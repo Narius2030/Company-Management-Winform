@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82DF95CD-6650-49A0-9DA2-5F58BDFD368F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLCongTy</RootNamespace>
+    <AssemblyName>QLCongTy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChamCong\ChamCong.cs" />
+    <Compile Include="ChamCong\ChamCongDAO.cs" />
+    <Compile Include="ChamCong\CheckInOutDAO.cs" />
+    <Compile Include="ChamCong\fCheckin-Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChamCong\fCheckin-Checkout.Designer.cs">
+      <DependentUpon>fCheckin-Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong\CheckInOut.cs" />
+    <Compile Include="ChamCong\fQLchamcong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChamCong\fQLchamcong.Designer.cs">
+      <DependentUpon>fQLchamcong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="MainMenu\fMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\fMainMenu.Designer.cs">
+      <DependentUpon>fMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\ChucVu.cs" />
+    <Compile Include="NhanSu\ChucVuDao.cs" />
+    <Compile Include="NhanSu\fChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\fChucVu.Designer.cs">
+      <DependentUpon>fChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\fNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\fNhanSu.Designer.cs">
+      <DependentUpon>fNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\NhanSu.cs" />
+    <Compile Include="NhanSu\NhanSuDao.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDuAn\DuAn.cs" />
+    <Compile Include="QLDuAn\DuAnDAO.cs" />
+    <Compile Include="QLDuAn\fQLThongTinDuAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDuAn\fQLThongTinDuAn.Designer.cs">
+      <DependentUpon>fQLThongTinDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDuAn\fVonDieuHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDuAn\fVonDieuHanh.Designer.cs">
+      <DependentUpon>fVonDieuHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLDAThamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLDAThamGia.Designer.cs">
+      <DependentUpon>fQLDAThamGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLNhanVienPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLNhanVienPB.Designer.cs">
+      <DependentUpon>fQLNhanVienPB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPhongBan\fQLPhongBan.Designer.cs">
+      <DependentUpon>fQLPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhongBan\PhongBan.cs" />
+    <Compile Include="QLPhongBan\PhongBanDAO.cs" />
+    <Compile Include="QLPhongBan\QLDAThamGiaDAO.cs" />
+    <Compile Include="QLPhongBan\QLNhanVienPBDAO.cs" />
+    <Compile Include="TienLuong\fQLtienluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TienLuong\fQLtienluong.Designer.cs">
+      <DependentUpon>fQLtienluong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChamCong\fCheckin-Checkout.resx">
+      <DependentUpon>fCheckin-Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChamCong\fQLchamcong.resx">
+      <DependentUpon>fQLchamcong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\fMainMenu.resx">
+      <DependentUpon>fMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\fChucVu.resx">
+      <DependentUpon>fChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\fNhanSu.resx">
+      <DependentUpon>fNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QLDuAn\fQLThongTinDuAn.resx">
+      <DependentUpon>fQLThongTinDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDuAn\fVonDieuHanh.resx">
+      <DependentUpon>fVonDieuHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPhongBan\fQLDAThamGia.resx">
+      <DependentUpon>fQLDAThamGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPhongBan\fQLNhanVienPB.resx">
+      <DependentUpon>fQLNhanVienPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPhongBan\fQLPhongBan.resx">
+      <DependentUpon>fQLPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TienLuong\fQLtienluong.resx">
+      <DependentUpon>fQLtienluong.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nhanvien %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chuvu %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phancong %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Truongphong %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nhanvienphong %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duan %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luong %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bonus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tienphat %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chitietduan %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VonDT %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ngaynghi %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chamcong %281%29.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
