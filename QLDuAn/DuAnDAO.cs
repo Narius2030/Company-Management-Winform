@@ -12,8 +12,8 @@ namespace QLCongTy.QLDuAn
 {
     internal class DuAnDAO
     {
+        public DuAnDAO() { }
         DBConnection db = new DBConnection();
-
         public DataTable LDS()
         {
             string sqlStr = string.Format("select *from DUAN");
@@ -21,16 +21,15 @@ namespace QLCongTy.QLDuAn
         }
         public void Them(DuAn da)
         {
-            string sqlStr = string.Format("INSERT INTO DUAN VALUES ('{0}', '{1}', '{2}','{3}')",da.mada,da.tenda,da.mapb,da.truongda);
+            string sqlStr = $"INSERT INTO DUAN VALUES ('{da.mada}', '{da.tenda}', '{da.mapb}','{da.truongda}')";
             db.ThucThi(sqlStr);
         }
 
         public void Xoa(DuAn da)
         {
-            string sqlStr = string.Format("DELETE FROM DUAN WHERE MaDA = '{0}'",da.mada);
+            string sqlStr = $"DELETE FROM DUAN WHERE MaDA = '{da.mada}'";
             db.ThucThi(sqlStr);
         }
-
         public void Sua(DuAn da)
         {
             string sqlStr = string.Format("UPDATE DUAN SET TenDA = '{0}', MaPB = '{1}',TruongDA = '{2}' WHERE MaDA = '{3}'",da.tenda,da.mapb,da.truongda, da.mada);

@@ -18,7 +18,6 @@ namespace QLCongTy.QLDuAn
             this.mada = mada;
             this.tenda = tenda;
             this.mapb = mapb;
-           
             this.truongda = truongda;
         }
     }
