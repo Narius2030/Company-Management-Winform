@@ -17,12 +17,12 @@ namespace QLCongTy.ChamCong
         }
         public void SubmitSang(CheckInOut cio)
         {
-            string sqlStr = $"insert into CHECKIN_OUT values('{cio.MaNV}', '{cio.Macv}','{cio.Ngay}', {cio.CheckInSang}, {cio.CheckOutSang}, {cio.CheckInChieu}, {cio.CheckOutChieu})";
+            string sqlStr = $"insert into CHECKIN_OUT values('{cio.MaNV}', '{cio.Macv}','{cio.Ngay}', {cio.CheckInSang}, {cio.CheckOutChieu})";
             dbconn.ThucThi(sqlStr);
         }
         public void SubmitChieu(CheckInOut cio)
         {
-            string sqlStr = $"update CHECKIN_OUT set CheckInChieu = {cio.CheckInChieu}, CheckOutChieu = {cio.CheckOutChieu} where MaNV = '{cio.MaNV}' and Ngay = '{cio.Ngay}'";
+            string sqlStr = $"update CHECKIN_OUT set CheckOutChieu = {cio.CheckOutChieu} where MaNV = '{cio.MaNV}' and Ngay = '{cio.Ngay}'";
             dbconn.ThucThi(sqlStr);
         }
         public void PushToChamCongTB(string manv, string macv, object ngay, int check)

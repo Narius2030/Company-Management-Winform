@@ -36,12 +36,8 @@ namespace QLCongTy
             txtMacvsang.Text = selectedrow.Cells["MaCV"].Value.ToString();
             cbCheckInsang.Text = selectedrow.Cells["CheckInSang"].Value.ToString();
             cbCheckInsang.Enabled = false;
-            cbCheckOutsang.Text = selectedrow.Cells["CheckOutSang"].Value.ToString();
-            cbCheckOutsang.Enabled = false;
             txtManvchieu.Text = selectedrow.Cells["MaNV"].Value.ToString();
             txtMacvchieu.Text = selectedrow.Cells["MaCV"].Value.ToString();
-            cbCheckInchieu.Text = selectedrow.Cells["CheckInChieu"].Value.ToString();
-            cbCheckInchieu.Enabled = false;
             cbCheckOutchieu.Text = selectedrow.Cells["CheckOutChieu"].Value.ToString();
             cbCheckOutchieu.Enabled = false;
         }
@@ -57,9 +53,6 @@ namespace QLCongTy
         private void btnSubmitchieu_Click(object sender, EventArgs e)
         {
             ConvertCheck(cio);
-            cio.MaNV = txtManvsang.Text;
-            cio.Macv = txtMacvchieu.Text;
-            cio.Ngay = dtpCheckInchieu.Value.Date;
             ciod.SubmitChieu(cio);
             ReLoad();
             CheckNgayNghi(cio);
@@ -70,14 +63,6 @@ namespace QLCongTy
             {
                 cio.CheckInSang = 1;
             }
-            if (cbCheckOutsang.Checked == true)
-            {
-                cio.CheckOutSang = 1;
-            }
-            if (cbCheckInchieu.Checked == true)
-            {
-                cio.CheckInChieu = 1;
-            }
             if (cbCheckOutchieu.Checked == true)
             {
                 cio.CheckOutChieu = 1;
@@ -85,7 +70,7 @@ namespace QLCongTy
         }
         public void CheckNgayNghi(CheckInOut cio)
         {
-            if (cio.CheckInSang == 0 || cio.CheckInChieu == 0 || cio.CheckOutSang == 0 || cio.CheckOutChieu == 0)
+            if (cio.CheckInSang == 0 || cio.CheckOutChieu == 0)
             {
                 ciod.PushToChamCongTB(cio.MaNV, cio.Macv, cio.Ngay, 0);
             }
