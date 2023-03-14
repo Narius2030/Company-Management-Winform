@@ -22,7 +22,6 @@ namespace QLCongTy.QLDuAn
             this.ngaybd = ngaybd;
             this.ngaykt = ngaykt;
         }
-
         public string Mada { get { return mada; } }
         public string Manv { get { return manv; } }
         public string Tennv { get { return tennv; } }

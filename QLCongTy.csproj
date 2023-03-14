@@ -102,6 +102,7 @@
       <DependentUpon>fVonDieuHanh.cs</DependentUpon>
     </Compile>
     <Compile Include="QLDuAn\PCNhanLuc.cs" />
+    <Compile Include="QLDuAn\PhanCongDAO.cs" />
     <Compile Include="QLPhongBan\fQLDAThamGia.cs">
       <SubType>Form</SubType>
     </Compile>
