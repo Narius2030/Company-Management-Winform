@@ -13,7 +13,7 @@ namespace QLCongTy.ChamCong
         public DBConnection dbconn = new DBConnection();
         public DataTable LayDanhSach()
         {
-            return dbconn.FormLoad("select * from CHECKIN_OUT");
+            return dbconn.FormLoad("select * from PHANCONGDUAN");
         }
         public void SubmitSang(CheckInOut cio)
         {
@@ -28,6 +28,11 @@ namespace QLCongTy.ChamCong
         public void PushToChamCongTB(string manv, string macv, object ngay, int check)
         {
             string sqlStr = $"insert into CHAMCONG values('{manv}', '{macv}', '{ngay}', {check})";
+            dbconn.ThucThi(sqlStr);
+        }
+        public void DanhGiaCV(string phantram, string MaDA, string MaNV)
+        {
+            string sqlStr = string.Format("UPDATE PHANCONGDUAN SET TienDo = '{0}' WHERE MaDA = '{1}' AND MaNV = '{2}'", phantram, MaDA, MaNV);
             dbconn.ThucThi(sqlStr);
         }
     }

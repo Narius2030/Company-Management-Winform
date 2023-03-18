@@ -49,20 +49,20 @@
     <Compile Include="ChamCong\ChamCong.cs" />
     <Compile Include="ChamCong\ChamCongDAO.cs" />
     <Compile Include="ChamCong\CheckInOutDAO.cs" />
+    <Compile Include="ChamCong\CheckInOut.cs" />
+    <Compile Include="DBConnection.cs" />
     <Compile Include="ChamCong\fCheckin-Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChamCong\fCheckin-Checkout.Designer.cs">
+    <Compile Include="ChamCong\fCheckin-Checkout.designer.cs">
       <DependentUpon>fCheckin-Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChamCong\CheckInOut.cs" />
     <Compile Include="ChamCong\fQLchamcong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChamCong\fQLchamcong.Designer.cs">
+    <Compile Include="ChamCong\fQLchamcong.designer.cs">
       <DependentUpon>fQLchamcong.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnection.cs" />
     <Compile Include="MainMenu\fMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

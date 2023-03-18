@@ -49,8 +49,14 @@
             this.txtManvchieu = new System.Windows.Forms.TextBox();
             this.dtpCheckOutchieu = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cbCheckOutchieu = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblMaDa = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtPhanTram = new System.Windows.Forms.TextBox();
             this.tabDiemdanh.SuspendLayout();
             this.tpCheckSang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvChecksang)).BeginInit();
@@ -65,7 +71,7 @@
             this.tabDiemdanh.Location = new System.Drawing.Point(12, 12);
             this.tabDiemdanh.Name = "tabDiemdanh";
             this.tabDiemdanh.SelectedIndex = 0;
-            this.tabDiemdanh.Size = new System.Drawing.Size(1035, 433);
+            this.tabDiemdanh.Size = new System.Drawing.Size(698, 494);
             this.tabDiemdanh.TabIndex = 0;
             // 
             // tpCheckSang
@@ -84,7 +90,7 @@
             this.tpCheckSang.Location = new System.Drawing.Point(4, 25);
             this.tpCheckSang.Name = "tpCheckSang";
             this.tpCheckSang.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckSang.Size = new System.Drawing.Size(1027, 404);
+            this.tpCheckSang.Size = new System.Drawing.Size(690, 465);
             this.tpCheckSang.TabIndex = 0;
             this.tpCheckSang.Text = "Buổi Sáng ";
             this.tpCheckSang.UseVisualStyleBackColor = true;
@@ -107,7 +113,7 @@
             // 
             // btnSubmitsang
             // 
-            this.btnSubmitsang.Location = new System.Drawing.Point(20, 255);
+            this.btnSubmitsang.Location = new System.Drawing.Point(524, 190);
             this.btnSubmitsang.Name = "btnSubmitsang";
             this.btnSubmitsang.Size = new System.Drawing.Size(86, 34);
             this.btnSubmitsang.TabIndex = 26;
@@ -137,11 +143,11 @@
             // gvChecksang
             // 
             this.gvChecksang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvChecksang.Location = new System.Drawing.Point(492, 75);
+            this.gvChecksang.Location = new System.Drawing.Point(20, 239);
             this.gvChecksang.Name = "gvChecksang";
             this.gvChecksang.RowHeadersWidth = 51;
             this.gvChecksang.RowTemplate.Height = 24;
-            this.gvChecksang.Size = new System.Drawing.Size(519, 310);
+            this.gvChecksang.Size = new System.Drawing.Size(602, 146);
             this.gvChecksang.TabIndex = 23;
             this.gvChecksang.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvChecksang_RowHeaderMouseClick);
             // 
@@ -182,6 +188,12 @@
             // 
             // tpCheckchieu
             // 
+            this.tpCheckchieu.Controls.Add(this.txtPhanTram);
+            this.tpCheckchieu.Controls.Add(this.label12);
+            this.tpCheckchieu.Controls.Add(this.comboBox1);
+            this.tpCheckchieu.Controls.Add(this.lblMaDa);
+            this.tpCheckchieu.Controls.Add(this.label7);
+            this.tpCheckchieu.Controls.Add(this.label3);
             this.tpCheckchieu.Controls.Add(this.txtMacvchieu);
             this.tpCheckchieu.Controls.Add(this.label9);
             this.tpCheckchieu.Controls.Add(this.btnSubmitchieu);
@@ -192,18 +204,18 @@
             this.tpCheckchieu.Controls.Add(this.label2);
             this.tpCheckchieu.Controls.Add(this.cbCheckOutchieu);
             this.tpCheckchieu.Controls.Add(this.label5);
-            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tpCheckchieu.Location = new System.Drawing.Point(4, 25);
             this.tpCheckchieu.Name = "tpCheckchieu";
             this.tpCheckchieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckchieu.Size = new System.Drawing.Size(1027, 404);
+            this.tpCheckchieu.Size = new System.Drawing.Size(690, 465);
             this.tpCheckchieu.TabIndex = 1;
             this.tpCheckchieu.Text = "Buổi Chiều ";
             this.tpCheckchieu.UseVisualStyleBackColor = true;
             // 
             // txtMacvchieu
             // 
-            this.txtMacvchieu.Location = new System.Drawing.Point(162, 135);
+            this.txtMacvchieu.Location = new System.Drawing.Point(162, 120);
             this.txtMacvchieu.Name = "txtMacvchieu";
             this.txtMacvchieu.Size = new System.Drawing.Size(214, 22);
             this.txtMacvchieu.TabIndex = 39;
@@ -212,7 +224,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 131);
+            this.label9.Location = new System.Drawing.Point(17, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 25);
             this.label9.TabIndex = 38;
@@ -220,7 +232,7 @@
             // 
             // btnSubmitchieu
             // 
-            this.btnSubmitchieu.Location = new System.Drawing.Point(20, 256);
+            this.btnSubmitchieu.Location = new System.Drawing.Point(506, 166);
             this.btnSubmitchieu.Name = "btnSubmitchieu";
             this.btnSubmitchieu.Size = new System.Drawing.Size(79, 35);
             this.btnSubmitchieu.TabIndex = 37;
@@ -243,12 +255,13 @@
             // gvCheckchieu
             // 
             this.gvCheckchieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCheckchieu.Location = new System.Drawing.Point(477, 75);
+            this.gvCheckchieu.Location = new System.Drawing.Point(22, 299);
             this.gvCheckchieu.Name = "gvCheckchieu";
             this.gvCheckchieu.RowHeadersWidth = 51;
             this.gvCheckchieu.RowTemplate.Height = 24;
-            this.gvCheckchieu.Size = new System.Drawing.Size(534, 310);
+            this.gvCheckchieu.Size = new System.Drawing.Size(641, 143);
             this.gvCheckchieu.TabIndex = 35;
+            this.gvCheckchieu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Row_Click);
             // 
             // txtManvchieu
             // 
@@ -259,7 +272,7 @@
             // 
             // dtpCheckOutchieu
             // 
-            this.dtpCheckOutchieu.Location = new System.Drawing.Point(131, 198);
+            this.dtpCheckOutchieu.Location = new System.Drawing.Point(127, 165);
             this.dtpCheckOutchieu.Name = "dtpCheckOutchieu";
             this.dtpCheckOutchieu.Size = new System.Drawing.Size(245, 22);
             this.dtpCheckOutchieu.TabIndex = 31;
@@ -267,11 +280,21 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 196);
+            this.label2.Location = new System.Drawing.Point(11, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 30);
             this.label2.TabIndex = 29;
             this.label2.Text = "Check Out";
+            // 
+            // cbCheckOutchieu
+            // 
+            this.cbCheckOutchieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCheckOutchieu.Location = new System.Drawing.Point(392, 151);
+            this.cbCheckOutchieu.Name = "cbCheckOutchieu";
+            this.cbCheckOutchieu.Size = new System.Drawing.Size(193, 50);
+            this.cbCheckOutchieu.TabIndex = 27;
+            this.cbCheckOutchieu.Text = "Now";
+            this.cbCheckOutchieu.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -282,21 +305,66 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Mã Nhân viên ";
             // 
-            // cbCheckOutchieu
+            // label3
             // 
-            this.cbCheckOutchieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCheckOutchieu.Location = new System.Drawing.Point(396, 184);
-            this.cbCheckOutchieu.Name = "cbCheckOutchieu";
-            this.cbCheckOutchieu.Size = new System.Drawing.Size(193, 50);
-            this.cbCheckOutchieu.TabIndex = 27;
-            this.cbCheckOutchieu.Text = "Now";
-            this.cbCheckOutchieu.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 208);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Đánh giá ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(62, 244);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 25);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Dự án: ";
+            // 
+            // lblMaDa
+            // 
+            this.lblMaDa.AutoSize = true;
+            this.lblMaDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaDa.Location = new System.Drawing.Point(136, 244);
+            this.lblMaDa.Name = "lblMaDa";
+            this.lblMaDa.Size = new System.Drawing.Size(42, 25);
+            this.lblMaDa.TabIndex = 42;
+            this.lblMaDa.Text = "      ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 43;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(239, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(197, 25);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Mức độ hoàn thành";
+            // 
+            // txtPhanTram
+            // 
+            this.txtPhanTram.Location = new System.Drawing.Point(456, 244);
+            this.txtPhanTram.Name = "txtPhanTram";
+            this.txtPhanTram.Size = new System.Drawing.Size(66, 22);
+            this.txtPhanTram.TabIndex = 45;
             // 
             // fCheckin_Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 455);
+            this.ClientSize = new System.Drawing.Size(739, 518);
             this.Controls.Add(this.tabDiemdanh);
             this.Name = "fCheckin_Checkout";
             this.Text = "Checkin_Checkout";
@@ -337,5 +405,11 @@
         private System.Windows.Forms.TextBox txtMacvchieu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox cbCheckOutchieu;
+        private System.Windows.Forms.TextBox txtPhanTram;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblMaDa;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
     }
 }

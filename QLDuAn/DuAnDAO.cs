@@ -45,7 +45,12 @@ namespace QLCongTy.QLDuAn
         }
         public void ThemNVvaoDA(PCNhanLuc pcnl)
         {
-            string sqlStr = string.Format("INSERT INTO PHANCONGDUAN VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", pcnl.Mada, pcnl.Manv, pcnl.Tennv, pcnl.Ngaybd, pcnl.Ngaykt);
+            string sqlStr = string.Format("INSERT INTO PHANCONGDUAN VALUES ('{0}', '{1}', '{2}', '{3}', '0')", pcnl.Mada, pcnl.Manv, pcnl.Ngaybd, pcnl.Ngaykt);
+            db.ThucThi(sqlStr);
+        }
+        public void XoaNVkhoiDA(PCNhanLuc pcnl)
+        {
+            string sqlStr = string.Format("DELETE FROM PHANCONGDUAN WHERE MaDA = '{0}' AND MaNV = '{1}'", pcnl.Mada, pcnl.Manv);
             db.ThucThi(sqlStr);
         }
         public void InitStatusTB()
@@ -87,7 +92,6 @@ namespace QLCongTy.QLDuAn
                 {
                     CommandUpdateStatus("Ranh", (string)dr["MaNV"]);
                 }
-
             }
         }
         public void DeleteBangTT()
