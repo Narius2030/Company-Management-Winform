@@ -80,7 +80,6 @@ namespace QLCongTy
                 ciod.PushToChamCongTB(cio.MaNV, cio.Macv, cio.Ngay, 1);
             }
         }
-
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvCheckchieu.SelectedRows[0];
