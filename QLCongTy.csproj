@@ -50,6 +50,9 @@
     <Compile Include="ChamCong\ChamCongDAO.cs" />
     <Compile Include="ChamCong\CheckInOutDAO.cs" />
     <Compile Include="ChamCong\CheckInOut.cs" />
+    <Compile Include="Custom_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="ChamCong\fCheckin-Checkout.cs">
       <SubType>Form</SubType>

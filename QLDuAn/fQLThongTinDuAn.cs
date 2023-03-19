@@ -1,4 +1,5 @@
-﻿using QLCongTy.QLDuAn;
+﻿using Microsoft.SqlServer.Server;
+using QLCongTy.QLDuAn;
 using QLCongTy.QLPhongBan;
 using System;
 using System.Collections.Generic;
@@ -48,32 +49,6 @@ namespace QLCongTy
             gvNhanLuc.Columns[0].HeaderText = "Mã Nhân Viên";
             gvNhanLuc.Columns[1].HeaderText = "Trình Độ";
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
-            daDao.Them(da);
-            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
-        }
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
-            daDao.Sua(da);
-            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
-            daDao.Xoa(da);
-            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
-            gvQLDuAn.DataSource = daDao.TimKiem(da);
-        }
         private void cboTrinhDo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -93,25 +68,9 @@ namespace QLCongTy
             lblTruongDA.Text = "MÃ NGƯỜI QUẢN LÝ: " + txtMaTruongDA.Text;
             gvPCDuAn.DataSource = daDao.LayDanhSach($"select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN where MaDA = '{txtMaDA.Text}'");
         }
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            daDao.UpdateStatus(dtpStart.Value.Date, dtpFinish.Value.Date);
-            gvNhanLuc.DataSource = db.FormLoad("select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'");
-        }
         private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
         {
             daDao.DeleteBangTT();
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            PCNhanLuc pcnl = new PCNhanLuc(txtMaDA.Text, txtMaNV.Text, dtpStart.Value.Date, dtpFinish.Value.Date);
-            DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn muốn loại nhân viên khỏi dự án?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                daDao.XoaNVkhoiDA(pcnl);
-            }
-            gvPCDuAn.DataSource = daDao.LayDanhSach("select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN");
         }
 
         private void gvPCDuAn_Row_Click(object sender, DataGridViewCellMouseEventArgs e)
@@ -128,29 +87,96 @@ namespace QLCongTy
             txtMaNV.Text = r.Cells[0].Value.ToString();
         }
 
-        private void btnThemNVvaoDA_Click(object sender, EventArgs e)
-        {
-            PCNhanLuc pcnl = new PCNhanLuc(txtMaDA.Text, txtMaNV.Text, dtpStart.Value.Date, dtpFinish.Value.Date);
-            daDao.ThemNVvaoDA(pcnl);
-            gvPCDuAn.DataSource = daDao.LayDanhSach("select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN");
-        }
-
         private void cboTrinhDo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            string sqlStr = string.Format("select *from TRANGTHAINHANVIEN where TrinhDo = '{0}'", cboTrinhDo.Text);
-            gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
+            if (cboTrinhDo.Text == "All")
+            {
+                string sqlStr = string.Format("select * from TRANGTHAINHANVIEN");
+                gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
+            }
+            else
+            {
+                string sqlStr = string.Format("select *from TRANGTHAINHANVIEN where TrinhDo = '{0}'", cboTrinhDo.Text);
+                gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
+            }
         }
 
         private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboTrangThai.Text == "All")
+            {
+                string sqlStr = string.Format("SELECT * FROM DUAN");
+                gvQLDuAn.DataSource = daDao.LayDanhSach(sqlStr);
+            }
+            else
+            {
+                string sqlStr = string.Format("select *from DUAN where TrangThai = '{0}'", cboTrangThai.Text);
+                gvQLDuAn.DataSource = daDao.LayDanhSach(sqlStr);
+            }
+        }
 
-            string sqlStr = string.Format("select *from DUAN where TrangThai = '{0}'", cboTrangThai.Text);
-            gvQLDuAn.DataSource = daDao.LayDanhSach(sqlStr);
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            daDao.Them(da);
+            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            daDao.Sua(da);
+            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            daDao.Xoa(da);
+            gvQLDuAn.DataSource = daDao.LayDanhSach("select *from DUAN");
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            gvQLDuAn.DataSource = daDao.TimKiem(da);
         }
 
         private void btnPhanCong_Click(object sender, EventArgs e)
         {
             tabQLDA.SelectedIndex = 1;
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(txtMaNV.Text)))
+            {
+                daDao.UpdateStatus(dtpStart.Value.Date, dtpFinish.Value.Date);
+                gvNhanLuc.DataSource = db.FormLoad("select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'");
+            }
+            else
+            {
+                gvPCDuAn.DataSource = daDao.LayDanhSach($"select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE MaNV = '{txtMaNV.Text}'");
+                gvNhanLuc.DataSource = db.FormLoad($"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE MaNV = '{txtMaNV.Text}'");
+            }
+        }
+
+        private void btnXoaNVkhoiDA_Click(object sender, EventArgs e)
+        {
+            PCNhanLuc pcnl = new PCNhanLuc(txtMaDA.Text, txtMaNV.Text, dtpStart.Value.Date, dtpFinish.Value.Date);
+            DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn muốn loại nhân viên khỏi dự án?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                daDao.XoaNVkhoiDA(pcnl);
+            }
+            gvPCDuAn.DataSource = daDao.LayDanhSach("select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN");
+        }
+
+        private void btnThemNVvaoDA_Click(object sender, EventArgs e)
+        {
+            PCNhanLuc pcnl = new PCNhanLuc(txtMaDA.Text, txtMaNV.Text, dtpStart.Value.Date, dtpFinish.Value.Date);
+            daDao.ThemNVvaoDA(pcnl);
+            gvPCDuAn.DataSource = daDao.LayDanhSach("select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN");
         }
     }
 }
