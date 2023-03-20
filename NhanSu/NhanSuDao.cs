@@ -25,11 +25,15 @@ namespace QLCongTy
         {
             string sqlStr = string.Format("INSERT INTO NHANSU(MaNV, HovaTendem, Ten, NgaySinh, DiaChi, CCCD, MaPB, GioiTinh, SDT, Email, MaCV) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')", ns.MaNV, ns.HoDem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV);
             dbConnec.ThucThi(sqlStr);
+            sqlStr = string.Format("INSERT INTO TAIKHOAN VALUES('{0}', '{1}','{2}')", ns.MaNV,ns.MaNV,ns.MaCV);
+            dbConnec.ThucThi(sqlStr);
         }
 
         public void Xoa(NhanSu ns)
         {
             string sqlStr = string.Format("DELETE FROM NHANSU WHERE MaNV = '{0}';", ns.MaNV);
+            dbConnec.ThucThi(sqlStr);
+            sqlStr = string.Format("DELETE FROM TAIKHOAN WHERE taikhoan = '{0}';", ns.MaNV);
             dbConnec.ThucThi(sqlStr);
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabQLThumuc = new System.Windows.Forms.TabControl();
             this.tpQLNhansu = new System.Windows.Forms.TabPage();
             this.btnPhancong = new System.Windows.Forms.Button();
@@ -63,16 +64,37 @@
             this.btnNgaynghi = new System.Windows.Forms.Button();
             this.btnCheckInOut = new System.Windows.Forms.Button();
             this.btnChamcong = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabDangNhap = new System.Windows.Forms.TabControl();
+            this.tbDangNhap = new System.Windows.Forms.TabPage();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.lblTenTk = new System.Windows.Forms.Label();
+            this.btnDangNhap = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.tpDoiMK = new System.Windows.Forms.TabPage();
+            this.btnDoiMk = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtNhapLaiMK = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.picAnHienMK = new System.Windows.Forms.PictureBox();
+            this.picAnHienMkMoi = new System.Windows.Forms.PictureBox();
+            this.picAnHienNhapLaiMk = new System.Windows.Forms.PictureBox();
             this.tabQLThumuc.SuspendLayout();
             this.tpQLNhansu.SuspendLayout();
             this.tpQLPhongban.SuspendLayout();
             this.tpQLTiendo.SuspendLayout();
             this.tpQLDuan.SuspendLayout();
             this.tpQLChamcong.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabDangNhap.SuspendLayout();
+            this.tbDangNhap.SuspendLayout();
+            this.tpDoiMK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienMK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienMkMoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienNhapLaiMk)).BeginInit();
             this.SuspendLayout();
             // 
             // tabQLThumuc
@@ -440,42 +462,200 @@
             this.btnChamcong.UseVisualStyleBackColor = true;
             this.btnChamcong.Click += new System.EventHandler(this.btnChamcong_Click);
             // 
-            // tabControl1
+            // tabDangNhap
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(668, 13);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(320, 179);
-            this.tabControl1.TabIndex = 2;
+            this.tabDangNhap.Controls.Add(this.tbDangNhap);
+            this.tabDangNhap.Controls.Add(this.tpDoiMK);
+            this.tabDangNhap.Location = new System.Drawing.Point(668, 13);
+            this.tabDangNhap.Name = "tabDangNhap";
+            this.tabDangNhap.SelectedIndex = 0;
+            this.tabDangNhap.Size = new System.Drawing.Size(379, 195);
+            this.tabDangNhap.TabIndex = 2;
             // 
-            // tabPage1
+            // tbDangNhap
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(312, 149);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tbDangNhap.Controls.Add(this.picAnHienMK);
+            this.tbDangNhap.Controls.Add(this.btnThoat);
+            this.tbDangNhap.Controls.Add(this.lblTenTk);
+            this.tbDangNhap.Controls.Add(this.btnDangNhap);
+            this.tbDangNhap.Controls.Add(this.label16);
+            this.tbDangNhap.Controls.Add(this.label12);
+            this.tbDangNhap.Controls.Add(this.txtMatKhau);
+            this.tbDangNhap.Controls.Add(this.txtTaiKhoan);
+            this.tbDangNhap.Location = new System.Drawing.Point(4, 26);
+            this.tbDangNhap.Name = "tbDangNhap";
+            this.tbDangNhap.Padding = new System.Windows.Forms.Padding(3);
+            this.tbDangNhap.Size = new System.Drawing.Size(371, 165);
+            this.tbDangNhap.TabIndex = 0;
+            this.tbDangNhap.Text = "Đăng nhập";
+            this.tbDangNhap.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // btnThoat
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(312, 149);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnThoat.Location = new System.Drawing.Point(143, 3);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(65, 23);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Visible = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // lblTenTk
+            // 
+            this.lblTenTk.AutoSize = true;
+            this.lblTenTk.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTenTk.Location = new System.Drawing.Point(224, 7);
+            this.lblTenTk.Name = "lblTenTk";
+            this.lblTenTk.Size = new System.Drawing.Size(0, 18);
+            this.lblTenTk.TabIndex = 5;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Location = new System.Drawing.Point(108, 112);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(100, 31);
+            this.btnDangNhap.TabIndex = 4;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 82);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 18);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Mật Khẩu";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Tài Khoản";
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(108, 82);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(100, 24);
+            this.txtMatKhau.TabIndex = 1;
+            // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.Location = new System.Drawing.Point(108, 49);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(100, 24);
+            this.txtTaiKhoan.TabIndex = 0;
+            // 
+            // tpDoiMK
+            // 
+            this.tpDoiMK.Controls.Add(this.picAnHienNhapLaiMk);
+            this.tpDoiMK.Controls.Add(this.picAnHienMkMoi);
+            this.tpDoiMK.Controls.Add(this.btnDoiMk);
+            this.tpDoiMK.Controls.Add(this.label18);
+            this.tpDoiMK.Controls.Add(this.label17);
+            this.tpDoiMK.Controls.Add(this.txtNhapLaiMK);
+            this.tpDoiMK.Controls.Add(this.txtMatKhauMoi);
+            this.tpDoiMK.Location = new System.Drawing.Point(4, 26);
+            this.tpDoiMK.Name = "tpDoiMK";
+            this.tpDoiMK.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDoiMK.Size = new System.Drawing.Size(371, 165);
+            this.tpDoiMK.TabIndex = 1;
+            this.tpDoiMK.Text = "Đổi mật khẩu";
+            this.tpDoiMK.UseVisualStyleBackColor = true;
+            // 
+            // btnDoiMk
+            // 
+            this.btnDoiMk.Location = new System.Drawing.Point(139, 109);
+            this.btnDoiMk.Name = "btnDoiMk";
+            this.btnDoiMk.Size = new System.Drawing.Size(141, 34);
+            this.btnDoiMk.TabIndex = 5;
+            this.btnDoiMk.Text = "Đổi Mật Khẩu";
+            this.btnDoiMk.UseVisualStyleBackColor = true;
+            this.btnDoiMk.Click += new System.EventHandler(this.btnDoiMk_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 85);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(126, 18);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Nhập lại mật khẩu";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 37);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 18);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Mật khẩu mới";
+            // 
+            // txtNhapLaiMK
+            // 
+            this.txtNhapLaiMK.Location = new System.Drawing.Point(139, 79);
+            this.txtNhapLaiMK.Name = "txtNhapLaiMK";
+            this.txtNhapLaiMK.PasswordChar = '*';
+            this.txtNhapLaiMK.Size = new System.Drawing.Size(141, 24);
+            this.txtNhapLaiMK.TabIndex = 2;
+            // 
+            // txtMatKhauMoi
+            // 
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(139, 37);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '*';
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(141, 24);
+            this.txtMatKhauMoi.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // picAnHienMK
+            // 
+            this.picAnHienMK.BackColor = System.Drawing.Color.Gray;
+            this.picAnHienMK.Location = new System.Drawing.Point(214, 83);
+            this.picAnHienMK.Name = "picAnHienMK";
+            this.picAnHienMK.Size = new System.Drawing.Size(20, 23);
+            this.picAnHienMK.TabIndex = 7;
+            this.picAnHienMK.TabStop = false;
+            this.picAnHienMK.Click += new System.EventHandler(this.picAnHienMK_Click);
+            // 
+            // picAnHienMkMoi
+            // 
+            this.picAnHienMkMoi.BackColor = System.Drawing.Color.Gray;
+            this.picAnHienMkMoi.Location = new System.Drawing.Point(286, 38);
+            this.picAnHienMkMoi.Name = "picAnHienMkMoi";
+            this.picAnHienMkMoi.Size = new System.Drawing.Size(20, 23);
+            this.picAnHienMkMoi.TabIndex = 8;
+            this.picAnHienMkMoi.TabStop = false;
+            this.picAnHienMkMoi.Click += new System.EventHandler(this.picAnHienMkMoi_Click);
+            // 
+            // picAnHienNhapLaiMk
+            // 
+            this.picAnHienNhapLaiMk.BackColor = System.Drawing.Color.Gray;
+            this.picAnHienNhapLaiMk.Location = new System.Drawing.Point(286, 85);
+            this.picAnHienNhapLaiMk.Name = "picAnHienNhapLaiMk";
+            this.picAnHienNhapLaiMk.Size = new System.Drawing.Size(20, 23);
+            this.picAnHienNhapLaiMk.TabIndex = 9;
+            this.picAnHienNhapLaiMk.TabStop = false;
+            this.picAnHienNhapLaiMk.Click += new System.EventHandler(this.picAnHienNhapLaiMk_Click);
             // 
             // fMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 567);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1059, 567);
+            this.Controls.Add(this.tabDangNhap);
             this.Controls.Add(this.tabQLThumuc);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fMainMenu";
@@ -492,7 +672,14 @@
             this.tpQLDuan.PerformLayout();
             this.tpQLChamcong.ResumeLayout(false);
             this.tpQLChamcong.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabDangNhap.ResumeLayout(false);
+            this.tbDangNhap.ResumeLayout(false);
+            this.tbDangNhap.PerformLayout();
+            this.tpDoiMK.ResumeLayout(false);
+            this.tpDoiMK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienMK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienMkMoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnHienNhapLaiMk)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,9 +721,25 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabDangNhap;
+        private System.Windows.Forms.TabPage tbDangNhap;
+        private System.Windows.Forms.TabPage tpDoiMK;
+        private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTaiKhoan;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lblTenTk;
+        private System.Windows.Forms.Button btnDoiMk;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtNhapLaiMK;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.PictureBox picAnHienMK;
+        private System.Windows.Forms.PictureBox picAnHienNhapLaiMk;
+        private System.Windows.Forms.PictureBox picAnHienMkMoi;
     }
 }
 

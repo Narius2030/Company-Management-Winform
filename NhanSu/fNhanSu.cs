@@ -37,6 +37,7 @@ namespace QLCongTy
             ns = new NhanSu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, txtGioiTinh.Text, txtSDT.Text, txtEmail.Text);
             nsDao.Them(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
