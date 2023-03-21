@@ -30,6 +30,7 @@
         {
             this.tabQLDA = new System.Windows.Forms.TabControl();
             this.tpQLDA = new System.Windows.Forms.TabPage();
+            this.monLichDuAn = new System.Windows.Forms.MonthCalendar();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -46,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.gvQLDuAn = new System.Windows.Forms.DataGridView();
             this.tpPCDA = new System.Windows.Forms.TabPage();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTruongDA = new System.Windows.Forms.Label();
@@ -67,9 +69,9 @@
             this.btnSua = new QLCongTy.VBButton();
             this.btnXoa = new QLCongTy.VBButton();
             this.btnThem = new QLCongTy.VBButton();
-            this.btnFilter = new QLCongTy.VBButton();
             this.btnThemNVvaoDA = new QLCongTy.VBButton();
             this.btnXoaNVkhoiDA = new QLCongTy.VBButton();
+            this.btnFilter = new QLCongTy.VBButton();
             this.tabQLDA.SuspendLayout();
             this.tpQLDA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQLDuAn)).BeginInit();
@@ -95,6 +97,7 @@
             // 
             // tpQLDA
             // 
+            this.tpQLDA.Controls.Add(this.monLichDuAn);
             this.tpQLDA.Controls.Add(this.btnPhanCong);
             this.tpQLDA.Controls.Add(this.btnTimKiem);
             this.tpQLDA.Controls.Add(this.btnSua);
@@ -122,6 +125,16 @@
             this.tpQLDA.TabIndex = 0;
             this.tpQLDA.Text = "Dự Án";
             this.tpQLDA.UseVisualStyleBackColor = true;
+            // 
+            // monLichDuAn
+            // 
+            this.monLichDuAn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.monLichDuAn.Location = new System.Drawing.Point(898, 127);
+            this.monLichDuAn.MaxSelectionCount = 1000;
+            this.monLichDuAn.Name = "monLichDuAn";
+            this.monLichDuAn.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2023, 3, 1, 0, 0, 0, 0), new System.DateTime(2023, 3, 31, 0, 0, 0, 0));
+            this.monLichDuAn.TabIndex = 82;
+            this.monLichDuAn.TrailingForeColor = System.Drawing.SystemColors.ButtonFace;
             // 
             // cboTrangThai
             // 
@@ -273,7 +286,7 @@
             // tpPCDA
             // 
             this.tpPCDA.BackColor = System.Drawing.Color.White;
-            this.tpPCDA.Controls.Add(this.btnFilter);
+            this.tpPCDA.Controls.Add(this.monthCalendar1);
             this.tpPCDA.Controls.Add(this.txtMaNV);
             this.tpPCDA.Controls.Add(this.label5);
             this.tpPCDA.Controls.Add(this.lblTruongDA);
@@ -284,6 +297,7 @@
             this.tpPCDA.Controls.Add(this.lblTenDA);
             this.tpPCDA.Controls.Add(this.panel1);
             this.tpPCDA.Controls.Add(this.lblPhongban);
+            this.tpPCDA.Controls.Add(this.btnFilter);
             this.tpPCDA.Location = new System.Drawing.Point(4, 25);
             this.tpPCDA.Name = "tpPCDA";
             this.tpPCDA.Padding = new System.Windows.Forms.Padding(3);
@@ -291,10 +305,19 @@
             this.tpPCDA.TabIndex = 1;
             this.tpPCDA.Text = "Phân Công";
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.monthCalendar1.Location = new System.Drawing.Point(915, 67);
+            this.monthCalendar1.MaxSelectionCount = 1000;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2023, 3, 1, 0, 0, 0, 0), new System.DateTime(2023, 3, 31, 0, 0, 0, 0));
+            this.monthCalendar1.TabIndex = 83;
+            // 
             // txtMaNV
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(551, 81);
+            this.txtMaNV.Location = new System.Drawing.Point(506, 81);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(173, 26);
             this.txtMaNV.TabIndex = 70;
@@ -303,7 +326,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(400, 84);
+            this.label5.Location = new System.Drawing.Point(355, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 20);
             this.label5.TabIndex = 68;
@@ -322,7 +345,7 @@
             // dtpFinish
             // 
             this.dtpFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFinish.Location = new System.Drawing.Point(551, 169);
+            this.dtpFinish.Location = new System.Drawing.Point(506, 169);
             this.dtpFinish.Name = "dtpFinish";
             this.dtpFinish.Size = new System.Drawing.Size(292, 26);
             this.dtpFinish.TabIndex = 66;
@@ -330,7 +353,7 @@
             // dtpStart
             // 
             this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStart.Location = new System.Drawing.Point(551, 125);
+            this.dtpStart.Location = new System.Drawing.Point(506, 125);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(292, 26);
             this.dtpStart.TabIndex = 65;
@@ -339,7 +362,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(400, 173);
+            this.label8.Location = new System.Drawing.Point(355, 173);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(141, 20);
             this.label8.TabIndex = 64;
@@ -349,7 +372,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(400, 130);
+            this.label7.Location = new System.Drawing.Point(355, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 20);
             this.label7.TabIndex = 63;
@@ -369,18 +392,18 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Location = new System.Drawing.Point(53, 229);
+            this.panel1.Location = new System.Drawing.Point(44, 294);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1136, 410);
+            this.panel1.Size = new System.Drawing.Size(1136, 363);
             this.panel1.TabIndex = 57;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpNhanlucDA);
-            this.tabControl1.Location = new System.Drawing.Point(6, 3);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1130, 407);
+            this.tabControl1.Size = new System.Drawing.Size(1130, 354);
             this.tabControl1.TabIndex = 58;
             // 
             // tpNhanlucDA
@@ -394,7 +417,7 @@
             this.tpNhanlucDA.Location = new System.Drawing.Point(4, 25);
             this.tpNhanlucDA.Name = "tpNhanlucDA";
             this.tpNhanlucDA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanlucDA.Size = new System.Drawing.Size(1122, 378);
+            this.tpNhanlucDA.Size = new System.Drawing.Size(1122, 325);
             this.tpNhanlucDA.TabIndex = 0;
             this.tpNhanlucDA.Text = "Nhân lực dự án";
             this.tpNhanlucDA.UseVisualStyleBackColor = true;
@@ -412,7 +435,7 @@
             this.cboTrinhDo.Name = "cboTrinhDo";
             this.cboTrinhDo.Size = new System.Drawing.Size(163, 24);
             this.cboTrinhDo.TabIndex = 65;
-            this.cboTrinhDo.SelectedIndexChanged += new System.EventHandler(this.cboTrinhDo_SelectedIndexChanged_1);
+            this.cboTrinhDo.SelectedIndexChanged += new System.EventHandler(this.cboTrinhDo_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -431,7 +454,7 @@
             this.gvNhanLuc.Name = "gvNhanLuc";
             this.gvNhanLuc.RowHeadersWidth = 51;
             this.gvNhanLuc.RowTemplate.Height = 24;
-            this.gvNhanLuc.Size = new System.Drawing.Size(337, 312);
+            this.gvNhanLuc.Size = new System.Drawing.Size(337, 254);
             this.gvNhanLuc.TabIndex = 4;
             this.gvNhanLuc.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvNhanLuc_Row_Click);
             // 
@@ -442,7 +465,7 @@
             this.gvPCDuAn.Name = "gvPCDuAn";
             this.gvPCDuAn.RowHeadersWidth = 51;
             this.gvPCDuAn.RowTemplate.Height = 24;
-            this.gvPCDuAn.Size = new System.Drawing.Size(738, 312);
+            this.gvPCDuAn.Size = new System.Drawing.Size(738, 254);
             this.gvPCDuAn.TabIndex = 2;
             this.gvPCDuAn.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvPCDuAn_Row_Click);
             // 
@@ -511,7 +534,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(108, 52);
             this.btnSua.TabIndex = 78;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "Cập Nhật";
             this.btnSua.TextColor = System.Drawing.Color.Black;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -556,26 +579,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.Color.Azure;
-            this.btnFilter.BackgroundColor = System.Drawing.Color.Azure;
-            this.btnFilter.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnFilter.BorderRadius = 10;
-            this.btnFilter.BorderSize = 1;
-            this.btnFilter.FlatAppearance.BorderSize = 0;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.Black;
-            this.btnFilter.Location = new System.Drawing.Point(882, 148);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(108, 47);
-            this.btnFilter.TabIndex = 80;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.TextColor = System.Drawing.Color.Black;
-            this.btnFilter.UseVisualStyleBackColor = false;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
             // btnThemNVvaoDA
             // 
             this.btnThemNVvaoDA.BackColor = System.Drawing.Color.Azure;
@@ -615,6 +618,26 @@
             this.btnXoaNVkhoiDA.TextColor = System.Drawing.Color.Black;
             this.btnXoaNVkhoiDA.UseVisualStyleBackColor = false;
             this.btnXoaNVkhoiDA.Click += new System.EventHandler(this.btnXoaNVkhoiDA_Click);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.Azure;
+            this.btnFilter.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnFilter.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnFilter.BorderRadius = 10;
+            this.btnFilter.BorderSize = 1;
+            this.btnFilter.FlatAppearance.BorderSize = 0;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.Black;
+            this.btnFilter.Location = new System.Drawing.Point(690, 215);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(108, 47);
+            this.btnFilter.TabIndex = 80;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.TextColor = System.Drawing.Color.Black;
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // fQLDuAn
             // 
@@ -686,5 +709,7 @@
         private VBButton btnFilter;
         private VBButton btnXoaNVkhoiDA;
         private VBButton btnThemNVvaoDA;
+        private System.Windows.Forms.MonthCalendar monLichDuAn;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
