@@ -25,8 +25,7 @@ namespace QLCongTy.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-VC5IF5QK\\SQLEXPRESS01;Initial Catalog=QLCT;Integrated Security" +
-            "=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QLCT;Integrated Security=True")]
         public string cnnStr {
             get {
                 return ((string)(this["cnnStr"]));

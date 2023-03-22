@@ -33,7 +33,7 @@ namespace QLCongTy.MainMenu
                     return null;
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 MessageBox.Show("Tai khoan khong ton tai");
                 return null;
