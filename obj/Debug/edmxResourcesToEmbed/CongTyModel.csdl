@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHAMCONG">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="Ngay" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CheckNgay" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CHECKIN_OUT">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="Ngay" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CheckInSang" Type="Boolean" />
+    <Property Name="CheckOutChieu" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CHUCVU">
+    <Key>
+      <PropertyRef Name="MaCV" />
+    </Key>
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenCV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HeSoLuong" Type="Single" />
+  </EntityType>
+  <EntityType Name="DUAN">
+    <Key>
+      <PropertyRef Name="MaDA" />
+      <PropertyRef Name="MaPB" />
+    </Key>
+    <Property Name="MaDA" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenDA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MaPB" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VonDH" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TruongDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NgayBD" Type="DateTime" Precision="0" />
+    <Property Name="NgayKT" Type="DateTime" Precision="0" />
+    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NHANSU">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HovaTendem" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Ten" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CCCD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MaPB" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="false" />
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TrinhDo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PHANCONGDUAN">
+    <Key>
+      <PropertyRef Name="MaDA" />
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaDA" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CongViec" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NgayBD" Type="DateTime" Precision="0" />
+    <Property Name="NgayKT" Type="DateTime" Precision="0" />
+    <Property Name="TienDo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PHONGBAN">
+    <Key>
+      <PropertyRef Name="MaPB" />
+    </Key>
+    <Property Name="MaPB" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenPB" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="MaTP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="taikhoan1" />
+    </Key>
+    <Property Name="taikhoan1" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TIENLUONG">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaCV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="LuongCB" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LuongThuong" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LuongPhat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LuongThucTe" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TRANGTHAINHANVIEN">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TrinhDo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TrangThai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DanhGia" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="QLCTContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHAMCONGs" EntityType="Self.CHAMCONG" />
+    <EntitySet Name="CHECKIN_OUT" EntityType="Self.CHECKIN_OUT" />
+    <EntitySet Name="CHUCVUs" EntityType="Self.CHUCVU" />
+    <EntitySet Name="DUANs" EntityType="Self.DUAN" />
+    <EntitySet Name="NHANSUs" EntityType="Self.NHANSU" />
+    <EntitySet Name="PHANCONGDUANs" EntityType="Self.PHANCONGDUAN" />
+    <EntitySet Name="PHONGBANs" EntityType="Self.PHONGBAN" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="TIENLUONGs" EntityType="Self.TIENLUONG" />
+    <EntitySet Name="TRANGTHAINHANVIENs" EntityType="Self.TRANGTHAINHANVIEN" />
+  </EntityContainer>
+</Schema>
