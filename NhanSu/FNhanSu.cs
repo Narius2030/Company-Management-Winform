@@ -18,13 +18,11 @@ namespace QLConTy_Entity.NhanSu
         {
             InitializeComponent();
         }
-
         private void FNhanSu_Load(object sender, EventArgs e)
         {
             gvNhanSu.DataSource = nsDao.DanhSach();
             DoiTenGV();
         }
-
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
@@ -40,7 +38,6 @@ namespace QLConTy_Entity.NhanSu
             txtEmail.Text = r.Cells[9].Value.ToString();
             txtMaCV.Text = r.Cells[10].Value.ToString();
         }
-
         private void DoiTenGV()
         {
             string[] thuoctinh = { "Mã Nhân Viên", "Họ Đệm", "Tên", "Ngày Sinh", "Địa Chỉ", "CCCD", "Mã Phòng Ban", "Giới Tính", "SĐT", "Email", "MaCV" };
@@ -85,16 +82,21 @@ namespace QLConTy_Entity.NhanSu
             switch (cboLocKhac.Text)
             {
                 case "Mã Nhân Viên":
-                    gvNhanSu.DataSource = nsDao.Loc("MaNV", txtThongTinLoc.Text);
+                    //gvNhanSu.DataSource = nsDao.Loc("MaNV", txtThongTinLoc.Text);
+                    using (var db = new QLCTContext())
+                    {
+                        var query = from q in db.NHANSUs select q;
+
+                    }
                     break;
                 case "Họ Đệm":
-                    gvNhanSu.DataSource = nsDao.Loc("HovaTendem", txtThongTinLoc.Text);
+                    //gvNhanSu.DataSource = nsDao.Loc("HovaTendem", txtThongTinLoc.Text);
                     break;
                 case "Tên":
-                    gvNhanSu.DataSource = nsDao.Loc("Ten", txtThongTinLoc.Text);
+                    //gvNhanSu.DataSource = nsDao.Loc("Ten", txtThongTinLoc.Text);
                     break;
                 case "CCCD":
-                    gvNhanSu.DataSource = nsDao.Loc("CCCD", txtThongTinLoc.Text);
+                    //gvNhanSu.DataSource = nsDao.Loc("CCCD", txtThongTinLoc.Text);
                     break;
             }
         }
