@@ -37,3 +37,21 @@ D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\Q
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.CopyComplete
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLConTy_Entity.exe
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLConTy_Entity.pdb
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.AssemblyReference.cache
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.SuggestedBindingRedirects.cache
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.ChamCong.fCheckin_Checkout.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.ChamCong.fQLchamcong.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.DuAn.fQLDuAn.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.MainMenu.fMainMenu.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.NhanSu.FNhanSu.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.Properties.Resources.resources
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.GenerateResource.cache
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.CoreCompileInputs.cache
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.exe
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.pdb
+D:\Github\Tuần 10\QuanLyCT\bin\Debug\QLConTy_Entity.exe.config
+D:\Github\Tuần 10\QuanLyCT\bin\Debug\QLConTy_Entity.exe
+D:\Github\Tuần 10\QuanLyCT\bin\Debug\QLConTy_Entity.pdb
+D:\Github\Tuần 10\QuanLyCT\bin\Debug\EntityFramework.xml
+D:\Github\Tuần 10\QuanLyCT\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Tuần 10\QuanLyCT\obj\Debug\QLConTy_Entity.csproj.CopyComplete
