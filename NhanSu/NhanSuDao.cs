@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QLCongTy.TienLuong;
 using QLCongTy.QLDuAn;
+using System.Windows.Documents;
 
 namespace QLCongTy.NhanSu
 {
@@ -31,8 +32,6 @@ namespace QLCongTy.NhanSu
             //Tao TAIKHOAN moi mac dinh
             sqlStr = string.Format("INSERT INTO TAIKHOAN VALUES('{0}', '{1}','{2}')", ns.MaNV, ns.MaNV, ns.MaCV);
             dbConnec.ThucThi(sqlStr);
-
-            //Tao TIENLUONG moi
         }
 
         public void Xoa(Nhansu ns)
@@ -50,22 +49,58 @@ namespace QLCongTy.NhanSu
             sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'",ns.MaCV,ns.MaNV );
             dbConnec.ThucThi(sqlStr);
         }
-        public DataTable LuongTheoThang(string mapb, int year)
+        public float LuongTheoThang(string mapb, int year)
         {
-            string sqlStr = $@"select MaPB, tl.Nam, sum(tl.LuongThucTe) as Luong
+            string sqlStr = $@"select sum(tl.LuongThucTe) as Luong
                                 from NHANSU as ns inner join TIENLUONG as tl
 	                                on ns.MaNV = tl.MaNV
-                                where MaPB = 'P001' and Nam = 2023
-                                group by MaPB, Nam";
+                                where MaPB = '{mapb}' and Nam = {year}";
             DataTable dt = dbConnec.FormLoad(sqlStr);
-            return dt;
+
+            float luong = float.Parse(dt.Rows[0]["Luong"].ToString());
+            return luong;
         }
 
         //Lấy số lượng phòng --> List<>
+        public List<string> LaySLPhong()
+        {
+            string sqlStr = $@"select MaPB from PHONGBAN";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
 
+            List<string> list = new List<string>();
+            for (int i=0; i<dt.Rows.Count; i++)
+            {
+                list.Add(dt.Rows[i]["MaPB"].ToString());
+            }
+            return list;
+        }
 
         //Lấy số lượng năm --> List<>
+        public List<int> LaySLNam()
+        {
+            string sqlStr = $@"select distinct Nam from TIENLUONG";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
 
+            List<int> list = new List<int>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                list.Add(int.Parse(dt.Rows[i]["Nam"].ToString()));
+            }
+            return list;
+        }
 
+        //Lấy số lượng trình độ --> Dictionary
+        public Dictionary<string, int> LaySLTrinhDo() 
+        {
+            string sqlStr = $@"select TrinhDo, count(TrinhDo) as so_luong from NHANSU group by TrinhDo";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dict.Add(dt.Rows[i]["TrinhDo"].ToString(), int.Parse(dt.Rows[i]["so_luong"].ToString()));
+            }
+            return dict;
+        }
     }
 }

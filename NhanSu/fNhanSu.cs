@@ -29,6 +29,9 @@ namespace QLCongTy.NhanSu
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
+
+            //Dùng Loop thay thế -> ???
+
             txtMaNV.Text = r.Cells[0].Value.ToString();
             txtHoDem.Text = r.Cells[1].Value.ToString();
             txtTenNV.Text = r.Cells[2].Value.ToString();
@@ -104,15 +107,24 @@ namespace QLCongTy.NhanSu
         }
         #region Vẽ biểu đồ
 
+        //Thống kế số lương của từng phòng theo năm
         public void ThongKeLuong()
         {
-            //Dùng Series.Points.Add()
-
-            chartLayLuongThang.Series[3].XValueMember = "thang";
-            chartLayLuongThang.Series[3].YValueMembers = "luong";
-
-            chartLayLuongThang.DataBind();
+            var listPB = nsDao.LaySLPhong();
+            var listNam = nsDao.LaySLNam();
+            
+            //Thêm từng cột vào chart
+            for (int i = 0; i < listNam.Count; i++)
+            {
+                for (int j = 0; j < listPB.Count; j++)
+                {
+                    chartLayLuongThang.Series[j].Points.AddXY(listNam[i], nsDao.LuongTheoThang(listPB[j], listNam[i]));
+                }
+            }
         }
+
+        //Vẽ biểu đồ thống kế tỉ lệ trình độ trong công ty
+
 
         #endregion
 
