@@ -54,20 +54,20 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom_Datagridview.cs">
+    <Compile Include="Custome_control\Custom_Datagridview.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChamCong\Chamcong.cs" />
     <Compile Include="ChamCong\ChamCongDAO.cs" />
     <Compile Include="ChamCong\CheckInOutDAO.cs" />
     <Compile Include="ChamCong\CheckInOut.cs" />
-    <Compile Include="CustomTextBox.cs">
+    <Compile Include="Custome_control\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomTextBox.Designer.cs">
+    <Compile Include="Custome_control\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Custom_Pannel.cs">
+    <Compile Include="Custome_control\Custom_Pannel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DBConnection.cs" />
@@ -159,7 +159,7 @@
     <EmbeddedResource Include="ChamCong\fQLchamcong.resx">
       <DependentUpon>fQLchamcong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomTextBox.resx">
+    <EmbeddedResource Include="Custome_control\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\FMainMenu.resx">

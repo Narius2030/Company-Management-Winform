@@ -24,10 +24,24 @@ namespace QLCongTy.NhanSu
         {
             gvNhanSu.DataSource = nsDao.DanhSach();
             DoiTenGV();
+
+            //Thống kê
             ThongKeLuong();
             ThongKeCLNL();
+            ThongKeSoLieu();
         }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            gvNhanSu.DataSource = nsDao.DanhSach();
+            cboChucVu.Text = "";
+            cboGioiTinh.Text = "";
+            cboLocKhac.Text = "";
+            cboPhongBan.Text = "";
+            txtThongTinLoc.Clear();
+        }
+
+        #region Tương tác với Datagridview
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
@@ -55,7 +69,9 @@ namespace QLCongTy.NhanSu
                 gvNhanSu.Columns[i].HeaderText = thuoctinh[i];
             }
         }
+        #endregion
 
+        #region Các chức năng phổ biến
         private void cboPhongBan_SelectedIndexChanged(object sender, EventArgs e)
         {
             string value = cboPhongBan.Text.ToString().Substring(0, 4);
@@ -71,7 +87,26 @@ namespace QLCongTy.NhanSu
         {
             gvNhanSu.DataSource = nsDao.Loc("GioiTinh", cboGioiTinh.Text);
         }
-    
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Them(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Xoa(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Sua(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
         private void btnLoc_Click(object sender, EventArgs e)
         {
             switch (cboLocKhac.Text)
@@ -90,7 +125,26 @@ namespace QLCongTy.NhanSu
                     break;
             }
         }
-        #region Vẽ biểu đồ
+        #endregion
+
+        #region Chức năng nâng cao
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            tmThongKe.Start();
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            tmDangKy.Start();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            tmSidebar.Start();
+        }
+        #endregion
+
+        #region Thống kê
 
         //Thống kế số lương của từng phòng theo năm
         public void ThongKeLuong()
@@ -119,17 +173,19 @@ namespace QLCongTy.NhanSu
             }
         }
 
+        public void ThongKeSoLieu()
+        {
+            var tile_thamgia = nsDao.TiLeTGDA();
+            lblNvtg.Text = tile_thamgia.ToString() + "%";
+
+            var tile_nam = nsDao.TiLeNam();
+            lblTLNam.Text = tile_nam.ToString() + "%";
+            lblTLNu.Text = (100-tile_nam).ToString() + "%";
+        }
+
         #endregion
 
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            gvNhanSu.DataSource = nsDao.DanhSach();
-            cboChucVu.Text = "";
-            cboGioiTinh.Text = "";
-            cboLocKhac.Text = "";
-            cboPhongBan.Text = "";
-            txtThongTinLoc.Clear();
-        }
+        
 
         #region Sidebar
         bool sidebarExpand;
@@ -200,40 +256,7 @@ namespace QLCongTy.NhanSu
         }
         #endregion
 
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            tmThongKe.Start();
-        }
+   
 
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-            tmDangKy.Start();
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            tmSidebar.Start();
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            nsDao.Them(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-
-        private void btnXoa_Click_1(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            nsDao.Xoa(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-
-        private void btnSua_Click_1(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            nsDao.Sua(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
     }
 }

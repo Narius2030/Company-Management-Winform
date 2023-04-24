@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using QLCongTy.TienLuong;
 using QLCongTy.QLDuAn;
 using System.Windows.Documents;
+using System.Windows;
 
 namespace QLCongTy.NhanSu
 {
@@ -101,6 +102,34 @@ namespace QLCongTy.NhanSu
                 list.Add(new KeyValuePair<string, int>(dt.Rows[i]["TrinhDo"].ToString(), int.Parse(dt.Rows[i]["so_luong"].ToString())));
             }
             return list;
+        }
+        public double TiLeTGDA()
+        {
+            string sqlStr = $@"select distinct count(MaNV) as so_luong from PHANCONGDUAN";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+            var sl_thamgia = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            sqlStr = $@"select distinct count(MaNV) as so_luong from NHANSU";
+            dt = dbConnec.FormLoad(sqlStr);
+            var tong_nv = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            double tile = Math.Round(((double)sl_thamgia / (double)tong_nv), 3) * 100;
+            return tile;
+        }
+        public double TiLeNam()
+        {
+            string sqlStr = $@"select GioiTinh, count(MaNV) as so_luong
+                                from NHANSU
+                                group by GioiTinh";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+            var sl_nam = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            sqlStr = $@"select distinct count(MaNV) as so_luong from NHANSU";
+            dt = dbConnec.FormLoad(sqlStr);
+            var tong_nv = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            double tile = Math.Round(((double)sl_nam / (double)tong_nv), 3) * 100;
+            return tile;
         }
     }
 }
