@@ -612,11 +612,11 @@
             this.pnlThongKe.Controls.Add(this.pnlDuLieuTK);
             this.pnlThongKe.Controls.Add(this.pnlBarchart);
             this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlThongKe.Location = new System.Drawing.Point(-1, 0);
+            this.pnlThongKe.Location = new System.Drawing.Point(1256, 0);
             this.pnlThongKe.MaximumSize = new System.Drawing.Size(1267, 772);
             this.pnlThongKe.MinimumSize = new System.Drawing.Size(10, 772);
             this.pnlThongKe.Name = "pnlThongKe";
-            this.pnlThongKe.Size = new System.Drawing.Size(1267, 772);
+            this.pnlThongKe.Size = new System.Drawing.Size(10, 772);
             this.pnlThongKe.TabIndex = 94;
             // 
             // pnlPiechart
@@ -632,9 +632,9 @@
             // 
             this.pnlBarchart.BackColor = System.Drawing.Color.White;
             this.pnlBarchart.Controls.Add(this.chartLayLuongThang);
-            this.pnlBarchart.Location = new System.Drawing.Point(3, 205);
+            this.pnlBarchart.Location = new System.Drawing.Point(0, 205);
             this.pnlBarchart.Name = "pnlBarchart";
-            this.pnlBarchart.Size = new System.Drawing.Size(858, 540);
+            this.pnlBarchart.Size = new System.Drawing.Size(861, 540);
             this.pnlBarchart.TabIndex = 1;
             // 
             // chartLayLuongThang
@@ -711,7 +711,7 @@
             this.pnlDuLieuTK.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDuLieuTK.Location = new System.Drawing.Point(0, 0);
             this.pnlDuLieuTK.Name = "pnlDuLieuTK";
-            this.pnlDuLieuTK.Size = new System.Drawing.Size(1267, 189);
+            this.pnlDuLieuTK.Size = new System.Drawing.Size(10, 189);
             this.pnlDuLieuTK.TabIndex = 3;
             // 
             // panel2
