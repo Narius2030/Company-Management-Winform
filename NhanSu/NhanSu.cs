@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLCongTy
+namespace QLCongTy.NhanSu
 {
-    public class NhanSu
+    public class Nhansu
     {
         private string maNV;
         private string hoDem;
@@ -20,7 +20,7 @@ namespace QLCongTy
         private string sdt;
         private string email;
 
-        public NhanSu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email)
+        public Nhansu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email)
         {
             this.maNV = MaNV;
             this.hoDem = HoDem;

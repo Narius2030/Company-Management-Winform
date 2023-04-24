@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLCongTy
+namespace QLCongTy.NhanSu
 {
-    public partial class fNhanSu : Form
+    public partial class FNhanSu : Form
     {
-        NhanSu ns;
+        Nhansu ns;
         NhanSuDAO nsDao = new NhanSuDAO();
-        public fNhanSu()
+        public FNhanSu()
         {
             InitializeComponent();
         }
@@ -23,27 +23,7 @@ namespace QLCongTy
         {
             gvNhanSu.DataSource = nsDao.DanhSach();
             DoiTenGV();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            ns = new NhanSu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, txtGioiTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Xoa(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            ns = new NhanSu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, txtGioiTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Them(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            ns = new NhanSu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, txtGioiTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Sua(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
+            ThongKeLuong();
         }
 
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
@@ -56,7 +36,7 @@ namespace QLCongTy
             txtDiaChi.Text = r.Cells[4].Value.ToString();
             txtCCCD.Text = r.Cells[5].Value.ToString();
             txtMaPB.Text = r.Cells[6].Value.ToString();
-            txtGioiTinh.Text = r.Cells[7].Value.ToString();
+            cboGTinh.Text = r.Cells[7].Value.ToString();
             txtSDT.Text = r.Cells[8].Value.ToString();
             txtEmail.Text = r.Cells[9].Value.ToString();
             txtMaCV.Text = r.Cells[10].Value.ToString();
@@ -86,7 +66,24 @@ namespace QLCongTy
         {
             gvNhanSu.DataSource = nsDao.Loc("GioiTinh", cboGioiTinh.Text);
         }
-
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
+            nsDao.Them(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
+            nsDao.Xoa(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
+            nsDao.Sua(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
         private void btnLoc_Click(object sender, EventArgs e)
         {
             switch (cboLocKhac.Text)
@@ -105,10 +102,112 @@ namespace QLCongTy
                     break;
             }
         }
+        #region Vẽ biểu đồ
+
+        public void ThongKeLuong()
+        {
+            //Dùng Series.Points.Add()
+
+            chartLayLuongThang.Series[3].XValueMember = "thang";
+            chartLayLuongThang.Series[3].YValueMembers = "luong";
+
+            chartLayLuongThang.DataBind();
+        }
+
+        #endregion
 
         private void btnReload_Click(object sender, EventArgs e)
         {
             gvNhanSu.DataSource = nsDao.DanhSach();
+            cboChucVu.Text = "";
+            cboGioiTinh.Text = "";
+            cboLocKhac.Text = "";
+            cboPhongBan.Text = "";
+            txtThongTinLoc.Clear();
+        }
+
+        #region Sidebar
+        bool sidebarExpand;
+        private void tmSidebar_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                pnlTool.Width -= 10;
+                if (pnlTool.Width == pnlTool.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    tmSidebar.Stop();
+                }
+            }
+            else
+            {
+                pnlTool.Width += 10;
+                if (pnlTool.Width == pnlTool.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    tmSidebar.Stop();
+                }
+            }
+        }
+
+        private void tmThongKe_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                pnlThongKe.Width -= 200;
+                if (pnlThongKe.Width == pnlThongKe.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    tmThongKe.Stop();
+                }
+            }
+            else
+            {
+                pnlThongKe.Width += 50;
+                if (pnlThongKe.Width == pnlThongKe.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    tmThongKe.Stop();
+                }
+            }
+        }
+
+        private void tmDangKy_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                pnlDangKy.Width -= 200;
+                if (pnlDangKy.Width == pnlDangKy.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    tmDangKy.Stop();
+                }
+            }
+            else
+            {
+                pnlDangKy.Width += 50;
+                if (pnlDangKy.Width == pnlDangKy.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    tmDangKy.Stop();
+                }
+            }
+        }
+        #endregion
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            tmThongKe.Start();
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            tmDangKy.Start();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            tmSidebar.Start();
         }
     }
 }

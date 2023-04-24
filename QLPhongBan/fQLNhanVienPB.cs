@@ -12,26 +12,31 @@ using System.Windows.Forms;
 
 namespace QLCongTy
 {
-    public partial class fQLNhanVienPB : Form
+    public partial class FQLNhanVienPB : Form
     {
         QLNhanVienPBDAO dao = new QLNhanVienPBDAO();
-        public fQLNhanVienPB()
+        public FQLNhanVienPB()
         {
             InitializeComponent();
+            
         }
 
         private void fQLNhanVienPB_Load(object sender, EventArgs e)
         {
-            gvNhanVienPB.DataSource = dao.LDS();
-            DoiTen(gvNhanVienPB);
+            
         }
 
-        void DoiTen(DataGridView dataGridView)
+        void DoiTen()
         {
-            dataGridView.Columns[0].HeaderText = "Mã Phong Ban";
-            dataGridView.Columns[1].HeaderText = "Tên Phong Ban";
-            dataGridView.Columns[2].HeaderText = "Mã Nhân Viên";
-            dataGridView.Columns[3].HeaderText = "Tên Nhân Viên";
+            gvTruongPhong.Columns[0].HeaderText = "Mã Phong Ban";
+            gvTruongPhong.Columns[1].HeaderText = "Tên Phong Ban";
+            gvTruongPhong.Columns[2].HeaderText = "Mã Trưởng Phòng";
+            gvTruongPhong.Columns[3].HeaderText = "Tên Trưởng Phòng";
+
+            gvNhanVienPB.Columns[0].HeaderText = "Mã Phong Ban";
+            gvNhanVienPB.Columns[1].HeaderText = "Tên Phong Ban";
+            gvNhanVienPB.Columns[2].HeaderText = "Mã Nhân Viên";
+            gvNhanVienPB.Columns[3].HeaderText = "Tên Nhân Viên";
         }
 
 
@@ -48,12 +53,16 @@ namespace QLCongTy
         private void btnSua_Click(object sender, EventArgs e)
         {
             dao.Sua(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
-            gvNhanVienPB.DataSource = dao.LDS();
+            gvNhanVienPB.DataSource = dao.TimKiem(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             gvNhanVienPB.DataSource = dao.TimKiem(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
+            gvTruongPhong.DataSource = dao.LDSTP(txtMaPhongBan.Text);
+            DoiTen();
         }
+
+
     }
 }

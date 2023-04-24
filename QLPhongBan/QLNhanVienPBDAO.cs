@@ -14,10 +14,9 @@ namespace QLCongTy.QLPhongBan
     internal class QLNhanVienPBDAO
     {
         DBConnection db = new DBConnection();
-
-        public DataTable LDS()
+        public DataTable LDSTP(string mapb)
         {
-            string sqlStr = string.Format("select NHANSU.MaPB, PHONGBAN.TenPB,NHANSU.MaNV,NHANSU.Ten  from NHANSU,PHONGBAN where NHANSU.MaPB = PHONGBAN.MaPB and NHANSU.MaNV <> PHONGBAN.MaTP");
+            string sqlStr = string.Format("select NHANSU.MaPB, PHONGBAN.TenPB,NHANSU.MaNV,NHANSU.Ten  from NHANSU,PHONGBAN where NHANSU.MaNV = PHONGBAN.MaTP and PHONGBAN.MaPB = '{0}'",mapb );
             return db.FormLoad(sqlStr);
         }
 
@@ -28,10 +27,6 @@ namespace QLCongTy.QLPhongBan
         }
         public DataTable TimKiem(string mpb, string tpb, string mnv, string tnv)
         {
-            if (mpb == string.Empty)
-            {
-                return LDS();
-            }
             string sqlStr = string.Format("select NHANSU.MaPB, PHONGBAN.TenPB,NHANSU.MaNV,NHANSU.Ten  from NHANSU,PHONGBAN where NHANSU.MaPB = PHONGBAN.MaPB and NHANSU.MaNV <> PHONGBAN.MaTP and PHONGBAN.MaPB = '{0}'",mpb);
             return db.FormLoad(sqlStr);
         }

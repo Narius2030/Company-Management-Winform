@@ -26,11 +26,20 @@ namespace QLCongTy
             DoiTenGV();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void DoiTenGV()
         {
-            cv = new ChucVu(txtMaChucVu.Text, txtTenChucVu.Text);
-            cvDao.Xoa(cv);
-            gvChucVu.DataSource = cvDao.DanhSach();
+            string[] thuoctinh = {"Mã chức vụ", "Tên chức vụ"};
+            for (int i = 0; i < thuoctinh.Length; i++)
+            {
+                gvChucVu.Columns[i].HeaderText = thuoctinh[i];
+            }
+        }
+
+        private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow r = gvChucVu.SelectedRows[0];
+            txtMaChucVu.Text = r.Cells[0].Value.ToString();
+            txtTenChucVu.Text = r.Cells[1].Value.ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -40,20 +49,18 @@ namespace QLCongTy
             gvChucVu.DataSource = cvDao.DanhSach();
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            cv = new ChucVu(txtMaChucVu.Text, txtTenChucVu.Text);
+            cvDao.Xoa(cv);
+            gvChucVu.DataSource = cvDao.DanhSach();
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             cv = new ChucVu(txtMaChucVu.Text, txtTenChucVu.Text);
             cvDao.Sua(cv);
             gvChucVu.DataSource = cvDao.DanhSach();
-        }
-
-        private void DoiTenGV()
-        {
-            string[] thuoctinh = {"Mã chức vụ", "Tên chức vụ"};
-            for (int i = 0; i < thuoctinh.Length; i++)
-            {
-                gvChucVu.Columns[i].HeaderText = thuoctinh[i];
-            }
         }
 
         private void btnLoc_Click(object sender, EventArgs e)
@@ -67,13 +74,6 @@ namespace QLCongTy
                     gvChucVu.DataSource = cvDao.Loc("TenCV", txtThongTinLoc.Text);
                     break;
             }
-        }
-
-        private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow r = gvChucVu.SelectedRows[0];
-            txtMaChucVu.Text = r.Cells[0].Value.ToString();
-            txtTenChucVu.Text = r.Cells[1].Value.ToString();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

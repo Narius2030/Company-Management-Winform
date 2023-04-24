@@ -12,10 +12,10 @@ using QLCongTy.QLPhongBan;
 
 namespace QLCongTy
 {
-    public partial class fQLPhongBan : Form
+    public partial class FQLPhongBan : Form
     {
         PhongBanDAO dao = new PhongBanDAO();
-        public fQLPhongBan()
+        public FQLPhongBan()
         {
             InitializeComponent();
         }

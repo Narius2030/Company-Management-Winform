@@ -6,30 +6,38 @@ using System.Threading.Tasks;
 
 namespace QLCongTy.ChamCong
 {
-    internal class ChamCong
+    internal class Chamcong
     {
-        private string maDA;
-        private string maPB;
-        private string tenDA;
-        private float vonDH;
-        private string truongDA;
+        string maNV;
+        int thang;
+        int nam;
+        int ngDilam;
+        int soNgNghiPhep;
 
-        public string MaDA { get => maDA; set => maDA = value;}
-        public string MaPB { get => maPB; set => maPB = value; }
-        public string TenDA { get => tenDA; set => tenDA = value; }
-        public float VonDH { get => vonDH; set => vonDH = value; }
-        public string TruongDA { get => truongDA; set => truongDA = value; }
-        public ChamCong()
+        public string MaNV { get => maNV; set => maNV = value; }
+        public int Thang { get => thang; set => thang = value; }
+        public int Nam { get => nam; set => nam = value; }
+        public int NgDilam { get => ngDilam; set => ngDilam = value; }
+        public int SoNgNghiPhep { get => soNgNghiPhep; set => soNgNghiPhep = value; }
+
+        public Chamcong() 
         {
-
+            NgDilam = 0;
+            SoNgNghiPhep = 1;
         }
-        public ChamCong(string maDA, string maPB, string tenDA, float vonDH, string truongDA)
+        public Chamcong(string maNV, int thang, int nam)
         {
-            this.maDA = maDA;
-            this.maPB = maPB;
-            this.tenDA = tenDA;
-            this.vonDH = vonDH;
-            this.truongDA = truongDA;
+            MaNV = maNV;
+            Thang = thang;
+            Nam = nam;
+        }
+        public Chamcong(string maNV, int thang, int nam, int soNgDilam, int soNgNghi)
+        {
+            MaNV = maNV;
+            Thang = thang;
+            Nam = nam;
+            SoNgNghiPhep = soNgNghi;
+            NgDilam = soNgDilam;
         }
     }
 }

@@ -49,5 +49,50 @@ namespace QLCongTy
             }
             return dataSet;
         }
+        public int TienDoDuAn(string MaDA)
+        {
+            int result = new int();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA", conn);
+                result = (int)command.ExecuteScalar();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (result >= 100)
+            {
+                return 100;
+            }
+            else
+            {
+                return result;
+            }
+        }
+        public object GetItem(string sqlStr)
+        {
+            object result = new object();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(sqlStr, conn);
+                result = command.ExecuteScalar();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
+        }
     }
 }
