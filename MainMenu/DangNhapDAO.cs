@@ -23,7 +23,7 @@ namespace QLCongTy.MainMenu
                 dataset = db.FormLoad(sqlStr);
                 DataRow tkrow = dataset.Rows[0];
 
-                Nhansu curStaff = new Nhansu(tkrow["MaNV"].ToString(), tkrow["HovaTendem"].ToString(), tkrow["Ten"].ToString(), Convert.ToDateTime(tkrow["NgaySinh"]), tkrow["DiaChi"].ToString(), tkrow["CCCD"].ToString(), tkrow["MaPB"].ToString(), tkrow["MaCV"].ToString(), tkrow["GioiTinh"].ToString(), tkrow["SDT"].ToString(), tkrow["Email"].ToString());
+                Nhansu curStaff = new Nhansu(tkrow["MaNV"].ToString(), tkrow["HovaTendem"].ToString(), tkrow["Ten"].ToString(), Convert.ToDateTime(tkrow["NgaySinh"]), tkrow["DiaChi"].ToString(), tkrow["CCCD"].ToString(), tkrow["MaPB"].ToString(), tkrow["MaCV"].ToString(), tkrow["GioiTinh"].ToString(), tkrow["SDT"].ToString(), tkrow["Email"].ToString(), tkrow["TrinhDo"].ToString());
                 return curStaff;
             }
             catch

@@ -19,20 +19,22 @@ namespace QLCongTy.NhanSu
         private string gioiTinh;
         private string sdt;
         private string email;
+        private string trinhdo;
 
-        public Nhansu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email)
+        public Nhansu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email, string trinhdo)
         {
             this.maNV = MaNV;
             this.hoDem = HoDem;
             this.ten = Ten;
-            this.ngaySinh= NgaySinh;
-            this.diaChi= DiaChi;
-            this.cccd= CCCD;
-            this.maPB= MaPB;
-            this.maCV= MaCV;
-            this.gioiTinh= GioiTinh;
-            this.sdt= SDT;
-            this.email= Email;
+            this.ngaySinh = NgaySinh;
+            this.diaChi = DiaChi;
+            this.cccd = CCCD;
+            this.maPB = MaPB;
+            this.maCV = MaCV;
+            this.gioiTinh = GioiTinh;
+            this.sdt = SDT;
+            this.email = Email;
+            Trinhdo = trinhdo;
         }
 
         public string MaNV
@@ -79,5 +81,7 @@ namespace QLCongTy.NhanSu
         {
             get { return this.email; }
         }
+
+        public string Trinhdo { get => trinhdo; set => trinhdo = value; }
     }
 }

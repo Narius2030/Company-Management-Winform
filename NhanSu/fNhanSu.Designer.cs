@@ -29,22 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpLocThongTin = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboPhongBan = new System.Windows.Forms.ComboBox();
@@ -85,6 +83,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pnlThongKe = new System.Windows.Forms.Panel();
+            this.pnlPiechart = new System.Windows.Forms.Panel();
+            this.pnlBarchart = new System.Windows.Forms.Panel();
+            this.chartLayLuongThang = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCLNL = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnlDuLieuTK = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblNvtg = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTLNamNu = new System.Windows.Forms.Label();
+            this.cboTrinhdo = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.btnSua = new QLCongTy.VBButton();
             this.btnXoa = new QLCongTy.VBButton();
             this.btnThem = new QLCongTy.VBButton();
@@ -104,21 +115,20 @@
             this.trinhDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLoc = new QLCongTy.VBButton();
             this.btnReload = new QLCongTy.VBButton();
-            this.pnlBarchart = new System.Windows.Forms.Panel();
-            this.chartLayLuongThang = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pnlPiechart = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpLocThongTin.SuspendLayout();
             this.pnlTool.SuspendLayout();
             this.pnlDangKy.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
-            this.artanPannel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNhanSu)).BeginInit();
+            this.pnlPiechart.SuspendLayout();
             this.pnlBarchart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLayLuongThang)).BeginInit();
-            this.pnlPiechart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCLNL)).BeginInit();
+            this.pnlDuLieuTK.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.artanPannel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhanSu)).BeginInit();
             this.SuspendLayout();
             // 
             // grpLocThongTin
@@ -350,7 +360,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.cboTrinhdo);
             this.panel1.Controls.Add(this.cboGTinh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtpNgaySinh);
@@ -549,7 +561,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(510, 241);
+            this.label5.Location = new System.Drawing.Point(506, 247);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 30);
@@ -592,6 +604,7 @@
             // pnlThongKe
             // 
             this.pnlThongKe.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlThongKe.Controls.Add(this.pnlDuLieuTK);
             this.pnlThongKe.Controls.Add(this.pnlPiechart);
             this.pnlThongKe.Controls.Add(this.pnlBarchart);
             this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Right;
@@ -601,6 +614,178 @@
             this.pnlThongKe.Name = "pnlThongKe";
             this.pnlThongKe.Size = new System.Drawing.Size(1267, 772);
             this.pnlThongKe.TabIndex = 94;
+            // 
+            // pnlPiechart
+            // 
+            this.pnlPiechart.Controls.Add(this.chartCLNL);
+            this.pnlPiechart.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPiechart.Location = new System.Drawing.Point(0, 415);
+            this.pnlPiechart.Name = "pnlPiechart";
+            this.pnlPiechart.Size = new System.Drawing.Size(678, 357);
+            this.pnlPiechart.TabIndex = 2;
+            // 
+            // pnlBarchart
+            // 
+            this.pnlBarchart.Controls.Add(this.chartLayLuongThang);
+            this.pnlBarchart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBarchart.Location = new System.Drawing.Point(0, 0);
+            this.pnlBarchart.Name = "pnlBarchart";
+            this.pnlBarchart.Size = new System.Drawing.Size(1267, 415);
+            this.pnlBarchart.TabIndex = 1;
+            // 
+            // chartLayLuongThang
+            // 
+            this.chartLayLuongThang.BorderlineColor = System.Drawing.Color.Black;
+            this.chartLayLuongThang.BorderlineWidth = 10;
+            chartArea5.Name = "ChartArea1";
+            this.chartLayLuongThang.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartLayLuongThang.Legends.Add(legend5);
+            this.chartLayLuongThang.Location = new System.Drawing.Point(148, 3);
+            this.chartLayLuongThang.Name = "chartLayLuongThang";
+            series13.ChartArea = "ChartArea1";
+            series13.Legend = "Legend1";
+            series13.Name = "P001";
+            series13.YValuesPerPoint = 2;
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "P002";
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "P003";
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "P004";
+            series17.ChartArea = "ChartArea1";
+            series17.Legend = "Legend1";
+            series17.Name = "P005";
+            this.chartLayLuongThang.Series.Add(series13);
+            this.chartLayLuongThang.Series.Add(series14);
+            this.chartLayLuongThang.Series.Add(series15);
+            this.chartLayLuongThang.Series.Add(series16);
+            this.chartLayLuongThang.Series.Add(series17);
+            this.chartLayLuongThang.Size = new System.Drawing.Size(1031, 394);
+            this.chartLayLuongThang.TabIndex = 1;
+            this.chartLayLuongThang.Text = "Thống kê lương cho các phòng";
+            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.Name = "Title1";
+            title5.Text = "Tổng lương theo năm của phòng";
+            this.chartLayLuongThang.Titles.Add(title5);
+            // 
+            // chartCLNL
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chartCLNL.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartCLNL.Legends.Add(legend6);
+            this.chartCLNL.Location = new System.Drawing.Point(148, 31);
+            this.chartCLNL.Name = "chartCLNL";
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series18.IsValueShownAsLabel = true;
+            series18.LabelForeColor = System.Drawing.Color.White;
+            series18.Legend = "Legend1";
+            series18.Name = "srClnl";
+            this.chartCLNL.Series.Add(series18);
+            this.chartCLNL.Size = new System.Drawing.Size(348, 300);
+            this.chartCLNL.TabIndex = 0;
+            this.chartCLNL.Text = "chart1";
+            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.Name = "Title";
+            title6.Text = "Tỉ lệ chất lượng nhân lực";
+            this.chartCLNL.Titles.Add(title6);
+            // 
+            // pnlDuLieuTK
+            // 
+            this.pnlDuLieuTK.Controls.Add(this.label15);
+            this.pnlDuLieuTK.Controls.Add(this.label14);
+            this.pnlDuLieuTK.Controls.Add(this.panel3);
+            this.pnlDuLieuTK.Controls.Add(this.panel2);
+            this.pnlDuLieuTK.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDuLieuTK.Location = new System.Drawing.Point(684, 415);
+            this.pnlDuLieuTK.Name = "pnlDuLieuTK";
+            this.pnlDuLieuTK.Size = new System.Drawing.Size(583, 357);
+            this.pnlDuLieuTK.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblNvtg);
+            this.panel2.Location = new System.Drawing.Point(91, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(255, 90);
+            this.panel2.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(106, 44);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(191, 30);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Tỉ lệ tham gia dự án";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNvtg
+            // 
+            this.lblNvtg.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNvtg.Location = new System.Drawing.Point(26, 30);
+            this.lblNvtg.Name = "lblNvtg";
+            this.lblNvtg.Size = new System.Drawing.Size(105, 31);
+            this.lblNvtg.TabIndex = 0;
+            this.lblNvtg.Text = "số liệu";
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(107, 179);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 31);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Tỉ lệ nam nữ";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblTLNamNu);
+            this.panel3.Location = new System.Drawing.Point(91, 199);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(255, 90);
+            this.panel3.TabIndex = 2;
+            // 
+            // lblTLNamNu
+            // 
+            this.lblTLNamNu.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTLNamNu.Location = new System.Drawing.Point(26, 30);
+            this.lblTLNamNu.Name = "lblTLNamNu";
+            this.lblTLNamNu.Size = new System.Drawing.Size(105, 31);
+            this.lblTLNamNu.TabIndex = 0;
+            this.lblTLNamNu.Text = "số liệu";
+            // 
+            // cboTrinhdo
+            // 
+            this.cboTrinhdo.FormattingEnabled = true;
+            this.cboTrinhdo.Items.AddRange(new object[] {
+            "Intership",
+            "Fresher",
+            "Junior",
+            "Senior"});
+            this.cboTrinhdo.Location = new System.Drawing.Point(288, 288);
+            this.cboTrinhdo.Name = "cboTrinhdo";
+            this.cboTrinhdo.Size = new System.Drawing.Size(188, 28);
+            this.cboTrinhdo.TabIndex = 129;
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(110, 288);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(108, 28);
+            this.label16.TabIndex = 130;
+            this.label16.Text = "Trình độ";
             // 
             // btnSua
             // 
@@ -614,13 +799,14 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(399, 332);
+            this.btnSua.Location = new System.Drawing.Point(399, 363);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(99, 50);
+            this.btnSua.Size = new System.Drawing.Size(104, 50);
             this.btnSua.TabIndex = 106;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextColor = System.Drawing.Color.Black;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnXoa
             // 
@@ -634,13 +820,14 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(258, 332);
+            this.btnXoa.Location = new System.Drawing.Point(254, 363);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(106, 50);
             this.btnXoa.TabIndex = 107;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextColor = System.Drawing.Color.Black;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnThem
             // 
@@ -654,13 +841,14 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Location = new System.Drawing.Point(112, 332);
+            this.btnThem.Location = new System.Drawing.Point(113, 363);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 48);
             this.btnThem.TabIndex = 105;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextColor = System.Drawing.Color.Black;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // artanPannel1
             // 
@@ -687,14 +875,14 @@
             this.gvNhanSu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvNhanSu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gvNhanSu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvNhanSu.ColumnHeadersHeight = 35;
             this.gvNhanSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maNV,
@@ -709,14 +897,14 @@
             this.email,
             this.maCV,
             this.trinhDo});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(97)))), ((int)(((byte)(177)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvNhanSu.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(97)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvNhanSu.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvNhanSu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvNhanSu.EnableHeadersVisualStyles = false;
             this.gvNhanSu.Location = new System.Drawing.Point(10, 10);
@@ -874,95 +1062,6 @@
             this.btnReload.UseVisualStyleBackColor = false;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // pnlBarchart
-            // 
-            this.pnlBarchart.Controls.Add(this.chartLayLuongThang);
-            this.pnlBarchart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarchart.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarchart.Name = "pnlBarchart";
-            this.pnlBarchart.Size = new System.Drawing.Size(1267, 415);
-            this.pnlBarchart.TabIndex = 1;
-            // 
-            // chartLayLuongThang
-            // 
-            this.chartLayLuongThang.BorderlineColor = System.Drawing.Color.Black;
-            this.chartLayLuongThang.BorderlineWidth = 10;
-            chartArea2.Name = "ChartArea1";
-            this.chartLayLuongThang.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartLayLuongThang.Legends.Add(legend2);
-            this.chartLayLuongThang.Location = new System.Drawing.Point(148, 3);
-            this.chartLayLuongThang.Name = "chartLayLuongThang";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "P001";
-            series6.YValuesPerPoint = 2;
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "P002";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "P003";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "P004";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "P005";
-            this.chartLayLuongThang.Series.Add(series6);
-            this.chartLayLuongThang.Series.Add(series7);
-            this.chartLayLuongThang.Series.Add(series8);
-            this.chartLayLuongThang.Series.Add(series9);
-            this.chartLayLuongThang.Series.Add(series10);
-            this.chartLayLuongThang.Size = new System.Drawing.Size(1031, 394);
-            this.chartLayLuongThang.TabIndex = 1;
-            this.chartLayLuongThang.Text = "Thống kê lương cho các phòng";
-            // 
-            // pnlPiechart
-            // 
-            this.pnlPiechart.Controls.Add(this.chart1);
-            this.pnlPiechart.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlPiechart.Location = new System.Drawing.Point(0, 415);
-            this.pnlPiechart.Name = "pnlPiechart";
-            this.pnlPiechart.Size = new System.Drawing.Size(678, 357);
-            this.pnlPiechart.TabIndex = 2;
-            // 
-            // chart1
-            // 
-            this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            this.chart1.BorderlineWidth = 10;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(103, 21);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "P001";
-            series1.YValuesPerPoint = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "P002";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "P003";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "P004";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "P005";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(393, 312);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "Thống kê lương cho các phòng";
-            // 
             // FNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -987,12 +1086,15 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlThongKe.ResumeLayout(false);
-            this.artanPannel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvNhanSu)).EndInit();
+            this.pnlPiechart.ResumeLayout(false);
             this.pnlBarchart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLayLuongThang)).EndInit();
-            this.pnlPiechart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCLNL)).EndInit();
+            this.pnlDuLieuTK.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.artanPannel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhanSu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1060,6 +1162,15 @@
         private System.Windows.Forms.Panel pnlBarchart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLayLuongThang;
         private System.Windows.Forms.Panel pnlPiechart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCLNL;
+        private System.Windows.Forms.Panel pnlDuLieuTK;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblNvtg;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblTLNamNu;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cboTrinhdo;
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace QLCongTy.NhanSu
@@ -24,6 +25,7 @@ namespace QLCongTy.NhanSu
             gvNhanSu.DataSource = nsDao.DanhSach();
             DoiTenGV();
             ThongKeLuong();
+            ThongKeCLNL();
         }
 
         private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
@@ -69,24 +71,7 @@ namespace QLCongTy.NhanSu
         {
             gvNhanSu.DataSource = nsDao.Loc("GioiTinh", cboGioiTinh.Text);
         }
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Them(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Xoa(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text);
-            nsDao.Sua(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
-        }
+    
         private void btnLoc_Click(object sender, EventArgs e)
         {
             switch (cboLocKhac.Text)
@@ -113,7 +98,7 @@ namespace QLCongTy.NhanSu
             var listPB = nsDao.LaySLPhong();
             var listNam = nsDao.LaySLNam();
             
-            //Thêm từng cột vào chart
+            //Thêm từng cột vào bar-chart
             for (int i = 0; i < listNam.Count; i++)
             {
                 for (int j = 0; j < listPB.Count; j++)
@@ -123,8 +108,16 @@ namespace QLCongTy.NhanSu
             }
         }
 
-        //Vẽ biểu đồ thống kế tỉ lệ trình độ trong công ty
-
+        //Vẽ biểu đồ thống kế tỉ lệ trình độ trong công ty (tròn)
+        public void ThongKeCLNL()
+        {
+            var clnlList = nsDao.LaySLTrinhDo();
+            //Thêm từng phần vào pie-chart
+            for (int i = 1; i < clnlList.Count; i++)
+            {
+                chartCLNL.Series[0].Points.AddXY(clnlList[i].Key, clnlList[i].Value);
+            }
+        }
 
         #endregion
 
@@ -220,6 +213,27 @@ namespace QLCongTy.NhanSu
         private void iconButton1_Click(object sender, EventArgs e)
         {
             tmSidebar.Start();
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Them(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Xoa(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            nsDao.Sua(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
         }
     }
 }

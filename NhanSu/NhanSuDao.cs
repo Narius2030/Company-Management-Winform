@@ -26,7 +26,7 @@ namespace QLCongTy.NhanSu
         }
         public void Them(Nhansu ns)
         {
-            string sqlStr = string.Format("INSERT INTO NHANSU(MaNV, HovaTendem, Ten, NgaySinh, DiaChi, CCCD, MaPB, GioiTinh, SDT, Email, MaCV) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')", ns.MaNV, ns.HoDem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV);
+            string sqlStr = string.Format("INSERT INTO NHANSU(MaNV, HovaTendem, Ten, NgaySinh, DiaChi, CCCD, MaPB, GioiTinh, SDT, Email, MaCV, TrinhDo) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}')", ns.MaNV, ns.HoDem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV, ns.Trinhdo);
             dbConnec.ThucThi(sqlStr);
 
             //Tao TAIKHOAN moi mac dinh
@@ -44,7 +44,7 @@ namespace QLCongTy.NhanSu
 
         public void Sua(Nhansu ns)
         {
-            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}' WHERE MaNV = '{10}'", ns.HoDem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh , ns.SDT, ns.Email, ns.MaCV, ns.MaNV);
+            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}', TrinhDo = '{10}' WHERE MaNV = '{10}'", ns.HoDem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh , ns.SDT, ns.Email, ns.MaCV, ns.MaNV, ns.Trinhdo);
             dbConnec.ThucThi(sqlStr);
             sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'",ns.MaCV,ns.MaNV );
             dbConnec.ThucThi(sqlStr);
@@ -90,17 +90,17 @@ namespace QLCongTy.NhanSu
         }
 
         //Lấy số lượng trình độ --> Dictionary
-        public Dictionary<string, int> LaySLTrinhDo() 
+        public List<KeyValuePair<string, int>> LaySLTrinhDo() 
         {
             string sqlStr = $@"select TrinhDo, count(TrinhDo) as so_luong from NHANSU group by TrinhDo";
             DataTable dt = dbConnec.FormLoad(sqlStr);
 
-            Dictionary<string, int> dict = new Dictionary<string, int>();
+            var list = new List<KeyValuePair<string, int>>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                dict.Add(dt.Rows[i]["TrinhDo"].ToString(), int.Parse(dt.Rows[i]["so_luong"].ToString()));
+                list.Add(new KeyValuePair<string, int>(dt.Rows[i]["TrinhDo"].ToString(), int.Parse(dt.Rows[i]["so_luong"].ToString())));
             }
-            return dict;
+            return list;
         }
     }
 }
