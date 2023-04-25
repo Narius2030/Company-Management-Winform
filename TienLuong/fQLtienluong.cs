@@ -50,5 +50,34 @@ namespace QLCongTy.TienLuong
             tlDao.TinhTienLuong();
             fTienLuong_Load(sender, e);
         }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            tmThongKe.Start();
+        }
+
+
+        bool sidebarExpand;
+        private void tmThongKe_Tick(object sender, EventArgs e)
+        {;
+            if (sidebarExpand)
+            {
+                pnlThongKe.Height -= 50;
+                if (pnlThongKe.Height == pnlThongKe.MinimumSize.Height)
+                {
+                    sidebarExpand = false;
+                    tmThongKe.Stop();
+                }
+            }
+            else
+            {
+                pnlThongKe.Height += 50;
+                if (pnlThongKe.Height == pnlThongKe.MaximumSize.Height)
+                {
+                    sidebarExpand = true;
+                    tmThongKe.Stop();
+                }
+            }
+        }
     }
 }

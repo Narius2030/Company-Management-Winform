@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCongTy.ChamCong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -150,13 +151,11 @@ namespace QLCongTy
 
         private void btnGuiDonXinNghi_Click(object sender, EventArgs e)
         {
-            //Cập nhật lý do nghi
-            pfd.CapNhatLyDoNghi(cboLyDoNghi.Text, lblMaNV.Text, dtpNgayNghi.Value);
-            //Giảm số ngày nghỉ phép
-            pfd.GiamSoNgNghiPhep(cboLyDoNghi.Text, lblMaNV.Text, dtpNgayNghi.Value.Month, dtpNgayNghi.Value.Year);
-            //Thông báo sau khi gửi
-            MessageBox.Show("Đã gửi đơn");
+            ThongTinXinNghi ttxn = new ThongTinXinNghi(fMainMenu.currentStaff.MaNV, dtpNgayNghi.Value, cboLyDoNghi.Text);
+            //Cập nhật bảng xin nghỉ.
+            pfd.CapNhatBangXinNghi(ttxn);
         }
+
         private void ShowLuong()
         {
             var luong = pfd.LayThongTinLuong(lblMaNV.Text);
@@ -167,6 +166,7 @@ namespace QLCongTy
                 i++;
             }
         }
+
         public void ShowTTCN()
         {
             var info = pfd.LayThonTinCN();

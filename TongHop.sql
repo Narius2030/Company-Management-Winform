@@ -228,6 +228,14 @@ INSERT INTO TRANGTHAINHANVIEN VALUES
 ('NV015','Intership', 'Ranh', '5')
 go
 
+CREATE TABLE NGHIPHEP
+(
+	MANV VARCHAR(10) NOT NULL,
+	NGAYNGHI DATE NOT NULL,
+	LYDO VARCHAR(20) NOT NULL,
+	PRIMARY KEY(MANV, NGAYNGHI)
+)
+
 alter table NHANSU with check add foreign key (MaPB) references PHONGBAN(MaPB);
 alter table NHANSU with check add foreign key (MaCV) references CHUCVU(MaCV);
 alter table TAIKHOAN with check add foreign key (taikhoan) references NHANSU(MaNV);

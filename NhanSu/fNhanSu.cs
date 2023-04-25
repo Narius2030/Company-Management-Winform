@@ -130,15 +130,19 @@ namespace QLCongTy.NhanSu
         #region Chức năng nâng cao
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            tmDangKy.Stop();
+            pnlDangKy.Size = pnlDangKy.MinimumSize;
             tmThongKe.Start();
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            tmThongKe.Stop();
+            pnlThongKe.Size = pnlThongKe.MinimumSize;
             tmDangKy.Start();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
             tmSidebar.Start();
         }
@@ -185,8 +189,6 @@ namespace QLCongTy.NhanSu
 
         #endregion
 
-        
-
         #region Sidebar
         bool sidebarExpand;
         private void tmSidebar_Tick(object sender, EventArgs e)
@@ -215,7 +217,7 @@ namespace QLCongTy.NhanSu
         {
             if (sidebarExpand)
             {
-                pnlThongKe.Width -= 200;
+                pnlThongKe.Width -= 50;
                 if (pnlThongKe.Width == pnlThongKe.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -237,7 +239,7 @@ namespace QLCongTy.NhanSu
         {
             if (sidebarExpand)
             {
-                pnlDangKy.Width -= 200;
+                pnlDangKy.Width -= 50;
                 if (pnlDangKy.Width == pnlDangKy.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -255,8 +257,5 @@ namespace QLCongTy.NhanSu
             }
         }
         #endregion
-
-   
-
     }
 }

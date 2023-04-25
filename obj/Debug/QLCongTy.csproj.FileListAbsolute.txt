@@ -98,7 +98,6 @@ C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\bin\Debug\QLCongTy.pd
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.csproj.AssemblyReference.cache
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.csproj.SuggestedBindingRedirects.cache
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fCheckin_Checkout.resources
-C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fQLchamcong.resources
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fMainMenu.resources
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 C:\Users\HUYNH THIEN NHAN\Source\Repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.Properties.Resources.resources
@@ -360,3 +359,4 @@ D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.csproj.CopyComplete
 D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.pdb
 D:\hoc\llwd\2\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
+C:\Users\HUYNH THIEN NHAN\source\repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources
