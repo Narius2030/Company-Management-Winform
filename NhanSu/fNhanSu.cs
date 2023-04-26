@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
-using QLCongTy.MainMenu;
 
 namespace QLCongTy.NhanSu
 {
@@ -91,11 +90,8 @@ namespace QLCongTy.NhanSu
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            if (ns.CheckThongTin())
-            {
-                nsDao.Them(ns);
-                gvNhanSu.DataSource = nsDao.DanhSach();
-            }
+            nsDao.Them(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
@@ -108,11 +104,8 @@ namespace QLCongTy.NhanSu
         private void btnSua_Click_1(object sender, EventArgs e)
         {
             ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            if (ns.CheckThongTin())
-            {
-                nsDao.Sua(ns);
-                gvNhanSu.DataSource = nsDao.DanhSach();
-            }
+            nsDao.Sua(ns);
+            gvNhanSu.DataSource = nsDao.DanhSach();
         }
         private void btnLoc_Click(object sender, EventArgs e)
         {
@@ -264,24 +257,5 @@ namespace QLCongTy.NhanSu
             }
         }
         #endregion
-
-        private void gvNhanSu_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow r = gvNhanSu.SelectedRows[0];
-
-            //Dùng Loop thay thế -> ???
-
-            txtMaNV.Text = r.Cells[0].Value.ToString();
-            txtHoDem.Text = r.Cells[1].Value.ToString();
-            txtTenNV.Text = r.Cells[2].Value.ToString();
-            dtpNgaySinh.Text = r.Cells[3].Value.ToString();
-            txtDiaChi.Text = r.Cells[4].Value.ToString();
-            txtCCCD.Text = r.Cells[5].Value.ToString();
-            txtMaPB.Text = r.Cells[6].Value.ToString();
-            cboGTinh.Text = r.Cells[7].Value.ToString();
-            txtSDT.Text = r.Cells[8].Value.ToString();
-            txtEmail.Text = r.Cells[9].Value.ToString();
-            txtMaCV.Text = r.Cells[10].Value.ToString();
-        }
     }
 }
