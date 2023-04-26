@@ -40,6 +40,7 @@
             this.pnlThongKe = new System.Windows.Forms.Panel();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.tmThongKe = new System.Windows.Forms.Timer(this.components);
+            this.btnXuatFileExcel = new QLCongTy.VBButton();
             this.artanPannel2.SuspendLayout();
             this.artanPannel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTienLuong)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             this.artanPannel2.BackColor = System.Drawing.Color.White;
             this.artanPannel2.BorderRadius = 40;
+            this.artanPannel2.Controls.Add(this.btnXuatFileExcel);
             this.artanPannel2.Controls.Add(this.cboNam);
             this.artanPannel2.Controls.Add(this.cboThang);
             this.artanPannel2.Controls.Add(this.btnLamMoi);
@@ -60,7 +62,7 @@
             this.artanPannel2.Location = new System.Drawing.Point(83, 118);
             this.artanPannel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.artanPannel2.Name = "artanPannel2";
-            this.artanPannel2.Size = new System.Drawing.Size(465, 98);
+            this.artanPannel2.Size = new System.Drawing.Size(576, 98);
             this.artanPannel2.TabIndex = 92;
             // 
             // cboNam
@@ -232,6 +234,29 @@
             this.tmThongKe.Interval = 10;
             this.tmThongKe.Tick += new System.EventHandler(this.tmThongKe_Tick);
             // 
+            // btnXuatFileExcel
+            // 
+            this.btnXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(232)))), ((int)(((byte)(250)))));
+            this.btnXuatFileExcel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(232)))), ((int)(((byte)(250)))));
+            this.btnXuatFileExcel.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btnXuatFileExcel.BorderRadius = 12;
+            this.btnXuatFileExcel.BorderSize = 0;
+            this.btnXuatFileExcel.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btnXuatFileExcel.FlatAppearance.BorderSize = 0;
+            this.btnXuatFileExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnXuatFileExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatFileExcel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatFileExcel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnXuatFileExcel.Location = new System.Drawing.Point(430, 29);
+            this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(105, 38);
+            this.btnXuatFileExcel.TabIndex = 91;
+            this.btnXuatFileExcel.Text = "Xuất Excel";
+            this.btnXuatFileExcel.TextColor = System.Drawing.Color.RoyalBlue;
+            this.btnXuatFileExcel.UseVisualStyleBackColor = false;
+            this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
+            // 
             // fTienLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -264,6 +289,7 @@
         private System.Windows.Forms.Panel pnlThongKe;
         private FontAwesome.Sharp.IconButton btnThongKe;
         private System.Windows.Forms.Timer tmThongKe;
+        private VBButton btnXuatFileExcel;
     }
 }
 

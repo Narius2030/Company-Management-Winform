@@ -1020,7 +1020,7 @@
             this.gvNhanSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvNhanSu.Size = new System.Drawing.Size(1174, 440);
             this.gvNhanSu.TabIndex = 0;
-            this.gvNhanSu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvNhanSu_CellMouseClick);
+            this.gvNhanSu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvNhanSu_RowHeaderMouseClick);
             // 
             // maNV
             // 

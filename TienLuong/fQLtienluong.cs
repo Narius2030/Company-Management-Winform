@@ -16,6 +16,7 @@ namespace QLCongTy.TienLuong
     {
         TienLuongDAO tlDao = new TienLuongDAO();
         DBConnection db = new DBConnection();
+        ExportFile exFile = new ExportFile();
         public fTienLuong()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace QLCongTy.TienLuong
             gvTienLuong.DataSource = tlDao.LDS();
         }
 
+        #region Tính năng Form
         private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlStr = string.Format("SELECT * FROM TIENLUONG WHERE Nam = '{0}'", cboNam.Text);
@@ -55,8 +57,9 @@ namespace QLCongTy.TienLuong
         {
             tmThongKe.Start();
         }
+        #endregion
 
-
+        #region Hiệu ứng
         bool sidebarExpand;
         private void tmThongKe_Tick(object sender, EventArgs e)
         {;
@@ -79,5 +82,38 @@ namespace QLCongTy.TienLuong
                 }
             }
         }
+        #endregion
+
+        #region Xuất File Excel tiền lương
+        public DataTable GetDataFromGV()
+        {
+            // Tạo đối tượng DataTable
+            DataTable dt = new DataTable();
+
+            // Lấy số lượng cột từ DataGridView và thêm các cột vào DataTable
+            for (int i = 0; i < gvTienLuong.Columns.Count; i++)
+            {
+                dt.Columns.Add(gvTienLuong.Columns[i].HeaderText);
+            }
+
+            // Lưu dữ liệu từ DataGridView vào DataTable
+            foreach (DataGridViewRow dgvRow in gvTienLuong.Rows)
+            {
+                DataRow dtRow = dt.NewRow();
+                for (int i = 0; i < gvTienLuong.Columns.Count; i++)
+                {
+                    dtRow[i] = dgvRow.Cells[i].Value;
+                }
+                dt.Rows.Add(dtRow);
+            }
+            return dt;
+        }
+
+        private void btnXuatFileExcel_Click(object sender, EventArgs e)
+        {
+            DataTable dt = GetDataFromGV();
+            exFile.SaveExcel(dt);
+        }
+        #endregion
     }
 }
