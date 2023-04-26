@@ -178,6 +178,7 @@
             this.gvQLDuAn.Location = new System.Drawing.Point(10, 10);
             this.gvQLDuAn.MultiSelect = false;
             this.gvQLDuAn.Name = "gvQLDuAn";
+            this.gvQLDuAn.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

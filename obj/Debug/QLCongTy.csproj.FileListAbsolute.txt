@@ -81,7 +81,6 @@ D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\bin\Debug\Q
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.csproj.AssemblyReference.cache
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.csproj.SuggestedBindingRedirects.cache
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fCheckin_Checkout.resources
-D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fQLchamcong.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fMainMenu.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.Properties.Resources.resources
@@ -360,3 +359,4 @@ D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.pdb
 D:\hoc\llwd\2\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 C:\Users\HUYNH THIEN NHAN\source\repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources
+D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources
