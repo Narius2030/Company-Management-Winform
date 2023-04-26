@@ -264,5 +264,24 @@ namespace QLCongTy.NhanSu
             }
         }
         #endregion
+
+        private void gvNhanSu_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow r = gvNhanSu.SelectedRows[0];
+
+            //Dùng Loop thay thế -> ???
+
+            txtMaNV.Text = r.Cells[0].Value.ToString();
+            txtHoDem.Text = r.Cells[1].Value.ToString();
+            txtTenNV.Text = r.Cells[2].Value.ToString();
+            dtpNgaySinh.Text = r.Cells[3].Value.ToString();
+            txtDiaChi.Text = r.Cells[4].Value.ToString();
+            txtCCCD.Text = r.Cells[5].Value.ToString();
+            txtMaPB.Text = r.Cells[6].Value.ToString();
+            cboGTinh.Text = r.Cells[7].Value.ToString();
+            txtSDT.Text = r.Cells[8].Value.ToString();
+            txtEmail.Text = r.Cells[9].Value.ToString();
+            txtMaCV.Text = r.Cells[10].Value.ToString();
+        }
     }
 }
