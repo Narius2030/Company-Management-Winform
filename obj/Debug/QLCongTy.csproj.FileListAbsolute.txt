@@ -81,7 +81,6 @@ D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\bin\Debug\Q
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.csproj.AssemblyReference.cache
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.csproj.SuggestedBindingRedirects.cache
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fCheckin_Checkout.resources
-D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fQLchamcong.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fMainMenu.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.Properties.Resources.resources
@@ -360,27 +359,4 @@ D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (9)\QuanLyCT\obj\Debug\QLCongTy.pdb
 D:\hoc\llwd\2\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 C:\Users\HUYNH THIEN NHAN\source\repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources
-D:\Github\New folder (10)\QuanLyCT\bin\Debug\QLCongTy.exe.config
-D:\Github\New folder (10)\QuanLyCT\bin\Debug\QLCongTy.exe
-D:\Github\New folder (10)\QuanLyCT\bin\Debug\QLCongTy.pdb
-D:\Github\New folder (10)\QuanLyCT\bin\Debug\FontAwesome.Sharp.dll
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.AssemblyReference.cache
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.SuggestedBindingRedirects.cache
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.fCheckin_Checkout.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.CTTextBox.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.fMainMenu.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.FProfile.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.NhanSu.FNhanSu.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.Properties.Resources.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.QLDuAn.fQLDuAn.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.fVonDieuHanh.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.FQLNhanVienPB.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.FQLPhongBan.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.TienLuong.fTienLuong.resources
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.GenerateResource.cache
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CoreCompileInputs.cache
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CopyComplete
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.exe
-D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.pdb
+D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fDuyetDonXinNghi.resources

@@ -25,7 +25,7 @@ namespace QLCongTy.QLDuAn
         }
         private void fQLDuAn_Load(object sender, EventArgs e)
         {
-            gvQLDuAn.DataSource= daDao.LayDanhSach("select *from DUAN");
+            gvQLDuAn.DataSource= daDao.LayDanhSach($"select *from DUAN where TruongDA = '{fMainMenu.currentStaff.MaNV}'");
             daDao.InitStatusTB();
             gvNhanLuc.DataSource = daDao.LayDanhSach("select MaNV, TrinhDo from TRANGTHAINHANVIEN");
             tabQLDA.Controls.Remove(tpPCDA);
@@ -63,12 +63,6 @@ namespace QLCongTy.QLDuAn
             gvQLDuAn.Columns[5].HeaderText = "Bắt Đầu";
             gvQLDuAn.Columns[6].HeaderText = "Kết Thúc";
             gvQLDuAn.Columns[7].HeaderText = "Trạng Thái";
-
-            //gvPCDuAn.Columns[0].HeaderText = "Mã Dự Án";
-            //gvPCDuAn.Columns[1].HeaderText = "Mã Nhân Viên";
-            //gvPCDuAn.Columns[2].HeaderText = "Bắt Đầu";
-            //gvPCDuAn.Columns[3].HeaderText = "Kết Thúc";
-
             gvNhanLuc.Columns[0].HeaderText = "Mã Nhân Viên";
             gvNhanLuc.Columns[1].HeaderText = "Trình Độ";
         }
@@ -76,7 +70,6 @@ namespace QLCongTy.QLDuAn
         {
             ShowPanel(pnlEdit);
             lblTitle.Text = "Xem thông tin";
-            Bold_Date("Remove");
             DataGridViewRow r = gvQLDuAn.SelectedRows[0];
             txtMaDA.Text = r.Cells[0].Value.ToString();
             txtTenDA.Text = r.Cells[1].Value.ToString();
@@ -100,8 +93,6 @@ namespace QLCongTy.QLDuAn
             {
                 lblTienDoDA.Text = "TIẾN ĐỘ DỰ ÁN: 00%";
             }
-            monLichDuAn.SelectionRange = new SelectionRange(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
-            Bold_Date("Add");
         }
         private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -143,12 +134,12 @@ namespace QLCongTy.QLDuAn
                         break;
                     case "Plan":
                         btnXoa.Enabled = true;
-                        btnSua.Enabled = false;
+                        btnSua.Enabled = true;
                         btnPhanCong.Enabled = true;
                         break;
                     case "Implement":
                         btnXoa.Enabled = true;
-                        btnSua.Enabled = false;
+                        btnSua.Enabled = true;
                         btnPhanCong.Enabled = true;
                         break;
                     case "Finish":
@@ -164,8 +155,15 @@ namespace QLCongTy.QLDuAn
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ShowPanel(pnlEdit);
-            lblTitle.Text = "Thêm dự án";
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                ShowPanel(pnlEdit);
+                lblTitle.Text = "Thêm dự án";
+            }
+            else
+            {
+                MessageBox.Show("Không thuộc thẩm quyền");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -255,28 +253,6 @@ namespace QLCongTy.QLDuAn
             {
                 string sqlStr = string.Format("select *from TRANGTHAINHANVIEN where TrinhDo = '{0}'", cboTrinhDo.Text);
                 gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
-            }
-        }
-
-        public void Bold_Date(string request)
-        {
-
-            // Lấy ngày đầu tiên và ngày cuối cùng trong SelectedRange
-            DateTime start = dtpNgayBatDau.Value;
-            DateTime end = dtpNgayKetThuc.Value;
-
-            // Tô đen các ngày trong SelectedRange
-            for (DateTime date = start; date <= end; date = date.AddDays(1))
-            {
-                if (request == "Add")
-                {
-                    monLichDuAn.AddBoldedDate(date);
-                }
-                else if (request == "Remove")
-                {
-                    monLichDuAn.RemoveBoldedDate(date);
-                }
-                monLichDuAn.UpdateBoldedDates();
             }
         }
 

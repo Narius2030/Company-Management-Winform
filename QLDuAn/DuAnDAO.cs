@@ -22,7 +22,7 @@ namespace QLCongTy.QLDuAn
         }
         public void Them(DuAn da)
         {
-            string sqlStr = string.Format("INSERT INTO DUAN VALUES ('{0}', '{1}', '{2}', '0', '{3}', '{4}', '{5}', '{6}')", da.Mada,da.Tenda,da.Mapb,da.Truongda, da.Ngaybd, da.Ngaykt, da.Trangthai);
+            string sqlStr = $"INSERT INTO DUAN VALUES ('{da.Mada}', '{da.Tenda}', '{da.Mapb}', 0, '{da.Truongda}', '{da.Ngaybd}', '{da.Ngaykt}', '{da.Trangthai}', 0)";
             db.ThucThi(sqlStr);
         }
         public void Xoa(DuAn da)

@@ -1014,13 +1014,13 @@
             this.gvNhanSu.MultiSelect = false;
             this.gvNhanSu.Name = "gvNhanSu";
             this.gvNhanSu.ReadOnly = true;
+            this.gvNhanSu.RowHeadersVisible = false;
             this.gvNhanSu.RowHeadersWidth = 51;
             this.gvNhanSu.RowTemplate.DividerHeight = 2;
             this.gvNhanSu.RowTemplate.Height = 24;
             this.gvNhanSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvNhanSu.Size = new System.Drawing.Size(1174, 440);
             this.gvNhanSu.TabIndex = 0;
-            this.gvNhanSu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvNhanSu_RowHeaderMouseClick);
             // 
             // maNV
             // 
