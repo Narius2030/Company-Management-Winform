@@ -212,7 +212,7 @@ namespace QLCongTy
                 //Enable feature base on their ChucVu
                 if (infoAcc.Item3 == null)      //??????????????????????
                     return;
-                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+                if (infoAcc.Item3.Contains("KT") || infoAcc.Item3.Contains("TPNS") || infoAcc.Item3.Contains("GD"))
                 {
                     pnlAccount.Visible = true;
                     btnDangXuat.Visible = true;
@@ -221,6 +221,15 @@ namespace QLCongTy
                     btnDiemDanh.Visible = true;
                     pnlDiemDanh.Visible = false;
                     btnLuong.Visible = true;
+                }
+                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
                     btnDuAn.Visible = true;
                     pnlNhanSu.Visible = true;
                     btnNhanSu.Visible = true;
