@@ -1014,6 +1014,7 @@
             this.gvNhanSu.MultiSelect = false;
             this.gvNhanSu.Name = "gvNhanSu";
             this.gvNhanSu.ReadOnly = true;
+            this.gvNhanSu.RowHeadersVisible = false;
             this.gvNhanSu.RowHeadersWidth = 51;
             this.gvNhanSu.RowTemplate.DividerHeight = 2;
             this.gvNhanSu.RowTemplate.Height = 24;
