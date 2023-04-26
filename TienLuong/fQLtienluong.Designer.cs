@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
@@ -36,9 +37,13 @@
             this.btnLamMoi = new QLCongTy.VBButton();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
             this.gvTienLuong = new System.Windows.Forms.DataGridView();
+            this.pnlThongKe = new System.Windows.Forms.Panel();
+            this.btnThongKe = new FontAwesome.Sharp.IconButton();
+            this.tmThongKe = new System.Windows.Forms.Timer(this.components);
             this.artanPannel2.SuspendLayout();
             this.artanPannel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTienLuong)).BeginInit();
+            this.pnlThongKe.SuspendLayout();
             this.SuspendLayout();
             // 
             // artanPannel2
@@ -52,10 +57,10 @@
             this.artanPannel2.GradientAngle = 90F;
             this.artanPannel2.GradientBttomColor = System.Drawing.Color.DarkOrchid;
             this.artanPannel2.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            this.artanPannel2.Location = new System.Drawing.Point(62, 96);
-            this.artanPannel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.artanPannel2.Location = new System.Drawing.Point(83, 118);
+            this.artanPannel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.artanPannel2.Name = "artanPannel2";
-            this.artanPannel2.Size = new System.Drawing.Size(349, 80);
+            this.artanPannel2.Size = new System.Drawing.Size(465, 98);
             this.artanPannel2.TabIndex = 92;
             // 
             // cboNam
@@ -70,10 +75,10 @@
             "2021",
             "2022",
             "2023"});
-            this.cboNam.Location = new System.Drawing.Point(34, 28);
-            this.cboNam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNam.Location = new System.Drawing.Point(45, 34);
+            this.cboNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNam.Name = "cboNam";
-            this.cboNam.Size = new System.Drawing.Size(72, 27);
+            this.cboNam.Size = new System.Drawing.Size(95, 31);
             this.cboNam.TabIndex = 89;
             this.cboNam.Text = "Năm";
             this.cboNam.SelectedIndexChanged += new System.EventHandler(this.cboNam_SelectedIndexChanged);
@@ -98,10 +103,10 @@
             "10",
             "11",
             "12"});
-            this.cboThang.Location = new System.Drawing.Point(123, 28);
-            this.cboThang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboThang.Location = new System.Drawing.Point(164, 34);
+            this.cboThang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(79, 27);
+            this.cboThang.Size = new System.Drawing.Size(104, 31);
             this.cboThang.TabIndex = 90;
             this.cboThang.Text = "Tháng";
             this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
@@ -119,10 +124,10 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnLamMoi.Location = new System.Drawing.Point(221, 24);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLamMoi.Location = new System.Drawing.Point(295, 30);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(79, 31);
+            this.btnLamMoi.Size = new System.Drawing.Size(105, 38);
             this.btnLamMoi.TabIndex = 87;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.RoyalBlue;
@@ -138,11 +143,11 @@
             this.artanPannel1.GradientAngle = 90F;
             this.artanPannel1.GradientBttomColor = System.Drawing.Color.DarkOrchid;
             this.artanPannel1.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            this.artanPannel1.Location = new System.Drawing.Point(62, 188);
-            this.artanPannel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.artanPannel1.Location = new System.Drawing.Point(83, 231);
+            this.artanPannel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.artanPannel1.Name = "artanPannel1";
-            this.artanPannel1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 15);
-            this.artanPannel1.Size = new System.Drawing.Size(844, 382);
+            this.artanPannel1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 18);
+            this.artanPannel1.Size = new System.Drawing.Size(1125, 470);
             this.artanPannel1.TabIndex = 91;
             // 
             // gvTienLuong
@@ -176,8 +181,8 @@
             this.gvTienLuong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvTienLuong.EnableHeadersVisualStyles = false;
             this.gvTienLuong.GridColor = System.Drawing.Color.DarkGray;
-            this.gvTienLuong.Location = new System.Drawing.Point(8, 8);
-            this.gvTienLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gvTienLuong.Location = new System.Drawing.Point(11, 10);
+            this.gvTienLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvTienLuong.MultiSelect = false;
             this.gvTienLuong.Name = "gvTienLuong";
             this.gvTienLuong.RowHeadersVisible = false;
@@ -185,25 +190,66 @@
             this.gvTienLuong.RowTemplate.DividerHeight = 2;
             this.gvTienLuong.RowTemplate.Height = 25;
             this.gvTienLuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvTienLuong.Size = new System.Drawing.Size(828, 359);
+            this.gvTienLuong.Size = new System.Drawing.Size(1103, 442);
             this.gvTienLuong.TabIndex = 35;
+            // 
+            // pnlThongKe
+            // 
+            this.pnlThongKe.BackColor = System.Drawing.Color.White;
+            this.pnlThongKe.Controls.Add(this.btnThongKe);
+            this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlThongKe.Location = new System.Drawing.Point(0, 759);
+            this.pnlThongKe.MaximumSize = new System.Drawing.Size(1355, 587);
+            this.pnlThongKe.MinimumSize = new System.Drawing.Size(1355, 59);
+            this.pnlThongKe.Name = "pnlThongKe";
+            this.pnlThongKe.Size = new System.Drawing.Size(1355, 59);
+            this.pnlThongKe.TabIndex = 93;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.Azure;
+            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.btnThongKe.IconColor = System.Drawing.Color.Azure;
+            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 0);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(1355, 59);
+            this.btnThongKe.TabIndex = 2;
+            this.btnThongKe.Text = "THỐNG KÊ";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // tmThongKe
+            // 
+            this.tmThongKe.Interval = 10;
+            this.tmThongKe.Tick += new System.EventHandler(this.tmThongKe_Tick);
             // 
             // fTienLuong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.ClientSize = new System.Drawing.Size(1016, 665);
+            this.ClientSize = new System.Drawing.Size(1355, 818);
+            this.Controls.Add(this.pnlThongKe);
             this.Controls.Add(this.artanPannel2);
             this.Controls.Add(this.artanPannel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fTienLuong";
             this.Text = "Quản lý tiền lương ";
             this.Load += new System.EventHandler(this.fTienLuong_Load);
             this.artanPannel2.ResumeLayout(false);
             this.artanPannel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvTienLuong)).EndInit();
+            this.pnlThongKe.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,6 +261,9 @@
         private System.Windows.Forms.ComboBox cboThang;
         private ArtanComponent.ArtanPannel artanPannel1;
         private ArtanComponent.ArtanPannel artanPannel2;
+        private System.Windows.Forms.Panel pnlThongKe;
+        private FontAwesome.Sharp.IconButton btnThongKe;
+        private System.Windows.Forms.Timer tmThongKe;
     }
 }
 

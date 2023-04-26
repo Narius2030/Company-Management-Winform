@@ -55,13 +55,13 @@ namespace QLCongTy.MainMenu
                 else
                 {
                     MessageBox.Show("Sai tai khoan hoac mat khau");
-                    return null;
+                    return new Tuple<string, string, string>(null, null, null);;
                 }
             }
             catch
             {
                 MessageBox.Show("Tai khoan khong ton tai");
-                return null;
+                return  new Tuple<string, string, string>(null, null, null);
             }
         }
         public void DoiMatKhau(string taiKhoan,string matKhauMoi,string matKhauNhapLai)

@@ -28,7 +28,7 @@ namespace QLCongTy
             InitializeComponent();
             CustomizeDesing();
             leftBorderBtn= new Panel();
-            leftBorderBtn.Size = new Size(10, 86);
+            leftBorderBtn.Size = new Size(10, 75);
             pnlMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
@@ -47,9 +47,15 @@ namespace QLCongTy
         #region Hide panel
         private void CustomizeDesing()
         {
-            
+            btnNhanSu.Visible = false;
+            btnDuAn.Visible = false;
+            btnLuong.Visible = false;
+            btnDiemDanh.Visible = false;
+            btnTaiKhoan.Visible = false;
+            btnDangXuat.Visible = false;
             pnlAccount.Visible = false;
             pnlNhanSu.Visible= false;
+            pnlDiemDanh.Visible = false;
         }
         #region Xử lý Form con
 
@@ -116,7 +122,7 @@ namespace QLCongTy
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(35, 37, 45);
+                currentBtn.BackColor = Color.FromArgb(30, 37, 45);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -195,34 +201,54 @@ namespace QLCongTy
         }
         #endregion
 
-        #region Chức năng Form con
+        #region Button
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Dealing with Login
-            var infoAcc = dao.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
-            currentStaff = dao.GetInfo(txtTaiKhoan.Text);
-            //Enable feature base on their ChucVu
-            if (infoAcc.Item3 == null) 
-                return;
-            if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+            try
             {
+                //Dealing with Login
+                var infoAcc = dao.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
+                currentStaff = dao.GetInfo(txtTaiKhoan.Text);
+                //Enable feature base on their ChucVu
+                if (infoAcc.Item3 == null)      //??????????????????????
+                    return;
+                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnLuong.Visible = true;
+                    btnDuAn.Visible = true;
+                    pnlNhanSu.Visible = true;
+                    btnNhanSu.Visible = true;
+                    pnlNhanSu.Visible = false;
+                }
+                else
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = false;
+                }
+                Account = true;
 
+                //Assigning to NhanSu variables
+                MaNV = infoAcc.Item1;
+                MaCV = infoAcc.Item3;
+                lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
+                HidePanel(pnlLogin);
+                lblAccount.Visible = true;
             }
-            else
+            catch (Exception ex)
             {
-                btnLuong.Visible= false;
-                btnDuAn.Visible = false;
-                pnlNhanSu.Visible = false;
-                btnNhanSu.Visible = false;
+                MessageBox.Show(ex.Message);
             }
-            Account = true;
-
-            //Assigning to NhanSu variables
-            MaNV = infoAcc.Item1;
-            MaCV = infoAcc.Item3;
-            lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
-            HidePanel(pnlLogin);
-            ShowPanel(pnlAccount);
         }
         private void btnShowPW_Click(object sender, EventArgs e)
         {
@@ -271,7 +297,22 @@ namespace QLCongTy
         private void btnDiemDanh_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new fCheckin_Checkout());        }
+            ShowPanel(pnlDiemDanh);
+        }
+
+        private void btnCheckInOut_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fCheckin_Checkout());
+            HidePanel(pnlDiemDanh);
+        }
+
+        private void btnDuyetDonXinNghi_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Check", "Hello", MessageBoxButtons.YesNo);
+
+            OpenChildForm(new fDuyetDonXinNghi());
+            HidePanel(pnlDiemDanh);
+        }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
@@ -281,6 +322,7 @@ namespace QLCongTy
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            CustomizeDesing();
             ActivateButton(sender, RGBColors.color7);
             if (currentChildForm != null)
             {

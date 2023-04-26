@@ -40,15 +40,19 @@
             this.btnXinNghiPhep = new FontAwesome.Sharp.IconButton();
             this.btnBaoMat = new FontAwesome.Sharp.IconButton();
             this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblMaNV = new QLCongTy.VBLabel();
+            this.lblTenNV = new QLCongTy.VBLabel();
             this.pnlTong = new System.Windows.Forms.Panel();
             this.pnlBaoMat = new System.Windows.Forms.Panel();
             this.pnlDoiMatKhau = new System.Windows.Forms.Panel();
+            this.btnUpdateMatKhau = new QLCongTy.VBButton();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.txtMatKhauCu = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.btnDoiMatKhau = new QLCongTy.VBButton();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
@@ -56,16 +60,33 @@
             this.pnlXinNghiPhep = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cboLyDoNghi = new System.Windows.Forms.ComboBox();
+            this.btnGuiDonXinNghi = new QLCongTy.VBButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNgayNghi = new System.Windows.Forms.DateTimePicker();
+            this.lblTitleNghiPhep = new QLCongTy.VBLabel();
             this.pnlLuong = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlThongtinluong = new System.Windows.Forms.Panel();
+            this.txtLuongcthuc = new System.Windows.Forms.TextBox();
+            this.txtLuongthuong = new System.Windows.Forms.TextBox();
+            this.txtLuongphat = new System.Windows.Forms.TextBox();
+            this.txtLuongcb = new System.Windows.Forms.TextBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.vbLabel3 = new QLCongTy.VBLabel();
+            this.vbLabel11 = new QLCongTy.VBLabel();
+            this.vbLabel9 = new QLCongTy.VBLabel();
+            this.vbLabel12 = new QLCongTy.VBLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.vbLabel2 = new QLCongTy.VBLabel();
             this.pnlDuAn = new System.Windows.Forms.Panel();
             this.gvDuAn = new System.Windows.Forms.DataGridView();
             this.pnlTTCN = new System.Windows.Forms.Panel();
@@ -75,33 +96,12 @@
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.txtLuongcb = new System.Windows.Forms.TextBox();
-            this.txtLuongphat = new System.Windows.Forms.TextBox();
-            this.txtLuongthuong = new System.Windows.Forms.TextBox();
-            this.txtLuongcthuc = new System.Windows.Forms.TextBox();
-            this.pnlThongtinluong = new System.Windows.Forms.Panel();
-            this.btnUpdateMatKhau = new QLCongTy.VBButton();
-            this.btnDoiMatKhau = new QLCongTy.VBButton();
-            this.btnGuiDonXinNghi = new QLCongTy.VBButton();
-            this.lblTitleNghiPhep = new QLCongTy.VBLabel();
-            this.vbLabel3 = new QLCongTy.VBLabel();
-            this.vbLabel11 = new QLCongTy.VBLabel();
-            this.vbLabel9 = new QLCongTy.VBLabel();
-            this.vbLabel12 = new QLCongTy.VBLabel();
-            this.vbLabel2 = new QLCongTy.VBLabel();
             this.lblNgsinh = new QLCongTy.VBLabel();
             this.lblPhone = new QLCongTy.VBLabel();
             this.lblSex = new QLCongTy.VBLabel();
             this.lblEmail = new QLCongTy.VBLabel();
             this.lblCCCD = new QLCongTy.VBLabel();
             this.lblDiaChi = new QLCongTy.VBLabel();
-            this.lblMaNV = new QLCongTy.VBLabel();
-            this.lblTenNV = new QLCongTy.VBLabel();
             this.sidebar.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -112,6 +112,7 @@
             this.panel8.SuspendLayout();
             this.pnlLuong.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlThongtinluong.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlDuAn.SuspendLayout();
@@ -123,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.pnlThongtinluong.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarTimer
@@ -134,6 +134,7 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sidebar.Controls.Add(this.pnlHome);
             this.sidebar.Controls.Add(this.pnlEmpty);
             this.sidebar.Controls.Add(this.btnThongTinCaNhan);
@@ -198,7 +199,7 @@
             this.btnThongTinCaNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongTinCaNhan.Location = new System.Drawing.Point(3, 129);
             this.btnThongTinCaNhan.Name = "btnThongTinCaNhan";
-            this.btnThongTinCaNhan.Size = new System.Drawing.Size(210, 67);
+            this.btnThongTinCaNhan.Size = new System.Drawing.Size(210, 75);
             this.btnThongTinCaNhan.TabIndex = 88;
             this.btnThongTinCaNhan.Text = "  Thông tin cá nhân";
             this.btnThongTinCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,9 +217,9 @@
             this.btnDuAn.IconColor = System.Drawing.Color.White;
             this.btnDuAn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDuAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDuAn.Location = new System.Drawing.Point(3, 202);
+            this.btnDuAn.Location = new System.Drawing.Point(3, 210);
             this.btnDuAn.Name = "btnDuAn";
-            this.btnDuAn.Size = new System.Drawing.Size(210, 67);
+            this.btnDuAn.Size = new System.Drawing.Size(210, 75);
             this.btnDuAn.TabIndex = 89;
             this.btnDuAn.Text = "  Dự án";
             this.btnDuAn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,9 +237,9 @@
             this.btnLuong.IconColor = System.Drawing.Color.White;
             this.btnLuong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuong.Location = new System.Drawing.Point(3, 275);
+            this.btnLuong.Location = new System.Drawing.Point(3, 291);
             this.btnLuong.Name = "btnLuong";
-            this.btnLuong.Size = new System.Drawing.Size(210, 67);
+            this.btnLuong.Size = new System.Drawing.Size(210, 75);
             this.btnLuong.TabIndex = 92;
             this.btnLuong.Text = "  Lương";
             this.btnLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,9 +257,9 @@
             this.btnXinNghiPhep.IconColor = System.Drawing.Color.White;
             this.btnXinNghiPhep.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXinNghiPhep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXinNghiPhep.Location = new System.Drawing.Point(3, 348);
+            this.btnXinNghiPhep.Location = new System.Drawing.Point(3, 372);
             this.btnXinNghiPhep.Name = "btnXinNghiPhep";
-            this.btnXinNghiPhep.Size = new System.Drawing.Size(210, 67);
+            this.btnXinNghiPhep.Size = new System.Drawing.Size(210, 75);
             this.btnXinNghiPhep.TabIndex = 95;
             this.btnXinNghiPhep.Text = "  Xin nghỉ phép";
             this.btnXinNghiPhep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -276,9 +277,9 @@
             this.btnBaoMat.IconColor = System.Drawing.Color.White;
             this.btnBaoMat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBaoMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoMat.Location = new System.Drawing.Point(3, 421);
+            this.btnBaoMat.Location = new System.Drawing.Point(3, 453);
             this.btnBaoMat.Name = "btnBaoMat";
-            this.btnBaoMat.Size = new System.Drawing.Size(210, 67);
+            this.btnBaoMat.Size = new System.Drawing.Size(210, 75);
             this.btnBaoMat.TabIndex = 96;
             this.btnBaoMat.Text = "  Bảo mật";
             this.btnBaoMat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,6 +290,7 @@
             // pnlTitle
             // 
             this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTitle.Controls.Add(this.lblMaNV);
             this.pnlTitle.Controls.Add(this.lblTenNV);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -296,6 +298,42 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(1136, 78);
             this.pnlTitle.TabIndex = 6;
+            // 
+            // lblMaNV
+            // 
+            this.lblMaNV.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblMaNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblMaNV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.lblMaNV.BorderRadius = 20;
+            this.lblMaNV.BorderSize = 0;
+            this.lblMaNV.FlatAppearance.BorderSize = 0;
+            this.lblMaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblMaNV.ForeColor = System.Drawing.Color.White;
+            this.lblMaNV.Location = new System.Drawing.Point(253, 21);
+            this.lblMaNV.Name = "lblMaNV";
+            this.lblMaNV.Size = new System.Drawing.Size(150, 40);
+            this.lblMaNV.TabIndex = 14;
+            this.lblMaNV.Text = "Mã";
+            this.lblMaNV.TextColor = System.Drawing.Color.White;
+            this.lblMaNV.UseVisualStyleBackColor = false;
+            // 
+            // lblTenNV
+            // 
+            this.lblTenNV.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTenNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.lblTenNV.BorderRadius = 20;
+            this.lblTenNV.BorderSize = 0;
+            this.lblTenNV.FlatAppearance.BorderSize = 0;
+            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTenNV.ForeColor = System.Drawing.Color.White;
+            this.lblTenNV.Location = new System.Drawing.Point(6, 21);
+            this.lblTenNV.Name = "lblTenNV";
+            this.lblTenNV.Size = new System.Drawing.Size(228, 40);
+            this.lblTenNV.TabIndex = 4;
+            this.lblTenNV.Text = "Tên";
+            this.lblTenNV.TextColor = System.Drawing.Color.White;
+            this.lblTenNV.UseVisualStyleBackColor = false;
             // 
             // pnlTong
             // 
@@ -340,6 +378,26 @@
             this.pnlDoiMatKhau.Name = "pnlDoiMatKhau";
             this.pnlDoiMatKhau.Size = new System.Drawing.Size(529, 316);
             this.pnlDoiMatKhau.TabIndex = 89;
+            // 
+            // btnUpdateMatKhau
+            // 
+            this.btnUpdateMatKhau.BackColor = System.Drawing.Color.White;
+            this.btnUpdateMatKhau.BackgroundColor = System.Drawing.Color.White;
+            this.btnUpdateMatKhau.BorderColor = System.Drawing.Color.LightGray;
+            this.btnUpdateMatKhau.BorderRadius = 15;
+            this.btnUpdateMatKhau.BorderSize = 1;
+            this.btnUpdateMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnUpdateMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateMatKhau.Location = new System.Drawing.Point(359, 241);
+            this.btnUpdateMatKhau.Name = "btnUpdateMatKhau";
+            this.btnUpdateMatKhau.Size = new System.Drawing.Size(116, 58);
+            this.btnUpdateMatKhau.TabIndex = 82;
+            this.btnUpdateMatKhau.Text = "Update";
+            this.btnUpdateMatKhau.TextColor = System.Drawing.Color.Black;
+            this.btnUpdateMatKhau.UseVisualStyleBackColor = false;
+            this.btnUpdateMatKhau.Click += new System.EventHandler(this.btnUpdateMatKhau_Click);
             // 
             // txtXacNhanMK
             // 
@@ -400,6 +458,26 @@
             this.label19.Size = new System.Drawing.Size(145, 31);
             this.label19.TabIndex = 80;
             this.label19.Text = "Mật khẩu cũ:";
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.Azure;
+            this.btnDoiMatKhau.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnDoiMatKhau.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDoiMatKhau.BorderRadius = 15;
+            this.btnDoiMatKhau.BorderSize = 1;
+            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(633, 384);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(116, 58);
+            this.btnDoiMatKhau.TabIndex = 89;
+            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhau.TextColor = System.Drawing.Color.Black;
+            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // lblMatKhau
             // 
@@ -481,6 +559,26 @@
             this.cboLyDoNghi.Size = new System.Drawing.Size(384, 24);
             this.cboLyDoNghi.TabIndex = 86;
             // 
+            // btnGuiDonXinNghi
+            // 
+            this.btnGuiDonXinNghi.BackColor = System.Drawing.Color.Azure;
+            this.btnGuiDonXinNghi.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnGuiDonXinNghi.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGuiDonXinNghi.BorderRadius = 15;
+            this.btnGuiDonXinNghi.BorderSize = 1;
+            this.btnGuiDonXinNghi.FlatAppearance.BorderSize = 0;
+            this.btnGuiDonXinNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuiDonXinNghi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiDonXinNghi.ForeColor = System.Drawing.Color.Black;
+            this.btnGuiDonXinNghi.Location = new System.Drawing.Point(368, 464);
+            this.btnGuiDonXinNghi.Name = "btnGuiDonXinNghi";
+            this.btnGuiDonXinNghi.Size = new System.Drawing.Size(103, 49);
+            this.btnGuiDonXinNghi.TabIndex = 85;
+            this.btnGuiDonXinNghi.Text = "Submit";
+            this.btnGuiDonXinNghi.TextColor = System.Drawing.Color.Black;
+            this.btnGuiDonXinNghi.UseVisualStyleBackColor = false;
+            this.btnGuiDonXinNghi.Click += new System.EventHandler(this.btnGuiDonXinNghi_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -522,6 +620,25 @@
             this.dtpNgayNghi.Size = new System.Drawing.Size(384, 32);
             this.dtpNgayNghi.TabIndex = 80;
             // 
+            // lblTitleNghiPhep
+            // 
+            this.lblTitleNghiPhep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(150)))));
+            this.lblTitleNghiPhep.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(150)))));
+            this.lblTitleNghiPhep.BorderColor = System.Drawing.Color.Peru;
+            this.lblTitleNghiPhep.BorderRadius = 30;
+            this.lblTitleNghiPhep.BorderSize = 0;
+            this.lblTitleNghiPhep.FlatAppearance.BorderSize = 0;
+            this.lblTitleNghiPhep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitleNghiPhep.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleNghiPhep.ForeColor = System.Drawing.Color.White;
+            this.lblTitleNghiPhep.Location = new System.Drawing.Point(88, 16);
+            this.lblTitleNghiPhep.Name = "lblTitleNghiPhep";
+            this.lblTitleNghiPhep.Size = new System.Drawing.Size(377, 51);
+            this.lblTitleNghiPhep.TabIndex = 79;
+            this.lblTitleNghiPhep.Text = "Đơn xin nghỉ";
+            this.lblTitleNghiPhep.TextColor = System.Drawing.Color.White;
+            this.lblTitleNghiPhep.UseVisualStyleBackColor = false;
+            // 
             // pnlLuong
             // 
             this.pnlLuong.Controls.Add(this.panel1);
@@ -542,6 +659,181 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 673);
             this.panel1.TabIndex = 67;
+            // 
+            // pnlThongtinluong
+            // 
+            this.pnlThongtinluong.BackColor = System.Drawing.Color.White;
+            this.pnlThongtinluong.Controls.Add(this.txtLuongcthuc);
+            this.pnlThongtinluong.Controls.Add(this.txtLuongthuong);
+            this.pnlThongtinluong.Controls.Add(this.txtLuongphat);
+            this.pnlThongtinluong.Controls.Add(this.txtLuongcb);
+            this.pnlThongtinluong.Controls.Add(this.panel12);
+            this.pnlThongtinluong.Controls.Add(this.panel11);
+            this.pnlThongtinluong.Controls.Add(this.panel10);
+            this.pnlThongtinluong.Controls.Add(this.panel9);
+            this.pnlThongtinluong.Controls.Add(this.panel7);
+            this.pnlThongtinluong.Controls.Add(this.vbLabel3);
+            this.pnlThongtinluong.Controls.Add(this.vbLabel11);
+            this.pnlThongtinluong.Controls.Add(this.vbLabel9);
+            this.pnlThongtinluong.Controls.Add(this.vbLabel12);
+            this.pnlThongtinluong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlThongtinluong.Location = new System.Drawing.Point(0, 166);
+            this.pnlThongtinluong.Name = "pnlThongtinluong";
+            this.pnlThongtinluong.Size = new System.Drawing.Size(515, 461);
+            this.pnlThongtinluong.TabIndex = 68;
+            // 
+            // txtLuongcthuc
+            // 
+            this.txtLuongcthuc.BackColor = System.Drawing.Color.White;
+            this.txtLuongcthuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLuongcthuc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuongcthuc.Location = new System.Drawing.Point(239, 24);
+            this.txtLuongcthuc.Name = "txtLuongcthuc";
+            this.txtLuongcthuc.Size = new System.Drawing.Size(170, 24);
+            this.txtLuongcthuc.TabIndex = 78;
+            // 
+            // txtLuongthuong
+            // 
+            this.txtLuongthuong.BackColor = System.Drawing.Color.White;
+            this.txtLuongthuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLuongthuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuongthuong.Location = new System.Drawing.Point(239, 147);
+            this.txtLuongthuong.Name = "txtLuongthuong";
+            this.txtLuongthuong.Size = new System.Drawing.Size(170, 24);
+            this.txtLuongthuong.TabIndex = 77;
+            // 
+            // txtLuongphat
+            // 
+            this.txtLuongphat.BackColor = System.Drawing.Color.White;
+            this.txtLuongphat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLuongphat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuongphat.Location = new System.Drawing.Point(239, 266);
+            this.txtLuongphat.Name = "txtLuongphat";
+            this.txtLuongphat.Size = new System.Drawing.Size(170, 24);
+            this.txtLuongphat.TabIndex = 76;
+            // 
+            // txtLuongcb
+            // 
+            this.txtLuongcb.BackColor = System.Drawing.Color.White;
+            this.txtLuongcb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLuongcb.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuongcb.Location = new System.Drawing.Point(239, 383);
+            this.txtLuongcb.Name = "txtLuongcb";
+            this.txtLuongcb.Size = new System.Drawing.Size(170, 24);
+            this.txtLuongcb.TabIndex = 72;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Location = new System.Drawing.Point(222, 416);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(204, 2);
+            this.panel12.TabIndex = 71;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel11.Location = new System.Drawing.Point(224, 54);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(204, 2);
+            this.panel11.TabIndex = 70;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.Location = new System.Drawing.Point(224, 293);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(204, 2);
+            this.panel10.TabIndex = 69;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel9.Location = new System.Drawing.Point(224, 174);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(204, 2);
+            this.panel9.TabIndex = 68;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel7.Location = new System.Drawing.Point(3, 344);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(439, 2);
+            this.panel7.TabIndex = 67;
+            // 
+            // vbLabel3
+            // 
+            this.vbLabel3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel3.BorderRadius = 20;
+            this.vbLabel3.BorderSize = 0;
+            this.vbLabel3.FlatAppearance.BorderSize = 0;
+            this.vbLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel3.ForeColor = System.Drawing.Color.White;
+            this.vbLabel3.Location = new System.Drawing.Point(22, 378);
+            this.vbLabel3.Name = "vbLabel3";
+            this.vbLabel3.Size = new System.Drawing.Size(182, 40);
+            this.vbLabel3.TabIndex = 0;
+            this.vbLabel3.Text = "Lương nhận:";
+            this.vbLabel3.TextColor = System.Drawing.Color.White;
+            this.vbLabel3.UseVisualStyleBackColor = false;
+            // 
+            // vbLabel11
+            // 
+            this.vbLabel11.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel11.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel11.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel11.BorderRadius = 20;
+            this.vbLabel11.BorderSize = 0;
+            this.vbLabel11.FlatAppearance.BorderSize = 0;
+            this.vbLabel11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel11.ForeColor = System.Drawing.Color.White;
+            this.vbLabel11.Location = new System.Drawing.Point(27, 255);
+            this.vbLabel11.Name = "vbLabel11";
+            this.vbLabel11.Size = new System.Drawing.Size(177, 40);
+            this.vbLabel11.TabIndex = 65;
+            this.vbLabel11.Text = "Lương phạt";
+            this.vbLabel11.TextColor = System.Drawing.Color.White;
+            this.vbLabel11.UseVisualStyleBackColor = false;
+            // 
+            // vbLabel9
+            // 
+            this.vbLabel9.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel9.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel9.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel9.BorderRadius = 20;
+            this.vbLabel9.BorderSize = 0;
+            this.vbLabel9.FlatAppearance.BorderSize = 0;
+            this.vbLabel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel9.ForeColor = System.Drawing.Color.White;
+            this.vbLabel9.Location = new System.Drawing.Point(22, 20);
+            this.vbLabel9.Name = "vbLabel9";
+            this.vbLabel9.Size = new System.Drawing.Size(182, 40);
+            this.vbLabel9.TabIndex = 63;
+            this.vbLabel9.Text = "Lương cơ bản";
+            this.vbLabel9.TextColor = System.Drawing.Color.White;
+            this.vbLabel9.UseVisualStyleBackColor = false;
+            // 
+            // vbLabel12
+            // 
+            this.vbLabel12.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel12.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel12.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel12.BorderRadius = 20;
+            this.vbLabel12.BorderSize = 0;
+            this.vbLabel12.FlatAppearance.BorderSize = 0;
+            this.vbLabel12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel12.ForeColor = System.Drawing.Color.White;
+            this.vbLabel12.Location = new System.Drawing.Point(22, 136);
+            this.vbLabel12.Name = "vbLabel12";
+            this.vbLabel12.Size = new System.Drawing.Size(182, 40);
+            this.vbLabel12.TabIndex = 66;
+            this.vbLabel12.Text = "Lương thưởng ";
+            this.vbLabel12.TextColor = System.Drawing.Color.White;
+            this.vbLabel12.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -580,6 +872,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(515, 161);
             this.panel2.TabIndex = 2;
+            // 
+            // vbLabel2
+            // 
+            this.vbLabel2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel2.BorderRadius = 20;
+            this.vbLabel2.BorderSize = 0;
+            this.vbLabel2.FlatAppearance.BorderSize = 0;
+            this.vbLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbLabel2.ForeColor = System.Drawing.Color.White;
+            this.vbLabel2.Location = new System.Drawing.Point(45, 49);
+            this.vbLabel2.Name = "vbLabel2";
+            this.vbLabel2.Size = new System.Drawing.Size(364, 67);
+            this.vbLabel2.TabIndex = 1;
+            this.vbLabel2.Text = "Hóa đơn tiền lương";
+            this.vbLabel2.TextColor = System.Drawing.Color.White;
+            this.vbLabel2.UseVisualStyleBackColor = false;
             // 
             // pnlDuAn
             // 
@@ -706,279 +1017,6 @@
             this.iconPictureBox1.TabIndex = 8;
             this.iconPictureBox1.TabStop = false;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel7.Location = new System.Drawing.Point(3, 344);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(439, 2);
-            this.panel7.TabIndex = 67;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(224, 174);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(204, 2);
-            this.panel9.TabIndex = 68;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel10.Location = new System.Drawing.Point(224, 293);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(204, 2);
-            this.panel10.TabIndex = 69;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel11.Location = new System.Drawing.Point(224, 54);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(204, 2);
-            this.panel11.TabIndex = 70;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Location = new System.Drawing.Point(222, 416);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(204, 2);
-            this.panel12.TabIndex = 71;
-            // 
-            // txtLuongcb
-            // 
-            this.txtLuongcb.BackColor = System.Drawing.Color.White;
-            this.txtLuongcb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongcb.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongcb.Location = new System.Drawing.Point(239, 383);
-            this.txtLuongcb.Name = "txtLuongcb";
-            this.txtLuongcb.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongcb.TabIndex = 72;
-            // 
-            // txtLuongphat
-            // 
-            this.txtLuongphat.BackColor = System.Drawing.Color.White;
-            this.txtLuongphat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongphat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongphat.Location = new System.Drawing.Point(239, 266);
-            this.txtLuongphat.Name = "txtLuongphat";
-            this.txtLuongphat.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongphat.TabIndex = 76;
-            // 
-            // txtLuongthuong
-            // 
-            this.txtLuongthuong.BackColor = System.Drawing.Color.White;
-            this.txtLuongthuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongthuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongthuong.Location = new System.Drawing.Point(239, 147);
-            this.txtLuongthuong.Name = "txtLuongthuong";
-            this.txtLuongthuong.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongthuong.TabIndex = 77;
-            // 
-            // txtLuongcthuc
-            // 
-            this.txtLuongcthuc.BackColor = System.Drawing.Color.White;
-            this.txtLuongcthuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongcthuc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongcthuc.Location = new System.Drawing.Point(239, 24);
-            this.txtLuongcthuc.Name = "txtLuongcthuc";
-            this.txtLuongcthuc.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongcthuc.TabIndex = 78;
-            // 
-            // pnlThongtinluong
-            // 
-            this.pnlThongtinluong.BackColor = System.Drawing.Color.White;
-            this.pnlThongtinluong.Controls.Add(this.txtLuongcthuc);
-            this.pnlThongtinluong.Controls.Add(this.txtLuongthuong);
-            this.pnlThongtinluong.Controls.Add(this.txtLuongphat);
-            this.pnlThongtinluong.Controls.Add(this.txtLuongcb);
-            this.pnlThongtinluong.Controls.Add(this.panel12);
-            this.pnlThongtinluong.Controls.Add(this.panel11);
-            this.pnlThongtinluong.Controls.Add(this.panel10);
-            this.pnlThongtinluong.Controls.Add(this.panel9);
-            this.pnlThongtinluong.Controls.Add(this.panel7);
-            this.pnlThongtinluong.Controls.Add(this.vbLabel3);
-            this.pnlThongtinluong.Controls.Add(this.vbLabel11);
-            this.pnlThongtinluong.Controls.Add(this.vbLabel9);
-            this.pnlThongtinluong.Controls.Add(this.vbLabel12);
-            this.pnlThongtinluong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlThongtinluong.Location = new System.Drawing.Point(0, 166);
-            this.pnlThongtinluong.Name = "pnlThongtinluong";
-            this.pnlThongtinluong.Size = new System.Drawing.Size(515, 461);
-            this.pnlThongtinluong.TabIndex = 68;
-            // 
-            // btnUpdateMatKhau
-            // 
-            this.btnUpdateMatKhau.BackColor = System.Drawing.Color.White;
-            this.btnUpdateMatKhau.BackgroundColor = System.Drawing.Color.White;
-            this.btnUpdateMatKhau.BorderColor = System.Drawing.Color.LightGray;
-            this.btnUpdateMatKhau.BorderRadius = 15;
-            this.btnUpdateMatKhau.BorderSize = 1;
-            this.btnUpdateMatKhau.FlatAppearance.BorderSize = 0;
-            this.btnUpdateMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateMatKhau.Location = new System.Drawing.Point(359, 241);
-            this.btnUpdateMatKhau.Name = "btnUpdateMatKhau";
-            this.btnUpdateMatKhau.Size = new System.Drawing.Size(116, 58);
-            this.btnUpdateMatKhau.TabIndex = 82;
-            this.btnUpdateMatKhau.Text = "Update";
-            this.btnUpdateMatKhau.TextColor = System.Drawing.Color.Black;
-            this.btnUpdateMatKhau.UseVisualStyleBackColor = false;
-            this.btnUpdateMatKhau.Click += new System.EventHandler(this.btnUpdateMatKhau_Click);
-            // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.BackColor = System.Drawing.Color.Azure;
-            this.btnDoiMatKhau.BackgroundColor = System.Drawing.Color.Azure;
-            this.btnDoiMatKhau.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDoiMatKhau.BorderRadius = 15;
-            this.btnDoiMatKhau.BorderSize = 1;
-            this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
-            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(633, 384);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(116, 58);
-            this.btnDoiMatKhau.TabIndex = 89;
-            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
-            this.btnDoiMatKhau.TextColor = System.Drawing.Color.Black;
-            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
-            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
-            // 
-            // btnGuiDonXinNghi
-            // 
-            this.btnGuiDonXinNghi.BackColor = System.Drawing.Color.Azure;
-            this.btnGuiDonXinNghi.BackgroundColor = System.Drawing.Color.Azure;
-            this.btnGuiDonXinNghi.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnGuiDonXinNghi.BorderRadius = 15;
-            this.btnGuiDonXinNghi.BorderSize = 1;
-            this.btnGuiDonXinNghi.FlatAppearance.BorderSize = 0;
-            this.btnGuiDonXinNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuiDonXinNghi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuiDonXinNghi.ForeColor = System.Drawing.Color.Black;
-            this.btnGuiDonXinNghi.Location = new System.Drawing.Point(368, 464);
-            this.btnGuiDonXinNghi.Name = "btnGuiDonXinNghi";
-            this.btnGuiDonXinNghi.Size = new System.Drawing.Size(103, 49);
-            this.btnGuiDonXinNghi.TabIndex = 85;
-            this.btnGuiDonXinNghi.Text = "Submit";
-            this.btnGuiDonXinNghi.TextColor = System.Drawing.Color.Black;
-            this.btnGuiDonXinNghi.UseVisualStyleBackColor = false;
-            this.btnGuiDonXinNghi.Click += new System.EventHandler(this.btnGuiDonXinNghi_Click);
-            // 
-            // lblTitleNghiPhep
-            // 
-            this.lblTitleNghiPhep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(150)))));
-            this.lblTitleNghiPhep.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(150)))));
-            this.lblTitleNghiPhep.BorderColor = System.Drawing.Color.Peru;
-            this.lblTitleNghiPhep.BorderRadius = 30;
-            this.lblTitleNghiPhep.BorderSize = 0;
-            this.lblTitleNghiPhep.FlatAppearance.BorderSize = 0;
-            this.lblTitleNghiPhep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTitleNghiPhep.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleNghiPhep.ForeColor = System.Drawing.Color.White;
-            this.lblTitleNghiPhep.Location = new System.Drawing.Point(88, 16);
-            this.lblTitleNghiPhep.Name = "lblTitleNghiPhep";
-            this.lblTitleNghiPhep.Size = new System.Drawing.Size(377, 51);
-            this.lblTitleNghiPhep.TabIndex = 79;
-            this.lblTitleNghiPhep.Text = "Đơn xin nghỉ";
-            this.lblTitleNghiPhep.TextColor = System.Drawing.Color.White;
-            this.lblTitleNghiPhep.UseVisualStyleBackColor = false;
-            // 
-            // vbLabel3
-            // 
-            this.vbLabel3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel3.BorderRadius = 20;
-            this.vbLabel3.BorderSize = 0;
-            this.vbLabel3.FlatAppearance.BorderSize = 0;
-            this.vbLabel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel3.ForeColor = System.Drawing.Color.White;
-            this.vbLabel3.Location = new System.Drawing.Point(22, 378);
-            this.vbLabel3.Name = "vbLabel3";
-            this.vbLabel3.Size = new System.Drawing.Size(182, 40);
-            this.vbLabel3.TabIndex = 0;
-            this.vbLabel3.Text = "Lương nhận:";
-            this.vbLabel3.TextColor = System.Drawing.Color.White;
-            this.vbLabel3.UseVisualStyleBackColor = false;
-            // 
-            // vbLabel11
-            // 
-            this.vbLabel11.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel11.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel11.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel11.BorderRadius = 20;
-            this.vbLabel11.BorderSize = 0;
-            this.vbLabel11.FlatAppearance.BorderSize = 0;
-            this.vbLabel11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel11.ForeColor = System.Drawing.Color.White;
-            this.vbLabel11.Location = new System.Drawing.Point(27, 255);
-            this.vbLabel11.Name = "vbLabel11";
-            this.vbLabel11.Size = new System.Drawing.Size(177, 40);
-            this.vbLabel11.TabIndex = 65;
-            this.vbLabel11.Text = "Lương phạt";
-            this.vbLabel11.TextColor = System.Drawing.Color.White;
-            this.vbLabel11.UseVisualStyleBackColor = false;
-            // 
-            // vbLabel9
-            // 
-            this.vbLabel9.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel9.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel9.BorderRadius = 20;
-            this.vbLabel9.BorderSize = 0;
-            this.vbLabel9.FlatAppearance.BorderSize = 0;
-            this.vbLabel9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel9.ForeColor = System.Drawing.Color.White;
-            this.vbLabel9.Location = new System.Drawing.Point(22, 20);
-            this.vbLabel9.Name = "vbLabel9";
-            this.vbLabel9.Size = new System.Drawing.Size(182, 40);
-            this.vbLabel9.TabIndex = 63;
-            this.vbLabel9.Text = "Lương cơ bản";
-            this.vbLabel9.TextColor = System.Drawing.Color.White;
-            this.vbLabel9.UseVisualStyleBackColor = false;
-            // 
-            // vbLabel12
-            // 
-            this.vbLabel12.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel12.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel12.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel12.BorderRadius = 20;
-            this.vbLabel12.BorderSize = 0;
-            this.vbLabel12.FlatAppearance.BorderSize = 0;
-            this.vbLabel12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel12.ForeColor = System.Drawing.Color.White;
-            this.vbLabel12.Location = new System.Drawing.Point(22, 136);
-            this.vbLabel12.Name = "vbLabel12";
-            this.vbLabel12.Size = new System.Drawing.Size(182, 40);
-            this.vbLabel12.TabIndex = 66;
-            this.vbLabel12.Text = "Lương thưởng ";
-            this.vbLabel12.TextColor = System.Drawing.Color.White;
-            this.vbLabel12.UseVisualStyleBackColor = false;
-            // 
-            // vbLabel2
-            // 
-            this.vbLabel2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel2.BorderRadius = 20;
-            this.vbLabel2.BorderSize = 0;
-            this.vbLabel2.FlatAppearance.BorderSize = 0;
-            this.vbLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbLabel2.ForeColor = System.Drawing.Color.White;
-            this.vbLabel2.Location = new System.Drawing.Point(45, 49);
-            this.vbLabel2.Name = "vbLabel2";
-            this.vbLabel2.Size = new System.Drawing.Size(364, 67);
-            this.vbLabel2.TabIndex = 1;
-            this.vbLabel2.Text = "Hóa đơn tiền lương";
-            this.vbLabel2.TextColor = System.Drawing.Color.White;
-            this.vbLabel2.UseVisualStyleBackColor = false;
-            // 
             // lblNgsinh
             // 
             this.lblNgsinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
@@ -1093,42 +1131,6 @@
             this.lblDiaChi.TextColor = System.Drawing.Color.White;
             this.lblDiaChi.UseVisualStyleBackColor = false;
             // 
-            // lblMaNV
-            // 
-            this.lblMaNV.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblMaNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblMaNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblMaNV.BorderRadius = 20;
-            this.lblMaNV.BorderSize = 0;
-            this.lblMaNV.FlatAppearance.BorderSize = 0;
-            this.lblMaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblMaNV.ForeColor = System.Drawing.Color.White;
-            this.lblMaNV.Location = new System.Drawing.Point(253, 21);
-            this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(150, 40);
-            this.lblMaNV.TabIndex = 14;
-            this.lblMaNV.Text = "Mã";
-            this.lblMaNV.TextColor = System.Drawing.Color.White;
-            this.lblMaNV.UseVisualStyleBackColor = false;
-            // 
-            // lblTenNV
-            // 
-            this.lblTenNV.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTenNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTenNV.BorderRadius = 20;
-            this.lblTenNV.BorderSize = 0;
-            this.lblTenNV.FlatAppearance.BorderSize = 0;
-            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTenNV.ForeColor = System.Drawing.Color.White;
-            this.lblTenNV.Location = new System.Drawing.Point(6, 21);
-            this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(228, 40);
-            this.lblTenNV.TabIndex = 4;
-            this.lblTenNV.Text = "Tên";
-            this.lblTenNV.TextColor = System.Drawing.Color.White;
-            this.lblTenNV.UseVisualStyleBackColor = false;
-            // 
             // FProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1155,6 +1157,8 @@
             this.panel8.PerformLayout();
             this.pnlLuong.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnlThongtinluong.ResumeLayout(false);
+            this.pnlThongtinluong.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1167,8 +1171,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.pnlThongtinluong.ResumeLayout(false);
-            this.pnlThongtinluong.PerformLayout();
             this.ResumeLayout(false);
 
         }
