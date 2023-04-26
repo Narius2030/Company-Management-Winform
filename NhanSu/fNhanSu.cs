@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using QLCongTy.MainMenu;
 
 namespace QLCongTy.NhanSu
 {
@@ -90,8 +91,11 @@ namespace QLCongTy.NhanSu
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            nsDao.Them(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
+            if (ns.CheckThongTin())
+            {
+                nsDao.Them(ns);
+                gvNhanSu.DataSource = nsDao.DanhSach();
+            }
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
@@ -104,8 +108,11 @@ namespace QLCongTy.NhanSu
         private void btnSua_Click_1(object sender, EventArgs e)
         {
             ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
-            nsDao.Sua(ns);
-            gvNhanSu.DataSource = nsDao.DanhSach();
+            if (ns.CheckThongTin())
+            {
+                nsDao.Sua(ns);
+                gvNhanSu.DataSource = nsDao.DanhSach();
+            }
         }
         private void btnLoc_Click(object sender, EventArgs e)
         {

@@ -1,13 +1,17 @@
-﻿using System;
+﻿using QLCongTy.MainMenu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace QLCongTy.NhanSu
 {
     public class Nhansu
     {
+        KiemTraThongTin kttt = new KiemTraThongTin();
+
         private string maNV;
         private string hoDem;
         private string ten;
@@ -82,6 +86,31 @@ namespace QLCongTy.NhanSu
             get { return this.email; }
         }
 
-        public string Trinhdo { get => trinhdo; set => trinhdo = value; }
+        public string Trinhdo
+        {
+            get
+            {
+                return trinhdo;
+            }
+            set
+            {
+                trinhdo = value;
+            }
+        }
+
+        public bool CheckThongTin()
+        {
+            if (!kttt.CheckSdt(SDT))
+            {
+                MessageBox.Show("SDT không hợp lệ");
+                return false;
+            }
+            if (!kttt.CheckEmail(Email))
+            {
+                MessageBox.Show("Email không hợp lệ");
+                return false;
+            }
+            return true;
+        }
     }
 }
