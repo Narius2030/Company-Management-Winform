@@ -104,5 +104,10 @@ namespace QLCongTy
         {
 
         }
+
+        private void tpCheckSang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
