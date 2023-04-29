@@ -47,6 +47,7 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.picHome = new FontAwesome.Sharp.IconPictureBox();
             this.pnlAccount = new System.Windows.Forms.Panel();
+            this.lblTenNV = new QLCongTy.VBLabel();
             this.picName = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
@@ -60,12 +61,11 @@
             this.btnShowPW = new FontAwesome.Sharp.IconButton();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
+            this.txtMatKhau = new QLCongTy.CTTextBox();
+            this.txtTaiKhoan = new QLCongTy.CTTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.picAccount = new FontAwesome.Sharp.IconPictureBox();
             this.tmCurrentTime = new System.Windows.Forms.Timer(this.components);
-            this.txtMatKhau = new QLCongTy.CTTextBox();
-            this.txtTaiKhoan = new QLCongTy.CTTextBox();
-            this.lblTenNV = new QLCongTy.VBLabel();
             this.pnlMenu.SuspendLayout();
             this.pnlDiemDanh.SuspendLayout();
             this.pnlNhanSu.SuspendLayout();
@@ -406,6 +406,25 @@
             this.pnlAccount.Size = new System.Drawing.Size(277, 61);
             this.pnlAccount.TabIndex = 1;
             // 
+            // lblTenNV
+            // 
+            this.lblTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.lblTenNV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.lblTenNV.BorderRadius = 8;
+            this.lblTenNV.BorderSize = 0;
+            this.lblTenNV.FlatAppearance.BorderSize = 0;
+            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNV.ForeColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.Location = new System.Drawing.Point(66, 9);
+            this.lblTenNV.Name = "lblTenNV";
+            this.lblTenNV.Size = new System.Drawing.Size(196, 43);
+            this.lblTenNV.TabIndex = 9;
+            this.lblTenNV.Text = "Tên Nhân Viên";
+            this.lblTenNV.TextColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.UseVisualStyleBackColor = false;
+            // 
             // picName
             // 
             this.picName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
@@ -580,37 +599,6 @@
             this.lblTaiKhoan.TabIndex = 12;
             this.lblTaiKhoan.Text = "Tài Khoản:";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(419, 261);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(121, 50);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // picAccount
-            // 
-            this.picAccount.BackColor = System.Drawing.Color.White;
-            this.picAccount.ForeColor = System.Drawing.Color.Black;
-            this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.picAccount.IconColor = System.Drawing.Color.Black;
-            this.picAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picAccount.IconSize = 139;
-            this.picAccount.Location = new System.Drawing.Point(22, 94);
-            this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(139, 150);
-            this.picAccount.TabIndex = 0;
-            this.picAccount.TabStop = false;
-            // 
-            // tmCurrentTime
-            // 
-            this.tmCurrentTime.Tick += new System.EventHandler(this.tmCurrentTime_Tick);
-            // 
             // txtMatKhau
             // 
             this.txtMatKhau.BackColor = System.Drawing.Color.White;
@@ -645,24 +633,36 @@
             this.txtTaiKhoan.Texts = "";
             this.txtTaiKhoan.UnderlinedStyle = false;
             // 
-            // lblTenNV
+            // btnLogin
             // 
-            this.lblTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
-            this.lblTenNV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
-            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTenNV.BorderRadius = 8;
-            this.lblTenNV.BorderSize = 0;
-            this.lblTenNV.FlatAppearance.BorderSize = 0;
-            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNV.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTenNV.Location = new System.Drawing.Point(66, 9);
-            this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(196, 43);
-            this.lblTenNV.TabIndex = 9;
-            this.lblTenNV.Text = "Tên Nhân Viên";
-            this.lblTenNV.TextColor = System.Drawing.Color.Transparent;
-            this.lblTenNV.UseVisualStyleBackColor = false;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(419, 261);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(121, 50);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // picAccount
+            // 
+            this.picAccount.BackColor = System.Drawing.Color.White;
+            this.picAccount.ForeColor = System.Drawing.Color.Black;
+            this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.picAccount.IconColor = System.Drawing.Color.Black;
+            this.picAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picAccount.IconSize = 139;
+            this.picAccount.Location = new System.Drawing.Point(22, 94);
+            this.picAccount.Name = "picAccount";
+            this.picAccount.Size = new System.Drawing.Size(139, 150);
+            this.picAccount.TabIndex = 0;
+            this.picAccount.TabStop = false;
+            // 
+            // tmCurrentTime
+            // 
+            this.tmCurrentTime.Tick += new System.EventHandler(this.tmCurrentTime_Tick);
             // 
             // fMainMenu
             // 

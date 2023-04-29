@@ -160,9 +160,9 @@ namespace QLCongTy
         {
             var luong = pfd.LayThongTinLuong(lblMaNV.Text);
             int i = 0;
-            foreach (var control in pnlThongtinluong.Controls.OfType<TextBox>())
+            foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
             {
-                control.Text = luong[i].ToString();
+                control.Texts = luong[i].ToString();
                 i++;
             }
         }

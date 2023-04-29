@@ -336,6 +336,7 @@ namespace QLCongTy
             lblTitleChildForm.Text = "Đăng nhập";
             Account = false;
             pnlLogin.Visible = true;
+            // Cần chỉnh sửa;
             txtTaiKhoan.Texts = "";
             txtMatKhau.Texts = "";
             pnlAccount.Visible = false;
