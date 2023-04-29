@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTTDuAn = new System.Windows.Forms.Panel();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.lblTienDoDA = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
@@ -44,35 +43,34 @@
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.txtMaDA = new System.Windows.Forms.TextBox();
             this.txtTenDA = new System.Windows.Forms.TextBox();
-            this.lblTitle = new QLCongTy.VBLabel();
             this.btnAccept = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.lblTitle = new QLCongTy.VBLabel();
+            this.pnlTTDuAn.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTTDuAn
             // 
-            this.panel1.Controls.Add(this.dtpNgayBatDau);
-            this.panel1.Controls.Add(this.lblTienDoDA);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cboTrangThai);
-            this.panel1.Controls.Add(this.txtMaTruongDA);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.txtMaPB);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.dtpNgayKetThuc);
-            this.panel1.Controls.Add(this.txtMaDA);
-            this.panel1.Controls.Add(this.txtTenDA);
-            this.panel1.Location = new System.Drawing.Point(24, 97);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(997, 331);
-            this.panel1.TabIndex = 0;
+            this.pnlTTDuAn.Controls.Add(this.dtpNgayBatDau);
+            this.pnlTTDuAn.Controls.Add(this.label10);
+            this.pnlTTDuAn.Controls.Add(this.label2);
+            this.pnlTTDuAn.Controls.Add(this.cboTrangThai);
+            this.pnlTTDuAn.Controls.Add(this.txtMaTruongDA);
+            this.pnlTTDuAn.Controls.Add(this.label1);
+            this.pnlTTDuAn.Controls.Add(this.label4);
+            this.pnlTTDuAn.Controls.Add(this.label11);
+            this.pnlTTDuAn.Controls.Add(this.txtMaPB);
+            this.pnlTTDuAn.Controls.Add(this.label3);
+            this.pnlTTDuAn.Controls.Add(this.label12);
+            this.pnlTTDuAn.Controls.Add(this.dtpNgayKetThuc);
+            this.pnlTTDuAn.Controls.Add(this.txtMaDA);
+            this.pnlTTDuAn.Controls.Add(this.txtTenDA);
+            this.pnlTTDuAn.Location = new System.Drawing.Point(24, 97);
+            this.pnlTTDuAn.Name = "pnlTTDuAn";
+            this.pnlTTDuAn.Size = new System.Drawing.Size(997, 331);
+            this.pnlTTDuAn.TabIndex = 0;
             // 
             // dtpNgayBatDau
             // 
@@ -81,17 +79,6 @@
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(195, 30);
             this.dtpNgayBatDau.TabIndex = 94;
-            // 
-            // lblTienDoDA
-            // 
-            this.lblTienDoDA.AutoSize = true;
-            this.lblTienDoDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienDoDA.ForeColor = System.Drawing.Color.Black;
-            this.lblTienDoDA.Location = new System.Drawing.Point(59, 228);
-            this.lblTienDoDA.Name = "lblTienDoDA";
-            this.lblTienDoDA.Size = new System.Drawing.Size(131, 18);
-            this.lblTienDoDA.TabIndex = 98;
-            this.lblTienDoDA.Text = "TIẾN ĐỘ DỰ ÁN";
             // 
             // label10
             // 
@@ -232,24 +219,6 @@
             this.txtTenDA.Size = new System.Drawing.Size(197, 30);
             this.txtTenDA.TabIndex = 89;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTitle.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTitle.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTitle.BorderRadius = 8;
-            this.lblTitle.BorderSize = 0;
-            this.lblTitle.FlatAppearance.BorderSize = 0;
-            this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(116, 12);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(138, 33);
-            this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Title";
-            this.lblTitle.TextColor = System.Drawing.Color.White;
-            this.lblTitle.UseVisualStyleBackColor = false;
-            // 
             // btnAccept
             // 
             this.btnAccept.IconChar = FontAwesome.Sharp.IconChar.Check;
@@ -288,18 +257,36 @@
             this.panel2.Size = new System.Drawing.Size(261, 59);
             this.panel2.TabIndex = 6;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTitle.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTitle.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.lblTitle.BorderRadius = 8;
+            this.lblTitle.BorderSize = 0;
+            this.lblTitle.FlatAppearance.BorderSize = 0;
+            this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(116, 12);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(138, 33);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "Title";
+            this.lblTitle.TextColor = System.Drawing.Color.White;
+            this.lblTitle.UseVisualStyleBackColor = false;
+            // 
             // TaoDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 463);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTTDuAn);
             this.Name = "TaoDuAn";
             this.Text = "TaoDuAn";
             this.Load += new System.EventHandler(this.TaoDuAn_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTTDuAn.ResumeLayout(false);
+            this.pnlTTDuAn.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -307,9 +294,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTTDuAn;
         private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
-        private System.Windows.Forms.Label lblTienDoDA;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboTrangThai;

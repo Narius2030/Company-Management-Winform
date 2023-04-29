@@ -126,7 +126,7 @@ namespace QLCongTy.QLDuAn
         {
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
-                TaoDuAn tda = new TaoDuAn();
+                TaoDuAn tda = new TaoDuAn(da, btnThem.Text);
                 tda.Show();
             }
             else
@@ -143,8 +143,15 @@ namespace QLCongTy.QLDuAn
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //ShowPanel(pnlEdit);
-            //lblTitle.Text = "Sửa dự án";
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                TaoDuAn tda = new TaoDuAn(da, btnXoa.Text);
+                tda.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không thuộc thẩm quyền");
+            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
