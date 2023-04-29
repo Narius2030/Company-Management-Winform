@@ -908,7 +908,7 @@
             // 
             this.pnlBarchart.BackColor = System.Drawing.Color.White;
             this.pnlBarchart.Controls.Add(this.chartLayLuongThang);
-            this.pnlBarchart.Location = new System.Drawing.Point(0, 205);
+            this.pnlBarchart.Location = new System.Drawing.Point(3, 205);
             this.pnlBarchart.Name = "pnlBarchart";
             this.pnlBarchart.Size = new System.Drawing.Size(861, 540);
             this.pnlBarchart.TabIndex = 1;

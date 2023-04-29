@@ -13,19 +13,23 @@ namespace QLCongTy.QLDuAn
         private string congviec;
         private DateTime ngaybd;
         private DateTime ngaykt;
+        private string trinhdo;
 
+        public PCNhanLuc() { }
         public PCNhanLuc(string mada, string manv, string congviec, DateTime ngaybd, DateTime ngaykt)
         {
-            this.mada = mada;
-            this.manv = manv;
-            this.congviec = congviec;
-            this.ngaybd = ngaybd;
-            this.ngaykt = ngaykt;
+            this.Mada = mada;
+            this.Manv = manv;
+            this.Congviec = congviec;
+            this.Ngaybd = ngaybd;
+            this.Ngaykt = ngaykt;
         }
-        public string Mada { get { return mada; } }
-        public string Manv { get { return manv; } }
-        public string Congviec { get { return congviec; } }
-        public DateTime Ngaybd { get { return ngaybd; } }
-        public DateTime Ngaykt { get { return ngaykt; } }
+
+        public string Mada { get => mada; set => mada = value; }
+        public string Manv { get => manv; set => manv = value; }
+        public string Congviec { get => congviec; set => congviec = value; }
+        public DateTime Ngaybd { get => ngaybd; set => ngaybd = value; }
+        public DateTime Ngaykt { get => ngaykt; set => ngaykt = value; }
+        public string Trinhdo { get => trinhdo; set => trinhdo = value; }
     }
 }

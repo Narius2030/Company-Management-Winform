@@ -139,6 +139,13 @@
       <DependentUpon>fVonDieuHanh.cs</DependentUpon>
     </Compile>
     <Compile Include="QLDuAn\PCNhanLuc.cs" />
+    <Compile Include="QLDuAn\TaoDuAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDuAn\TaoDuAn.Designer.cs">
+      <DependentUpon>TaoDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDuAn\TienDoDAO.cs" />
     <Compile Include="QLPhongBan\FQLNhanVienPB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLDuAn\fVonDieuHanh.resx">
       <DependentUpon>fVonDieuHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDuAn\TaoDuAn.resx">
+      <DependentUpon>TaoDuAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLPhongBan\FQLNhanVienPB.resx">
       <DependentUpon>FQLNhanVienPB.cs</DependentUpon>

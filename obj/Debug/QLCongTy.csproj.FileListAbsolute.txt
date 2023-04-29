@@ -384,3 +384,4 @@ D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CoreCompileInputs.c
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CopyComplete
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.pdb
+D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.QLDuAn.TaoDuAn.resources
