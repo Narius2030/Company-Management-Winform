@@ -72,7 +72,7 @@ namespace QLCongTy.TienLuong
             Tienluong tl = new Tienluong();
 
             //Thêm lương cho các nhân viên theo tháng và năm mới nhất
-            for (int i=0; i < dtns.Rows.Count-1; i++)
+            for (int i=0; i < dtns.Rows.Count; i++)
             {
                 TinhTienPhat(tl, dtns.Rows[i]["MaNV"].ToString());
                 TinhTienThuong(tl, dtns.Rows[i]["MaNV"].ToString());

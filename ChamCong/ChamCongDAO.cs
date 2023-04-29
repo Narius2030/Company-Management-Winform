@@ -51,7 +51,7 @@ namespace QLCongTy.ChamCong
                 Chamcong cc = new Chamcong();
 
                 //Thêm chấm công cho các nhân viên theo tháng và năm mới nhất
-                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     cc.MaNV = dt.Rows[i]["MaNV"].ToString();
                     cc.Thang = month;
