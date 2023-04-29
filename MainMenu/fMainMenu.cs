@@ -257,6 +257,7 @@ namespace QLCongTy
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnShowPW_Click(object sender, EventArgs e)
         {
             if (txtMatKhau.Password)

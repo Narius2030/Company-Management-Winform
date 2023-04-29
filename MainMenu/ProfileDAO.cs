@@ -16,7 +16,7 @@ namespace QLCongTy
         DBConnection db = new DBConnection();
         public DataTable GetDuAn(Nhansu nv)
         {
-            string sqlStr = string.Format("select * from PHANCONGDUAN where MaDA = '{0}'", nv.MaNV);
+            string sqlStr = string.Format("select * from PHANCONGDUAN where MaNV = '{0}'", nv.MaNV);
             return db.FormLoad(sqlStr);
         }
 

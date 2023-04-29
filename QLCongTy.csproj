@@ -61,6 +61,9 @@
   <ItemGroup>
     <Compile Include="ChamCong\ThongTinXinNghiDAO.cs" />
     <Compile Include="ChamCong\ThongTinXinNghi.cs" />
+    <Compile Include="CTDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Custome_control\Custom_Datagridview.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -263,6 +266,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chamcong %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-calendar-icon-16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteCalendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

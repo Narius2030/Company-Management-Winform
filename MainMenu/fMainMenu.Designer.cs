@@ -57,12 +57,12 @@
             this.pnlShadow = new System.Windows.Forms.Panel();
             this.picCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.txtMatKhau = new QLCongTy.CTTextBox();
+            this.txtTaiKhoan = new QLCongTy.CTTextBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnShowPW = new FontAwesome.Sharp.IconButton();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
-            this.txtMatKhau = new QLCongTy.CTTextBox();
-            this.txtTaiKhoan = new QLCongTy.CTTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.picAccount = new FontAwesome.Sharp.IconPictureBox();
             this.tmCurrentTime = new System.Windows.Forms.Timer(this.components);
@@ -641,7 +641,7 @@
             this.btnLogin.Location = new System.Drawing.Point(419, 261);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(121, 50);
-            this.btnLogin.TabIndex = 6;
+            this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -712,6 +712,8 @@
         private FontAwesome.Sharp.IconButton btnMinimize;
         private System.Windows.Forms.Panel pnlLogin;
         private FontAwesome.Sharp.IconPictureBox picAccount;
+        private CTTextBox txtMatKhau;
+        private CTTextBox txtTaiKhoan;
         private System.Windows.Forms.Button btnLogin;
         private FontAwesome.Sharp.IconButton btnShowPW;
         private System.Windows.Forms.Panel pnlAccount;
@@ -732,8 +734,6 @@
         private FontAwesome.Sharp.IconButton btnCheckInOut;
         private FontAwesome.Sharp.IconButton btnDangXuat;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
-        private CTTextBox txtMatKhau;
-        private CTTextBox txtTaiKhoan;
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.Label lblTaiKhoan;
         private VBLabel lblTenNV;

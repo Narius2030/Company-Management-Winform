@@ -16,39 +16,44 @@ namespace QLCongTy
         CheckInOutDAO ciod = new CheckInOutDAO();
         CheckInOut cio = new CheckInOut();
         ChamCongDAO ccd = new ChamCongDAO();
+
         public fCheckin_Checkout()
         {
             InitializeComponent();
         }
+
         private void fCheckin_Checkout_Load(object sender, EventArgs e)
         {
             ReLoad();
-            txtManvsang.Text = fMainMenu.MaNV;
-            txtManvchieu.Text = fMainMenu.MaNV;
-            txtMacvsang.Text = fMainMenu.MaCV;
-            txtMacvchieu.Text = fMainMenu.MaCV;
+            txtManvsang.Texts = fMainMenu.MaNV;
+            txtManvchieu.Texts = fMainMenu.MaNV;
+            txtMacvsang.Texts = fMainMenu.MaCV;
+            txtMacvchieu.Texts = fMainMenu.MaCV;
         }
+
         public void ReLoad()
         {
             gvChecksang.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
             gvCheckchieu.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
         }
+
         private void btnSubmitsang_Click(object sender, EventArgs e)
         {
             ConvertCheck(cio);
-            cio.MaNV = txtManvsang.Text;
-            cio.Macv = txtMacvsang.Text;
-            cio.Ngay = dtpCheckInsang.Value.Date;
+            cio.MaNV = txtManvsang.Texts;
+            cio.Macv = txtMacvsang.Texts;
+            cio.Ngay = dtpCheckIn.Value.Date;
             ciod.SubmitSang(cio);
             ReLoad();
         }
+
         private void btnSubmitchieu_Click(object sender, EventArgs e)
         {
             //Điền thông tin điểm danh cho cio
-            cio.MaNV = txtManvchieu.Text;
-            cio.Ngay = dtpCheckOutchieu.Value.Date;
+            cio.MaNV = txtManvchieu.Texts;
+            cio.Ngay = dtpCheckOut.Value.Date;
             
-            ciod.DanhGiaCV(txtPhanTram.Text, lblMaDa.Text, txtManvchieu.Text);
+            ciod.DanhGiaCV(txtPhanTram.Texts, txtMaDa.Texts, txtManvchieu.Texts);
             ConvertCheck(cio);
             ciod.SubmitChieu(cio);
             ReLoad();
@@ -61,6 +66,7 @@ namespace QLCongTy
             //Tính số ngày đi làm sau khi checkin_out
             CheckNgayNghi(cio);
         }
+
         public void ConvertCheck(CheckInOut cio)
         {
             if (cbCheckInsang.Checked == true)
@@ -72,10 +78,11 @@ namespace QLCongTy
                 cio.CheckOutChieu = 1;
             }
         }
+
         public void CheckNgayNghi(CheckInOut cio)
         {
             //Kiểm tra nhân viên đã check đủ 2 buổi không
-            bool check = ciod.CheckDiLam(txtManvchieu.Text, dtpCheckOutchieu.Value);
+            bool check = ciod.CheckDiLam(txtManvchieu.Texts, dtpCheckOut.Value);
             if (!check)
             {
                 ciod.UpdateNgDiLam(cio.MaNV, cio.Ngay, 0);
@@ -84,30 +91,18 @@ namespace QLCongTy
             {
                 ciod.UpdateNgDiLam(cio.MaNV, cio.Ngay, 1);
             }
+        } 
+
+        private void gvCheckchieu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow rows = gvCheckchieu.SelectedRows[0];
+            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString();
         }
-        private void gvChecksang_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void gvChecksang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow rows = gvChecksang.SelectedRows[0];
-            lblMaDa.Text = rows.Cells["MaDA"].Value.ToString();
-        }
-        private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow r = gvCheckchieu.SelectedRows[0];
-        }
-
-        private void gvChecksang1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tpCheckchieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tpCheckSang_Click(object sender, EventArgs e)
-        {
-
+            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString();
         }
     }
 }
