@@ -36,19 +36,20 @@
             this.textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textbox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox.Location = new System.Drawing.Point(0, 0);
+            this.textbox.Location = new System.Drawing.Point(7, 7);
             this.textbox.Name = "textbox";
-            this.textbox.Size = new System.Drawing.Size(241, 27);
+            this.textbox.Size = new System.Drawing.Size(227, 27);
             this.textbox.TabIndex = 0;
             // 
             // CTTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.textbox);
             this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CTTextBox";
+            this.Padding = new System.Windows.Forms.Padding(7);
             this.Size = new System.Drawing.Size(241, 35);
             this.Load += new System.EventHandler(this.CTTextBox_Load);
             this.ResumeLayout(false);

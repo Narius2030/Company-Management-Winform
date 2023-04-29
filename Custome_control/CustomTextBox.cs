@@ -22,6 +22,8 @@ namespace QLCongTy
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
         private bool underlinedStyle = false;
+        //private bool password = false;
+        //private bool multiline = false;
 
         //Properties
         public Color BorderColor 
@@ -61,6 +63,86 @@ namespace QLCongTy
             }
         }
 
+        public bool Password
+        {
+            get
+            {
+                return textbox.UseSystemPasswordChar;
+            }
+            set
+            {
+                textbox.UseSystemPasswordChar = value; 
+                this.Invalidate();
+            }
+        }
+
+        public bool Multiline
+        {
+            get
+            {
+                return textbox.Multiline;
+            }
+            set
+            {
+                textbox.Multiline = value;
+            }
+        }
+
+        public override Color BackColor
+        {
+            get
+            {
+                return base.BackColor;
+            }
+            set
+            {
+                base.BackColor = value;
+                textbox.BackColor = value;
+            }
+        }
+
+        public override Color ForeColor
+        {
+            get
+            {
+                return base.ForeColor;
+            }
+            set
+            {
+                base.ForeColor = value;
+                textbox.ForeColor = value;
+            }
+        }
+
+        public override Font Font
+        {
+            get
+            {
+                return base.Font;
+            }
+            set
+            {
+                base.Font = value;
+                textbox.Font = value;
+                if (this.DesignMode)
+                {
+                    UpdateControlHeight();
+                }
+            }
+        }
+
+        public string Texts
+        {
+            get
+            {
+                return textbox.Text;
+            }
+            set
+            {
+                textbox.Text = value;
+            }
+        }
+
         //Overide methods
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -97,6 +179,7 @@ namespace QLCongTy
             base.OnLoad(e);
             UpdateControlHeight();
         }
+
         //private mothods
         private void UpdateControlHeight()
         {

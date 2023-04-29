@@ -69,14 +69,10 @@
             this.pnlLuong = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlThongtinluong = new System.Windows.Forms.Panel();
-            this.txtLuongcthuc = new System.Windows.Forms.TextBox();
-            this.txtLuongthuong = new System.Windows.Forms.TextBox();
-            this.txtLuongphat = new System.Windows.Forms.TextBox();
-            this.txtLuongcb = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtLuongcb = new QLCongTy.CTTextBox();
+            this.txtLuongthuong = new QLCongTy.CTTextBox();
+            this.txtLuongphat = new QLCongTy.CTTextBox();
+            this.txtLuongcthuc = new QLCongTy.CTTextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.vbLabel3 = new QLCongTy.VBLabel();
             this.vbLabel11 = new QLCongTy.VBLabel();
@@ -663,14 +659,10 @@
             // pnlThongtinluong
             // 
             this.pnlThongtinluong.BackColor = System.Drawing.Color.White;
-            this.pnlThongtinluong.Controls.Add(this.txtLuongcthuc);
+            this.pnlThongtinluong.Controls.Add(this.txtLuongcb);
             this.pnlThongtinluong.Controls.Add(this.txtLuongthuong);
             this.pnlThongtinluong.Controls.Add(this.txtLuongphat);
-            this.pnlThongtinluong.Controls.Add(this.txtLuongcb);
-            this.pnlThongtinluong.Controls.Add(this.panel12);
-            this.pnlThongtinluong.Controls.Add(this.panel11);
-            this.pnlThongtinluong.Controls.Add(this.panel10);
-            this.pnlThongtinluong.Controls.Add(this.panel9);
+            this.pnlThongtinluong.Controls.Add(this.txtLuongcthuc);
             this.pnlThongtinluong.Controls.Add(this.panel7);
             this.pnlThongtinluong.Controls.Add(this.vbLabel3);
             this.pnlThongtinluong.Controls.Add(this.vbLabel11);
@@ -682,78 +674,73 @@
             this.pnlThongtinluong.Size = new System.Drawing.Size(515, 461);
             this.pnlThongtinluong.TabIndex = 68;
             // 
-            // txtLuongcthuc
+            // txtLuongcb
             // 
-            this.txtLuongcthuc.BackColor = System.Drawing.Color.White;
-            this.txtLuongcthuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongcthuc.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongcthuc.Location = new System.Drawing.Point(239, 24);
-            this.txtLuongcthuc.Name = "txtLuongcthuc";
-            this.txtLuongcthuc.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongcthuc.TabIndex = 78;
+            this.txtLuongcb.BackColor = System.Drawing.Color.White;
+            this.txtLuongcb.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtLuongcb.BorderSize = 2;
+            this.txtLuongcb.ForeColor = System.Drawing.Color.Black;
+            this.txtLuongcb.Location = new System.Drawing.Point(222, 20);
+            this.txtLuongcb.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuongcb.Multiline = false;
+            this.txtLuongcb.Name = "txtLuongcb";
+            this.txtLuongcb.Padding = new System.Windows.Forms.Padding(7);
+            this.txtLuongcb.Password = false;
+            this.txtLuongcb.Size = new System.Drawing.Size(185, 41);
+            this.txtLuongcb.TabIndex = 81;
+            this.txtLuongcb.Texts = "";
+            this.txtLuongcb.UnderlinedStyle = false;
             // 
             // txtLuongthuong
             // 
             this.txtLuongthuong.BackColor = System.Drawing.Color.White;
-            this.txtLuongthuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongthuong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongthuong.Location = new System.Drawing.Point(239, 147);
+            this.txtLuongthuong.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtLuongthuong.BorderSize = 2;
+            this.txtLuongthuong.ForeColor = System.Drawing.Color.Black;
+            this.txtLuongthuong.Location = new System.Drawing.Point(222, 136);
+            this.txtLuongthuong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuongthuong.Multiline = false;
             this.txtLuongthuong.Name = "txtLuongthuong";
-            this.txtLuongthuong.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongthuong.TabIndex = 77;
+            this.txtLuongthuong.Padding = new System.Windows.Forms.Padding(7);
+            this.txtLuongthuong.Password = false;
+            this.txtLuongthuong.Size = new System.Drawing.Size(189, 41);
+            this.txtLuongthuong.TabIndex = 80;
+            this.txtLuongthuong.Texts = "";
+            this.txtLuongthuong.UnderlinedStyle = false;
             // 
             // txtLuongphat
             // 
             this.txtLuongphat.BackColor = System.Drawing.Color.White;
-            this.txtLuongphat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongphat.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongphat.Location = new System.Drawing.Point(239, 266);
+            this.txtLuongphat.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtLuongphat.BorderSize = 2;
+            this.txtLuongphat.ForeColor = System.Drawing.Color.Black;
+            this.txtLuongphat.Location = new System.Drawing.Point(222, 255);
+            this.txtLuongphat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuongphat.Multiline = false;
             this.txtLuongphat.Name = "txtLuongphat";
-            this.txtLuongphat.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongphat.TabIndex = 76;
+            this.txtLuongphat.Padding = new System.Windows.Forms.Padding(7);
+            this.txtLuongphat.Password = false;
+            this.txtLuongphat.Size = new System.Drawing.Size(189, 41);
+            this.txtLuongphat.TabIndex = 79;
+            this.txtLuongphat.Texts = "";
+            this.txtLuongphat.UnderlinedStyle = false;
             // 
-            // txtLuongcb
+            // txtLuongcthuc
             // 
-            this.txtLuongcb.BackColor = System.Drawing.Color.White;
-            this.txtLuongcb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLuongcb.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuongcb.Location = new System.Drawing.Point(239, 383);
-            this.txtLuongcb.Name = "txtLuongcb";
-            this.txtLuongcb.Size = new System.Drawing.Size(170, 24);
-            this.txtLuongcb.TabIndex = 72;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Location = new System.Drawing.Point(222, 416);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(204, 2);
-            this.panel12.TabIndex = 71;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel11.Location = new System.Drawing.Point(224, 54);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(204, 2);
-            this.panel11.TabIndex = 70;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel10.Location = new System.Drawing.Point(224, 293);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(204, 2);
-            this.panel10.TabIndex = 69;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(224, 174);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(204, 2);
-            this.panel9.TabIndex = 68;
+            this.txtLuongcthuc.BackColor = System.Drawing.Color.White;
+            this.txtLuongcthuc.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtLuongcthuc.BorderSize = 2;
+            this.txtLuongcthuc.ForeColor = System.Drawing.Color.Black;
+            this.txtLuongcthuc.Location = new System.Drawing.Point(222, 378);
+            this.txtLuongcthuc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuongcthuc.Multiline = false;
+            this.txtLuongcthuc.Name = "txtLuongcthuc";
+            this.txtLuongcthuc.Padding = new System.Windows.Forms.Padding(7);
+            this.txtLuongcthuc.Password = false;
+            this.txtLuongcthuc.Size = new System.Drawing.Size(189, 41);
+            this.txtLuongcthuc.TabIndex = 78;
+            this.txtLuongcthuc.Texts = "";
+            this.txtLuongcthuc.UnderlinedStyle = false;
             // 
             // panel7
             // 
@@ -1158,7 +1145,6 @@
             this.pnlLuong.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlThongtinluong.ResumeLayout(false);
-            this.pnlThongtinluong.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1236,18 +1222,14 @@
         private VBLabel lblTitleNghiPhep;
         private System.Windows.Forms.ComboBox cboLyDoNghi;
         private System.Windows.Forms.Panel pnlThongtinluong;
-        private System.Windows.Forms.TextBox txtLuongcthuc;
-        private System.Windows.Forms.TextBox txtLuongthuong;
-        private System.Windows.Forms.TextBox txtLuongphat;
-        private System.Windows.Forms.TextBox txtLuongcb;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
         private VBLabel vbLabel3;
         private VBLabel vbLabel11;
         private VBLabel vbLabel9;
         private VBLabel vbLabel12;
+        private CTTextBox txtLuongcthuc;
+        private CTTextBox txtLuongcb;
+        private CTTextBox txtLuongthuong;
+        private CTTextBox txtLuongphat;
     }
 }

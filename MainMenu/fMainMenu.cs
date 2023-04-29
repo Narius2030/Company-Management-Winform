@@ -35,8 +35,6 @@ namespace QLCongTy
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //Login
-            txtMatKhau.PasswordChar = '*';
         }
 
         private void fMainMenu_Load(object sender, EventArgs e)
@@ -207,8 +205,8 @@ namespace QLCongTy
             try
             {
                 //Dealing with Login
-                var infoAcc = dao.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
-                currentStaff = dao.GetInfo(txtTaiKhoan.Text);
+                var infoAcc = dao.DangNhap(txtTaiKhoan.Texts, txtMatKhau.Texts);
+                currentStaff = dao.GetInfo(txtTaiKhoan.Texts);
                 //Enable feature base on their ChucVu
                 if (infoAcc.Item3 == null)      //??????????????????????
                     return;
@@ -252,23 +250,24 @@ namespace QLCongTy
                 MaCV = infoAcc.Item3;
                 lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
                 HidePanel(pnlLogin);
-                lblAccount.Visible = true;
+                pnlAccount.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnShowPW_Click(object sender, EventArgs e)
         {
-            if (txtMatKhau.PasswordChar == '*')
+            if (txtMatKhau.Password)
             {
-                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.Password = false;
                 btnShowPW.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
             else
             {
-                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.Password = true;
                 btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
@@ -317,8 +316,6 @@ namespace QLCongTy
 
         private void btnDuyetDonXinNghi_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Check", "Hello", MessageBoxButtons.YesNo);
-
             OpenChildForm(new fDuyetDonXinNghi());
             HidePanel(pnlDiemDanh);
         }
@@ -328,7 +325,7 @@ namespace QLCongTy
             ActivateButton(sender, RGBColors.color5);
             OpenChildForm(new FProfile());
         }
-
+        
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             CustomizeDesing();
@@ -340,8 +337,9 @@ namespace QLCongTy
             lblTitleChildForm.Text = "Đăng nhập";
             Account = false;
             pnlLogin.Visible = true;
-            txtTaiKhoan.Clear();
-            txtMatKhau.Clear();
+            // Cần chỉnh sửa;
+            txtTaiKhoan.Texts = "";
+            txtMatKhau.Texts = "";
             pnlAccount.Visible = false;
         }
         #endregion
