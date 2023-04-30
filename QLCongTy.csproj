@@ -64,6 +64,9 @@
     <Compile Include="CTDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Custome_control\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Custome_control\Custom_Datagridview.cs">
       <SubType>Component</SubType>
     </Compile>

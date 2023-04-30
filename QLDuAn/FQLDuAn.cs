@@ -41,6 +41,7 @@ namespace QLCongTy.QLDuAn
             gvNhanLuc.DataSource = daDao.LayDanhSach("select MaNV, TrinhDo from TRANGTHAINHANVIEN");
             tabQLDA.Controls.Remove(tpPCDA);
             DoiTen();
+            GettxtFindMaDA();
         }
         public void ReLoadPCDuAn()
         {
@@ -156,7 +157,7 @@ namespace QLCongTy.QLDuAn
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gvQLDuAn.DataSource = daDao.TimKiem(txtFindMaDA.Text);
+            gvQLDuAn.DataSource = daDao.TimKiem(cboFindMaDA.SelectedValue.ToString());
         }
 
         private void btnPhanCong_Click(object sender, EventArgs e)
@@ -294,10 +295,16 @@ namespace QLCongTy.QLDuAn
             VeBDTienDoCN();
             VeBDTienDoDA();
         }
+        public void GettxtFindMaDA()
+        {
+            cboFindMaDA.DataSource = daDao.GetNameProd();
+            cboFindMaDA.DisplayMember = "TenDA";
+            cboFindMaDA.ValueMember = "MaDA";
+        }
 
         #region Timer cho Sidebar 
 
-        bool sidebarExpand = false;
+    bool sidebarExpand = false;
         private void tmShowTiendo_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -357,5 +364,10 @@ namespace QLCongTy.QLDuAn
         }
 
         #endregion
+
+        private void cboFindMaDA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(cboFindMaDA.SelectedValue.ToString());
+        }
     }
 }
