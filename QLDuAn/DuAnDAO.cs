@@ -1,5 +1,6 @@
 ﻿using QLCongTy.QLPhongBan;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -95,6 +96,17 @@ namespace QLCongTy.QLDuAn
         {
             string sqlStr = $"delete from TRANGTHAINHANVIEN";
             db.ThucThi(sqlStr);
+        }
+
+        public DataTable GetNameDept()
+        {
+            string sqlStr = "SELECT MaPB, TenPB FROM PHONGBAN";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable GetNameDeptHead()
+        {
+            string sqlStr = "SELECT CONCAT(MaNV, ' - ', Ten) AS TenNV, MaNV FROM NHANSU WHERE MaCV LIKE 'TP%'";
+            return db.FormLoad(sqlStr);
         }
     }
 }

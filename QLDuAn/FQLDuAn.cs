@@ -126,7 +126,7 @@ namespace QLCongTy.QLDuAn
         {
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
-                TaoDuAn tda = new TaoDuAn(da, btnThem.Text);
+                FTaoDuAn tda = new FTaoDuAn(da, btnThem.Text);
                 tda.Show();
             }
             else
@@ -145,7 +145,7 @@ namespace QLCongTy.QLDuAn
         {
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
-                TaoDuAn tda = new TaoDuAn(da, btnXoa.Text);
+                FTaoDuAn tda = new FTaoDuAn(da, btnXoa.Text);
                 tda.Show();
             }
             else

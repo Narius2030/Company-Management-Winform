@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace QLCongTy.QLDuAn
 {
-    public partial class TaoDuAn : Form
+    public partial class FTaoDuAn : Form
     {
         DuAnDAO dad = new DuAnDAO();
         private string chedo;
         private DuAn da = new DuAn();
-        public TaoDuAn(DuAn da,string chedo)
+        public FTaoDuAn(DuAn da,string chedo)
         {
             InitializeComponent();
             this.chedo = chedo;
@@ -29,11 +29,27 @@ namespace QLCongTy.QLDuAn
             {
                 DoDLTextBox();
             }
+            GetCboPhongBan();
+            GetCboMaTruongDA();
+        }
+
+        private void GetCboMaTruongDA()
+        {
+            cboMaTruongDA.DataSource = dad.GetNameDeptHead();
+            cboMaTruongDA.DisplayMember = "TenNV";
+            cboMaTruongDA.ValueMember = "MaNV";
+        }
+
+        public void GetCboPhongBan()
+        {
+            cboMaPB.DataSource = dad.GetNameDept();
+            cboMaPB.DisplayMember = "TenPB";
+            cboMaPB.ValueMember = "MaPB";
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, txtMaPB.Text, txtMaTruongDA.Text, dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, cboMaPB.SelectedValue.ToString(), cboMaTruongDA.SelectedValue.ToString(), dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
             try
             {
                 if (chedo.ToUpper() == "THÊM")

@@ -1,6 +1,6 @@
 ﻿namespace QLCongTy.QLDuAn
 {
-    partial class TaoDuAn
+    partial class FTaoDuAn
     {
         /// <summary>
         /// Required designer variable.
@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.pnlTTDuAn = new System.Windows.Forms.Panel();
-            this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
+            this.cboMaTruongDA = new System.Windows.Forms.ComboBox();
+            this.cboMaPB = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
-            this.txtMaTruongDA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtMaPB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.txtMaDA = new System.Windows.Forms.TextBox();
             this.txtTenDA = new System.Windows.Forms.TextBox();
             this.btnAccept = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitle = new QLCongTy.VBLabel();
+            this.dtpNgayKetThuc = new QLCongTy.CTDateTimePicker();
+            this.dtpNgayBatDau = new QLCongTy.CTDateTimePicker();
             this.pnlTTDuAn.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTTDuAn
             // 
+            this.pnlTTDuAn.Controls.Add(this.dtpNgayKetThuc);
             this.pnlTTDuAn.Controls.Add(this.dtpNgayBatDau);
+            this.pnlTTDuAn.Controls.Add(this.cboMaTruongDA);
+            this.pnlTTDuAn.Controls.Add(this.cboMaPB);
             this.pnlTTDuAn.Controls.Add(this.label10);
             this.pnlTTDuAn.Controls.Add(this.label2);
             this.pnlTTDuAn.Controls.Add(this.cboTrangThai);
-            this.pnlTTDuAn.Controls.Add(this.txtMaTruongDA);
             this.pnlTTDuAn.Controls.Add(this.label1);
             this.pnlTTDuAn.Controls.Add(this.label4);
             this.pnlTTDuAn.Controls.Add(this.label11);
-            this.pnlTTDuAn.Controls.Add(this.txtMaPB);
             this.pnlTTDuAn.Controls.Add(this.label3);
             this.pnlTTDuAn.Controls.Add(this.label12);
-            this.pnlTTDuAn.Controls.Add(this.dtpNgayKetThuc);
             this.pnlTTDuAn.Controls.Add(this.txtMaDA);
             this.pnlTTDuAn.Controls.Add(this.txtTenDA);
             this.pnlTTDuAn.Location = new System.Drawing.Point(24, 97);
@@ -72,13 +72,21 @@
             this.pnlTTDuAn.Size = new System.Drawing.Size(997, 331);
             this.pnlTTDuAn.TabIndex = 0;
             // 
-            // dtpNgayBatDau
+            // cboMaTruongDA
             // 
-            this.dtpNgayBatDau.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(675, 155);
-            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(195, 30);
-            this.dtpNgayBatDau.TabIndex = 94;
+            this.cboMaTruongDA.FormattingEnabled = true;
+            this.cboMaTruongDA.Location = new System.Drawing.Point(675, 92);
+            this.cboMaTruongDA.Name = "cboMaTruongDA";
+            this.cboMaTruongDA.Size = new System.Drawing.Size(121, 24);
+            this.cboMaTruongDA.TabIndex = 99;
+            // 
+            // cboMaPB
+            // 
+            this.cboMaPB.FormattingEnabled = true;
+            this.cboMaPB.Location = new System.Drawing.Point(675, 27);
+            this.cboMaPB.Name = "cboMaPB";
+            this.cboMaPB.Size = new System.Drawing.Size(195, 24);
+            this.cboMaPB.TabIndex = 98;
             // 
             // label10
             // 
@@ -118,16 +126,6 @@
             this.cboTrangThai.Size = new System.Drawing.Size(197, 31);
             this.cboTrangThai.TabIndex = 97;
             // 
-            // txtMaTruongDA
-            // 
-            this.txtMaTruongDA.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTruongDA.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaTruongDA.Location = new System.Drawing.Point(675, 87);
-            this.txtMaTruongDA.Name = "txtMaTruongDA";
-            this.txtMaTruongDA.Size = new System.Drawing.Size(197, 30);
-            this.txtMaTruongDA.TabIndex = 91;
-            this.txtMaTruongDA.Text = "mã số";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -161,16 +159,6 @@
             this.label11.TabIndex = 93;
             this.label11.Text = "NGÀY KẾT THÚC";
             // 
-            // txtMaPB
-            // 
-            this.txtMaPB.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPB.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaPB.Location = new System.Drawing.Point(675, 26);
-            this.txtMaPB.Name = "txtMaPB";
-            this.txtMaPB.Size = new System.Drawing.Size(197, 30);
-            this.txtMaPB.TabIndex = 90;
-            this.txtMaPB.Text = "mã số";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -192,14 +180,6 @@
             this.label12.Size = new System.Drawing.Size(106, 18);
             this.label12.TabIndex = 96;
             this.label12.Text = "TRẠNG THÁI";
-            // 
-            // dtpNgayKetThuc
-            // 
-            this.dtpNgayKetThuc.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(675, 216);
-            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(195, 30);
-            this.dtpNgayKetThuc.TabIndex = 95;
             // 
             // txtMaDA
             // 
@@ -275,14 +255,40 @@
             this.lblTitle.TextColor = System.Drawing.Color.White;
             this.lblTitle.UseVisualStyleBackColor = false;
             // 
-            // TaoDuAn
+            // dtpNgayKetThuc
+            // 
+            this.dtpNgayKetThuc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpNgayKetThuc.BorderSize = 0;
+            this.dtpNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(675, 215);
+            this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(211, 35);
+            this.dtpNgayKetThuc.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.dtpNgayKetThuc.TabIndex = 101;
+            this.dtpNgayKetThuc.TextColor = System.Drawing.Color.White;
+            // 
+            // dtpNgayBatDau
+            // 
+            this.dtpNgayBatDau.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpNgayBatDau.BorderSize = 0;
+            this.dtpNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(675, 154);
+            this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(211, 35);
+            this.dtpNgayBatDau.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.dtpNgayBatDau.TabIndex = 100;
+            this.dtpNgayBatDau.TextColor = System.Drawing.Color.White;
+            // 
+            // FTaoDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 463);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlTTDuAn);
-            this.Name = "TaoDuAn";
+            this.Name = "FTaoDuAn";
             this.Text = "TaoDuAn";
             this.Load += new System.EventHandler(this.TaoDuAn_Load);
             this.pnlTTDuAn.ResumeLayout(false);
@@ -295,23 +301,23 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTTDuAn;
-        private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboTrangThai;
-        private System.Windows.Forms.TextBox txtMaTruongDA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtMaPB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dtpNgayKetThuc;
         private System.Windows.Forms.TextBox txtMaDA;
         private System.Windows.Forms.TextBox txtTenDA;
         private VBLabel lblTitle;
         private FontAwesome.Sharp.IconButton btnAccept;
         private FontAwesome.Sharp.IconButton btnExit;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cboMaPB;
+        private System.Windows.Forms.ComboBox cboMaTruongDA;
+        private CTDateTimePicker dtpNgayKetThuc;
+        private CTDateTimePicker dtpNgayBatDau;
     }
 }
