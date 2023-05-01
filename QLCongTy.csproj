@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="ChamCong\ThongTinXinNghiDAO.cs" />
     <Compile Include="ChamCong\ThongTinXinNghi.cs" />
-    <Compile Include="CTDateTimePicker.cs">
+    <Compile Include="Custome_control\CTDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custome_control\CustomComboBox.cs">
