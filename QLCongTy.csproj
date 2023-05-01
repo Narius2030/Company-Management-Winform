@@ -64,6 +64,9 @@
     <Compile Include="CTDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Custome_control\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Custome_control\Custom_Datagridview.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -142,11 +145,11 @@
       <DependentUpon>fVonDieuHanh.cs</DependentUpon>
     </Compile>
     <Compile Include="QLDuAn\PCNhanLuc.cs" />
-    <Compile Include="QLDuAn\TaoDuAn.cs">
+    <Compile Include="QLDuAn\FTaoDuAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDuAn\TaoDuAn.Designer.cs">
-      <DependentUpon>TaoDuAn.cs</DependentUpon>
+    <Compile Include="QLDuAn\FTaoDuAn.Designer.cs">
+      <DependentUpon>FTaoDuAn.cs</DependentUpon>
     </Compile>
     <Compile Include="QLDuAn\TienDoDAO.cs" />
     <Compile Include="QLPhongBan\FQLNhanVienPB.cs">
@@ -209,8 +212,8 @@
     <EmbeddedResource Include="QLDuAn\fVonDieuHanh.resx">
       <DependentUpon>fVonDieuHanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLDuAn\TaoDuAn.resx">
-      <DependentUpon>TaoDuAn.cs</DependentUpon>
+    <EmbeddedResource Include="QLDuAn\FTaoDuAn.resx">
+      <DependentUpon>FTaoDuAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLPhongBan\FQLNhanVienPB.resx">
       <DependentUpon>FQLNhanVienPB.cs</DependentUpon>

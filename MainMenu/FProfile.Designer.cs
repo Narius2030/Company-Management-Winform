@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHome = new System.Windows.Forms.Panel();
@@ -98,6 +99,7 @@
             this.lblEmail = new QLCongTy.VBLabel();
             this.lblCCCD = new QLCongTy.VBLabel();
             this.lblDiaChi = new QLCongTy.VBLabel();
+            this.pnldatagridviewDuAn = new ArtanComponent.ArtanPannel();
             this.sidebar.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -120,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.pnldatagridviewDuAn.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarTimer
@@ -881,7 +884,7 @@
             // 
             // pnlDuAn
             // 
-            this.pnlDuAn.Controls.Add(this.gvDuAn);
+            this.pnlDuAn.Controls.Add(this.pnldatagridviewDuAn);
             this.pnlDuAn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDuAn.Location = new System.Drawing.Point(0, 773);
             this.pnlDuAn.Name = "pnlDuAn";
@@ -890,12 +893,33 @@
             // 
             // gvDuAn
             // 
-            this.gvDuAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDuAn.Location = new System.Drawing.Point(169, 233);
+            this.gvDuAn.AllowUserToAddRows = false;
+            this.gvDuAn.AllowUserToDeleteRows = false;
+            this.gvDuAn.AllowUserToResizeColumns = false;
+            this.gvDuAn.AllowUserToResizeRows = false;
+            this.gvDuAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvDuAn.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvDuAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvDuAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvDuAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvDuAn.ColumnHeadersHeight = 35;
+            this.gvDuAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDuAn.EnableHeadersVisualStyles = false;
+            this.gvDuAn.Location = new System.Drawing.Point(10, 10);
+            this.gvDuAn.MultiSelect = false;
             this.gvDuAn.Name = "gvDuAn";
+            this.gvDuAn.RowHeadersVisible = false;
             this.gvDuAn.RowHeadersWidth = 51;
             this.gvDuAn.RowTemplate.Height = 24;
-            this.gvDuAn.Size = new System.Drawing.Size(742, 206);
+            this.gvDuAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvDuAn.Size = new System.Drawing.Size(788, 291);
             this.gvDuAn.TabIndex = 0;
             // 
             // pnlTTCN
@@ -1118,6 +1142,21 @@
             this.lblDiaChi.TextColor = System.Drawing.Color.White;
             this.lblDiaChi.UseVisualStyleBackColor = false;
             // 
+            // pnldatagridviewDuAn
+            // 
+            this.pnldatagridviewDuAn.BackColor = System.Drawing.Color.White;
+            this.pnldatagridviewDuAn.BorderRadius = 30;
+            this.pnldatagridviewDuAn.Controls.Add(this.gvDuAn);
+            this.pnldatagridviewDuAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(101)))), ((int)(((byte)(180)))));
+            this.pnldatagridviewDuAn.GradientAngle = 90F;
+            this.pnldatagridviewDuAn.GradientBttomColor = System.Drawing.Color.DarkOrchid;
+            this.pnldatagridviewDuAn.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(95)))), ((int)(((byte)(231)))));
+            this.pnldatagridviewDuAn.Location = new System.Drawing.Point(211, 148);
+            this.pnldatagridviewDuAn.Name = "pnldatagridviewDuAn";
+            this.pnldatagridviewDuAn.Padding = new System.Windows.Forms.Padding(10);
+            this.pnldatagridviewDuAn.Size = new System.Drawing.Size(808, 311);
+            this.pnldatagridviewDuAn.TabIndex = 1;
+            // 
             // FProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1157,6 +1196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.pnldatagridviewDuAn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1231,5 +1271,6 @@
         private CTTextBox txtLuongcb;
         private CTTextBox txtLuongthuong;
         private CTTextBox txtLuongphat;
+        private ArtanComponent.ArtanPannel pnldatagridviewDuAn;
     }
 }

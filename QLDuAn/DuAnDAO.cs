@@ -1,5 +1,6 @@
 ﻿using QLCongTy.QLPhongBan;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -37,7 +38,7 @@ namespace QLCongTy.QLDuAn
         }
         public DataTable TimKiem(string MaDA)
         {
-            string sqlStr = string.Format("select *from DUAN where MaDA = '{0}'",MaDA);
+            string sqlStr = string.Format("SELECT * FROM DUAN WHERE MaDA = '{0}'",MaDA);
             return db.FormLoad(sqlStr);
         }
         public void ThemNVvaoDA(PCNhanLuc pcnl)
@@ -95,6 +96,23 @@ namespace QLCongTy.QLDuAn
         {
             string sqlStr = $"delete from TRANGTHAINHANVIEN";
             db.ThucThi(sqlStr);
+        }
+
+        public DataTable GetNameDept()
+        {
+            string sqlStr = "SELECT MaPB, TenPB FROM PHONGBAN";
+            return db.FormLoad(sqlStr);
+        }
+
+        public DataTable GetNameDeptHead()
+        {
+            string sqlStr = "SELECT CONCAT(MaNV, ' - ', Ten) AS TenNV, MaNV FROM NHANSU WHERE MaCV LIKE 'TP%'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable GetNameProd()
+        {
+            string sqlStr = "SELECT CONCAT(MaDA, ' - ', TenDA) AS TenDA, MaDA FROM DUAN";
+            return db.FormLoad(sqlStr);
         }
     }
 }
