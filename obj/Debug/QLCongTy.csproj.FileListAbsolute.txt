@@ -384,7 +384,6 @@ D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CoreCompileInputs.c
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.csproj.CopyComplete
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (10)\QuanLyCT\obj\Debug\QLCongTy.pdb
-D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.QLDuAn.TaoDuAn.resources
 C:\Users\HUYNH THIEN NHAN\source\repos\Narius2030\QuanLyCT\obj\Debug\QLCongTy.QLDuAn.FTaoDuAn.resources
 D:\Github\New folder (11)\QuanLyCT\bin\Debug\QLCongTy.exe.config
 D:\Github\New folder (11)\QuanLyCT\bin\Debug\QLCongTy.exe
@@ -411,3 +410,4 @@ D:\Github\New folder (11)\QuanLyCT\obj\Debug\QLCongTy.csproj.CoreCompileInputs.c
 D:\Github\New folder (11)\QuanLyCT\obj\Debug\QLCongTy.csproj.CopyComplete
 D:\Github\New folder (11)\QuanLyCT\obj\Debug\QLCongTy.exe
 D:\Github\New folder (11)\QuanLyCT\obj\Debug\QLCongTy.pdb
+D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.QLDuAn.FTaoDuAn.resources

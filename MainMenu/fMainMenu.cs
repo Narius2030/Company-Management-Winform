@@ -250,6 +250,7 @@ namespace QLCongTy
                 MaCV = infoAcc.Item3;
                 lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
                 HidePanel(pnlLogin);
+
                 pnlAccount.Visible = true;
             }
             catch (Exception ex)

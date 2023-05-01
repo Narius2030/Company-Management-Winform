@@ -158,7 +158,17 @@ namespace QLCongTy
 
         private void ShowLuong()
         {
-            var luong = pfd.LayThongTinLuong(lblMaNV.Text);
+            List<float> luong;
+            try
+            {
+                luong = pfd.LayThongTinLuong(lblMaNV.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Lương tháng này hiện chưa có");
+                luong = Enumerable.Repeat<float>(0, 9).ToList();
+            }
+
             int i = 0;
             foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
             {

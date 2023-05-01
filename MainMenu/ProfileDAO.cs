@@ -60,7 +60,7 @@ namespace QLCongTy
         //Hàm cập nhật bảng XinNghi
         public void CapNhatBangXinNghi(ThongTinXinNghi ttxn)
         {
-            string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.Manv}', '{ttxn.Ngaynghi.ToString()}', '{ttxn.Lydo}')";
+            string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.Manv}', '{ttxn.Ngaynghi}', '{ttxn.Lydo}')";
             db.ThucThi(sqlStr);
             MessageBox.Show("Đã gửi đơn xin nghỉ");
         }

@@ -229,7 +229,7 @@ go
 
 CREATE TABLE NGHIPHEP
 (
-	MANV VARCHAR(10) NOT NULL,
+	MANV VARCHAR(5) NOT NULL,
 	NGAYNGHI DATE NOT NULL,
 	LYDO VARCHAR(20) NOT NULL,
 	PRIMARY KEY(MANV, NGAYNGHI)
@@ -250,4 +250,5 @@ alter table DUAN with check add foreign key (TruongDA) references NHANSU(MaNV);
 alter table PHANCONGDUAN with check add foreign key (MaDA) references DUAN(MaDA);
 alter table PHANCONGDUAN with check add foreign key (MaNV) references NHANSU(MaNV);
 alter table TRANGTHAINHANVIEN with check add foreign key (MaNV) references NHANSU(MaNV);
+alter table NGHIPHEP with check add foreign key (MANV) references NHANSU(MaNV);
 go
