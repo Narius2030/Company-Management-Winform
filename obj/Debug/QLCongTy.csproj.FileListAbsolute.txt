@@ -82,7 +82,6 @@ D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\Q
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.csproj.SuggestedBindingRedirects.cache
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fCheckin_Checkout.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fMainMenu.resources
-D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fChucVu.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.Properties.Resources.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fVonDieuHanh.resources
 D:\Education\Giáo trình\Window Programming\Workspace\DACK\QuanLyCT\obj\Debug\QLCongTy.fQLNhanVienPB.resources
