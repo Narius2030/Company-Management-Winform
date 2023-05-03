@@ -133,23 +133,6 @@ create table CHAMCONG(
 	primary key(MaNV, Thang, Nam)
 );
 go
---insert CHAMCONG values ('NV001', 1, 2022, 0),
---										('NV002', 1, 2022, 0),
---										('NV003', 1, 2022, 0),
---										('NV004', 1, 2022, 0),
---										('NV005', 1, 2022, 0),
---										('NV006', 1, 2022, 0),
---										('NV007', 1, 2022, 0),
---										('NV008', 1, 2022, 0),
---										('NV009', 1, 2022, 0),
---										('NV010', 1, 2022, 0),
---										('NV011', 1, 2022, 0),
---										('NV012', 1, 2022, 0),
---										('NV013', 1, 2022, 0),
---										('NV014', 1, 2022, 0),
---										('NV015', 1, 2022, 0)
-
---go
 
 
 --delete from CHECKIN_OUT
@@ -209,24 +192,6 @@ CREATE TABLE TRANGTHAINHANVIEN(
 )
 go
 
-INSERT INTO TRANGTHAINHANVIEN VALUES 
-('NV001','Junior', 'Ban', '7'),
-('NV002','Junior', 'Ban', '7'),
-('NV003','Senior', 'Ban', '10'),
-('NV004','Senior', 'Ranh', '8'),
-('NV005','Senior', 'Ranh', '9'),
-('NV006','Senior', 'Ranh', '9'),
-('NV007','Senior', 'Ranh', '9'),
-('NV008','fresher', 'Ranh', '5'),
-('NV009','fresher', 'Ranh', '5'),
-('NV010','Intership', 'Ranh', '5'),
-('NV011', 'Junior', 'Ranh', '5'),
-('NV012','fresher', 'Ranh', '5'),
-('NV013','Junior', 'Ranh', '5'),
-('NV014', 'Intership', 'Ranh', '5'),
-('NV015','Intership', 'Ranh', '5')
-go
-
 CREATE TABLE NGHIPHEP
 (
 	MANV VARCHAR(5) NOT NULL,
@@ -234,6 +199,7 @@ CREATE TABLE NGHIPHEP
 	LYDO VARCHAR(20) NOT NULL,
 	PRIMARY KEY(MANV, NGAYNGHI)
 )
+go
 
 alter table NHANSU with check add foreign key (MaPB) references PHONGBAN(MaPB);
 alter table NHANSU with check add foreign key (MaCV) references CHUCVU(MaCV);
@@ -244,7 +210,6 @@ alter table TIENLUONG with check add foreign key (MaCV) references CHUCVU(MaCV);
 alter table PHONGBAN with check add foreign key (MaTP) references NHANSU(MaNV);
 alter table CHAMCONG with check add foreign key (MaNV) references NHANSU(MaNV);
 alter table CHECKIN_OUT with check add foreign key (MaNV) references NHANSU(MaNV);
---alter table CHECKIN_OUT with check add foreign key (MaCV) references CHUCVU(MaCV);
 alter table DUAN with check add foreign key (MaPB) references PHONGBAN(MaPB);
 alter table DUAN with check add foreign key (TruongDA) references NHANSU(MaNV);
 alter table PHANCONGDUAN with check add foreign key (MaDA) references DUAN(MaDA);

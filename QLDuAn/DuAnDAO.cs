@@ -46,9 +46,9 @@ namespace QLCongTy.QLDuAn
             string sqlStr = $"INSERT INTO DUAN VALUES ('{da.Mada}', '{da.Tenda}', '{da.Mapb}', 0, '{da.Truongda}', '{da.Ngaybd}', '{da.Ngaykt}', '{da.Trangthai}', 0)";
             db.ThucThi(sqlStr);
         }
-        public void Xoa(DuAn da)
+        public void Xoa(string mada)
         {
-            string sqlStr = string.Format("DELETE FROM DUAN WHERE MaDA = '{0}'",da.Mada);
+            string sqlStr = $"DELETE FROM DUAN WHERE MaDA = '{mada}'";
             db.ThucThi(sqlStr);
         }
         public void Sua(DuAn da)

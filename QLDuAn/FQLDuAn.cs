@@ -96,8 +96,15 @@ namespace QLCongTy.QLDuAn
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            //ShowPanel(pnlEdit);
-            //lblTitle.Text = "Xóa dự án";
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                DataGridViewRow rows = gvQLDuAn.SelectedRows[0];
+                daDao.Xoa(rows.Cells[0].ToString());
+            }
+            else
+            {
+                MessageBox.Show("Không thuộc thẩm quyền");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)

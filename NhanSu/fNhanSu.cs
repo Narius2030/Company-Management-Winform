@@ -246,6 +246,7 @@ namespace QLCongTy.NhanSu
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
 
             //Dùng Loop thay thế -> ???
+
             if (r == null)
             {
                 MessageBox.Show("Rỗng");
@@ -261,6 +262,7 @@ namespace QLCongTy.NhanSu
             txtSDT.Text = r.Cells[8].Value.ToString();
             txtEmail.Text = r.Cells[9].Value.ToString();
             txtMaCV.Text = r.Cells[10].Value.ToString();
+            cboTrinhdo.Text = r.Cells[11].Value.ToString();
         }
 
         private void artanPannel1_Paint(object sender, PaintEventArgs e)
