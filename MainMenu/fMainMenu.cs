@@ -7,6 +7,7 @@ using QLCongTy.MainMenu;
 using QLCongTy.TienLuong;
 using QLCongTy.NhanSu;
 using QLCongTy.QLDuAn;
+using QLCongTy.ChamCong;
 using QLCongTy;
 
 namespace QLCongTy
@@ -19,6 +20,7 @@ namespace QLCongTy
         private Form currentChildForm;  //Form chuc nang hien tai
         //Fields dang nhap
         DangNhapDAO dao = new DangNhapDAO();
+        ChamCongDAO ccd = new ChamCongDAO();
         public static Nhansu currentStaff;
         public static string MaNV;
         public static string MaCV;
@@ -40,6 +42,8 @@ namespace QLCongTy
         private void fMainMenu_Load(object sender, EventArgs e)
         {
             tmCurrentTime.Start();
+            //Cập nhật bảng chấm công
+            ccd.InsertChamCong();
         }
 
         #region Hide panel

@@ -16,9 +16,29 @@ namespace QLCongTy.QLDuAn
     {
         DBConnection db = new DBConnection();
 
-        public DataTable LayDanhSach(string lenh)
+        public DataTable LayDanhSachDuAn(string manv)
         {
-            string sqlStr = string.Format(lenh);
+            string sqlStr = $"select * from DUAN where TruongDA = '{manv}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachNhanLuc()
+        {
+            string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachPhanCong(string col, string value)
+        {
+            string sqlStr = $"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE {col} = '{value}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachNVRanh()
+        {
+            string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDSNVRanhVaDieuKien(string col, string value)
+        {
+            string sqlStr = $"select  MaNV, TrinhDo from TRANGTHAINHANVIEN where {col} = '{value}' and TrangThai = 'Ranh'";
             return db.FormLoad(sqlStr);
         }
         public void Them(DuAn da)

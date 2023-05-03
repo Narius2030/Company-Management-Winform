@@ -49,7 +49,7 @@ namespace QLCongTy.QLDuAn
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            DuAn da = new DuAn(txtMaDA.Text, txtTenDA.Text, cboMaPB.SelectedValue.ToString(), cboMaTruongDA.SelectedValue.ToString(), dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            DuAn da = new DuAn(txtMaDA.Texts, txtTenDA.Texts, cboMaPB.SelectedValue.ToString(), cboMaTruongDA.SelectedValue.ToString(), dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
             try
             {
                 if (chedo.ToUpper() == "THÊM")
@@ -60,7 +60,7 @@ namespace QLCongTy.QLDuAn
                 {
                     dad.Sua(da);
                 }
-                MessageBox.Show("Thông báo" ,"Thao tác thành công");
+                MessageBox.Show("Thao tác thành công", "Thông báo");
             }
             catch (Exception ex)
             {

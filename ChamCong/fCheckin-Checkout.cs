@@ -33,8 +33,8 @@ namespace QLCongTy
 
         public void ReLoad()
         {
-            gvChecksang.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
-            gvCheckchieu.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
+            gvChecksang.DataSource = ciod.LayDanhSach(fMainMenu.MaNV);
+            gvCheckchieu.DataSource = ciod.LayDanhSach(fMainMenu.MaNV);
         }
 
         private void btnSubmitsang_Click(object sender, EventArgs e)
@@ -52,17 +52,11 @@ namespace QLCongTy
             //Điền thông tin điểm danh cho cio
             cio.MaNV = txtManvchieu.Texts;
             cio.Ngay = dtpCheckOut.Value.Date;
-            
+            //Cập nhật CheckInOut
             ciod.DanhGiaCV(txtPhanTram.Texts, txtMaDa.Texts, txtManvchieu.Texts);
             ConvertCheck(cio);
             ciod.SubmitChieu(cio);
             ReLoad();
-
-            //Kiểm tra tháng, năm chấm công có tồn tại hay chưa
-            if (!ccd.InsertChamCong())
-            {
-                MessageBox.Show("Đã tồn tại dữ liệu chấm công tại thời gian này");
-            }
             //Tính số ngày đi làm sau khi checkin_out
             CheckNgayNghi(cio);
         }

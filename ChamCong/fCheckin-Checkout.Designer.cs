@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabDiemdanh = new System.Windows.Forms.TabControl();
             this.tpCheckSang = new System.Windows.Forms.TabPage();
+            this.tpCheckchieu = new System.Windows.Forms.TabPage();
             this.pnlThongtinCheckIn = new ArtanComponent.ArtanPannel();
             this.dtpCheckIn = new QLCongTy.CTDateTimePicker();
             this.txtMaDa = new QLCongTy.CTTextBox();
@@ -49,7 +50,6 @@
             this.btnSubmitsang = new System.Windows.Forms.Button();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
             this.label3 = new System.Windows.Forms.Label();
-            this.tpCheckchieu = new System.Windows.Forms.TabPage();
             this.pnlThongtinCheckout = new ArtanComponent.ArtanPannel();
             this.txtPhanTram = new QLCongTy.CTTextBox();
             this.dtpCheckOut = new QLCongTy.CTDateTimePicker();
@@ -67,11 +67,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabDiemdanh.SuspendLayout();
             this.tpCheckSang.SuspendLayout();
+            this.tpCheckchieu.SuspendLayout();
             this.pnlThongtinCheckIn.SuspendLayout();
             this.pnlgridviewsang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvChecksang)).BeginInit();
             this.artanPannel1.SuspendLayout();
-            this.tpCheckchieu.SuspendLayout();
             this.pnlThongtinCheckout.SuspendLayout();
             this.artanPannel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCheckchieu)).BeginInit();
@@ -104,6 +104,20 @@
             this.tpCheckSang.Size = new System.Drawing.Size(1347, 777);
             this.tpCheckSang.TabIndex = 0;
             this.tpCheckSang.Text = "Buổi Sáng ";
+            // 
+            // tpCheckchieu
+            // 
+            this.tpCheckchieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.tpCheckchieu.Controls.Add(this.pnlThongtinCheckout);
+            this.tpCheckchieu.Controls.Add(this.artanPannel2);
+            this.tpCheckchieu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tpCheckchieu.Location = new System.Drawing.Point(4, 38);
+            this.tpCheckchieu.Name = "tpCheckchieu";
+            this.tpCheckchieu.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCheckchieu.Size = new System.Drawing.Size(1347, 777);
+            this.tpCheckchieu.TabIndex = 1;
+            this.tpCheckchieu.Text = "Buổi Chiều ";
             // 
             // pnlThongtinCheckIn
             // 
@@ -213,10 +227,10 @@
             this.pnlgridviewsang.GradientAngle = 90F;
             this.pnlgridviewsang.GradientBttomColor = System.Drawing.Color.DarkOrchid;
             this.pnlgridviewsang.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(95)))), ((int)(((byte)(231)))));
-            this.pnlgridviewsang.Location = new System.Drawing.Point(65, 258);
+            this.pnlgridviewsang.Location = new System.Drawing.Point(89, 262);
             this.pnlgridviewsang.Name = "pnlgridviewsang";
             this.pnlgridviewsang.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlgridviewsang.Size = new System.Drawing.Size(725, 306);
+            this.pnlgridviewsang.Size = new System.Drawing.Size(674, 306);
             this.pnlgridviewsang.TabIndex = 50;
             // 
             // gvChecksang
@@ -256,7 +270,7 @@
             this.gvChecksang.RowHeadersWidth = 51;
             this.gvChecksang.RowTemplate.Height = 24;
             this.gvChecksang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvChecksang.Size = new System.Drawing.Size(705, 286);
+            this.gvChecksang.Size = new System.Drawing.Size(654, 286);
             this.gvChecksang.TabIndex = 38;
             this.gvChecksang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvChecksang_CellClick);
             // 
@@ -346,20 +360,6 @@
             this.label3.Text = "Thông Tin Điểm Danh";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tpCheckchieu
-            // 
-            this.tpCheckchieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.tpCheckchieu.Controls.Add(this.pnlThongtinCheckout);
-            this.tpCheckchieu.Controls.Add(this.artanPannel2);
-            this.tpCheckchieu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tpCheckchieu.Location = new System.Drawing.Point(4, 38);
-            this.tpCheckchieu.Name = "tpCheckchieu";
-            this.tpCheckchieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckchieu.Size = new System.Drawing.Size(1347, 777);
-            this.tpCheckchieu.TabIndex = 1;
-            this.tpCheckchieu.Text = "Buổi Chiều ";
-            // 
             // pnlThongtinCheckout
             // 
             this.pnlThongtinCheckout.BackColor = System.Drawing.Color.White;
@@ -397,7 +397,7 @@
             this.txtPhanTram.Name = "txtPhanTram";
             this.txtPhanTram.Padding = new System.Windows.Forms.Padding(7);
             this.txtPhanTram.Password = false;
-            this.txtPhanTram.Size = new System.Drawing.Size(96, 43);
+            this.txtPhanTram.Size = new System.Drawing.Size(96, 41);
             this.txtPhanTram.TabIndex = 59;
             this.txtPhanTram.Texts = "";
             this.txtPhanTram.UnderlinedStyle = false;
@@ -427,7 +427,7 @@
             this.txtMacvchieu.Name = "txtMacvchieu";
             this.txtMacvchieu.Padding = new System.Windows.Forms.Padding(7);
             this.txtMacvchieu.Password = false;
-            this.txtMacvchieu.Size = new System.Drawing.Size(120, 43);
+            this.txtMacvchieu.Size = new System.Drawing.Size(120, 41);
             this.txtMacvchieu.TabIndex = 57;
             this.txtMacvchieu.Texts = "";
             this.txtMacvchieu.UnderlinedStyle = false;
@@ -444,7 +444,7 @@
             this.txtManvchieu.Name = "txtManvchieu";
             this.txtManvchieu.Padding = new System.Windows.Forms.Padding(7);
             this.txtManvchieu.Password = false;
-            this.txtManvchieu.Size = new System.Drawing.Size(132, 43);
+            this.txtManvchieu.Size = new System.Drawing.Size(132, 41);
             this.txtManvchieu.TabIndex = 56;
             this.txtManvchieu.Texts = "";
             this.txtManvchieu.UnderlinedStyle = false;
@@ -621,12 +621,12 @@
             this.Load += new System.EventHandler(this.fCheckin_Checkout_Load);
             this.tabDiemdanh.ResumeLayout(false);
             this.tpCheckSang.ResumeLayout(false);
+            this.tpCheckchieu.ResumeLayout(false);
             this.pnlThongtinCheckIn.ResumeLayout(false);
             this.pnlThongtinCheckIn.PerformLayout();
             this.pnlgridviewsang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvChecksang)).EndInit();
             this.artanPannel1.ResumeLayout(false);
-            this.tpCheckchieu.ResumeLayout(false);
             this.pnlThongtinCheckout.ResumeLayout(false);
             this.pnlThongtinCheckout.PerformLayout();
             this.artanPannel4.ResumeLayout(false);

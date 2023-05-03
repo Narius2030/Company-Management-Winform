@@ -11,9 +11,10 @@ namespace QLCongTy.ChamCong
     {
         public CheckInOutDAO() { }
         public DBConnection dbconn = new DBConnection();
-        public DataTable LayDanhSach(string lenh)
+        public DataTable LayDanhSach(string manv)
         {
-            return dbconn.FormLoad(lenh);
+            string sqlStr = $"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{manv}'";
+            return dbconn.FormLoad(sqlStr);
         }
         public void SubmitSang(CheckInOut cio)
         {

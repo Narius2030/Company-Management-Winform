@@ -60,8 +60,16 @@ namespace QLCongTy.TienLuong
             string sqlStr = string.Format("UPDATE TIENLUONG SET HeSoLuong = {0}, LuongCB = {1}, LuongThuong = {2}, LuongPhat = {3} where MaNV = '{4}'", tl.Hesoluong,tl.Luongcoban,tl.Luongthuong,tl.Luongphat,tl.Manv);
             db.ThucThi(sqlStr);
         }
-        public DataTable Loc(string sqlStr)
+        public DataTable LocThang(string nam, string thang)
         {
+            //return db.FormLoad(sqlStr);
+            string sqlStr = $"SELECT * FROM TIENLUONG WHERE Nam = '{nam}' AND Thang = '{thang}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LocNam(string nam)
+        {
+            //return db.FormLoad(sqlStr);
+            string sqlStr = $"SELECT * FROM TIENLUONG WHERE Nam = '{nam}'";
             return db.FormLoad(sqlStr);
         }
         public void TinhTienLuong()
