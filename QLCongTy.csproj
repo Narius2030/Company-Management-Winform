@@ -112,8 +112,6 @@
     </Compile>
     <Compile Include="MainMenu\KiemTraThongTin.cs" />
     <Compile Include="MainMenu\ProfileDAO.cs" />
-    <Compile Include="NhanSu\ChucVu.cs" />
-    <Compile Include="NhanSu\ChucVuDao.cs" />
     <Compile Include="NhanSu\fNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
