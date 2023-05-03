@@ -262,5 +262,10 @@ namespace QLCongTy.NhanSu
             txtEmail.Text = r.Cells[9].Value.ToString();
             txtMaCV.Text = r.Cells[10].Value.ToString();
         }
+
+        private void artanPannel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
