@@ -106,7 +106,7 @@ namespace QLCongTy
             HidePanel();
 
             currentPanel = pnlDuAn;
-            gvDuAn.DataSource = pfd.GetDuAn(fMainMenu.currentStaff);
+            gvDuAn.DataSource = pfd.GetDuAn(lblMaNV.Text);
 
             ShowPanel();
         }

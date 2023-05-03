@@ -14,9 +14,9 @@ namespace QLCongTy
     public class ProfileDAO
     {
         DBConnection db = new DBConnection();
-        public DataTable GetDuAn(Nhansu nv)
+        public DataTable GetDuAn(string manv)
         {
-            string sqlStr = string.Format("select * from PHANCONGDUAN where MaNV = '{0}'", nv.MaNV);
+            string sqlStr = $"select * from PHANCONGDUAN where MaNV = '{manv}'";
             return db.FormLoad(sqlStr);
         }
 

@@ -85,6 +85,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.vbLabel2 = new QLCongTy.VBLabel();
             this.pnlDuAn = new System.Windows.Forms.Panel();
+            this.pnldatagridviewDuAn = new ArtanComponent.ArtanPannel();
             this.gvDuAn = new System.Windows.Forms.DataGridView();
             this.pnlTTCN = new System.Windows.Forms.Panel();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
@@ -99,7 +100,6 @@
             this.lblEmail = new QLCongTy.VBLabel();
             this.lblCCCD = new QLCongTy.VBLabel();
             this.lblDiaChi = new QLCongTy.VBLabel();
-            this.pnldatagridviewDuAn = new ArtanComponent.ArtanPannel();
             this.sidebar.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -114,6 +114,7 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlDuAn.SuspendLayout();
+            this.pnldatagridviewDuAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).BeginInit();
             this.pnlTTCN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
@@ -122,7 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.pnldatagridviewDuAn.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebarTimer
@@ -891,6 +891,21 @@
             this.pnlDuAn.Size = new System.Drawing.Size(1115, 735);
             this.pnlDuAn.TabIndex = 25;
             // 
+            // pnldatagridviewDuAn
+            // 
+            this.pnldatagridviewDuAn.BackColor = System.Drawing.Color.White;
+            this.pnldatagridviewDuAn.BorderRadius = 30;
+            this.pnldatagridviewDuAn.Controls.Add(this.gvDuAn);
+            this.pnldatagridviewDuAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(101)))), ((int)(((byte)(180)))));
+            this.pnldatagridviewDuAn.GradientAngle = 90F;
+            this.pnldatagridviewDuAn.GradientBttomColor = System.Drawing.Color.DarkOrchid;
+            this.pnldatagridviewDuAn.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(95)))), ((int)(((byte)(231)))));
+            this.pnldatagridviewDuAn.Location = new System.Drawing.Point(211, 148);
+            this.pnldatagridviewDuAn.Name = "pnldatagridviewDuAn";
+            this.pnldatagridviewDuAn.Padding = new System.Windows.Forms.Padding(10);
+            this.pnldatagridviewDuAn.Size = new System.Drawing.Size(808, 311);
+            this.pnldatagridviewDuAn.TabIndex = 1;
+            // 
             // gvDuAn
             // 
             this.gvDuAn.AllowUserToAddRows = false;
@@ -915,6 +930,7 @@
             this.gvDuAn.Location = new System.Drawing.Point(10, 10);
             this.gvDuAn.MultiSelect = false;
             this.gvDuAn.Name = "gvDuAn";
+            this.gvDuAn.ReadOnly = true;
             this.gvDuAn.RowHeadersVisible = false;
             this.gvDuAn.RowHeadersWidth = 51;
             this.gvDuAn.RowTemplate.Height = 24;
@@ -1142,21 +1158,6 @@
             this.lblDiaChi.TextColor = System.Drawing.Color.White;
             this.lblDiaChi.UseVisualStyleBackColor = false;
             // 
-            // pnldatagridviewDuAn
-            // 
-            this.pnldatagridviewDuAn.BackColor = System.Drawing.Color.White;
-            this.pnldatagridviewDuAn.BorderRadius = 30;
-            this.pnldatagridviewDuAn.Controls.Add(this.gvDuAn);
-            this.pnldatagridviewDuAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(101)))), ((int)(((byte)(180)))));
-            this.pnldatagridviewDuAn.GradientAngle = 90F;
-            this.pnldatagridviewDuAn.GradientBttomColor = System.Drawing.Color.DarkOrchid;
-            this.pnldatagridviewDuAn.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(95)))), ((int)(((byte)(231)))));
-            this.pnldatagridviewDuAn.Location = new System.Drawing.Point(211, 148);
-            this.pnldatagridviewDuAn.Name = "pnldatagridviewDuAn";
-            this.pnldatagridviewDuAn.Padding = new System.Windows.Forms.Padding(10);
-            this.pnldatagridviewDuAn.Size = new System.Drawing.Size(808, 311);
-            this.pnldatagridviewDuAn.TabIndex = 1;
-            // 
             // FProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1188,6 +1189,7 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.pnlDuAn.ResumeLayout(false);
+            this.pnldatagridviewDuAn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).EndInit();
             this.pnlTTCN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
@@ -1196,7 +1198,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.pnldatagridviewDuAn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
