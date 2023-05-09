@@ -57,7 +57,7 @@ namespace QLCongTy.TienLuong
         }
         public void CapNhat(Tienluong tl)
         {
-            string sqlStr = string.Format("UPDATE TIENLUONG SET HeSoLuong = {0}, LuongCB = {1}, LuongThuong = {2}, LuongPhat = {3} where MaNV = '{4}'", tl.Hesoluong,tl.Luongcoban,tl.Luongthuong,tl.Luongphat,tl.Manv);
+            string sqlStr = string.Format("UPDATE TIENLUONG SET LuongThuong = {0}, LuongPhat = {1}, LuongThucTe = {2} where MaNV = '{3}'", tl.Luongthuong,tl.Luongphat,tl.LuongThucTe, tl.Manv);
             db.ThucThi(sqlStr);
         }
         public DataTable LocThang(string nam, string thang)

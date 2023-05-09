@@ -247,10 +247,6 @@ namespace QLCongTy.NhanSu
 
             //Dùng Loop thay thế -> ???
 
-            if (r == null)
-            {
-                MessageBox.Show("Rỗng");
-            }
             txtMaNV.Text = r.Cells[0].Value.ToString();
             txtHoDem.Text = r.Cells[1].Value.ToString();
             txtTenNV.Text = r.Cells[2].Value.ToString();

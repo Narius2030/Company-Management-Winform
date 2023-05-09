@@ -940,7 +940,7 @@
             // 
             // pnlTTCN
             // 
-            this.pnlTTCN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.pnlTTCN.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlTTCN.Controls.Add(this.iconPictureBox6);
             this.pnlTTCN.Controls.Add(this.iconPictureBox5);
             this.pnlTTCN.Controls.Add(this.iconPictureBox4);
@@ -962,10 +962,10 @@
             // 
             // iconPictureBox6
             // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox6.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox6.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.LocationDot;
-            this.iconPictureBox6.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox6.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox6.IconSize = 70;
             this.iconPictureBox6.Location = new System.Drawing.Point(596, 440);
@@ -976,10 +976,10 @@
             // 
             // iconPictureBox5
             // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox5.IconSize = 70;
             this.iconPictureBox5.Location = new System.Drawing.Point(594, 310);
@@ -990,10 +990,10 @@
             // 
             // iconPictureBox4
             // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Phone;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 70;
             this.iconPictureBox4.Location = new System.Drawing.Point(594, 176);
@@ -1004,10 +1004,10 @@
             // 
             // iconPictureBox3
             // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.iconPictureBox3.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 70;
             this.iconPictureBox3.Location = new System.Drawing.Point(146, 440);
@@ -1018,10 +1018,10 @@
             // 
             // iconPictureBox2
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.VenusMars;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 70;
             this.iconPictureBox2.Location = new System.Drawing.Point(146, 310);
@@ -1032,10 +1032,10 @@
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Black;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 70;
             this.iconPictureBox1.Location = new System.Drawing.Point(146, 176);
@@ -1046,8 +1046,8 @@
             // 
             // lblNgsinh
             // 
-            this.lblNgsinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblNgsinh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblNgsinh.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblNgsinh.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblNgsinh.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblNgsinh.BorderRadius = 12;
             this.lblNgsinh.BorderSize = 0;
@@ -1065,8 +1065,8 @@
             // 
             // lblPhone
             // 
-            this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblPhone.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblPhone.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblPhone.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblPhone.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblPhone.BorderRadius = 12;
             this.lblPhone.BorderSize = 0;
@@ -1084,8 +1084,8 @@
             // 
             // lblSex
             // 
-            this.lblSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblSex.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblSex.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblSex.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblSex.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblSex.BorderRadius = 12;
             this.lblSex.BorderSize = 0;
@@ -1103,8 +1103,8 @@
             // 
             // lblEmail
             // 
-            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblEmail.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblEmail.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblEmail.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblEmail.BorderRadius = 12;
             this.lblEmail.BorderSize = 0;
@@ -1122,8 +1122,8 @@
             // 
             // lblCCCD
             // 
-            this.lblCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblCCCD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblCCCD.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblCCCD.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblCCCD.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblCCCD.BorderRadius = 12;
             this.lblCCCD.BorderSize = 0;
@@ -1141,8 +1141,8 @@
             // 
             // lblDiaChi
             // 
-            this.lblDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.lblDiaChi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lblDiaChi.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblDiaChi.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.lblDiaChi.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.lblDiaChi.BorderRadius = 12;
             this.lblDiaChi.BorderSize = 0;

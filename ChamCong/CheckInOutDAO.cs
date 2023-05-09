@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLCongTy.ChamCong
 {
@@ -17,9 +18,15 @@ namespace QLCongTy.ChamCong
             return dbconn.FormLoad(sqlStr);
         }
         public void SubmitSang(CheckInOut cio)
-        {
-            string sqlStr = $"insert into CHECKIN_OUT values('{cio.MaNV}', '{cio.Ngay}', {cio.CheckInSang}, {cio.CheckOutChieu}, '{cio.LyDo}')";
-            dbconn.ThucThi(sqlStr);
+        {   try
+            {
+                string sqlStr = $"insert into CHECKIN_OUT values('{cio.MaNV}', '{cio.Ngay}', {cio.CheckInSang}, {cio.CheckOutChieu}, '{cio.LyDo}')";
+                dbconn.ThucThi(sqlStr);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void SubmitChieu(CheckInOut cio)
         {
@@ -45,10 +52,17 @@ namespace QLCongTy.ChamCong
                                where MaNV = '{manv}' and Thang = {ngay.Month} and Nam = {ngay.Year}";
             dbconn.ThucThi(sqlStr);
         }
-        public void DanhGiaCV(string phantram, string MaDA, string MaNV)
+        public void DanhGiaCV(int phantram, string manv, DateTime ngaybd, DateTime ngaykt)
         {
-            string sqlStr = string.Format("UPDATE PHANCONGDUAN SET TienDo = '{0}' WHERE MaDA = '{1}' AND MaNV = '{2}'", phantram, MaDA, MaNV);
-            dbconn.ThucThi(sqlStr);
+            try
+            {
+                string sqlStr = $"UPDATE PHANCONGDUAN SET TienDo = {phantram} WHERE MaNV = '{manv}' AND NgayBD = '{ngaybd}' AND NgayKT = '{ngaykt}'";
+                dbconn.ThucThi(sqlStr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public bool CheckDiLam(string manv, DateTime ngay)
         {

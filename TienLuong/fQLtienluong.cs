@@ -117,5 +117,24 @@ namespace QLCongTy.TienLuong
             exFile.SaveExcel(dt);
         }
         #endregion
+
+        private void gvTienLuong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = gvTienLuong.SelectedRows[0];
+            txtMaNV.Text = row.Cells["MaNV"].Value.ToString();
+            txtMaCV.Text = row.Cells["MaCV"].Value.ToString();
+            txtThang.Text = row.Cells["Thang"].Value.ToString();
+            txtNam.Text = row.Cells["Nam"].Value.ToString();
+            txtLuongCB.Text = row.Cells["LuongCB"].Value.ToString();
+            txtThuong.Text = row.Cells["LuongThuong"].Value.ToString();
+            txtLuongPhat.Text = row.Cells["LuongPhat"].Value.ToString();
+            txtLuongTT.Text = row.Cells["LuongThucTe"].Value.ToString();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Tienluong tl = new Tienluong(txtMaNV.Text, txtMaCV.Text, int.Parse(txtThang.Text), int.Parse(txtNam.Text), int.Parse(txtThuong.Text), float.Parse(txtLuongPhat.Text), float.Parse(txtLuongTT.Text));
+            tlDao.CapNhat(tl);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace QLCongTy.QLDuAn
         private string congviec;
         private DateTime ngaybd;
         private DateTime ngaykt;
-        private string trinhdo;
+        private string tiendo;
 
         public PCNhanLuc() { }
         public PCNhanLuc(string mada, string manv, string congviec, DateTime ngaybd, DateTime ngaykt)
@@ -30,6 +30,6 @@ namespace QLCongTy.QLDuAn
         public string Congviec { get => congviec; set => congviec = value; }
         public DateTime Ngaybd { get => ngaybd; set => ngaybd = value; }
         public DateTime Ngaykt { get => ngaykt; set => ngaykt = value; }
-        public string Trinhdo { get => trinhdo; set => trinhdo = value; }
+        public string TienDo { get => tiendo; set => tiendo = value; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using QLCongTy.ChamCong;
+using QLCongTy.QLDuAn;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,8 @@ namespace QLCongTy
     {
         CheckInOutDAO ciod = new CheckInOutDAO();
         CheckInOut cio = new CheckInOut();
-        ChamCongDAO ccd = new ChamCongDAO();
-
+        DuAnDAO dad = new DuAnDAO();
+        PCNhanLuc pc = null;
         public fCheckin_Checkout()
         {
             InitializeComponent();
@@ -53,7 +54,11 @@ namespace QLCongTy
             cio.MaNV = txtManvchieu.Texts;
             cio.Ngay = dtpCheckOut.Value.Date;
             //Cập nhật CheckInOut
-            ciod.DanhGiaCV(txtPhanTram.Texts, txtMaDa.Texts, txtManvchieu.Texts);
+            if (pc != null)
+            {
+                ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.Manv, pc.Ngaybd, pc.Ngaykt);
+                dad.TienDoDuAn(pc.Mada);
+            }
             ConvertCheck(cio);
             ciod.SubmitChieu(cio);
             ReLoad();
@@ -90,13 +95,17 @@ namespace QLCongTy
         private void gvCheckchieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow rows = gvCheckchieu.SelectedRows[0];
-            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString();
+            pc = new PCNhanLuc();
+            pc.Manv = rows.Cells["MaNV"].Value.ToString();
+            pc.Mada = rows.Cells["MaDA"].Value.ToString();
+            pc.Ngaybd = DateTime.Parse(rows.Cells["NgayBD"].Value.ToString());
+            pc.Ngaykt = DateTime.Parse(rows.Cells["NgayKT"].Value.ToString());
         }
 
         private void gvChecksang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow rows = gvChecksang.SelectedRows[0];
-            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString();
+            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString() + " - " + rows.Cells["CongViec"].Value.ToString();
         }
     }
 }

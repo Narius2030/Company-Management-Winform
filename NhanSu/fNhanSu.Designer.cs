@@ -62,7 +62,7 @@
             this.pnlTool = new System.Windows.Forms.Panel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pnlDangKy = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlThongTin = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.cboTrinhdo = new System.Windows.Forms.ComboBox();
             this.cboGTinh = new System.Windows.Forms.ComboBox();
@@ -110,7 +110,7 @@
             this.grpLocThongTin.SuspendLayout();
             this.pnlTool.SuspendLayout();
             this.pnlDangKy.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlThongTin.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
             this.pnlPiechart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartCLNL)).BeginInit();
@@ -383,48 +383,48 @@
             // pnlDangKy
             // 
             this.pnlDangKy.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlDangKy.Controls.Add(this.panel1);
+            this.pnlDangKy.Controls.Add(this.pnlThongTin);
             this.pnlDangKy.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDangKy.Location = new System.Drawing.Point(1266, 0);
+            this.pnlDangKy.Location = new System.Drawing.Point(12, 0);
             this.pnlDangKy.MaximumSize = new System.Drawing.Size(1264, 772);
             this.pnlDangKy.MinimumSize = new System.Drawing.Size(10, 772);
             this.pnlDangKy.Name = "pnlDangKy";
-            this.pnlDangKy.Size = new System.Drawing.Size(10, 772);
+            this.pnlDangKy.Size = new System.Drawing.Size(1264, 772);
             this.pnlDangKy.TabIndex = 93;
             // 
-            // panel1
+            // pnlThongTin
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.cboTrinhdo);
-            this.panel1.Controls.Add(this.cboGTinh);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dtpNgaySinh);
-            this.panel1.Controls.Add(this.btnSua);
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.txtMaPB);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.txtMaCV);
-            this.panel1.Controls.Add(this.txtTenNV);
-            this.panel1.Controls.Add(this.txtSDT);
-            this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Controls.Add(this.txtCCCD);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.txtHoDem);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtMaNV);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(207, 90);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(912, 474);
-            this.panel1.TabIndex = 105;
+            this.pnlThongTin.BackColor = System.Drawing.Color.White;
+            this.pnlThongTin.Controls.Add(this.label16);
+            this.pnlThongTin.Controls.Add(this.cboTrinhdo);
+            this.pnlThongTin.Controls.Add(this.cboGTinh);
+            this.pnlThongTin.Controls.Add(this.label1);
+            this.pnlThongTin.Controls.Add(this.dtpNgaySinh);
+            this.pnlThongTin.Controls.Add(this.btnSua);
+            this.pnlThongTin.Controls.Add(this.btnXoa);
+            this.pnlThongTin.Controls.Add(this.txtMaPB);
+            this.pnlThongTin.Controls.Add(this.txtEmail);
+            this.pnlThongTin.Controls.Add(this.btnThem);
+            this.pnlThongTin.Controls.Add(this.txtMaCV);
+            this.pnlThongTin.Controls.Add(this.txtTenNV);
+            this.pnlThongTin.Controls.Add(this.txtSDT);
+            this.pnlThongTin.Controls.Add(this.txtDiaChi);
+            this.pnlThongTin.Controls.Add(this.txtCCCD);
+            this.pnlThongTin.Controls.Add(this.label11);
+            this.pnlThongTin.Controls.Add(this.label10);
+            this.pnlThongTin.Controls.Add(this.txtHoDem);
+            this.pnlThongTin.Controls.Add(this.label6);
+            this.pnlThongTin.Controls.Add(this.txtMaNV);
+            this.pnlThongTin.Controls.Add(this.label7);
+            this.pnlThongTin.Controls.Add(this.label2);
+            this.pnlThongTin.Controls.Add(this.label5);
+            this.pnlThongTin.Controls.Add(this.label3);
+            this.pnlThongTin.Controls.Add(this.label9);
+            this.pnlThongTin.Controls.Add(this.label12);
+            this.pnlThongTin.Location = new System.Drawing.Point(207, 90);
+            this.pnlThongTin.Name = "pnlThongTin";
+            this.pnlThongTin.Size = new System.Drawing.Size(912, 474);
+            this.pnlThongTin.TabIndex = 105;
             // 
             // label16
             // 
@@ -729,7 +729,7 @@
             this.pnlThongKe.Controls.Add(this.pnlDuLieuTK);
             this.pnlThongKe.Controls.Add(this.pnlBarchart);
             this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlThongKe.Location = new System.Drawing.Point(1256, 0);
+            this.pnlThongKe.Location = new System.Drawing.Point(2, 0);
             this.pnlThongKe.MaximumSize = new System.Drawing.Size(1267, 772);
             this.pnlThongKe.MinimumSize = new System.Drawing.Size(10, 772);
             this.pnlThongKe.Name = "pnlThongKe";
@@ -1023,8 +1023,8 @@
             this.grpLocThongTin.PerformLayout();
             this.pnlTool.ResumeLayout(false);
             this.pnlDangKy.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlThongTin.ResumeLayout(false);
+            this.pnlThongTin.PerformLayout();
             this.pnlThongKe.ResumeLayout(false);
             this.pnlPiechart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartCLNL)).EndInit();
@@ -1062,25 +1062,26 @@
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Panel pnlDangKy;
         private System.Windows.Forms.Panel pnlThongKe;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cboGTinh;
+        private System.Windows.Forms.Panel pnlThongTin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private VBButton btnSua;
-        private VBButton btnXoa;
-        private System.Windows.Forms.TextBox txtMaPB;
-        private System.Windows.Forms.TextBox txtEmail;
+        private VBButton btnXoa;       
         private VBButton btnThem;
-        private System.Windows.Forms.TextBox txtMaCV;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.TextBox txtHoDem;
         private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.TextBox txtMaPB;
+        private System.Windows.Forms.ComboBox cboGTinh;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtMaCV;
+        private System.Windows.Forms.ComboBox cboTrinhdo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtHoDem;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -1099,7 +1100,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTLNam;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cboTrinhdo;
         private System.Windows.Forms.Label lblTLNu;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;

@@ -18,7 +18,7 @@ namespace QLCongTy
         private IconButton currentBtn;  //Button hien tai
         private Panel leftBorderBtn;    //Bien phia ben trai button
         private Form currentChildForm;  //Form chuc nang hien tai
-        //Fields dang nhap
+        //Fields dang nhap va cham cong
         DangNhapDAO dao = new DangNhapDAO();
         ChamCongDAO ccd = new ChamCongDAO();
         public static Nhansu currentStaff;

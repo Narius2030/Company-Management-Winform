@@ -26,16 +26,16 @@ namespace QLCongTy.TienLuong
             luongphat = 0;
             luongthucte = 0;
         }
-        public Tienluong(string MaNV, string MaCV, int Thang, int Nam)
+        public Tienluong(string MaNV, string MaCV, int Thang, int Nam, int Luongthuong, float Luongphat, float Luongthucte)
         {
             manv = MaNV;
             macv = MaCV;
             thang = Thang;
             nam = Nam;
             luongcoban = 1000000;
-            luongthuong = 0;
-            luongphat = 0;
-            luongthucte = 0;
+            luongthuong = Luongthuong;
+            luongphat = Luongphat;
+            luongthucte = Luongthucte;
         }
         public string Manv { get => manv; set => manv = value; }
         public string Macv { get => macv; set => macv = value; }

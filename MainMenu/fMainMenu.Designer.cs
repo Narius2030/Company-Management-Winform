@@ -538,7 +538,7 @@
             // 
             // pnlDesktop
             // 
-            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.pnlDesktop.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlDesktop.Controls.Add(this.pnlLogin);
             this.pnlDesktop.Location = new System.Drawing.Point(245, 131);
             this.pnlDesktop.Name = "pnlDesktop";

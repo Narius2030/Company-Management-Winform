@@ -35,18 +35,18 @@ namespace QLCongTy.ChamCong
         public bool InsertChamCong()
         {
             //Tìm tháng, năm mới nhất
-            //string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
-            //DataTable dt = dbconn.FormLoad(sqlStr);
-            //int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
-            //int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+            string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
+            DataTable dt = dbconn.FormLoad(sqlStr);
+            int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
+            int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
 
-            int month = DateTime.Now.Month; 
-            int year = DateTime.Now.Year;
+            //int month = DateTime.Now.Month; 
+            //int year = DateTime.Now.Year;
 
             //Thêm tháng, năm châm công mới nhất vào
-            string sqlStr = $@"select * from CHAMCONG
+            sqlStr = $@"select * from CHAMCONG
                         where Thang = {month} and Nam = {year}";
-            DataTable dt = dbconn.FormLoad(sqlStr);
+            dt = dbconn.FormLoad(sqlStr);
             if (dt.Rows.Count == 0)
             {
                 sqlStr = $@"select MaNV from NHANSU join CHUCVU on NHANSU.MaCV = CHUCVU.MaCV";

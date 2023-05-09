@@ -71,6 +71,16 @@ namespace QLCongTy.QLDuAn
             string sqlStr = string.Format("DELETE FROM PHANCONGDUAN WHERE MaDA = '{0}' AND MaNV = '{1}'", pcnl.Mada, pcnl.Manv);
             db.ThucThi(sqlStr);
         }
+        public void TienDoDuAn(string MaDA)
+        {
+            int result = int.Parse(db.GetItem($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
+            if (result >= 100)
+            {
+                result = 100;
+            }
+            string sqlStr = $"UPDATE DUAN SET TienDo = {result} WHERE MaDA = '{MaDA}'";
+            db.ThucThi(sqlStr);
+        }
         public void InitStatusTB()
         {
             DataTable dataset = db.FormLoad("select * from TRANGTHAINHANVIEN");
