@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
@@ -17,5 +17,8 @@ namespace QLConTy_Entity
         public string taikhoan1 { get; set; }
         public string matkhau { get; set; }
         public string MaCV { get; set; }
+    
+        public virtual CHUCVU CHUCVU { get; set; }
+        public virtual NHANSU NHANSU { get; set; }
     }
 }

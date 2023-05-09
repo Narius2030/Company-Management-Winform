@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entity_QLCongTy.ChamCong;
+using Entity_QLCongTy.QLDuAn;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,60 +9,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLConTy_Entity.MainMenu;
 
-namespace QLConTy_Entity.ChamCong
+namespace Entity_QLCongTy
 {
     public partial class fCheckin_Checkout : Form
     {
         CheckInOutDAO ciod = new CheckInOutDAO();
         CHECKIN_OUT cio = new CHECKIN_OUT();
+        ChamCongDAO ccd = new ChamCongDAO();
+        DuAnDAO dad = new DuAnDAO();
+        PHANCONGDUAN pc = null;
         public fCheckin_Checkout()
         {
             InitializeComponent();
         }
+
         private void fCheckin_Checkout_Load(object sender, EventArgs e)
         {
             ReLoad();
-            txtManvsang.Text = fMainMenu.MaNV;
-            txtManvchieu.Text = fMainMenu.MaNV;
-            txtMacvsang.Text = fMainMenu.MaCV;
-            txtMacvsang.Text = fMainMenu.MaCV;
+            txtManvsang.Texts = fMainMenu.MaNV;
+            txtManvchieu.Texts = fMainMenu.MaNV;
+            txtMacvsang.Texts = fMainMenu.MaCV;
+            txtMacvchieu.Texts = fMainMenu.MaCV;
         }
+
         public void ReLoad()
         {
             gvChecksang.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
             gvCheckchieu.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
         }
-        private void gvChecksang_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow selectedrow = gvChecksang.SelectedRows[0];
-            txtManvsang.Text = selectedrow.Cells["MaNV"].Value.ToString();
-            txtMacvsang.Text = selectedrow.Cells["MaCV"].Value.ToString();
-            cbCheckInsang.Text = selectedrow.Cells["CheckInSang"].Value.ToString();
-            cbCheckInsang.Enabled = false;
-            txtManvchieu.Text = selectedrow.Cells["MaNV"].Value.ToString();
-            txtMacvchieu.Text = selectedrow.Cells["MaCV"].Value.ToString();
-            cbCheckOutchieu.Text = selectedrow.Cells["CheckOutChieu"].Value.ToString();
-            cbCheckOutchieu.Enabled = false;
-        }
+
         private void btnSubmitsang_Click(object sender, EventArgs e)
         {
             ConvertCheck(cio);
-            cio.MaNV = txtManvsang.Text;
-            cio.MaCV = txtMacvsang.Text;
-            cio.Ngay = dtpCheckInsang.Value.Date;
+            cio.MaNV = txtManvsang.Texts;
+            cio.Ngay = dtpCheckIn.Value.Date;
             ciod.SubmitSang(cio);
             ReLoad();
         }
+
         private void btnSubmitchieu_Click(object sender, EventArgs e)
         {
-            ciod.DanhGiaCV(txtPhanTram.Text, lblMaDa.Text, txtManvchieu.Text);
+            //Điền thông tin điểm danh cho cio
+            cio.MaNV = txtManvchieu.Texts;
+            cio.Ngay = dtpCheckOut.Value.Date;
+            //Cập nhật CheckInOut
+            if (pc != null)
+            {
+                ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.MaNV, pc.NgayBD, pc.NgayKT);
+                dad.TienDoDuAn(pc.MaDA);
+            }
             ConvertCheck(cio);
             ciod.SubmitChieu(cio);
             ReLoad();
-            CheckNgay(cio);
+
+            //Kiểm tra tháng, năm chấm công có tồn tại hay chưa
+            if (!ccd.InsertChamCong())
+            {
+                MessageBox.Show("Đã tồn tại dữ liệu chấm công tại thời gian này");
+            }
+            //Tính số ngày đi làm sau khi checkin_out
+            CheckNgayNghi(cio);
         }
+
         public void ConvertCheck(CHECKIN_OUT cio)
         {
             if (cbCheckInsang.Checked == true)
@@ -72,21 +83,35 @@ namespace QLConTy_Entity.ChamCong
                 cio.CheckOutChieu = true;
             }
         }
-        public void CheckNgay(CHECKIN_OUT cio)
+
+        public void CheckNgayNghi(CHECKIN_OUT cio)
         {
-            if (cio.CheckInSang == false || cio.CheckOutChieu == false)
+            //Kiểm tra nhân viên đã check đủ 2 buổi không
+            bool check = ciod.CheckDiLam(txtManvchieu.Texts, dtpCheckOut.Value);
+            if (!check)
             {
-                ciod.PushToChamCongTB(cio.MaNV, cio.MaCV, cio.Ngay, 0);
+                ciod.UpdateNgDiLam(cio.MaNV, cio.Ngay, 0);
             }
             else
             {
-                ciod.PushToChamCongTB(cio.MaNV, cio.MaCV, cio.Ngay, 1);
+                ciod.UpdateNgDiLam(cio.MaNV, cio.Ngay, 1);
             }
-        }
-        private void Row_Click(object sender, DataGridViewCellMouseEventArgs e)
+        } 
+
+        private void gvCheckchieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow r = gvCheckchieu.SelectedRows[0];
-            lblMaDa.Text = r.Cells[0].Value.ToString();
+            DataGridViewRow rows = gvCheckchieu.SelectedRows[0];
+            pc = new PHANCONGDUAN();
+            pc.MaNV = rows.Cells["MaNV"].Value.ToString();
+            pc.MaDA = rows.Cells["MaDA"].Value.ToString();
+            pc.NgayBD = DateTime.Parse(rows.Cells["NgayBD"].Value.ToString());
+            pc.NgayKT = DateTime.Parse(rows.Cells["NgayKT"].Value.ToString());
+        }
+
+        private void gvChecksang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow rows = gvChecksang.SelectedRows[0];
+            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString() + " - " + rows.Cells["CongViec"].Value.ToString();
         }
     }
 }

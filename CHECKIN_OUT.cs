@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
@@ -15,9 +15,11 @@ namespace QLConTy_Entity
     public partial class CHECKIN_OUT
     {
         public string MaNV { get; set; }
-        public string MaCV { get; set; }
         public System.DateTime Ngay { get; set; }
         public Nullable<bool> CheckInSang { get; set; }
         public Nullable<bool> CheckOutChieu { get; set; }
+        public string LyDoNghi { get; set; }
+    
+        public virtual NHANSU NHANSU { get; set; }
     }
 }

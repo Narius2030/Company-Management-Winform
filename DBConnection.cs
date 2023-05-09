@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     internal class DBConnection
     {
@@ -51,12 +51,21 @@ namespace QLConTy_Entity
         }
         public int TienDoDuAn(string MaDA)
         {
-            int result = new int();
+            int result = int.Parse(GetItem($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
+            if (result >= 100)
+            {
+                return 100;
+            }
+            return result;
+        }
+        public object GetItem(string sqlStr)
+        {
+            object result = new object();
             try
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA", conn);
-                result = (int)command.ExecuteScalar();
+                SqlCommand command = new SqlCommand(sqlStr, conn);
+                result = command.ExecuteScalar();
             }
             catch (Exception exc)
             {
@@ -66,14 +75,7 @@ namespace QLConTy_Entity
             {
                 conn.Close();
             }
-            if (result >= 100)
-            {
-                return 100;
-            }
-            else
-            {
-                return result;
-            }
+            return result;
         }
     }
 }

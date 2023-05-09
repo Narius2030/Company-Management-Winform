@@ -1,11 +1,10 @@
-﻿using QLConTy_Entity.MainMenu;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     internal static class Program
     {

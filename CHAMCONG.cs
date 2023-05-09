@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
@@ -15,8 +15,30 @@ namespace QLConTy_Entity
     public partial class CHAMCONG
     {
         public string MaNV { get; set; }
-        public string MaCV { get; set; }
-        public System.DateTime Ngay { get; set; }
-        public Nullable<bool> CheckNgay { get; set; }
+        public int Thang { get; set; }
+        public int Nam { get; set; }
+        public Nullable<int> NgDilam { get; set; }
+        public Nullable<int> SoNgNghiPhep { get; set; }
+    
+        public virtual NHANSU NHANSU { get; set; }
+        public CHAMCONG()
+        {
+            NgDilam = 0;
+            SoNgNghiPhep = 1;
+        }
+        public CHAMCONG(string maNV, int thang, int nam)
+        {
+            MaNV = maNV;
+            Thang = thang;
+            Nam = nam;
+        }
+        public CHAMCONG(string maNV, int thang, int nam, int? ngDilam, int? soNgNghiPhep)
+        {
+            MaNV = maNV;
+            Thang = thang;
+            Nam = nam;
+            NgDilam = ngDilam;
+            SoNgNghiPhep = soNgNghiPhep;
+        }
     }
 }

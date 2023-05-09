@@ -7,21 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
     
     public partial class PHONGBAN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PHONGBAN()
+        {
+            this.DUANs = new HashSet<DUAN>();
+            this.NHANSUs = new HashSet<NHANSU>();
+        }
+    
         public string MaPB { get; set; }
         public string TenPB { get; set; }
         public string MaTP { get; set; }
-        public PHONGBAN(string mapb, string tenpb, string matp)
-        {
-            MaPB = mapb;
-            TenPB = tenpb;
-            MaTP = matp;
-        }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DUAN> DUANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHANSU> NHANSUs { get; set; }
+        public virtual NHANSU NHANSU { get; set; }
     }
 }

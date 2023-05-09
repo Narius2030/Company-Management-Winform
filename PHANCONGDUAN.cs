@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
@@ -17,16 +17,24 @@ namespace QLConTy_Entity
         public string MaDA { get; set; }
         public string MaNV { get; set; }
         public string CongViec { get; set; }
-        public Nullable<System.DateTime> NgayBD { get; set; }
-        public Nullable<System.DateTime> NgayKT { get; set; }
+        public System.DateTime NgayBD { get; set; }
+        public System.DateTime NgayKT { get; set; }
         public Nullable<int> TienDo { get; set; }
-        public PHANCONGDUAN(string mada, string manv, string congviec, DateTime ngaybd, DateTime ngaykt)
+    
+        public virtual DUAN DUAN { get; set; }
+        public virtual NHANSU NHANSU { get; set; }
+        public PHANCONGDUAN(string maDA, string maNV, string congViec, DateTime ngayBD, DateTime ngayKT, int tienDo)
         {
-            MaDA = mada;
-            MaNV = manv;
-            CongViec = congviec;
-            NgayBD = ngaybd;
-            NgayKT = ngaykt;
+            MaDA = maDA;
+            MaNV = maNV;
+            CongViec = congViec;
+            NgayBD = ngayBD;
+            NgayKT = ngayKT;
+            TienDo = tienDo;
+        }
+        public PHANCONGDUAN()
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace QLConTy_Entity.MainMenu
+﻿namespace Entity_QLCongTy
 {
     partial class fMainMenu
     {
@@ -28,43 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
+            this.pnlDiemDanh = new System.Windows.Forms.Panel();
+            this.btnDuyetDonXinNghi = new FontAwesome.Sharp.IconButton();
+            this.btnCheckInOut = new FontAwesome.Sharp.IconButton();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnDiemDanh = new FontAwesome.Sharp.IconButton();
             this.btnLuong = new FontAwesome.Sharp.IconButton();
             this.btnDuAn = new FontAwesome.Sharp.IconButton();
             this.pnlNhanSu = new System.Windows.Forms.Panel();
             this.btnPhongBan = new FontAwesome.Sharp.IconButton();
             this.btnNhanVien = new FontAwesome.Sharp.IconButton();
-            this.pnlAccount = new System.Windows.Forms.Panel();
-            this.lblTenNV = new QLConTy_Entity.VBLabel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.btnNhanSu = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.picHome = new FontAwesome.Sharp.IconPictureBox();
+            this.pnlAccount = new System.Windows.Forms.Panel();
+            this.lblTenNV = new Entity_QLCongTy.VBLabel();
+            this.picName = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
-            this.picCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlShadow = new System.Windows.Forms.Panel();
+            this.picCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.txtMatKhau = new Entity_QLCongTy.CTTextBox();
+            this.txtTaiKhoan = new Entity_QLCongTy.CTTextBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnShowPW = new FontAwesome.Sharp.IconButton();
+            this.lblMatKhau = new System.Windows.Forms.Label();
+            this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.lblPassword = new QLConTy_Entity.VBLabel();
-            this.lblAccount = new QLConTy_Entity.VBLabel();
             this.picAccount = new FontAwesome.Sharp.IconPictureBox();
+            this.tmCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
+            this.pnlDiemDanh.SuspendLayout();
             this.pnlNhanSu.SuspendLayout();
-            this.pnlAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
+            this.pnlAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picName)).BeginInit();
             this.pnlTitleBar.SuspendLayout();
+            this.pnlShadow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrentChildForm)).BeginInit();
             this.pnlDesktop.SuspendLayout();
             this.pnlLogin.SuspendLayout();
@@ -73,110 +83,216 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.pnlMenu.Controls.Add(this.btnDangXuat);
             this.pnlMenu.Controls.Add(this.btnTaiKhoan);
+            this.pnlMenu.Controls.Add(this.pnlDiemDanh);
+            this.pnlMenu.Controls.Add(this.lblDate);
+            this.pnlMenu.Controls.Add(this.lblTime);
             this.pnlMenu.Controls.Add(this.btnDiemDanh);
             this.pnlMenu.Controls.Add(this.btnLuong);
             this.pnlMenu.Controls.Add(this.btnDuAn);
             this.pnlMenu.Controls.Add(this.pnlNhanSu);
-            this.pnlMenu.Controls.Add(this.pnlAccount);
             this.pnlMenu.Controls.Add(this.btnNhanSu);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 61);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(190, 703);
+            this.pnlMenu.Size = new System.Drawing.Size(245, 889);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+            this.btnDangXuat.IconColor = System.Drawing.Color.White;
+            this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDangXuat.IconSize = 45;
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 720);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDangXuat.Size = new System.Drawing.Size(245, 75);
+            this.btnDangXuat.TabIndex = 43;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnTaiKhoan
             // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             this.btnTaiKhoan.IconColor = System.Drawing.Color.White;
             this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTaiKhoan.IconSize = 40;
+            this.btnTaiKhoan.IconSize = 45;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 426);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 645);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTaiKhoan.Size = new System.Drawing.Size(190, 60);
-            this.btnTaiKhoan.TabIndex = 10;
+            this.btnTaiKhoan.Size = new System.Drawing.Size(245, 75);
+            this.btnTaiKhoan.TabIndex = 41;
             this.btnTaiKhoan.Text = "Tài khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
+            // pnlDiemDanh
+            // 
+            this.pnlDiemDanh.Controls.Add(this.btnDuyetDonXinNghi);
+            this.pnlDiemDanh.Controls.Add(this.btnCheckInOut);
+            this.pnlDiemDanh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDiemDanh.Location = new System.Drawing.Point(0, 542);
+            this.pnlDiemDanh.Name = "pnlDiemDanh";
+            this.pnlDiemDanh.Size = new System.Drawing.Size(245, 103);
+            this.pnlDiemDanh.TabIndex = 37;
+            // 
+            // btnDuyetDonXinNghi
+            // 
+            this.btnDuyetDonXinNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            this.btnDuyetDonXinNghi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDuyetDonXinNghi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(75)))));
+            this.btnDuyetDonXinNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuyetDonXinNghi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuyetDonXinNghi.ForeColor = System.Drawing.Color.White;
+            this.btnDuyetDonXinNghi.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDuyetDonXinNghi.IconColor = System.Drawing.Color.Black;
+            this.btnDuyetDonXinNghi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDuyetDonXinNghi.IconSize = 30;
+            this.btnDuyetDonXinNghi.Location = new System.Drawing.Point(0, 50);
+            this.btnDuyetDonXinNghi.Name = "btnDuyetDonXinNghi";
+            this.btnDuyetDonXinNghi.Size = new System.Drawing.Size(245, 50);
+            this.btnDuyetDonXinNghi.TabIndex = 2;
+            this.btnDuyetDonXinNghi.Text = "Duyệt Đơn Xin Nghỉ";
+            this.btnDuyetDonXinNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDuyetDonXinNghi.UseVisualStyleBackColor = false;
+            this.btnDuyetDonXinNghi.Click += new System.EventHandler(this.btnDuyetDonXinNghi_Click);
+            // 
+            // btnCheckInOut
+            // 
+            this.btnCheckInOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
+            this.btnCheckInOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckInOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(75)))));
+            this.btnCheckInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckInOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckInOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckInOut.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCheckInOut.IconColor = System.Drawing.Color.White;
+            this.btnCheckInOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCheckInOut.IconSize = 30;
+            this.btnCheckInOut.Location = new System.Drawing.Point(0, 0);
+            this.btnCheckInOut.Name = "btnCheckInOut";
+            this.btnCheckInOut.Size = new System.Drawing.Size(245, 50);
+            this.btnCheckInOut.TabIndex = 2;
+            this.btnCheckInOut.Text = "Check In Out";
+            this.btnCheckInOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheckInOut.UseVisualStyleBackColor = false;
+            this.btnCheckInOut.Click += new System.EventHandler(this.btnCheckInOut_Click);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblDate.Location = new System.Drawing.Point(12, 861);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(41, 19);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.Honeydew;
+            this.lblTime.Location = new System.Drawing.Point(12, 824);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(43, 19);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "Time";
             // 
             // btnDiemDanh
             // 
+            this.btnDiemDanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.btnDiemDanh.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDiemDanh.FlatAppearance.BorderSize = 0;
             this.btnDiemDanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiemDanh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiemDanh.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiemDanh.ForeColor = System.Drawing.Color.White;
             this.btnDiemDanh.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
             this.btnDiemDanh.IconColor = System.Drawing.Color.White;
             this.btnDiemDanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDiemDanh.IconSize = 40;
+            this.btnDiemDanh.IconSize = 45;
             this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiemDanh.Location = new System.Drawing.Point(0, 366);
+            this.btnDiemDanh.Location = new System.Drawing.Point(0, 467);
             this.btnDiemDanh.Name = "btnDiemDanh";
             this.btnDiemDanh.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDiemDanh.Size = new System.Drawing.Size(190, 60);
-            this.btnDiemDanh.TabIndex = 9;
+            this.btnDiemDanh.Size = new System.Drawing.Size(245, 75);
+            this.btnDiemDanh.TabIndex = 39;
             this.btnDiemDanh.Text = "Điểm danh";
             this.btnDiemDanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiemDanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDiemDanh.UseVisualStyleBackColor = true;
+            this.btnDiemDanh.UseVisualStyleBackColor = false;
             this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
             // 
             // btnLuong
             // 
+            this.btnLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.btnLuong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuong.ForeColor = System.Drawing.Color.White;
             this.btnLuong.IconChar = FontAwesome.Sharp.IconChar.Donate;
             this.btnLuong.IconColor = System.Drawing.Color.White;
             this.btnLuong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLuong.IconSize = 40;
+            this.btnLuong.IconSize = 45;
             this.btnLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuong.Location = new System.Drawing.Point(0, 306);
+            this.btnLuong.Location = new System.Drawing.Point(0, 392);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLuong.Size = new System.Drawing.Size(190, 60);
-            this.btnLuong.TabIndex = 8;
+            this.btnLuong.Size = new System.Drawing.Size(245, 75);
+            this.btnLuong.TabIndex = 38;
             this.btnLuong.Text = "Lương";
             this.btnLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuong.UseVisualStyleBackColor = true;
+            this.btnLuong.UseVisualStyleBackColor = false;
+            this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // btnDuAn
             // 
+            this.btnDuAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.btnDuAn.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDuAn.FlatAppearance.BorderSize = 0;
             this.btnDuAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDuAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuAn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDuAn.ForeColor = System.Drawing.Color.White;
             this.btnDuAn.IconChar = FontAwesome.Sharp.IconChar.ProjectDiagram;
             this.btnDuAn.IconColor = System.Drawing.Color.White;
             this.btnDuAn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDuAn.IconSize = 40;
+            this.btnDuAn.IconSize = 45;
             this.btnDuAn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDuAn.Location = new System.Drawing.Point(0, 246);
+            this.btnDuAn.Location = new System.Drawing.Point(0, 317);
             this.btnDuAn.Name = "btnDuAn";
             this.btnDuAn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDuAn.Size = new System.Drawing.Size(190, 60);
-            this.btnDuAn.TabIndex = 7;
+            this.btnDuAn.Size = new System.Drawing.Size(245, 75);
+            this.btnDuAn.TabIndex = 37;
             this.btnDuAn.Text = "Dự án";
             this.btnDuAn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDuAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDuAn.UseVisualStyleBackColor = true;
+            this.btnDuAn.UseVisualStyleBackColor = false;
             this.btnDuAn.Click += new System.EventHandler(this.btnDuAn_Click);
             // 
             // pnlNhanSu
@@ -184,37 +300,39 @@
             this.pnlNhanSu.Controls.Add(this.btnPhongBan);
             this.pnlNhanSu.Controls.Add(this.btnNhanVien);
             this.pnlNhanSu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNhanSu.Location = new System.Drawing.Point(0, 169);
+            this.pnlNhanSu.Location = new System.Drawing.Point(0, 214);
             this.pnlNhanSu.Name = "pnlNhanSu";
-            this.pnlNhanSu.Size = new System.Drawing.Size(190, 77);
-            this.pnlNhanSu.TabIndex = 1;
+            this.pnlNhanSu.Size = new System.Drawing.Size(245, 103);
+            this.pnlNhanSu.TabIndex = 36;
             // 
             // btnPhongBan
             // 
-            this.btnPhongBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(100)))));
+            this.btnPhongBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
             this.btnPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPhongBan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(75)))));
             this.btnPhongBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhongBan.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhongBan.ForeColor = System.Drawing.Color.White;
             this.btnPhongBan.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnPhongBan.IconColor = System.Drawing.Color.Black;
             this.btnPhongBan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPhongBan.Location = new System.Drawing.Point(0, 38);
+            this.btnPhongBan.IconSize = 30;
+            this.btnPhongBan.Location = new System.Drawing.Point(0, 50);
             this.btnPhongBan.Name = "btnPhongBan";
-            this.btnPhongBan.Size = new System.Drawing.Size(190, 38);
-            this.btnPhongBan.TabIndex = 1;
+            this.btnPhongBan.Size = new System.Drawing.Size(245, 50);
+            this.btnPhongBan.TabIndex = 2;
             this.btnPhongBan.Text = "Phòng Ban";
+            this.btnPhongBan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhongBan.UseVisualStyleBackColor = false;
             this.btnPhongBan.Click += new System.EventHandler(this.btnPhongBan_Click);
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(100)))));
+            this.btnNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
             this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(75)))));
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNhanVien.IconColor = System.Drawing.Color.White;
@@ -222,114 +340,116 @@
             this.btnNhanVien.IconSize = 30;
             this.btnNhanVien.Location = new System.Drawing.Point(0, 0);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(190, 38);
-            this.btnNhanVien.TabIndex = 0;
+            this.btnNhanVien.Size = new System.Drawing.Size(245, 50);
+            this.btnNhanVien.TabIndex = 2;
             this.btnNhanVien.Text = "Nhân Viên";
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
-            // pnlAccount
-            // 
-            this.pnlAccount.Controls.Add(this.lblTenNV);
-            this.pnlAccount.Controls.Add(this.iconPictureBox1);
-            this.pnlAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAccount.Location = new System.Drawing.Point(0, 662);
-            this.pnlAccount.Name = "pnlAccount";
-            this.pnlAccount.Size = new System.Drawing.Size(190, 41);
-            this.pnlAccount.TabIndex = 1;
-            // 
-            // lblTenNV
-            // 
-            this.lblTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblTenNV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTenNV.BorderRadius = 20;
-            this.lblTenNV.BorderSize = 0;
-            this.lblTenNV.FlatAppearance.BorderSize = 0;
-            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNV.ForeColor = System.Drawing.Color.White;
-            this.lblTenNV.Location = new System.Drawing.Point(39, 3);
-            this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(145, 29);
-            this.lblTenNV.TabIndex = 9;
-            this.lblTenNV.Text = "Tên nhân viên";
-            this.lblTenNV.TextColor = System.Drawing.Color.White;
-            this.lblTenNV.UseVisualStyleBackColor = false;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Azure;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Azure;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(30, 31);
-            this.iconPictureBox1.TabIndex = 8;
-            this.iconPictureBox1.TabStop = false;
-            // 
             // btnNhanSu
             // 
+            this.btnNhanSu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.btnNhanSu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNhanSu.FlatAppearance.BorderSize = 0;
             this.btnNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanSu.ForeColor = System.Drawing.Color.White;
             this.btnNhanSu.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
             this.btnNhanSu.IconColor = System.Drawing.Color.White;
             this.btnNhanSu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhanSu.IconSize = 40;
+            this.btnNhanSu.IconSize = 45;
             this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanSu.Location = new System.Drawing.Point(0, 109);
+            this.btnNhanSu.Location = new System.Drawing.Point(0, 139);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnNhanSu.Size = new System.Drawing.Size(190, 60);
-            this.btnNhanSu.TabIndex = 1;
+            this.btnNhanSu.Size = new System.Drawing.Size(245, 75);
+            this.btnNhanSu.TabIndex = 35;
             this.btnNhanSu.Text = "Nhân sự";
             this.btnNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanSu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhanSu.UseVisualStyleBackColor = true;
+            this.btnNhanSu.UseVisualStyleBackColor = false;
             this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
             // 
             // pnlLogo
             // 
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.pnlLogo.Controls.Add(this.picHome);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(190, 109);
+            this.pnlLogo.Size = new System.Drawing.Size(245, 139);
             this.pnlLogo.TabIndex = 0;
             // 
             // picHome
             // 
-            this.picHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.picHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.picHome.IconChar = FontAwesome.Sharp.IconChar.House;
             this.picHome.IconColor = System.Drawing.Color.White;
             this.picHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picHome.IconSize = 69;
-            this.picHome.Location = new System.Drawing.Point(26, 21);
+            this.picHome.IconSize = 126;
+            this.picHome.Location = new System.Drawing.Point(12, 7);
             this.picHome.Name = "picHome";
-            this.picHome.Size = new System.Drawing.Size(139, 69);
+            this.picHome.Size = new System.Drawing.Size(217, 126);
+            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picHome.TabIndex = 0;
             this.picHome.TabStop = false;
             this.picHome.Click += new System.EventHandler(this.picHome_Click);
             // 
+            // pnlAccount
+            // 
+            this.pnlAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.pnlAccount.Controls.Add(this.lblTenNV);
+            this.pnlAccount.Controls.Add(this.picName);
+            this.pnlAccount.Location = new System.Drawing.Point(1058, 4);
+            this.pnlAccount.Name = "pnlAccount";
+            this.pnlAccount.Size = new System.Drawing.Size(277, 61);
+            this.pnlAccount.TabIndex = 1;
+            // 
+            // lblTenNV
+            // 
+            this.lblTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.lblTenNV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.lblTenNV.BorderRadius = 8;
+            this.lblTenNV.BorderSize = 0;
+            this.lblTenNV.FlatAppearance.BorderSize = 0;
+            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNV.ForeColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.Location = new System.Drawing.Point(66, 9);
+            this.lblTenNV.Name = "lblTenNV";
+            this.lblTenNV.Size = new System.Drawing.Size(196, 43);
+            this.lblTenNV.TabIndex = 9;
+            this.lblTenNV.Text = "Tên Nhân Viên";
+            this.lblTenNV.TextColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.UseVisualStyleBackColor = false;
+            // 
+            // picName
+            // 
+            this.picName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.picName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picName.ForeColor = System.Drawing.Color.Azure;
+            this.picName.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
+            this.picName.IconColor = System.Drawing.Color.Azure;
+            this.picName.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picName.IconSize = 39;
+            this.picName.Location = new System.Drawing.Point(12, 12);
+            this.picName.Name = "picName";
+            this.picName.Size = new System.Drawing.Size(40, 39);
+            this.picName.TabIndex = 8;
+            this.picName.TabStop = false;
+            // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
-            this.pnlTitleBar.Controls.Add(this.btnMaximize);
             this.pnlTitleBar.Controls.Add(this.btnExit);
-            this.pnlTitleBar.Controls.Add(this.lblTitleChildForm);
-            this.pnlTitleBar.Controls.Add(this.picCurrentChildForm);
+            this.pnlTitleBar.Controls.Add(this.btnMaximize);
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitleBar.Location = new System.Drawing.Point(190, 0);
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(992, 55);
+            this.pnlTitleBar.Size = new System.Drawing.Size(1600, 61);
             this.pnlTitleBar.TabIndex = 1;
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             // 
@@ -341,27 +461,12 @@
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 30;
-            this.btnMinimize.Location = new System.Drawing.Point(917, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(1454, 12);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(20, 18);
+            this.btnMinimize.Size = new System.Drawing.Size(40, 43);
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximize.IconColor = System.Drawing.Color.White;
-            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximize.IconSize = 30;
-            this.btnMaximize.Location = new System.Drawing.Point(943, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(20, 18);
-            this.btnMaximize.TabIndex = 3;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnExit
             // 
@@ -371,184 +476,220 @@
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
-            this.btnExit.Location = new System.Drawing.Point(969, 3);
+            this.btnExit.Location = new System.Drawing.Point(1548, 12);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(20, 18);
+            this.btnExit.Size = new System.Drawing.Size(40, 43);
             this.btnExit.TabIndex = 2;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximize.IconColor = System.Drawing.Color.White;
+            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximize.IconSize = 30;
+            this.btnMaximize.Location = new System.Drawing.Point(1500, 12);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 43);
+            this.btnMaximize.TabIndex = 3;
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleChildForm.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(57, 21);
+            this.lblTitleChildForm.Location = new System.Drawing.Point(79, 16);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(44, 17);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(79, 31);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
+            // pnlShadow
+            // 
+            this.pnlShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            this.pnlShadow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlShadow.Controls.Add(this.picCurrentChildForm);
+            this.pnlShadow.Controls.Add(this.pnlAccount);
+            this.pnlShadow.Controls.Add(this.lblTitleChildForm);
+            this.pnlShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlShadow.Location = new System.Drawing.Point(245, 61);
+            this.pnlShadow.Name = "pnlShadow";
+            this.pnlShadow.Size = new System.Drawing.Size(1355, 70);
+            this.pnlShadow.TabIndex = 2;
+            // 
             // picCurrentChildForm
             // 
-            this.picCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.picCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.picCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
             this.picCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             this.picCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
             this.picCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picCurrentChildForm.Location = new System.Drawing.Point(19, 12);
+            this.picCurrentChildForm.IconSize = 58;
+            this.picCurrentChildForm.Location = new System.Drawing.Point(7, 5);
             this.picCurrentChildForm.Name = "picCurrentChildForm";
-            this.picCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.picCurrentChildForm.Size = new System.Drawing.Size(66, 58);
             this.picCurrentChildForm.TabIndex = 0;
             this.picCurrentChildForm.TabStop = false;
             // 
-            // pnlShadow
-            // 
-            this.pnlShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.pnlShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlShadow.Location = new System.Drawing.Point(190, 55);
-            this.pnlShadow.Name = "pnlShadow";
-            this.pnlShadow.Size = new System.Drawing.Size(992, 9);
-            this.pnlShadow.TabIndex = 2;
-            // 
             // pnlDesktop
             // 
-            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
             this.pnlDesktop.Controls.Add(this.pnlLogin);
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(190, 64);
+            this.pnlDesktop.Location = new System.Drawing.Point(245, 131);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(992, 639);
+            this.pnlDesktop.Size = new System.Drawing.Size(1355, 819);
             this.pnlDesktop.TabIndex = 3;
             // 
             // pnlLogin
             // 
             this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlLogin.Controls.Add(this.btnShowPW);
-            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.lblMatKhau);
+            this.pnlLogin.Controls.Add(this.lblTaiKhoan);
             this.pnlLogin.Controls.Add(this.txtMatKhau);
             this.pnlLogin.Controls.Add(this.txtTaiKhoan);
-            this.pnlLogin.Controls.Add(this.lblPassword);
-            this.pnlLogin.Controls.Add(this.lblAccount);
+            this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.picAccount);
-            this.pnlLogin.Location = new System.Drawing.Point(241, 171);
+            this.pnlLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlLogin.Location = new System.Drawing.Point(364, 216);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(489, 281);
+            this.pnlLogin.Size = new System.Drawing.Size(656, 380);
             this.pnlLogin.TabIndex = 0;
             // 
             // btnShowPW
             // 
+            this.btnShowPW.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.btnShowPW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPW.ForeColor = System.Drawing.Color.White;
             this.btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.btnShowPW.IconColor = System.Drawing.Color.Black;
             this.btnShowPW.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnShowPW.IconSize = 30;
-            this.btnShowPW.Location = new System.Drawing.Point(403, 115);
+            this.btnShowPW.Location = new System.Drawing.Point(511, 188);
             this.btnShowPW.Name = "btnShowPW";
-            this.btnShowPW.Size = new System.Drawing.Size(32, 27);
+            this.btnShowPW.Size = new System.Drawing.Size(46, 27);
             this.btnShowPW.TabIndex = 7;
             this.btnShowPW.UseVisualStyleBackColor = true;
             this.btnShowPW.Click += new System.EventHandler(this.btnShowPW_Click);
             // 
-            // btnLogin
+            // lblMatKhau
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(301, 177);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(96, 35);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lblMatKhau.AutoSize = true;
+            this.lblMatKhau.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatKhau.Location = new System.Drawing.Point(215, 188);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Size = new System.Drawing.Size(109, 26);
+            this.lblMatKhau.TabIndex = 13;
+            this.lblMatKhau.Text = "Mật Khẩu:";
+            // 
+            // lblTaiKhoan
+            // 
+            this.lblTaiKhoan.AutoSize = true;
+            this.lblTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaiKhoan.Location = new System.Drawing.Point(208, 119);
+            this.lblTaiKhoan.Name = "lblTaiKhoan";
+            this.lblTaiKhoan.Size = new System.Drawing.Size(116, 26);
+            this.lblTaiKhoan.TabIndex = 12;
+            this.lblTaiKhoan.Text = "Tài Khoản:";
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(264, 115);
+            this.txtMatKhau.BackColor = System.Drawing.Color.White;
+            this.txtMatKhau.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtMatKhau.BorderSize = 2;
+            this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.txtMatKhau.Location = new System.Drawing.Point(331, 181);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhau.Multiline = false;
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(133, 26);
-            this.txtMatKhau.TabIndex = 4;
+            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(7);
+            this.txtMatKhau.Password = true;
+            this.txtMatKhau.Size = new System.Drawing.Size(233, 41);
+            this.txtMatKhau.TabIndex = 11;
+            this.txtMatKhau.Texts = "";
+            this.txtMatKhau.UnderlinedStyle = false;
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(264, 65);
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.White;
+            this.txtTaiKhoan.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtTaiKhoan.BorderSize = 2;
+            this.txtTaiKhoan.ForeColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(331, 104);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTaiKhoan.Multiline = false;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(133, 26);
-            this.txtTaiKhoan.TabIndex = 3;
+            this.txtTaiKhoan.Padding = new System.Windows.Forms.Padding(7);
+            this.txtTaiKhoan.Password = false;
+            this.txtTaiKhoan.Size = new System.Drawing.Size(233, 41);
+            this.txtTaiKhoan.TabIndex = 10;
+            this.txtTaiKhoan.Texts = "";
+            this.txtTaiKhoan.UnderlinedStyle = false;
             // 
-            // lblPassword
+            // btnLogin
             // 
-            this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblPassword.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblPassword.BorderRadius = 20;
-            this.lblPassword.BorderSize = 0;
-            this.lblPassword.FlatAppearance.BorderSize = 0;
-            this.lblPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(143, 111);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(115, 29);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Tài khoản";
-            this.lblPassword.TextColor = System.Drawing.Color.White;
-            this.lblPassword.UseVisualStyleBackColor = false;
-            // 
-            // lblAccount
-            // 
-            this.lblAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblAccount.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblAccount.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblAccount.BorderRadius = 20;
-            this.lblAccount.BorderSize = 0;
-            this.lblAccount.FlatAppearance.BorderSize = 0;
-            this.lblAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblAccount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccount.ForeColor = System.Drawing.Color.White;
-            this.lblAccount.Location = new System.Drawing.Point(143, 61);
-            this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(115, 29);
-            this.lblAccount.TabIndex = 1;
-            this.lblAccount.Text = "Tài khoản";
-            this.lblAccount.TextColor = System.Drawing.Color.White;
-            this.lblAccount.UseVisualStyleBackColor = false;
+            this.btnLogin.BackColor = System.Drawing.Color.White;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(419, 261);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(121, 50);
+            this.btnLogin.TabIndex = 12;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // picAccount
             // 
-            this.picAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.picAccount.ForeColor = System.Drawing.Color.Azure;
+            this.picAccount.BackColor = System.Drawing.Color.White;
+            this.picAccount.ForeColor = System.Drawing.Color.Black;
             this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.picAccount.IconColor = System.Drawing.Color.Azure;
+            this.picAccount.IconColor = System.Drawing.Color.Black;
             this.picAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picAccount.IconSize = 96;
-            this.picAccount.Location = new System.Drawing.Point(41, 38);
+            this.picAccount.IconSize = 139;
+            this.picAccount.Location = new System.Drawing.Point(22, 94);
             this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(96, 100);
+            this.picAccount.Size = new System.Drawing.Size(139, 150);
             this.picAccount.TabIndex = 0;
             this.picAccount.TabStop = false;
+            // 
+            // tmCurrentTime
+            // 
+            this.tmCurrentTime.Tick += new System.EventHandler(this.tmCurrentTime_Tick);
             // 
             // fMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1182, 703);
+            this.ClientSize = new System.Drawing.Size(1600, 950);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlShadow);
-            this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.pnlTitleBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.fMainMenu_Load);
             this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
+            this.pnlDiemDanh.ResumeLayout(false);
             this.pnlNhanSu.ResumeLayout(false);
-            this.pnlAccount.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
+            this.pnlAccount.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picName)).EndInit();
             this.pnlTitleBar.ResumeLayout(false);
-            this.pnlTitleBar.PerformLayout();
+            this.pnlShadow.ResumeLayout(false);
+            this.pnlShadow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCurrentChildForm)).EndInit();
             this.pnlDesktop.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
@@ -561,11 +702,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMenu;
-        private FontAwesome.Sharp.IconButton btnNhanSu;
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconPictureBox picHome;
         private System.Windows.Forms.Panel pnlTitleBar;
-        private FontAwesome.Sharp.IconPictureBox picCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel pnlShadow;
         private System.Windows.Forms.Panel pnlDesktop;
@@ -574,22 +713,31 @@
         private FontAwesome.Sharp.IconButton btnMinimize;
         private System.Windows.Forms.Panel pnlLogin;
         private FontAwesome.Sharp.IconPictureBox picAccount;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.TextBox txtTaiKhoan;
-        private VBLabel lblPassword;
-        private VBLabel lblAccount;
+        private CTTextBox txtMatKhau;
+        private CTTextBox txtTaiKhoan;
         private System.Windows.Forms.Button btnLogin;
         private FontAwesome.Sharp.IconButton btnShowPW;
         private System.Windows.Forms.Panel pnlAccount;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private VBLabel lblTenNV;
+        private FontAwesome.Sharp.IconPictureBox picName;
+        private FontAwesome.Sharp.IconButton btnDiemDanh;
+        private FontAwesome.Sharp.IconButton btnLuong;
+        private FontAwesome.Sharp.IconButton btnDuAn;
         private System.Windows.Forms.Panel pnlNhanSu;
         private FontAwesome.Sharp.IconButton btnPhongBan;
         private FontAwesome.Sharp.IconButton btnNhanVien;
-        private FontAwesome.Sharp.IconButton btnDuAn;
+        private FontAwesome.Sharp.IconButton btnNhanSu;
+        private FontAwesome.Sharp.IconPictureBox picCurrentChildForm;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer tmCurrentTime;
+        private System.Windows.Forms.Panel pnlDiemDanh;
+        private FontAwesome.Sharp.IconButton btnDuyetDonXinNghi;
+        private FontAwesome.Sharp.IconButton btnCheckInOut;
+        private FontAwesome.Sharp.IconButton btnDangXuat;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
-        private FontAwesome.Sharp.IconButton btnDiemDanh;
-        private FontAwesome.Sharp.IconButton btnLuong;
+        private System.Windows.Forms.Label lblMatKhau;
+        private System.Windows.Forms.Label lblTaiKhoan;
+        private VBLabel lblTenNV;
     }
 }
 

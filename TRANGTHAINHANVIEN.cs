@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
@@ -15,9 +15,10 @@ namespace QLConTy_Entity
     public partial class TRANGTHAINHANVIEN
     {
         public string MaNV { get; set; }
-        public string TenNV { get; set; }
         public string TrinhDo { get; set; }
         public string TrangThai { get; set; }
         public Nullable<int> DanhGia { get; set; }
+    
+        public virtual NHANSU NHANSU { get; set; }
     }
 }

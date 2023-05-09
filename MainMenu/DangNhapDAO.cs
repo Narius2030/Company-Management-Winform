@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity_QLCongTy.NhanSu;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -6,32 +7,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLConTy_Entity.MainMenu
+namespace Entity_QLCongTy.MainMenu
 {
     internal class DangNhapDAO
     {
         DBConnection db = new DBConnection();
 
-        public string DangNhap(string taiKhoan, string matKhau)
+        public NHANSU GetInfo(string taiKhoan)
         {
             try
             {
-                string sqlStr = string.Format("select MaCV,matkhau from TAIKHOAN where taikhoan = '{0}'", taiKhoan);
-                DataTable a = new DataTable();
-                a = db.FormLoad(sqlStr);
-                DataRow b = a.Rows[0];
-                string mk = b["matkhau"].ToString();
-                if (SoSanh(matKhau, mk))
-                {
-                    string cv = b["MaCV"].ToString();
-                    if (String.Compare(cv, "QL", true) == 1) return "QL";
-                    else return "NV";
-                }
-                else
-                {
-                    MessageBox.Show("Sai tai khoan hoac mat khau");
-                    return null;
-                }
+                //Get info staff
+                string sqlStr = string.Format("SELECT * FROM NHANSU WHERE MaNV = '{0}'", taiKhoan);
+                DataTable dataset = new DataTable();
+                dataset = db.FormLoad(sqlStr);
+                DataRow tkrow = dataset.Rows[0];
+
+                NHANSU curStaff = new NHANSU(tkrow["MaNV"].ToString(), tkrow["HovaTendem"].ToString(), tkrow["Ten"].ToString(), Convert.ToDateTime(tkrow["NgaySinh"]), tkrow["DiaChi"].ToString(), tkrow["CCCD"].ToString(), tkrow["MaPB"].ToString(), tkrow["GioiTinh"].ToString(), tkrow["SDT"].ToString(), tkrow["Email"].ToString(), tkrow["MaCV"].ToString(), tkrow["TrinhDo"].ToString());
+                return curStaff;
             }
             catch
             {
@@ -39,24 +32,41 @@ namespace QLConTy_Entity.MainMenu
                 return null;
             }
         }
-        bool SoSanh(string mk, string mk1)
-        {
-            int count = 0;
-            for (int i = 0; i < mk1.Length; i++)
-            {
-                if (mk1[i] == ' ') break;
-                else count++;
-            }
-            if (count != mk.Length) return false;
-            bool check = true;
-            for(int i =0; i< mk.Length;i++) 
-                if ((int)mk[i] != (int)mk1[i]) { check = false; break; }
-            return check;
-        }
 
+        public Tuple<string, string, string> DangNhap(string taiKhoan, string matKhau)
+        {
+            try
+            {
+                string sqlStr = string.Format("select taikhoan, MaCV,matkhau from TAIKHOAN where taikhoan = '{0}'", taiKhoan);
+                DataTable dataset = new DataTable();
+                dataset = db.FormLoad(sqlStr);
+                DataRow tkrow = dataset.Rows[0];
+
+                //Get the password from database
+                string mk = tkrow["matkhau"].ToString();
+                string tk = tkrow["taikhoan"].ToString();
+                string cv = tkrow["MaCV"].ToString();
+
+                //Check the valid of mk and tk
+                if (mk.Trim() == matKhau.Trim() && tk.Trim() == taiKhoan.Trim())
+                {
+                    return new Tuple<string, string, string>(taiKhoan, matKhau, cv);
+                }
+                else
+                {
+                    MessageBox.Show("Sai tai khoan hoac mat khau");
+                    return new Tuple<string, string, string>(null, null, null);;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Tai khoan khong ton tai");
+                return  new Tuple<string, string, string>(null, null, null);
+            }
+        }
         public void DoiMatKhau(string taiKhoan,string matKhauMoi,string matKhauNhapLai)
         {
-            if (SoSanh(matKhauMoi,matKhauNhapLai))
+            if (matKhauMoi == matKhauNhapLai)
             {
                 string sqlString = string.Format("UPDATE TAIKHOAN SET matkhau = '{0}' WHERE taikhoan = '{1}'",matKhauMoi, taiKhoan);
                 db.ThucThi(sqlString);

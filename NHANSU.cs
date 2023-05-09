@@ -7,13 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
     using System;
     using System.Collections.Generic;
     
     public partial class NHANSU
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NHANSU()
+        {
+            this.CHAMCONGs = new HashSet<CHAMCONG>();
+            this.CHECKIN_OUT = new HashSet<CHECKIN_OUT>();
+            this.DUANs = new HashSet<DUAN>();
+            this.NGHIPHEPs = new HashSet<NGHIPHEP>();
+            this.PHANCONGDUANs = new HashSet<PHANCONGDUAN>();
+            this.PHONGBANs = new HashSet<PHONGBAN>();
+            this.TIENLUONGs = new HashSet<TIENLUONG>();
+        }
+    
         public string MaNV { get; set; }
         public string HovaTendem { get; set; }
         public string Ten { get; set; }
@@ -26,19 +38,39 @@ namespace QLConTy_Entity
         public string Email { get; set; }
         public string MaCV { get; set; }
         public string TrinhDo { get; set; }
-        public NHANSU(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email)
+        public NHANSU(string maNV, string hovaTendem, string ten, DateTime? ngaySinh, string diaChi, string cCCD, string maPB, string gioiTinh, string sDT, string email, string maCV, string trinhDo)
         {
-            this.MaNV = MaNV;
-            this.HovaTendem = HoDem;
-            this.Ten = Ten;
-            this.NgaySinh = NgaySinh;
-            this.DiaChi = DiaChi;
-            this.CCCD = CCCD;
-            this.MaPB = MaPB;
-            this.MaCV = MaCV;
-            this.GioiTinh = GioiTinh;
-            this.SDT = SDT;
-            this.Email = Email;
+            MaNV = maNV;
+            HovaTendem = hovaTendem;
+            Ten = ten;
+            NgaySinh = ngaySinh;
+            DiaChi = diaChi;
+            CCCD = cCCD;
+            MaPB = maPB;
+            GioiTinh = gioiTinh;
+            SDT = sDT;
+            Email = email;
+            MaCV = maCV;
+            TrinhDo = trinhDo;
         }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHAMCONG> CHAMCONGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHECKIN_OUT> CHECKIN_OUT { get; set; }
+        public virtual CHUCVU CHUCVU { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DUAN> DUANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NGHIPHEP> NGHIPHEPs { get; set; }
+        public virtual PHONGBAN PHONGBAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHANCONGDUAN> PHANCONGDUANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHONGBAN> PHONGBANs { get; set; }
+        public virtual TAIKHOAN TAIKHOAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TIENLUONG> TIENLUONGs { get; set; }
+        public virtual TRANGTHAINHANVIEN TRANGTHAINHANVIEN { get; set; }
     }
 }

@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using QLConTy_Entity.ChamCong;
-using QLConTy_Entity.NhanSu;
-using QLConTy_Entity.PhongBan;
-using QLConTy_Entity.DuAn;
+using Entity_QLCongTy.MainMenu;
+using Entity_QLCongTy.TienLuong;
+using Entity_QLCongTy.NhanSu;
+using Entity_QLCongTy.QLDuAn;
+using Entity_QLCongTy;
+using Entity_QLCongTy.ChamCong;
 
-namespace QLConTy_Entity.MainMenu
+namespace Entity_QLCongTy
 {
     public partial class fMainMenu : Form
     {
@@ -22,60 +18,70 @@ namespace QLConTy_Entity.MainMenu
         private IconButton currentBtn;  //Button hien tai
         private Panel leftBorderBtn;    //Bien phia ben trai button
         private Form currentChildForm;  //Form chuc nang hien tai
-        //Fields dang nhap
+        //Fields dang nhap va cham cong
         DangNhapDAO dao = new DangNhapDAO();
-        static public string MaNV;
-        static public string MaCV;
+        ChamCongDAO ccd = new ChamCongDAO();
+        public static NHANSU currentStaff;
+        public static string MaNV;
+        public static string MaCV;
+        public bool Account = false;
         public fMainMenu()
         {
             InitializeComponent();
             CustomizeDesing();
             leftBorderBtn= new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(10, 75);
             pnlMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //Login
-            txtMatKhau.PasswordChar = '*';
+        }
+
+        private void fMainMenu_Load(object sender, EventArgs e)
+        {
+            tmCurrentTime.Start();
+            //Cập nhật bảng chấm công
+            ccd.InsertChamCong();
         }
 
         #region Hide panel
         private void CustomizeDesing()
         {
-            pnlNhanSu.Visible = false;
             btnNhanSu.Visible = false;
             btnDuAn.Visible = false;
+            btnLuong.Visible = false;
+            btnDiemDanh.Visible = false;
+            btnTaiKhoan.Visible = false;
+            btnDangXuat.Visible = false;
+            pnlAccount.Visible = false;
+            pnlNhanSu.Visible= false;
+            pnlDiemDanh.Visible = false;
         }
+        #region Xử lý Form con
 
         //Phương thức HidePanel() và ShowPanel() có khả năng trùng lặp trên nhiều form >>> Chưa được xử lý
-        private void HidePanel()
+        private void HidePanel(Panel pnl)
         {
-            if (pnlNhanSu.Visible)
+            if (pnl.Visible)
             {
-                pnlNhanSu.Visible = false;
-            }
-            if (pnlLogin.Visible)
-            {
-                pnlLogin.Visible = false;
+                pnl.Visible = false;
             }
         }
 
-        private void ShowMenuPanel(Panel Menupnl)
+        private void ShowPanel(Panel pnl)
         {
-            if (Menupnl.Visible == false)
+            if (pnl.Visible == false)
             {
-                HidePanel();
-                Menupnl.Visible= true;
+                HidePanel(pnl);
+                pnl.Visible= true;
             }
             else
             {
-                Menupnl.Visible = false;
+                pnl.Visible = false;
             }
         }
-        #endregion
 
         # region Struct color
         private struct RGBColors
@@ -86,9 +92,9 @@ namespace QLConTy_Entity.MainMenu
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(12, 12, 171);
         }
         #endregion
-        
         //Methods
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -97,7 +103,7 @@ namespace QLConTy_Entity.MainMenu
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(4, 41, 68);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor= color;
@@ -113,11 +119,12 @@ namespace QLConTy_Entity.MainMenu
                 picCurrentChildForm.IconColor = color;
             }
         }
+
         private void DisableButton()
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(30, 37, 45);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -125,6 +132,7 @@ namespace QLConTy_Entity.MainMenu
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm!= null)
@@ -132,7 +140,7 @@ namespace QLConTy_Entity.MainMenu
                 //Chi 1 form duoc phep hien thi
                 currentChildForm.Close();
             }
-            currentChildForm = new Form();
+            currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Size = pnlDesktop.Size;
@@ -143,51 +151,11 @@ namespace QLConTy_Entity.MainMenu
             childForm.Show();
             lblTitleChildForm.Text = currentBtn.Text;
         }
-
-        #region Nhân sự 
-        private void btnNhanSu_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            ShowMenuPanel(pnlNhanSu);
-        }
-
-        private void btnNhanVien_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FNhanSu());
-            HidePanel();
-        }
-        private void btnPhongBan_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FQLNhanVienPB());
-            HidePanel();
-        }
-
-        #endregion
-
-        private void btnDuAn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new fQLDuAn());
-        }
-
-        //private void btnLuong_Click(object sender, EventArgs e)
-        //{
-        //    ActivateButton(sender, RGBColors.color3);
-        //    OpenChildForm(new fTienLuong());
-        //}
-        private void btnDiemDanh_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new fCheckin_Checkout());
-        }
-        private void btnTaiKhoan_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color5);
-        }
         private void picHome_Click(object sender, EventArgs e)
         {
+            currentChildForm.Close();
             Reset();
-            //pnlDesktop.Refresh();
+            HidePanel(pnlLogin);
         }
         private void Reset()
         {
@@ -197,6 +165,7 @@ namespace QLConTy_Entity.MainMenu
             picCurrentChildForm.IconColor = Color.MediumPurple;
             lblTitleChildForm.Text = "Home";
         }
+        #endregion
 
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -210,15 +179,13 @@ namespace QLConTy_Entity.MainMenu
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void fMainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        #endregion
+
+        #region Design_Click
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -234,35 +201,157 @@ namespace QLConTy_Entity.MainMenu
         {
             WindowState= FormWindowState.Minimized;
         }
+        #endregion
+
+        #region Button
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string cv;
-            cv = dao.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text);
-            if (cv == null) return;
-            if (cv == "QL")
+            try
             {
-                btnNhanSu.Visible = true;
-                btnDuAn.Visible = true;
+                //Dealing with Login
+                var infoAcc = dao.DangNhap(txtTaiKhoan.Texts, txtMatKhau.Texts);
+                currentStaff = dao.GetInfo(txtTaiKhoan.Texts);
+                //Enable feature base on their ChucVu
+                if (infoAcc.Item3 == null)      //??????????????????????
+                    return;
+                if (infoAcc.Item3.Contains("KT") || infoAcc.Item3.Contains("TPNS") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnLuong.Visible = true;
+                }
+                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnDuAn.Visible = true;
+                    pnlNhanSu.Visible = true;
+                    btnNhanSu.Visible = true;
+                    pnlNhanSu.Visible = false;
+                }
+                else
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = false;
+                }
+                Account = true;
+
+                //Assigning to NhanSu variables
+                MaNV = infoAcc.Item1;
+                MaCV = infoAcc.Item3;
+                lblTenNV.Text = currentStaff.HovaTendem + " " + currentStaff.Ten;
+                HidePanel(pnlLogin);
+                pnlAccount.Visible = true;
             }
-            MaNV = txtTaiKhoan.Text;
-            MaCV = cv;
-            lblTenNV.Text = MaNV;
-            HidePanel();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
         private void btnShowPW_Click(object sender, EventArgs e)
         {
-            if (txtMatKhau.PasswordChar == '*')
+            if (txtMatKhau.Password)
             {
-                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.Password = false;
                 btnShowPW.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
             else
             {
-                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.Password = true;
                 btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
 
+        private void btnNhanSu_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            ShowPanel(pnlNhanSu);
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FNhanSu());
+            HidePanel(pnlNhanSu);        
+        }
+
+        private void btnPhongBan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FQLNhanVienPB());
+            HidePanel(pnlNhanSu);
+        }
+
+        private void btnDuAn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new fQLDuAn());
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new fTienLuong());
+        }
+
+        private void btnDiemDanh_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            ShowPanel(pnlDiemDanh);
+        }
+
+        private void btnCheckInOut_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fCheckin_Checkout());
+            HidePanel(pnlDiemDanh);
+        }
+
+        private void btnDuyetDonXinNghi_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fDuyetDonXinNghi());
+            HidePanel(pnlDiemDanh);
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new FProfile());
+        }
         
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            CustomizeDesing();
+            ActivateButton(sender, RGBColors.color7);
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            lblTitleChildForm.Text = "Đăng nhập";
+            Account = false;
+            pnlLogin.Visible = true;
+            // Cần chỉnh sửa;
+            txtTaiKhoan.Texts = "";
+            txtMatKhau.Texts = "";
+            pnlAccount.Visible = false;
+        }
+        #endregion
+
+        private void tmCurrentTime_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

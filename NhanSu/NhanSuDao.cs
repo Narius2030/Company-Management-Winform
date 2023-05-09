@@ -5,22 +5,19 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity_QLCongTy.TienLuong;
+using Entity_QLCongTy.QLDuAn;
+//using System.Windows.Documents;
 using System.Windows;
 
-namespace QLConTy_Entity.NhanSu
+namespace Entity_QLCongTy.NhanSu
 {
-    public class NhanSuDAO
+    internal class NhanSuDAO
     {
         DBConnection dbConnec = new DBConnection();
-        public List<NHANSU> DanhSach()
+        public DataTable DanhSach()
         {
-            using (var db = new QLCTContext())
-            {
-                var query = from q in db.NHANSUs select q;
-
-                List<NHANSU> rows = query.ToList();
-                return rows;
-            }
+            return dbConnec.FormLoad("SELECT *FROM NHANSU");
         }
 
         public DataTable Loc(string col, string value)
@@ -28,12 +25,12 @@ namespace QLConTy_Entity.NhanSu
             string lenh = string.Format("SELECT *FROM NHANSU WHERE {0} = '{1}'", col, value);
             return dbConnec.FormLoad(lenh);
         }
-
-        //---v----v----v----
         public void Them(NHANSU ns)
         {
-            string sqlStr = string.Format("INSERT INTO NHANSU(MaNV, HovaTendem, Ten, NgaySinh, DiaChi, CCCD, MaPB, GioiTinh, SDT, Email, MaCV) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')", ns.MaNV, ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV);
+            string sqlStr = string.Format("INSERT INTO NHANSU(MaNV, HovaTendem, Ten, NgaySinh, DiaChi, CCCD, MaPB, GioiTinh, SDT, Email, MaCV, TrinhDo) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}')", ns.MaNV, ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV, ns.TrinhDo);
             dbConnec.ThucThi(sqlStr);
+
+            //Tao TAIKHOAN moi mac dinh
             sqlStr = string.Format("INSERT INTO TAIKHOAN VALUES('{0}', '{1}','{2}')", ns.MaNV, ns.MaNV, ns.MaCV);
             dbConnec.ThucThi(sqlStr);
         }
@@ -48,10 +45,91 @@ namespace QLConTy_Entity.NhanSu
 
         public void Sua(NHANSU ns)
         {
-            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}' WHERE MaNV = '{10}'", ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV, ns.MaNV);
+            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}', TrinhDo = '{10}' WHERE MaNV = '{10}'", ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh , ns.SDT, ns.Email, ns.MaCV, ns.MaNV, ns.TrinhDo);
             dbConnec.ThucThi(sqlStr);
-            sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'", ns.MaCV, ns.MaNV);
+            sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'",ns.MaCV,ns.MaNV );
             dbConnec.ThucThi(sqlStr);
+        }
+        public float LuongTheoThang(string mapb, int year)
+        {
+            string sqlStr = $@"select sum(tl.LuongThucTe) as Luong
+                                from NHANSU as ns inner join TIENLUONG as tl
+	                                on ns.MaNV = tl.MaNV
+                                where MaPB = '{mapb}' and Nam = {year}";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+
+            float luong = float.Parse(dt.Rows[0]["Luong"].ToString());
+            return luong;
+        }
+
+        //Lấy số lượng phòng --> List<>
+        public List<string> LaySLPhong()
+        {
+            string sqlStr = $@"select MaPB from PHONGBAN";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+
+            List<string> list = new List<string>();
+            for (int i=0; i<dt.Rows.Count; i++)
+            {
+                list.Add(dt.Rows[i]["MaPB"].ToString());
+            }
+            return list;
+        }
+
+        //Lấy số lượng năm --> List<>
+        public List<int> LaySLNam()
+        {
+            string sqlStr = $@"select distinct Nam from TIENLUONG";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+
+            List<int> list = new List<int>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                list.Add(int.Parse(dt.Rows[i]["Nam"].ToString()));
+            }
+            return list;
+        }
+
+        //Lấy số lượng trình độ --> Dictionary
+        public List<KeyValuePair<string, int>> LaySLTrinhDo() 
+        {
+            string sqlStr = $@"select TrinhDo, count(TrinhDo) as so_luong from NHANSU group by TrinhDo";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+
+            var list = new List<KeyValuePair<string, int>>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                list.Add(new KeyValuePair<string, int>(dt.Rows[i]["TrinhDo"].ToString(), int.Parse(dt.Rows[i]["so_luong"].ToString())));
+            }
+            return list;
+        }
+        public double TiLeTGDA()
+        {
+            string sqlStr = $@"select distinct count(MaNV) as so_luong from PHANCONGDUAN";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+            var sl_thamgia = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            sqlStr = $@"select distinct count(MaNV) as so_luong from NHANSU";
+            dt = dbConnec.FormLoad(sqlStr);
+            var tong_nv = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            double tile = Math.Round(((double)sl_thamgia / (double)tong_nv), 3) * 100;
+            return tile;
+        }
+        public double TiLeNam()
+        {
+            string sqlStr = $@"select GioiTinh, count(MaNV) as so_luong
+                                from NHANSU
+                                group by GioiTinh";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+            var sl_nam = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            sqlStr = $@"select distinct count(MaNV) as so_luong from NHANSU";
+            dt = dbConnec.FormLoad(sqlStr);
+            var tong_nv = int.Parse(dt.Rows[0]["so_luong"].ToString());
+
+            double tile = Math.Round(((double)sl_nam / (double)tong_nv), 3) * 100;
+            return tile;
         }
     }
 }

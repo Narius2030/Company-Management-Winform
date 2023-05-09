@@ -7,35 +7,42 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLConTy_Entity
+namespace Entity_QLCongTy
 {
+    using Microsoft.Office.Interop.Excel;
     using System;
     using System.Collections.Generic;
-    using System.Data;
-
+    
     public partial class TIENLUONG
     {
-        private DBConnection dbconn = new DBConnection();
         public string MaNV { get; set; }
         public string MaCV { get; set; }
+        public int Thang { get; set; }
+        public int Nam { get; set; }
         public Nullable<decimal> LuongCB { get; set; }
         public Nullable<decimal> LuongThuong { get; set; }
         public Nullable<decimal> LuongPhat { get; set; }
-        public Nullable<decimal> LuongThucTe { get; set; }
-        public TIENLUONG(string MaNV, string MaCV, float HeSoLuong, int LuongCoBan, int LuongThuong, int SoNgayNghi)
+        public Nullable<double> LuongThucTe { get; set; }
+    
+        public virtual CHUCVU CHUCVU { get; set; }
+        public virtual NHANSU NHANSU { get; set; }
+        public TIENLUONG()
         {
-            /* Tim he so luong */
-            string sql = $"select HeSoLuong from CHUCVU where MaCV = {this.MaCV}";
-            DataTable data = dbconn.FormLoad(sql);
-            DataRow row = data.Rows[0];
-            HeSoLuong = (float)row["HeSoLuong"];
-
+            LuongCB = 1000000;
+            LuongThuong = 0;
+            LuongPhat = 0;
+            LuongThucTe = 0;
+        }
+        public TIENLUONG(string MaNV, string MaCV, int Thang, int Nam, int Luongthuong, decimal Luongphat, float Luongthucte)
+        {
             this.MaNV = MaNV;
             this.MaCV = MaCV;
-            this.LuongCB = LuongCB;
-            this.LuongThuong = LuongThuong;
-            LuongPhat = (decimal)(HeSoLuong * LuongCoBan * SoNgayNghi / 30);
-            LuongThucTe = (decimal)(HeSoLuong * LuongCoBan + LuongThuong) - LuongPhat;
+            this.Thang = Thang;
+            this.Nam = Nam;
+            LuongCB = 1000000;
+            LuongThuong = Luongthuong;
+            LuongPhat = Luongphat;
+            LuongThucTe = Luongthucte;
         }
     }
 }

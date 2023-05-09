@@ -1,0 +1,80 @@
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.AssemblyReference.cache
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.SuggestedBindingRedirects.cache
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.CTTextBox.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.Properties.Resources.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.GenerateResource.cache
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CoreCompileInputs.cache
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fCheckin_Checkout.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fDuyetDonXinNghi.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fMainMenu.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FProfile.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fChucVu.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.NhanSu.FNhanSu.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.fQLDuAn.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.FTaoDuAn.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FQLNhanVienPB.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FQLPhongBan.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.TienLuong.fTienLuong.resources
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe.config
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.pdb
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\EntityFramework.dll
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\EntityFramework.SqlServer.dll
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\FontAwesome.Sharp.dll
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\EntityFramework.xml
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\bin\Debug\EntityFramework.SqlServer.xml
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CopyComplete
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.exe
+D:\HCMUTE\Nam hai\HK02\Windows\DO_AN\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.pdb
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.pdb
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\EntityFramework.xml
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.AssemblyReference.cache
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.SuggestedBindingRedirects.cache
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fCheckin_Checkout.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fDuyetDonXinNghi.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.CTTextBox.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fMainMenu.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FProfile.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fChucVu.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.NhanSu.FNhanSu.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.Properties.Resources.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.fQLDuAn.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.FTaoDuAn.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FQLNhanVienPB.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FQLPhongBan.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.TienLuong.fTienLuong.resources
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.GenerateResource.cache
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CoreCompileInputs.cache
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CopyComplete
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.exe
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.pdb
+C:\Users\HUYNH THIEN NHAN\OneDrive\Máy tính\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe.config
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe.config
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.exe
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\Entity_QLCongTy.pdb
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\FontAwesome.Sharp.dll
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\EntityFramework.xml
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\EntityFramework.SqlServer.xml
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.AssemblyReference.cache
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.SuggestedBindingRedirects.cache
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fCheckin_Checkout.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fDuyetDonXinNghi.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.CTTextBox.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.fMainMenu.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FProfile.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.NhanSu.FNhanSu.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.Properties.Resources.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.fQLDuAn.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.QLDuAn.FTaoDuAn.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.FQLNhanVienPB.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.TienLuong.fTienLuong.resources
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.GenerateResource.cache
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CoreCompileInputs.cache
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.csproj.CopyComplete
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.exe
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\obj\Debug\Entity_QLCongTy.pdb
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\EntityFramework.dll
+D:\Education\Giáo trình\Window Programming\Workspace\Entity_QLCongTy\bin\Debug\EntityFramework.SqlServer.dll
