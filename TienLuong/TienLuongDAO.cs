@@ -75,7 +75,7 @@ namespace QLCongTy.TienLuong
         public void TinhTienLuong()
         {
             string sqlStr = $@"select MaNV, CHUCVU.MaCV, HeSoLuong
-                               from NHANSU join CHUCVU on NHANSU.MaCV = CHUCVU.MaCV";
+                               from NHANSU join CHUCVU on NHANSU.MaCV = CHUCVU.MaCV  ";
             DataTable dtns = db.FormLoad(sqlStr);
             Tienluong tl = new Tienluong();
 

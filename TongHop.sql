@@ -217,3 +217,9 @@ alter table PHANCONGDUAN with check add foreign key (MaNV) references NHANSU(MaN
 alter table TRANGTHAINHANVIEN with check add foreign key (MaNV) references NHANSU(MaNV);
 alter table NGHIPHEP with check add foreign key (MANV) references NHANSU(MaNV);
 go
+
+
+SELECT LuongCB, LuongThuong, LuongPhat, LuongThucTe, NgDiLam, SoNgNghiPhep 
+FROM TIENLUONG inner join CHAMCONG
+	ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
+WHERE TIENLUONG.MaNV = 'NV003' AND TIENLUONG.Nam = '2023' AND TIENLUONG.Thang = '5'

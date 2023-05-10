@@ -36,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSua = new QLCongTy.VBButton();
             this.txtLuongTT = new System.Windows.Forms.TextBox();
             this.txtThang = new System.Windows.Forms.TextBox();
             this.txtLuongPhat = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnChinhSua = new FontAwesome.Sharp.IconButton();
             this.tmThongKe = new System.Windows.Forms.Timer(this.components);
+            this.btnSua = new QLCongTy.VBButton();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
             this.btnXuatFileExcel = new QLCongTy.VBButton();
             this.cboNam = new System.Windows.Forms.ComboBox();
@@ -135,27 +135,6 @@
             this.label1.Size = new System.Drawing.Size(138, 28);
             this.label1.TabIndex = 127;
             this.label1.Text = "Tháng";
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Azure;
-            this.btnSua.BackgroundColor = System.Drawing.Color.Azure;
-            this.btnSua.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSua.BorderRadius = 10;
-            this.btnSua.BorderSize = 1;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(91, 326);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(104, 50);
-            this.btnSua.TabIndex = 106;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextColor = System.Drawing.Color.Black;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txtLuongTT
             // 
@@ -323,6 +302,27 @@
             // 
             this.tmThongKe.Interval = 10;
             this.tmThongKe.Tick += new System.EventHandler(this.tmThongKe_Tick);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Azure;
+            this.btnSua.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnSua.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSua.BorderRadius = 10;
+            this.btnSua.BorderSize = 1;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.Black;
+            this.btnSua.Location = new System.Drawing.Point(91, 326);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(104, 50);
+            this.btnSua.TabIndex = 106;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextColor = System.Drawing.Color.Black;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // artanPannel2
             // 
