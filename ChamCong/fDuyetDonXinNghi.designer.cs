@@ -92,6 +92,7 @@
             this.gvDSXinNghi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvDSXinNghi.Size = new System.Drawing.Size(800, 507);
             this.gvDSXinNghi.TabIndex = 0;
+            this.gvDSXinNghi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDSXinNghi_CellClick);
             this.gvDSXinNghi.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvDSXinNghi_RowHeaderMouseClick);
             // 
             // PnlDonxinnghi

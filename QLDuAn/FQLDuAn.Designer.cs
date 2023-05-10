@@ -35,7 +35,11 @@
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,6 +57,7 @@
             this.tabQLDA = new System.Windows.Forms.TabControl();
             this.tpQLDA = new System.Windows.Forms.TabPage();
             this.pnlTiendo = new System.Windows.Forms.Panel();
+            this.chartTongTiendo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTienDoDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTiendoCN = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
@@ -61,6 +66,7 @@
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
             this.gvQLDuAn = new System.Windows.Forms.DataGridView();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
+            this.cboFindMaDA = new System.Windows.Forms.ComboBox();
             this.btnPhanCong = new QLCongTy.VBButton();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnThem = new QLCongTy.VBButton();
@@ -92,10 +98,10 @@
             this.lblPhongban = new System.Windows.Forms.Label();
             this.btnFilter = new QLCongTy.VBButton();
             this.tmShowTiendo = new System.Windows.Forms.Timer(this.components);
-            this.cboFindMaDA = new System.Windows.Forms.ComboBox();
             this.tabQLDA.SuspendLayout();
             this.tpQLDA.SuspendLayout();
             this.pnlTiendo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).BeginInit();
             this.artanPannel5.SuspendLayout();
@@ -143,59 +149,85 @@
             // pnlTiendo
             // 
             this.pnlTiendo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(48)))), ((int)(((byte)(68)))));
+            this.pnlTiendo.Controls.Add(this.chartTongTiendo);
             this.pnlTiendo.Controls.Add(this.chartTienDoDA);
             this.pnlTiendo.Controls.Add(this.chartTiendoCN);
             this.pnlTiendo.Controls.Add(this.btnThongKe);
             this.pnlTiendo.Controls.Add(this.artanPannel5);
             this.pnlTiendo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTiendo.Location = new System.Drawing.Point(3, 682);
+            this.pnlTiendo.Location = new System.Drawing.Point(3, 6);
             this.pnlTiendo.MaximumSize = new System.Drawing.Size(1323, 734);
             this.pnlTiendo.MinimumSize = new System.Drawing.Size(1323, 58);
             this.pnlTiendo.Name = "pnlTiendo";
-            this.pnlTiendo.Size = new System.Drawing.Size(1323, 58);
+            this.pnlTiendo.Size = new System.Drawing.Size(1323, 734);
             this.pnlTiendo.TabIndex = 1;
             // 
-            // chartTienDoDA
+            // chartTongTiendo
             // 
             chartArea1.Name = "ChartArea1";
-            this.chartTienDoDA.ChartAreas.Add(chartArea1);
+            this.chartTongTiendo.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartTienDoDA.Legends.Add(legend1);
-            this.chartTienDoDA.Location = new System.Drawing.Point(7, 371);
-            this.chartTienDoDA.Name = "chartTienDoDA";
+            this.chartTongTiendo.Legends.Add(legend1);
+            this.chartTongTiendo.Location = new System.Drawing.Point(567, 371);
+            this.chartTongTiendo.Name = "chartTongTiendo";
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.IsValueShownAsLabel = true;
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chartTienDoDA.Series.Add(series1);
-            this.chartTienDoDA.Size = new System.Drawing.Size(488, 344);
+            this.chartTongTiendo.Series.Add(series1);
+            this.chartTongTiendo.Size = new System.Drawing.Size(629, 344);
+            this.chartTongTiendo.TabIndex = 91;
+            this.chartTongTiendo.Text = "chart1";
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Tổng tiến độ";
+            this.chartTongTiendo.Titles.Add(title1);
+            // 
+            // chartTienDoDA
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartTienDoDA.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartTienDoDA.Legends.Add(legend2);
+            this.chartTienDoDA.Location = new System.Drawing.Point(7, 371);
+            this.chartTienDoDA.Name = "chartTienDoDA";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartTienDoDA.Series.Add(series2);
+            this.chartTienDoDA.Size = new System.Drawing.Size(531, 344);
             this.chartTienDoDA.TabIndex = 90;
             this.chartTienDoDA.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Tiến độ dự án";
-            this.chartTienDoDA.Titles.Add(title1);
+            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Tiến độ dự án";
+            this.chartTienDoDA.Titles.Add(title2);
             // 
             // chartTiendoCN
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartTiendoCN.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTiendoCN.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chartTiendoCN.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartTiendoCN.Legends.Add(legend3);
             this.chartTiendoCN.Location = new System.Drawing.Point(631, 69);
             this.chartTiendoCN.Name = "chartTiendoCN";
             this.chartTiendoCN.Size = new System.Drawing.Size(673, 282);
             this.chartTiendoCN.TabIndex = 89;
             this.chartTiendoCN.Text = "chartTiendoCN";
-            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Tiến độ cá nhân";
-            this.chartTiendoCN.Titles.Add(title2);
+            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Tiến độ cá nhân";
+            this.chartTiendoCN.Titles.Add(title3);
             // 
             // btnThongKe
             // 
@@ -377,6 +409,15 @@
             this.artanPannel1.Name = "artanPannel1";
             this.artanPannel1.Size = new System.Drawing.Size(960, 184);
             this.artanPannel1.TabIndex = 86;
+            // 
+            // cboFindMaDA
+            // 
+            this.cboFindMaDA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFindMaDA.FormattingEnabled = true;
+            this.cboFindMaDA.Location = new System.Drawing.Point(58, 28);
+            this.cboFindMaDA.Name = "cboFindMaDA";
+            this.cboFindMaDA.Size = new System.Drawing.Size(189, 30);
+            this.cboFindMaDA.TabIndex = 86;
             // 
             // btnPhanCong
             // 
@@ -884,15 +925,6 @@
             this.tmShowTiendo.Interval = 10;
             this.tmShowTiendo.Tick += new System.EventHandler(this.tmShowTiendo_Tick);
             // 
-            // cboFindMaDA
-            // 
-            this.cboFindMaDA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFindMaDA.FormattingEnabled = true;
-            this.cboFindMaDA.Location = new System.Drawing.Point(58, 28);
-            this.cboFindMaDA.Name = "cboFindMaDA";
-            this.cboFindMaDA.Size = new System.Drawing.Size(189, 30);
-            this.cboFindMaDA.TabIndex = 86;
-            // 
             // fQLDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -910,6 +942,7 @@
             this.tabQLDA.ResumeLayout(false);
             this.tpQLDA.ResumeLayout(false);
             this.pnlTiendo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).EndInit();
             this.artanPannel5.ResumeLayout(false);
@@ -976,5 +1009,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTiendoCN;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTienDoDA;
         private System.Windows.Forms.ComboBox cboFindMaDA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTongTiendo;
     }
 }
