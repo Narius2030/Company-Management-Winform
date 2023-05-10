@@ -155,11 +155,11 @@
             this.pnlTiendo.Controls.Add(this.btnThongKe);
             this.pnlTiendo.Controls.Add(this.artanPannel5);
             this.pnlTiendo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTiendo.Location = new System.Drawing.Point(3, 6);
+            this.pnlTiendo.Location = new System.Drawing.Point(3, 682);
             this.pnlTiendo.MaximumSize = new System.Drawing.Size(1323, 734);
             this.pnlTiendo.MinimumSize = new System.Drawing.Size(1323, 58);
             this.pnlTiendo.Name = "pnlTiendo";
-            this.pnlTiendo.Size = new System.Drawing.Size(1323, 734);
+            this.pnlTiendo.Size = new System.Drawing.Size(1323, 58);
             this.pnlTiendo.TabIndex = 1;
             // 
             // chartTongTiendo

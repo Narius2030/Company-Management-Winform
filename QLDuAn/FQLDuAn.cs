@@ -103,7 +103,10 @@ namespace QLCongTy.QLDuAn
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
                 DataGridViewRow rows = gvQLDuAn.SelectedRows[0];
-                daDao.Xoa(rows.Cells[0].ToString());
+                // -----v------v-------
+                MessageBox.Show(da.Mada);
+                daDao.Xoa(da.Mada);
+                gvQLDuAn.DataSource = daDao.DSDuAn();
             }
             else
             {
