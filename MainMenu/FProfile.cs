@@ -161,7 +161,7 @@ namespace QLCongTy
             List<float> luong;
             try
             {
-                luong = pfd.LayThongTinLuong(lblMaNV.Text);
+                luong = pfd.LayThongTinLuong(fMainMenu.currentStaff.MaNV, 5, 2023);//month, year);
             }
             catch
             {
@@ -171,6 +171,12 @@ namespace QLCongTy
 
             int i = 0;
             foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
+            {
+                control.Texts = luong[i].ToString();
+                i++;
+            }
+            i--;
+            foreach (var control in pnlThongSo.Controls.OfType<CTTextBox>())
             {
                 control.Texts = luong[i].ToString();
                 i++;

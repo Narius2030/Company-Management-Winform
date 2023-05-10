@@ -20,63 +20,74 @@ namespace QLCongTy.QLDuAn
         {
             string sqlStr = $"select * from DUAN where TruongDA = '{manv}'";
             return db.FormLoad(sqlStr);
-        }
+        } 
 
         public DataTable DSDuAn()
         {
             string sqlStr = $"select * from DUAN";
             return db.FormLoad(sqlStr);
         }
+
         public DataTable LayDanhSachNhanLuc()
         {
             string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN";
             return db.FormLoad(sqlStr);
         }
+
         public DataTable LayDanhSachPhanCong(string col, string value)
         {
             string sqlStr = $"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE {col} = '{value}'";
             return db.FormLoad(sqlStr);
         }
+
         public DataTable LayDanhSachNVRanh()
         {
             string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'";
             return db.FormLoad(sqlStr);
         }
+
         public DataTable LayDSNVRanhVaDieuKien(string col, string value)
         {
             string sqlStr = $"select  MaNV, TrinhDo from TRANGTHAINHANVIEN where {col} = '{value}' and TrangThai = 'Ranh'";
             return db.FormLoad(sqlStr);
         }
+
         public void Them(DuAn da)
         {
             string sqlStr = $"INSERT INTO DUAN VALUES ('{da.Mada}', '{da.Tenda}', '{da.Mapb}', 0, '{da.Truongda}', '{da.Ngaybd}', '{da.Ngaykt}', '{da.Trangthai}', 0)";
             db.ThucThi(sqlStr);
         }
+
         public void Xoa(string mada)
         {
             string sqlStr = $"DELETE FROM DUAN WHERE MaDA = '{mada}'";
             db.ThucThi(sqlStr);
         }
+
         public void Sua(DuAn da)
         {
             string sqlStr = string.Format("UPDATE DUAN SET TenDA = '{0}', MaPB = '{1}',TruongDA = '{2}', NgayBD = '{3}', NgayKT = '{4}', TrangThai = '{5}' WHERE MaDA = '{6}'", da.Tenda, da.Mapb, da.Truongda, da.Ngaybd, da.Ngaykt, da.Trangthai, da.Mada);
             db.ThucThi(sqlStr);
         }
+
         public DataTable TimKiem(string MaDA)
         {
             string sqlStr = string.Format("SELECT * FROM DUAN WHERE MaDA = '{0}'",MaDA);
             return db.FormLoad(sqlStr);
         }
+
         public void ThemNVvaoDA(PCNhanLuc pcnl)
         {
             string sqlStr = string.Format("INSERT INTO PHANCONGDUAN VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '0')", pcnl.Mada, pcnl.Manv, pcnl.Congviec, pcnl.Ngaybd, pcnl.Ngaykt);
             db.ThucThi(sqlStr);
         }
+
         public void XoaNVkhoiDA(PCNhanLuc pcnl)
         {
             string sqlStr = string.Format("DELETE FROM PHANCONGDUAN WHERE MaDA = '{0}' AND MaNV = '{1}'", pcnl.Mada, pcnl.Manv);
             db.ThucThi(sqlStr);
         }
+
         public void TienDoDuAn(string MaDA)
         {
             int result = int.Parse(db.GetItem($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
