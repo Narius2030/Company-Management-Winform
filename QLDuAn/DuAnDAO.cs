@@ -21,6 +21,12 @@ namespace QLCongTy.QLDuAn
             string sqlStr = $"select * from DUAN where TruongDA = '{manv}'";
             return db.FormLoad(sqlStr);
         }
+
+        public DataTable DSDuAn()
+        {
+            string sqlStr = $"select * from DUAN";
+            return db.FormLoad(sqlStr);
+        }
         public DataTable LayDanhSachNhanLuc()
         {
             string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN";

@@ -37,6 +37,10 @@ namespace QLCongTy.QLDuAn
         private void fQLDuAn_Load(object sender, EventArgs e)
         {
             gvQLDuAn.DataSource= daDao.LayDanhSachDuAn(fMainMenu.currentStaff.MaNV);
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                gvQLDuAn.DataSource = daDao.DSDuAn();
+            }
             daDao.InitStatusTB();
             gvNhanLuc.DataSource = daDao.LayDanhSachNhanLuc();
             tabQLDA.Controls.Remove(tpPCDA);
@@ -111,7 +115,7 @@ namespace QLCongTy.QLDuAn
         {
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
-                FTaoDuAn tda = new FTaoDuAn(da, btnXoa.Text);
+                FTaoDuAn tda = new FTaoDuAn(da, btnSua.Text);
                 tda.Show();
             }
             else
