@@ -39,9 +39,8 @@ namespace QLCongTy.TienLuong
         {
             if (cboNam.Text != "Năm")
             {
-                //string sqlStr = string.Format("SELECT * FROM TIENLUONG WHERE Nam = '{0}' AND Thang = '{1}'", cboNam.Text, cboThang.Text);
-                //gvTienLuong.DataSource = tlDao.Loc(sqlStr);
-                tlDao.LocThang(cboNam.Text, cboThang.Text);
+                string sqlStr = string.Format("SELECT * FROM TIENLUONG WHERE Nam = '{0}' AND Thang = '{1}'", cboNam.Text, cboThang.Text);
+                gvTienLuong.DataSource= tlDao.LocThang(cboNam.Text, cboThang.Text);
             }
             else
             {
