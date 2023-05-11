@@ -7,4 +7,5 @@
 
 6. Cho chọn nghĩ nhiều ngày (cuối cùng)
 7. Chỉnh định dạng thành phần trong form (màu, trang trí,...)
-8. Lỗi khi submit lại ngày đã submit, bắt exception nhưng mesagebox vẫn hiện là check thành công--------
+8. Lỗi khi submit lại ngày đã submit, bắt exception nhưng mesagebox vẫn hiện là check thành công (ĐƠn xin nghỉ cũng gặp tình trạng tương tự)--------
+9. Xem lương cá nhân theo tháng

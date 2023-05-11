@@ -22,9 +22,6 @@ namespace QLCongTy.ChamCong
             {
                 string sqlStr = $"insert into CHECKIN_OUT values('{cio.MaNV}', '{cio.Ngay}', {cio.CheckInSang}, {cio.CheckOutChieu}, '{cio.LyDo}')";
                 dbconn.ThucThi(sqlStr);
-
-                //Thông báo
-                MessageBox.Show("Đã check in thành công");
             }
             catch(Exception ex)
             {

@@ -22,7 +22,7 @@ namespace QLCongTy.QLPhongBan
         }
         public void Them(PhongBan pb)
         {
-            string sqlStr = string.Format("INSERT INTO PHONGBAN(MaPB,TenPB,MaTP) VALUES ('{0}', '{1}', '{2}')",pb.Mapb,pb.Tenpb,pb.Matp);
+            string sqlStr = string.Format("INSERT INTO PHONGBAN(MaPB,TenPB,MaTP) VALUES ('{0}', '{1}', '{2}')", pb.Mapb, pb.Tenpb, pb.Matp);
             db.ThucThi(sqlStr);
         }
 
@@ -34,7 +34,7 @@ namespace QLCongTy.QLPhongBan
 
         public void Sua(PhongBan pb)
         {
-            string sqlStr = string.Format("UPDATE PHONGBAN SET  TenPB = '{0}', MaTP = '{1}' WHERE MaPB = '{2}'", pb.Tenpb,pb.Matp,pb.Mapb);
+            string sqlStr = string.Format("UPDATE PHONGBAN SET  TenPB = '{0}', MaTP = '{1}' WHERE MaPB = '{2}'", pb.Tenpb, pb.Matp, pb.Mapb);
             db.ThucThi(sqlStr);
         }
         public DataTable TimKiem(PhongBan pb)
@@ -43,8 +43,8 @@ namespace QLCongTy.QLPhongBan
             {
                 return LDS();
             }
-            string sqlStr = string.Format("select PHONGBAN.MaPB, TenPB, MaTP, Ten from PHONGBAN left outer join NHANSU on MaTP = MaNV WHERE PHONGBAN.MaPB = '{0}'",pb.Mapb);
-             return db.FormLoad(sqlStr);       
+            string sqlStr = string.Format("select PHONGBAN.MaPB, TenPB, MaTP, Ten from PHONGBAN left outer join NHANSU on MaTP = MaNV WHERE PHONGBAN.MaPB = '{0}'", pb.Mapb);
+            return db.FormLoad(sqlStr);
         }
     }
 }

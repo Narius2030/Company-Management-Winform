@@ -23,7 +23,7 @@ namespace QLCongTy
 
         private void fQLNhanVienPB_Load(object sender, EventArgs e)
         {
-            
+            GetCboPhongBan();
         }
 
         void DoiTen()
@@ -44,25 +44,35 @@ namespace QLCongTy
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1) return;
             DataGridViewRow row = gvNhanVienPB.Rows[e.RowIndex];
-            txtMaPhongBan.Text = row.Cells[0].Value.ToString();
-            txtTenPhongBan.Text = row.Cells[1].Value.ToString();
             txtMaNhanVien.Text = row.Cells[2].Value.ToString();
             txtTenNhanVien.Text = row.Cells[3].Value.ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            dao.Sua(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
-            gvNhanVienPB.DataSource = dao.TimKiem(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
+            dao.Sua(cboPhongBan.SelectedValue.ToString(), cboPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
+            gvNhanVienPB.DataSource = dao.TimKiem(cboPhongBan.SelectedValue.ToString(), cboPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gvNhanVienPB.DataSource = dao.TimKiem(txtMaPhongBan.Text, txtTenPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
-            gvTruongPhong.DataSource = dao.LDSTP(txtMaPhongBan.Text);
+            gvNhanVienPB.DataSource = dao.TimKiem(cboPhongBan.SelectedValue.ToString(), cboPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
+            gvTruongPhong.DataSource = dao.LDSTP(cboPhongBan.SelectedValue.ToString());
             DoiTen();
         }
 
+        private void txtPhongBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gvNhanVienPB.DataSource = dao.TimKiem(cboPhongBan.SelectedValue.ToString(), cboPhongBan.Text, txtMaNhanVien.Text, txtTenNhanVien.Text);
+            gvTruongPhong.DataSource = dao.LDSTP(cboPhongBan.SelectedValue.ToString());
+            DoiTen();
+        }
 
+        private void GetCboPhongBan()
+        {
+            cboPhongBan.DataSource = dao.GetNameDept();
+            cboPhongBan.DisplayMember = "TenPB";
+            cboPhongBan.ValueMember = "MaPB";
+        }
     }
 }
