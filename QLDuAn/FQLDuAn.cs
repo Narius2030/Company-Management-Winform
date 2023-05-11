@@ -103,7 +103,10 @@ namespace QLCongTy.QLDuAn
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
                 DataGridViewRow rows = gvQLDuAn.SelectedRows[0];
-                daDao.Xoa(rows.Cells[0].ToString());
+                // -----v------v-------
+                MessageBox.Show(da.Mada);
+                daDao.Xoa(da.Mada);
+                gvQLDuAn.DataSource = daDao.DSDuAn();
             }
             else
             {
@@ -259,8 +262,10 @@ namespace QLCongTy.QLDuAn
             tmShowTiendo.Start();
             chartTiendoCN.Series.Clear();
             chartTienDoDA.Series.Clear();
+            chartTongTiendo.Series.Clear();
             VeBDTienDoCN();
             VeBDTienDoDA();
+            VeBDTongTienDoDA();
         }
         public void GettxtFindMaDA()
         {
@@ -305,7 +310,7 @@ namespace QLCongTy.QLDuAn
             //Add series
             chartTiendoCN.Series.Add("Task");
             chartTiendoCN.Series[0].ChartType = SeriesChartType.Bar;
-
+            
             //Add columns
             foreach (var ele in lstparent)
             {           
@@ -328,6 +333,23 @@ namespace QLCongTy.QLDuAn
             chartTienDoDA.Series[0].Points.AddXY("Chưa thực hiện", tdd.LaySLChuaThucHien(da.Mada));
             chartTienDoDA.Series[0].Points.AddXY("Đã hoàn thành", tdd.LaySLHoanThanh(da.Mada));
             chartTienDoDA.Series[0].Points.AddXY("Quá hạn", tdd.LaySLQuaHan(da.Mada));
+        }
+
+        //Vẽ biểu đồ tổng tiến độ dự án
+        public void VeBDTongTienDoDA()
+        {
+            chartTongTiendo.Series.Add("Series1");
+            chartTongTiendo.Series[0].ChartType = SeriesChartType.Doughnut;
+
+            #region Trang trí biểu đồ
+            chartTongTiendo.Series[0].IsValueShownAsLabel = true;
+            chartTongTiendo.Series[0].LabelForeColor = Color.White;
+            chartTongTiendo.Series[0].Font = new System.Drawing.Font("Segoe UI", 12.0f, FontStyle.Bold);
+            #endregion
+
+            int tiendo = tdd.LayTienDoDA(da.Mada);
+            chartTongTiendo.Series[0].Points.AddXY("Đã hoàn thành", tiendo);
+            chartTongTiendo.Series[0].Points.AddXY("Chưa hoàn thanh", 100-tiendo);
         }
 
         #endregion

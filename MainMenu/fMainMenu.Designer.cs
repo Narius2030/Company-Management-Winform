@@ -442,7 +442,7 @@
             // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
             this.pnlTitleBar.Controls.Add(this.btnExit);
             this.pnlTitleBar.Controls.Add(this.btnMaximize);
@@ -538,7 +538,7 @@
             // 
             // pnlDesktop
             // 
-            this.pnlDesktop.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.pnlDesktop.Controls.Add(this.pnlLogin);
             this.pnlDesktop.Location = new System.Drawing.Point(245, 131);
             this.pnlDesktop.Name = "pnlDesktop";
@@ -650,9 +650,9 @@
             // picAccount
             // 
             this.picAccount.BackColor = System.Drawing.Color.White;
-            this.picAccount.ForeColor = System.Drawing.Color.Black;
+            this.picAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(111)))), ((int)(((byte)(255)))));
             this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.picAccount.IconColor = System.Drawing.Color.Black;
+            this.picAccount.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(111)))), ((int)(((byte)(255)))));
             this.picAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.picAccount.IconSize = 139;
             this.picAccount.Location = new System.Drawing.Point(22, 94);
