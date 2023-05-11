@@ -65,9 +65,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlThongtinluong = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pnlThongSo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlHoaDon = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlDuAn = new System.Windows.Forms.Panel();
             this.pnlTTCN = new System.Windows.Forms.Panel();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
@@ -76,7 +77,6 @@
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.pnlThongSo = new System.Windows.Forms.Panel();
             this.btnUpdateMatKhau = new QLCongTy.VBButton();
             this.btnDoiMatKhau = new QLCongTy.VBButton();
             this.btnGuiDonXinNghi = new QLCongTy.VBButton();
@@ -89,10 +89,12 @@
             this.vbLabel11 = new QLCongTy.VBLabel();
             this.vbLabel9 = new QLCongTy.VBLabel();
             this.vbLabel12 = new QLCongTy.VBLabel();
-            this.txtDuAnHoanThanh = new QLCongTy.CTTextBox();
-            this.vbLabel5 = new QLCongTy.VBLabel();
-            this.txtSoNgayNghi = new QLCongTy.CTTextBox();
             this.txtSoNgayLam = new QLCongTy.CTTextBox();
+            this.vbLabel6 = new QLCongTy.VBLabel();
+            this.txtSoNgayNghi = new QLCongTy.CTTextBox();
+            this.vbLabel5 = new QLCongTy.VBLabel();
+            this.txtSoNgayNghiPhep = new QLCongTy.CTTextBox();
+            this.txtSoDuAnHoanThanh = new QLCongTy.CTTextBox();
             this.vbLabel1 = new QLCongTy.VBLabel();
             this.vbLabel4 = new QLCongTy.VBLabel();
             this.vbLabel2 = new QLCongTy.VBLabel();
@@ -106,8 +108,6 @@
             this.lblDiaChi = new QLCongTy.VBLabel();
             this.lblMaNV = new QLCongTy.VBLabel();
             this.lblTenNV = new QLCongTy.VBLabel();
-            this.ctTextBox1 = new QLCongTy.CTTextBox();
-            this.vbLabel6 = new QLCongTy.VBLabel();
             this.sidebar.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -119,6 +119,7 @@
             this.pnlLuong.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlThongtinluong.SuspendLayout();
+            this.pnlThongSo.SuspendLayout();
             this.pnlHoaDon.SuspendLayout();
             this.pnlDuAn.SuspendLayout();
             this.pnlTTCN.SuspendLayout();
@@ -128,7 +129,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.pnlThongSo.SuspendLayout();
             this.pnldatagridviewDuAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).BeginInit();
             this.SuspendLayout();
@@ -578,15 +578,22 @@
             this.panel7.Size = new System.Drawing.Size(564, 3);
             this.panel7.TabIndex = 67;
             // 
-            // label5
+            // pnlThongSo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(240, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(600, 22);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Đã nhân với hệ số lương. Nếu có khiếu nại vui lòng liên hệ phòng tài chính";
+            this.pnlThongSo.BackColor = System.Drawing.Color.White;
+            this.pnlThongSo.Controls.Add(this.txtSoNgayLam);
+            this.pnlThongSo.Controls.Add(this.vbLabel6);
+            this.pnlThongSo.Controls.Add(this.txtSoNgayNghi);
+            this.pnlThongSo.Controls.Add(this.vbLabel5);
+            this.pnlThongSo.Controls.Add(this.txtSoNgayNghiPhep);
+            this.pnlThongSo.Controls.Add(this.txtSoDuAnHoanThanh);
+            this.pnlThongSo.Controls.Add(this.vbLabel1);
+            this.pnlThongSo.Controls.Add(this.vbLabel4);
+            this.pnlThongSo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlThongSo.Location = new System.Drawing.Point(0, 138);
+            this.pnlThongSo.Name = "pnlThongSo";
+            this.pnlThongSo.Size = new System.Drawing.Size(399, 359);
+            this.pnlThongSo.TabIndex = 67;
             // 
             // panel3
             // 
@@ -606,6 +613,16 @@
             this.pnlHoaDon.Name = "pnlHoaDon";
             this.pnlHoaDon.Size = new System.Drawing.Size(961, 133);
             this.pnlHoaDon.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(240, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(600, 22);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Đã nhân với hệ số lương. Nếu có khiếu nại vui lòng liên hệ phòng tài chính";
             // 
             // pnlDuAn
             // 
@@ -721,23 +738,6 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(70, 74);
             this.iconPictureBox1.TabIndex = 8;
             this.iconPictureBox1.TabStop = false;
-            // 
-            // pnlThongSo
-            // 
-            this.pnlThongSo.BackColor = System.Drawing.Color.White;
-            this.pnlThongSo.Controls.Add(this.ctTextBox1);
-            this.pnlThongSo.Controls.Add(this.vbLabel6);
-            this.pnlThongSo.Controls.Add(this.txtDuAnHoanThanh);
-            this.pnlThongSo.Controls.Add(this.vbLabel5);
-            this.pnlThongSo.Controls.Add(this.txtSoNgayNghi);
-            this.pnlThongSo.Controls.Add(this.txtSoNgayLam);
-            this.pnlThongSo.Controls.Add(this.vbLabel1);
-            this.pnlThongSo.Controls.Add(this.vbLabel4);
-            this.pnlThongSo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlThongSo.Location = new System.Drawing.Point(0, 138);
-            this.pnlThongSo.Name = "pnlThongSo";
-            this.pnlThongSo.Size = new System.Drawing.Size(399, 359);
-            this.pnlThongSo.TabIndex = 67;
             // 
             // btnUpdateMatKhau
             // 
@@ -958,23 +958,59 @@
             this.vbLabel12.TextColor = System.Drawing.Color.White;
             this.vbLabel12.UseVisualStyleBackColor = false;
             // 
-            // txtDuAnHoanThanh
+            // txtSoNgayLam
             // 
-            this.txtDuAnHoanThanh.BackColor = System.Drawing.Color.White;
-            this.txtDuAnHoanThanh.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDuAnHoanThanh.BorderSize = 2;
-            this.txtDuAnHoanThanh.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuAnHoanThanh.ForeColor = System.Drawing.Color.Black;
-            this.txtDuAnHoanThanh.Location = new System.Drawing.Point(244, 238);
-            this.txtDuAnHoanThanh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDuAnHoanThanh.Multiline = false;
-            this.txtDuAnHoanThanh.Name = "txtDuAnHoanThanh";
-            this.txtDuAnHoanThanh.Padding = new System.Windows.Forms.Padding(7);
-            this.txtDuAnHoanThanh.Password = false;
-            this.txtDuAnHoanThanh.Size = new System.Drawing.Size(85, 32);
-            this.txtDuAnHoanThanh.TabIndex = 86;
-            this.txtDuAnHoanThanh.Texts = "";
-            this.txtDuAnHoanThanh.UnderlinedStyle = false;
+            this.txtSoNgayLam.BackColor = System.Drawing.Color.White;
+            this.txtSoNgayLam.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoNgayLam.BorderSize = 2;
+            this.txtSoNgayLam.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoNgayLam.ForeColor = System.Drawing.Color.Black;
+            this.txtSoNgayLam.Location = new System.Drawing.Point(244, 53);
+            this.txtSoNgayLam.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoNgayLam.Multiline = false;
+            this.txtSoNgayLam.Name = "txtSoNgayLam";
+            this.txtSoNgayLam.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoNgayLam.Password = false;
+            this.txtSoNgayLam.Size = new System.Drawing.Size(85, 32);
+            this.txtSoNgayLam.TabIndex = 88;
+            this.txtSoNgayLam.Texts = "";
+            this.txtSoNgayLam.UnderlinedStyle = false;
+            // 
+            // vbLabel6
+            // 
+            this.vbLabel6.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel6.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.vbLabel6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbLabel6.BorderRadius = 20;
+            this.vbLabel6.BorderSize = 0;
+            this.vbLabel6.FlatAppearance.BorderSize = 0;
+            this.vbLabel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbLabel6.ForeColor = System.Drawing.Color.White;
+            this.vbLabel6.Location = new System.Drawing.Point(64, 109);
+            this.vbLabel6.Name = "vbLabel6";
+            this.vbLabel6.Size = new System.Drawing.Size(155, 40);
+            this.vbLabel6.TabIndex = 87;
+            this.vbLabel6.Text = "Số ngày nghỉ";
+            this.vbLabel6.TextColor = System.Drawing.Color.White;
+            this.vbLabel6.UseVisualStyleBackColor = false;
+            // 
+            // txtSoNgayNghi
+            // 
+            this.txtSoNgayNghi.BackColor = System.Drawing.Color.White;
+            this.txtSoNgayNghi.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoNgayNghi.BorderSize = 2;
+            this.txtSoNgayNghi.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoNgayNghi.ForeColor = System.Drawing.Color.Black;
+            this.txtSoNgayNghi.Location = new System.Drawing.Point(244, 116);
+            this.txtSoNgayNghi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoNgayNghi.Multiline = false;
+            this.txtSoNgayNghi.Name = "txtSoNgayNghi";
+            this.txtSoNgayNghi.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoNgayNghi.Password = false;
+            this.txtSoNgayNghi.Size = new System.Drawing.Size(85, 32);
+            this.txtSoNgayNghi.TabIndex = 86;
+            this.txtSoNgayNghi.Texts = "";
+            this.txtSoNgayNghi.UnderlinedStyle = false;
             // 
             // vbLabel5
             // 
@@ -994,41 +1030,41 @@
             this.vbLabel5.TextColor = System.Drawing.Color.White;
             this.vbLabel5.UseVisualStyleBackColor = false;
             // 
-            // txtSoNgayNghi
+            // txtSoNgayNghiPhep
             // 
-            this.txtSoNgayNghi.BackColor = System.Drawing.Color.White;
-            this.txtSoNgayNghi.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtSoNgayNghi.BorderSize = 2;
-            this.txtSoNgayNghi.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoNgayNghi.ForeColor = System.Drawing.Color.Black;
-            this.txtSoNgayNghi.Location = new System.Drawing.Point(244, 53);
-            this.txtSoNgayNghi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoNgayNghi.Multiline = false;
-            this.txtSoNgayNghi.Name = "txtSoNgayNghi";
-            this.txtSoNgayNghi.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSoNgayNghi.Password = false;
-            this.txtSoNgayNghi.Size = new System.Drawing.Size(86, 32);
-            this.txtSoNgayNghi.TabIndex = 84;
-            this.txtSoNgayNghi.Texts = "";
-            this.txtSoNgayNghi.UnderlinedStyle = false;
+            this.txtSoNgayNghiPhep.BackColor = System.Drawing.Color.White;
+            this.txtSoNgayNghiPhep.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoNgayNghiPhep.BorderSize = 2;
+            this.txtSoNgayNghiPhep.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoNgayNghiPhep.ForeColor = System.Drawing.Color.Black;
+            this.txtSoNgayNghiPhep.Location = new System.Drawing.Point(243, 177);
+            this.txtSoNgayNghiPhep.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoNgayNghiPhep.Multiline = false;
+            this.txtSoNgayNghiPhep.Name = "txtSoNgayNghiPhep";
+            this.txtSoNgayNghiPhep.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoNgayNghiPhep.Password = false;
+            this.txtSoNgayNghiPhep.Size = new System.Drawing.Size(86, 32);
+            this.txtSoNgayNghiPhep.TabIndex = 84;
+            this.txtSoNgayNghiPhep.Texts = "";
+            this.txtSoNgayNghiPhep.UnderlinedStyle = false;
             // 
-            // txtSoNgayLam
+            // txtSoDuAnHoanThanh
             // 
-            this.txtSoNgayLam.BackColor = System.Drawing.Color.White;
-            this.txtSoNgayLam.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtSoNgayLam.BorderSize = 2;
-            this.txtSoNgayLam.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoNgayLam.ForeColor = System.Drawing.Color.Black;
-            this.txtSoNgayLam.Location = new System.Drawing.Point(244, 169);
-            this.txtSoNgayLam.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoNgayLam.Multiline = false;
-            this.txtSoNgayLam.Name = "txtSoNgayLam";
-            this.txtSoNgayLam.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSoNgayLam.Password = false;
-            this.txtSoNgayLam.Size = new System.Drawing.Size(85, 32);
-            this.txtSoNgayLam.TabIndex = 83;
-            this.txtSoNgayLam.Texts = "";
-            this.txtSoNgayLam.UnderlinedStyle = false;
+            this.txtSoDuAnHoanThanh.BackColor = System.Drawing.Color.White;
+            this.txtSoDuAnHoanThanh.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoDuAnHoanThanh.BorderSize = 2;
+            this.txtSoDuAnHoanThanh.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDuAnHoanThanh.ForeColor = System.Drawing.Color.Black;
+            this.txtSoDuAnHoanThanh.Location = new System.Drawing.Point(244, 238);
+            this.txtSoDuAnHoanThanh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoDuAnHoanThanh.Multiline = false;
+            this.txtSoDuAnHoanThanh.Name = "txtSoDuAnHoanThanh";
+            this.txtSoDuAnHoanThanh.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoDuAnHoanThanh.Password = false;
+            this.txtSoDuAnHoanThanh.Size = new System.Drawing.Size(85, 32);
+            this.txtSoDuAnHoanThanh.TabIndex = 83;
+            this.txtSoDuAnHoanThanh.Texts = "";
+            this.txtSoDuAnHoanThanh.UnderlinedStyle = false;
             // 
             // vbLabel1
             // 
@@ -1282,42 +1318,6 @@
             this.lblTenNV.TextColor = System.Drawing.Color.White;
             this.lblTenNV.UseVisualStyleBackColor = false;
             // 
-            // ctTextBox1
-            // 
-            this.ctTextBox1.BackColor = System.Drawing.Color.White;
-            this.ctTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.ctTextBox1.BorderSize = 2;
-            this.ctTextBox1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.ctTextBox1.Location = new System.Drawing.Point(244, 109);
-            this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox1.Multiline = false;
-            this.ctTextBox1.Name = "ctTextBox1";
-            this.ctTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.ctTextBox1.Password = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(85, 32);
-            this.ctTextBox1.TabIndex = 88;
-            this.ctTextBox1.Texts = "";
-            this.ctTextBox1.UnderlinedStyle = false;
-            // 
-            // vbLabel6
-            // 
-            this.vbLabel6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel6.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.vbLabel6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbLabel6.BorderRadius = 20;
-            this.vbLabel6.BorderSize = 0;
-            this.vbLabel6.FlatAppearance.BorderSize = 0;
-            this.vbLabel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbLabel6.ForeColor = System.Drawing.Color.White;
-            this.vbLabel6.Location = new System.Drawing.Point(64, 109);
-            this.vbLabel6.Name = "vbLabel6";
-            this.vbLabel6.Size = new System.Drawing.Size(155, 40);
-            this.vbLabel6.TabIndex = 87;
-            this.vbLabel6.Text = "Số ngày nghỉ";
-            this.vbLabel6.TextColor = System.Drawing.Color.White;
-            this.vbLabel6.UseVisualStyleBackColor = false;
-            // 
             // FProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1345,6 +1345,7 @@
             this.pnlLuong.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlThongtinluong.ResumeLayout(false);
+            this.pnlThongSo.ResumeLayout(false);
             this.pnlHoaDon.ResumeLayout(false);
             this.pnlHoaDon.PerformLayout();
             this.pnlDuAn.ResumeLayout(false);
@@ -1355,7 +1356,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.pnlThongSo.ResumeLayout(false);
             this.pnldatagridviewDuAn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).EndInit();
             this.ResumeLayout(false);
@@ -1432,14 +1432,14 @@
         private CTTextBox txtLuongthuong;
         private CTTextBox txtLuongphat;
         private ArtanComponent.ArtanPannel pnldatagridviewDuAn;
-        private CTTextBox txtDuAnHoanThanh;
-        private VBLabel vbLabel5;
         private CTTextBox txtSoNgayNghi;
-        private CTTextBox txtSoNgayLam;
+        private VBLabel vbLabel5;
+        private CTTextBox txtSoNgayNghiPhep;
+        private CTTextBox txtSoDuAnHoanThanh;
         private VBLabel vbLabel1;
         private VBLabel vbLabel4;
         private System.Windows.Forms.Panel pnlThongSo;
-        private CTTextBox ctTextBox1;
+        private CTTextBox txtSoNgayLam;
         private VBLabel vbLabel6;
     }
 }

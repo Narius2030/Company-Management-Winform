@@ -37,9 +37,9 @@ namespace QLCongTy
         public List<float> LayThongTinLuong(string manv, int month, int year)
         {
             //Lấy thông tin lương của tài khoản trên TIENLUONG
-            string sqlStr = $@"SELECT LuongCB, LuongThuong, LuongPhat, LuongThucTe, NgDiLam, SoNgNghiPhep
-                                FROM TIENLUONG inner join CHAMCONG
-                                ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
+            string sqlStr = $@"SELECT TIENLUONG.LuongCB, TIENLUONG.LuongThuong, TIENLUONG.LuongPhat, TIENLUONG.LuongThucTe, CHAMCONG.NgDiLam, (30 - CHAMCONG.NgDiLam - CHAMCONG.SoNgNghiPhep) AS SoNgNghiKhongPhep, CHAMCONG.SoNgNghiPhep, (30 - 1) as DuAnHoanThanh
+                                FROM TIENLUONG
+                                INNER JOIN CHAMCONG ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
                                 WHERE TIENLUONG.MaNV = '{manv}' AND TIENLUONG.Nam = '{year}' AND TIENLUONG.Thang = '{month}'";
             DataTable dt = db.FormLoad(sqlStr);
 

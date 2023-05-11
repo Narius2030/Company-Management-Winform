@@ -169,14 +169,12 @@ namespace QLCongTy
                 MessageBox.Show("Lương tháng này hiện chưa có");
                 luong = Enumerable.Repeat<float>(0, 9).ToList();
             }
-
             int i = 0;
             foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
             {
                 control.Texts = luong[i].ToString();
                 i++;
             }
-            i--;
             foreach (var control in pnlThongSo.Controls.OfType<CTTextBox>())
             {
                 control.Texts = luong[i].ToString();
