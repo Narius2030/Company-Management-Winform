@@ -34,23 +34,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabDiemdanh = new System.Windows.Forms.TabControl();
             this.tpCheckSang = new System.Windows.Forms.TabPage();
-            this.tpCheckchieu = new System.Windows.Forms.TabPage();
             this.pnlThongtinCheckIn = new ArtanComponent.ArtanPannel();
+            this.btnSubmitSang = new QLCongTy.VBButton();
             this.dtpCheckIn = new QLCongTy.CTDateTimePicker();
-            this.txtMaDa = new QLCongTy.CTTextBox();
             this.txtMacvsang = new QLCongTy.CTTextBox();
             this.txtManvsang = new QLCongTy.CTTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlgridviewsang = new ArtanComponent.ArtanPannel();
             this.gvChecksang = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbCheckInsang = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnSubmitsang = new System.Windows.Forms.Button();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
             this.label3 = new System.Windows.Forms.Label();
+            this.tpCheckchieu = new System.Windows.Forms.TabPage();
             this.pnlThongtinCheckout = new ArtanComponent.ArtanPannel();
+            this.btnSubmitChieu = new QLCongTy.VBButton();
+            this.btnCapNhatTienDo = new QLCongTy.VBButton();
             this.txtPhanTram = new QLCongTy.CTTextBox();
             this.dtpCheckOut = new QLCongTy.CTDateTimePicker();
             this.txtMacvchieu = new QLCongTy.CTTextBox();
@@ -61,17 +61,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbCheckOutchieu = new System.Windows.Forms.CheckBox();
-            this.btnSubmitchieu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabDiemdanh.SuspendLayout();
             this.tpCheckSang.SuspendLayout();
-            this.tpCheckchieu.SuspendLayout();
             this.pnlThongtinCheckIn.SuspendLayout();
             this.pnlgridviewsang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvChecksang)).BeginInit();
             this.artanPannel1.SuspendLayout();
+            this.tpCheckchieu.SuspendLayout();
             this.pnlThongtinCheckout.SuspendLayout();
             this.artanPannel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCheckchieu)).BeginInit();
@@ -105,35 +104,19 @@
             this.tpCheckSang.TabIndex = 0;
             this.tpCheckSang.Text = "Buổi Sáng ";
             // 
-            // tpCheckchieu
-            // 
-            this.tpCheckchieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            this.tpCheckchieu.Controls.Add(this.pnlThongtinCheckout);
-            this.tpCheckchieu.Controls.Add(this.artanPannel2);
-            this.tpCheckchieu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tpCheckchieu.Location = new System.Drawing.Point(4, 38);
-            this.tpCheckchieu.Name = "tpCheckchieu";
-            this.tpCheckchieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckchieu.Size = new System.Drawing.Size(1347, 777);
-            this.tpCheckchieu.TabIndex = 1;
-            this.tpCheckchieu.Text = "Buổi Chiều ";
-            // 
             // pnlThongtinCheckIn
             // 
             this.pnlThongtinCheckIn.BackColor = System.Drawing.Color.White;
             this.pnlThongtinCheckIn.BorderRadius = 50;
+            this.pnlThongtinCheckIn.Controls.Add(this.btnSubmitSang);
             this.pnlThongtinCheckIn.Controls.Add(this.dtpCheckIn);
-            this.pnlThongtinCheckIn.Controls.Add(this.txtMaDa);
             this.pnlThongtinCheckIn.Controls.Add(this.txtMacvsang);
             this.pnlThongtinCheckIn.Controls.Add(this.txtManvsang);
-            this.pnlThongtinCheckIn.Controls.Add(this.label6);
             this.pnlThongtinCheckIn.Controls.Add(this.pnlgridviewsang);
             this.pnlThongtinCheckIn.Controls.Add(this.label8);
             this.pnlThongtinCheckIn.Controls.Add(this.label4);
             this.pnlThongtinCheckIn.Controls.Add(this.cbCheckInsang);
             this.pnlThongtinCheckIn.Controls.Add(this.label10);
-            this.pnlThongtinCheckIn.Controls.Add(this.btnSubmitsang);
             this.pnlThongtinCheckIn.ForeColor = System.Drawing.Color.Black;
             this.pnlThongtinCheckIn.GradientAngle = 90F;
             this.pnlThongtinCheckIn.GradientBttomColor = System.Drawing.Color.WhiteSmoke;
@@ -143,35 +126,38 @@
             this.pnlThongtinCheckIn.Size = new System.Drawing.Size(847, 601);
             this.pnlThongtinCheckIn.TabIndex = 51;
             // 
+            // btnSubmitSang
+            // 
+            this.btnSubmitSang.BackColor = System.Drawing.Color.Azure;
+            this.btnSubmitSang.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnSubmitSang.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSubmitSang.BorderRadius = 10;
+            this.btnSubmitSang.BorderSize = 1;
+            this.btnSubmitSang.FlatAppearance.BorderSize = 0;
+            this.btnSubmitSang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitSang.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitSang.ForeColor = System.Drawing.Color.Black;
+            this.btnSubmitSang.Location = new System.Drawing.Point(630, 183);
+            this.btnSubmitSang.Name = "btnSubmitSang";
+            this.btnSubmitSang.Size = new System.Drawing.Size(103, 43);
+            this.btnSubmitSang.TabIndex = 88;
+            this.btnSubmitSang.Text = "Submit";
+            this.btnSubmitSang.TextColor = System.Drawing.Color.Black;
+            this.btnSubmitSang.UseVisualStyleBackColor = false;
+            this.btnSubmitSang.Click += new System.EventHandler(this.btnSubmitSang_Click);
+            // 
             // dtpCheckIn
             // 
             this.dtpCheckIn.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtpCheckIn.BorderSize = 0;
             this.dtpCheckIn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckIn.Location = new System.Drawing.Point(175, 121);
+            this.dtpCheckIn.Location = new System.Drawing.Point(272, 124);
             this.dtpCheckIn.MinimumSize = new System.Drawing.Size(4, 35);
             this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(255, 35);
+            this.dtpCheckIn.Size = new System.Drawing.Size(257, 35);
             this.dtpCheckIn.SkinColor = System.Drawing.Color.MediumSlateBlue;
             this.dtpCheckIn.TabIndex = 62;
             this.dtpCheckIn.TextColor = System.Drawing.Color.White;
-            // 
-            // txtMaDa
-            // 
-            this.txtMaDa.BackColor = System.Drawing.Color.White;
-            this.txtMaDa.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtMaDa.BorderSize = 2;
-            this.txtMaDa.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDa.Location = new System.Drawing.Point(157, 187);
-            this.txtMaDa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaDa.Multiline = false;
-            this.txtMaDa.Name = "txtMaDa";
-            this.txtMaDa.Padding = new System.Windows.Forms.Padding(7);
-            this.txtMaDa.Password = false;
-            this.txtMaDa.Size = new System.Drawing.Size(102, 43);
-            this.txtMaDa.TabIndex = 61;
-            this.txtMaDa.Texts = "";
-            this.txtMaDa.UnderlinedStyle = false;
             // 
             // txtMacvsang
             // 
@@ -179,13 +165,13 @@
             this.txtMacvsang.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtMacvsang.BorderSize = 2;
             this.txtMacvsang.ForeColor = System.Drawing.Color.Black;
-            this.txtMacvsang.Location = new System.Drawing.Point(604, 56);
+            this.txtMacvsang.Location = new System.Drawing.Point(613, 54);
             this.txtMacvsang.Margin = new System.Windows.Forms.Padding(4);
             this.txtMacvsang.Multiline = false;
             this.txtMacvsang.Name = "txtMacvsang";
             this.txtMacvsang.Padding = new System.Windows.Forms.Padding(7);
             this.txtMacvsang.Password = false;
-            this.txtMacvsang.Size = new System.Drawing.Size(150, 43);
+            this.txtMacvsang.Size = new System.Drawing.Size(120, 43);
             this.txtMacvsang.TabIndex = 60;
             this.txtMacvsang.Texts = "";
             this.txtMacvsang.UnderlinedStyle = false;
@@ -196,27 +182,16 @@
             this.txtManvsang.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtManvsang.BorderSize = 2;
             this.txtManvsang.ForeColor = System.Drawing.Color.Black;
-            this.txtManvsang.Location = new System.Drawing.Point(242, 56);
+            this.txtManvsang.Location = new System.Drawing.Point(272, 54);
             this.txtManvsang.Margin = new System.Windows.Forms.Padding(4);
             this.txtManvsang.Multiline = false;
             this.txtManvsang.Name = "txtManvsang";
             this.txtManvsang.Padding = new System.Windows.Forms.Padding(7);
             this.txtManvsang.Password = false;
-            this.txtManvsang.Size = new System.Drawing.Size(149, 43);
+            this.txtManvsang.Size = new System.Drawing.Size(132, 43);
             this.txtManvsang.TabIndex = 59;
             this.txtManvsang.Texts = "";
             this.txtManvsang.UnderlinedStyle = false;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(60, 191);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 30);
-            this.label6.TabIndex = 58;
-            this.label6.Text = "Dự án";
             // 
             // pnlgridviewsang
             // 
@@ -272,16 +247,15 @@
             this.gvChecksang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvChecksang.Size = new System.Drawing.Size(654, 286);
             this.gvChecksang.TabIndex = 38;
-            this.gvChecksang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvChecksang_CellClick);
             // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(59, 126);
+            this.label8.Location = new System.Drawing.Point(90, 129);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 30);
+            this.label8.Size = new System.Drawing.Size(143, 30);
             this.label8.TabIndex = 30;
             this.label8.Text = "Check In ";
             // 
@@ -291,7 +265,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(452, 66);
+            this.label4.Location = new System.Drawing.Point(459, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 33);
             this.label4.TabIndex = 36;
@@ -300,9 +274,9 @@
             // cbCheckInsang
             // 
             this.cbCheckInsang.BackColor = System.Drawing.Color.Transparent;
-            this.cbCheckInsang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCheckInsang.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCheckInsang.ForeColor = System.Drawing.Color.Black;
-            this.cbCheckInsang.Location = new System.Drawing.Point(506, 113);
+            this.cbCheckInsang.Location = new System.Drawing.Point(554, 119);
             this.cbCheckInsang.Name = "cbCheckInsang";
             this.cbCheckInsang.Size = new System.Drawing.Size(109, 50);
             this.cbCheckInsang.TabIndex = 32;
@@ -314,22 +288,11 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(59, 65);
+            this.label10.Location = new System.Drawing.Point(90, 60);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(176, 30);
             this.label10.TabIndex = 29;
             this.label10.Text = "Mã Nhân viên ";
-            // 
-            // btnSubmitsang
-            // 
-            this.btnSubmitsang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitsang.Location = new System.Drawing.Point(403, 191);
-            this.btnSubmitsang.Name = "btnSubmitsang";
-            this.btnSubmitsang.Size = new System.Drawing.Size(86, 34);
-            this.btnSubmitsang.TabIndex = 34;
-            this.btnSubmitsang.Text = "Submit";
-            this.btnSubmitsang.UseVisualStyleBackColor = true;
-            this.btnSubmitsang.Click += new System.EventHandler(this.btnSubmitsang_Click);
             // 
             // artanPannel1
             // 
@@ -360,10 +323,26 @@
             this.label3.Text = "Thông Tin Điểm Danh";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tpCheckchieu
+            // 
+            this.tpCheckchieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.tpCheckchieu.Controls.Add(this.pnlThongtinCheckout);
+            this.tpCheckchieu.Controls.Add(this.artanPannel2);
+            this.tpCheckchieu.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpCheckchieu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tpCheckchieu.Location = new System.Drawing.Point(4, 38);
+            this.tpCheckchieu.Name = "tpCheckchieu";
+            this.tpCheckchieu.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCheckchieu.Size = new System.Drawing.Size(1347, 777);
+            this.tpCheckchieu.TabIndex = 1;
+            this.tpCheckchieu.Text = "Buổi Chiều ";
+            // 
             // pnlThongtinCheckout
             // 
             this.pnlThongtinCheckout.BackColor = System.Drawing.Color.White;
             this.pnlThongtinCheckout.BorderRadius = 50;
+            this.pnlThongtinCheckout.Controls.Add(this.btnSubmitChieu);
+            this.pnlThongtinCheckout.Controls.Add(this.btnCapNhatTienDo);
             this.pnlThongtinCheckout.Controls.Add(this.txtPhanTram);
             this.pnlThongtinCheckout.Controls.Add(this.dtpCheckOut);
             this.pnlThongtinCheckout.Controls.Add(this.txtMacvchieu);
@@ -373,7 +352,6 @@
             this.pnlThongtinCheckout.Controls.Add(this.label5);
             this.pnlThongtinCheckout.Controls.Add(this.label9);
             this.pnlThongtinCheckout.Controls.Add(this.cbCheckOutchieu);
-            this.pnlThongtinCheckout.Controls.Add(this.btnSubmitchieu);
             this.pnlThongtinCheckout.Controls.Add(this.label2);
             this.pnlThongtinCheckout.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.pnlThongtinCheckout.ForeColor = System.Drawing.Color.Transparent;
@@ -384,6 +362,46 @@
             this.pnlThongtinCheckout.Name = "pnlThongtinCheckout";
             this.pnlThongtinCheckout.Size = new System.Drawing.Size(847, 601);
             this.pnlThongtinCheckout.TabIndex = 57;
+            // 
+            // btnSubmitChieu
+            // 
+            this.btnSubmitChieu.BackColor = System.Drawing.Color.Azure;
+            this.btnSubmitChieu.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnSubmitChieu.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSubmitChieu.BorderRadius = 10;
+            this.btnSubmitChieu.BorderSize = 1;
+            this.btnSubmitChieu.FlatAppearance.BorderSize = 0;
+            this.btnSubmitChieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitChieu.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitChieu.ForeColor = System.Drawing.Color.Black;
+            this.btnSubmitChieu.Location = new System.Drawing.Point(630, 183);
+            this.btnSubmitChieu.Name = "btnSubmitChieu";
+            this.btnSubmitChieu.Size = new System.Drawing.Size(103, 43);
+            this.btnSubmitChieu.TabIndex = 87;
+            this.btnSubmitChieu.Text = "Submit";
+            this.btnSubmitChieu.TextColor = System.Drawing.Color.Black;
+            this.btnSubmitChieu.UseVisualStyleBackColor = false;
+            this.btnSubmitChieu.Click += new System.EventHandler(this.btnSubmitChieu_Click);
+            // 
+            // btnCapNhatTienDo
+            // 
+            this.btnCapNhatTienDo.BackColor = System.Drawing.Color.Azure;
+            this.btnCapNhatTienDo.BackgroundColor = System.Drawing.Color.Azure;
+            this.btnCapNhatTienDo.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCapNhatTienDo.BorderRadius = 10;
+            this.btnCapNhatTienDo.BorderSize = 1;
+            this.btnCapNhatTienDo.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatTienDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatTienDo.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhatTienDo.ForeColor = System.Drawing.Color.Black;
+            this.btnCapNhatTienDo.Location = new System.Drawing.Point(456, 183);
+            this.btnCapNhatTienDo.Name = "btnCapNhatTienDo";
+            this.btnCapNhatTienDo.Size = new System.Drawing.Size(103, 43);
+            this.btnCapNhatTienDo.TabIndex = 86;
+            this.btnCapNhatTienDo.Text = "Cập nhật";
+            this.btnCapNhatTienDo.TextColor = System.Drawing.Color.Black;
+            this.btnCapNhatTienDo.UseVisualStyleBackColor = false;
+            this.btnCapNhatTienDo.Click += new System.EventHandler(this.btnCapNhatTienDo_Click);
             // 
             // txtPhanTram
             // 
@@ -397,7 +415,7 @@
             this.txtPhanTram.Name = "txtPhanTram";
             this.txtPhanTram.Padding = new System.Windows.Forms.Padding(7);
             this.txtPhanTram.Password = false;
-            this.txtPhanTram.Size = new System.Drawing.Size(96, 41);
+            this.txtPhanTram.Size = new System.Drawing.Size(96, 43);
             this.txtPhanTram.TabIndex = 59;
             this.txtPhanTram.Texts = "";
             this.txtPhanTram.UnderlinedStyle = false;
@@ -407,7 +425,7 @@
             this.dtpCheckOut.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtpCheckOut.BorderSize = 0;
             this.dtpCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOut.Location = new System.Drawing.Point(239, 129);
+            this.dtpCheckOut.Location = new System.Drawing.Point(272, 124);
             this.dtpCheckOut.MinimumSize = new System.Drawing.Size(4, 35);
             this.dtpCheckOut.Name = "dtpCheckOut";
             this.dtpCheckOut.Size = new System.Drawing.Size(257, 35);
@@ -427,7 +445,7 @@
             this.txtMacvchieu.Name = "txtMacvchieu";
             this.txtMacvchieu.Padding = new System.Windows.Forms.Padding(7);
             this.txtMacvchieu.Password = false;
-            this.txtMacvchieu.Size = new System.Drawing.Size(120, 41);
+            this.txtMacvchieu.Size = new System.Drawing.Size(120, 43);
             this.txtMacvchieu.TabIndex = 57;
             this.txtMacvchieu.Texts = "";
             this.txtMacvchieu.UnderlinedStyle = false;
@@ -444,7 +462,7 @@
             this.txtManvchieu.Name = "txtManvchieu";
             this.txtManvchieu.Padding = new System.Windows.Forms.Padding(7);
             this.txtManvchieu.Password = false;
-            this.txtManvchieu.Size = new System.Drawing.Size(132, 41);
+            this.txtManvchieu.Size = new System.Drawing.Size(132, 43);
             this.txtManvchieu.TabIndex = 56;
             this.txtManvchieu.Texts = "";
             this.txtManvchieu.UnderlinedStyle = false;
@@ -498,6 +516,7 @@
             this.gvCheckchieu.Location = new System.Drawing.Point(10, 10);
             this.gvCheckchieu.MultiSelect = false;
             this.gvCheckchieu.Name = "gvCheckchieu";
+            this.gvCheckchieu.ReadOnly = true;
             this.gvCheckchieu.RowHeadersVisible = false;
             this.gvCheckchieu.RowHeadersWidth = 51;
             this.gvCheckchieu.RowTemplate.Height = 24;
@@ -546,27 +565,14 @@
             // cbCheckOutchieu
             // 
             this.cbCheckOutchieu.BackColor = System.Drawing.Color.Transparent;
-            this.cbCheckOutchieu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCheckOutchieu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCheckOutchieu.ForeColor = System.Drawing.Color.Black;
-            this.cbCheckOutchieu.Location = new System.Drawing.Point(521, 120);
+            this.cbCheckOutchieu.Location = new System.Drawing.Point(554, 119);
             this.cbCheckOutchieu.Name = "cbCheckOutchieu";
             this.cbCheckOutchieu.Size = new System.Drawing.Size(117, 50);
             this.cbCheckOutchieu.TabIndex = 48;
             this.cbCheckOutchieu.Text = "Now";
             this.cbCheckOutchieu.UseVisualStyleBackColor = false;
-            // 
-            // btnSubmitchieu
-            // 
-            this.btnSubmitchieu.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSubmitchieu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitchieu.ForeColor = System.Drawing.Color.Black;
-            this.btnSubmitchieu.Location = new System.Drawing.Point(506, 190);
-            this.btnSubmitchieu.Name = "btnSubmitchieu";
-            this.btnSubmitchieu.Size = new System.Drawing.Size(85, 34);
-            this.btnSubmitchieu.TabIndex = 51;
-            this.btnSubmitchieu.Text = "Submit";
-            this.btnSubmitchieu.UseVisualStyleBackColor = false;
-            this.btnSubmitchieu.Click += new System.EventHandler(this.btnSubmitchieu_Click);
             // 
             // label2
             // 
@@ -621,12 +627,12 @@
             this.Load += new System.EventHandler(this.fCheckin_Checkout_Load);
             this.tabDiemdanh.ResumeLayout(false);
             this.tpCheckSang.ResumeLayout(false);
-            this.tpCheckchieu.ResumeLayout(false);
             this.pnlThongtinCheckIn.ResumeLayout(false);
             this.pnlThongtinCheckIn.PerformLayout();
             this.pnlgridviewsang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvChecksang)).EndInit();
             this.artanPannel1.ResumeLayout(false);
+            this.tpCheckchieu.ResumeLayout(false);
             this.pnlThongtinCheckout.ResumeLayout(false);
             this.pnlThongtinCheckout.PerformLayout();
             this.artanPannel4.ResumeLayout(false);
@@ -645,17 +651,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gvChecksang;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSubmitsang;
         private System.Windows.Forms.CheckBox cbCheckInsang;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnSubmitchieu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbCheckOutchieu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private ArtanComponent.ArtanPannel artanPannel1;
         private ArtanComponent.ArtanPannel pnlgridviewsang;
         private ArtanComponent.ArtanPannel pnlThongtinCheckIn;
@@ -665,11 +668,13 @@
         private ArtanComponent.ArtanPannel artanPannel4;
         private CTTextBox txtManvsang;
         private CTTextBox txtMacvsang;
-        private CTTextBox txtMaDa;
         private CTTextBox txtManvchieu;
         private CTTextBox txtMacvchieu;
         private CTDateTimePicker dtpCheckOut;
         private CTDateTimePicker dtpCheckIn;
         private CTTextBox txtPhanTram;
+        private VBButton btnCapNhatTienDo;
+        private VBButton btnSubmitChieu;
+        private VBButton btnSubmitSang;
     }
 }

@@ -1,9 +1,10 @@
 1. Chỉnh sửa cách tính % tiến độ dự án--------đã xong
 2. Thông báo đã đơn xin nghỉ   
 3. Nhấn logo đăng home thì ẩn mẹ form đăng nhập
-4. cho nhân viên cập nhật tiến độ cho nhiều dự án-------TN
+4. cho nhân viên cập nhật tiến độ cho nhiều dự án-------Xong
 5. Trực quan thể hiện dự án đã xong, quá hạn, đang làm trên datagridview------đã xong
 
 
 6. Cho chọn nghĩ nhiều ngày (cuối cùng)
 7. Chỉnh định dạng thành phần trong form (màu, trang trí,...)
+8. Lỗi khi submit lại ngày đã submit, bắt exception nhưng mesagebox vẫn hiện là check thành công--------
