@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Threading.Tasks;
 
 namespace QLCongTy.ChamCong
@@ -22,7 +23,18 @@ namespace QLCongTy.ChamCong
             string sqlStr = $"DELETE NGHIPHEP WHERE MANV = '{ttxn.Manv}' AND NGAYNGHI = '{ttxn.Ngaynghi}'";
             dbconn.ThucThi(sqlStr);
         }
-
+        public void ThemBangXinNghi(ThongTinXinNghi ttxn)
+        {
+            string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.Manv}', '{ttxn.Ngaynghi}', '{ttxn.Lydo}', 'chua duyet')";
+            dbconn.ThucThi(sqlStr);
+            MessageBox.Show("Đã gửi đơn xin nghỉ");
+        }
+        public void CapNhatBangXinNghi(ThongTinXinNghi ttxn, string phanhoi)
+        {
+            string sqlStr = $"UPDATE NGHIPHEP SET PHANHOI = '{phanhoi}' WHERE MANV = '{ttxn.Manv}' AND NGAYNGHI = '{ttxn.Ngaynghi}'";
+            dbconn.ThucThi(sqlStr);
+            MessageBox.Show("Đã phản hồi cho nhân viên");
+        }
         public void GiamSoNgNghiPhep(ThongTinXinNghi ttxn)
         {
             //Tạo CHAMCONG ban đầu 
@@ -42,7 +54,7 @@ namespace QLCongTy.ChamCong
                 soNgNP = 0;
             }
 
-            if (ttxn.Lydo.ToLower() == "nghi phep")
+            if (ttxn.Lydo.ToLower() == "nghi phep" && soNgNP > 0)
             {
                 soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString()) + 1;
             }

@@ -45,6 +45,8 @@ namespace QLCongTy
             cio.Macv = txtMacvsang.Texts;
             cio.Ngay = dtpCheckIn.Value.Date;
             ciod.SubmitSang(cio);
+            //Thông báo
+            MessageBox.Show("Đã check in thành công");
             ReLoad();
         }
 
@@ -64,6 +66,8 @@ namespace QLCongTy
             ReLoad();
             //Tính số ngày đi làm sau khi checkin_out
             CheckNgayNghi(cio);
+            //Thông báo
+            MessageBox.Show("Đã check out thành công");
         }
 
         public void ConvertCheck(CheckInOut cio)

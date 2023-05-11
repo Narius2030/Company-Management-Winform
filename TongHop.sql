@@ -66,6 +66,8 @@ insert into TAIKHOAN VALUES ('NV001','NV001','TD'),
 							('NV100','NV100','GD')
 go
 
+--delete from TIENLUONG
+--drop table TIENLUONG
 create table TIENLUONG (
 	MaNV varchar(5),
 	MaCV varchar(6),
@@ -79,10 +81,6 @@ create table TIENLUONG (
 )
 go
 
---delete from TIENLUONG
---drop table TIENLUONG
-
-----------------------------------------------------------
 CREATE TABLE PHONGBAN(
 	MaPB varchar(4) PRIMARY KEY,
 	TenPB varchar(40) NULL,
@@ -123,7 +121,6 @@ go
 
 --delete from CHAMCONG
 --drop table CHAMCONG
-
 create table CHAMCONG(
 	MaNV varchar(5),
 	Thang int,
@@ -137,7 +134,6 @@ go
 
 --delete from CHECKIN_OUT
 --drop table CHECKIN_OUT
-
 create table CHECKIN_OUT(
 	MaNV varchar(5),
 	Ngay date,
@@ -197,6 +193,7 @@ CREATE TABLE NGHIPHEP
 	MANV VARCHAR(5) NOT NULL,
 	NGAYNGHI DATE NOT NULL,
 	LYDO VARCHAR(20) NOT NULL,
+	PHANHOI VARCHAR(20) NOT NULL,
 	PRIMARY KEY(MANV, NGAYNGHI)
 )
 go
@@ -218,8 +215,3 @@ alter table TRANGTHAINHANVIEN with check add foreign key (MaNV) references NHANS
 alter table NGHIPHEP with check add foreign key (MANV) references NHANSU(MaNV);
 go
 
-
-SELECT TIENLUONG.LuongCB, TIENLUONG.LuongThuong, TIENLUONG.LuongPhat, TIENLUONG.LuongThucTe, CHAMCONG.NgDiLam, (30 - CHAMCONG.NgDiLam - CHAMCONG.SoNgNghiPhep) AS SoNgNghiKhongPhep, CHAMCONG.SoNgNghiPhep, (30 - 1) as DuAnHoanThanh
-FROM TIENLUONG
-INNER JOIN CHAMCONG ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
-WHERE TIENLUONG.MaNV = 'NV003' AND TIENLUONG.Nam = 2023 AND TIENLUONG.Thang = 5

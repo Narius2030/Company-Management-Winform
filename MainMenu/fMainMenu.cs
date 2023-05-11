@@ -237,6 +237,7 @@ namespace QLCongTy
                     pnlNhanSu.Visible = true;
                     btnNhanSu.Visible = true;
                     pnlNhanSu.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = true;
                 }
                 else
                 {
