@@ -153,7 +153,8 @@ namespace QLCongTy
         }
         private void picHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (currentBtn != null)
+                currentChildForm.Close();
             Reset();
             HidePanel(pnlLogin);
         }

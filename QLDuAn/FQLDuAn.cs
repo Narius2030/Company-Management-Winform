@@ -3,6 +3,7 @@ using Microsoft.SqlServer.Server;
 using QLCongTy.QLDuAn;
 using QLCongTy.QLPhongBan;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace QLCongTy.QLDuAn
 {
@@ -34,6 +36,7 @@ namespace QLCongTy.QLDuAn
             gvNhanLuc.AllowUserToAddRows = false;
             gvPCDuAn.AllowUserToAddRows = false;
         }
+
         private void fQLDuAn_Load(object sender, EventArgs e)
         {
             gvQLDuAn.DataSource= daDao.LayDanhSachDuAn(fMainMenu.currentStaff.MaNV);
@@ -47,6 +50,7 @@ namespace QLCongTy.QLDuAn
             DoiTen();
             GettxtFindMaDA();
         }
+
         public void ReLoadPCDuAn()
         {
             gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaDA", da.Mada);
@@ -68,6 +72,7 @@ namespace QLCongTy.QLDuAn
             gvNhanLuc.Columns[0].HeaderText = "Mã Nhân Viên";
             gvNhanLuc.Columns[1].HeaderText = "Trình Độ";
         }
+
         private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
         {
             daDao.DeleteBangTT();
@@ -357,6 +362,28 @@ namespace QLCongTy.QLDuAn
         private void cboFindMaDA_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(cboFindMaDA.SelectedValue.ToString());
+        }
+
+        private void gvQLDuAn_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in gvQLDuAn.Rows)
+            {
+                DateTime Deadline = Convert.ToDateTime(row.Cells["NgayKT"].Value);
+                bool OutDeadLine = DateTime.Now > Deadline;
+                if (OutDeadLine)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    int TienDo = Convert.ToInt32(row.Cells["Tiendo"].Value);
+                    if (TienDo == 100) { 
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                    }
+                }
+            }
         }
     }
 }
