@@ -45,7 +45,6 @@ namespace QLCongTy.TienLuong
             {
                 //Them Luong mới cho Nhan Vien
                 sqlStr = $"insert into TIENLUONG values ('{tl.Manv}','{tl.Macv}', {tl.Thang}, {tl.Nam}, {tl.Luongcoban}, {tl.Luongthuong},{tl.Luongphat},{tl.LuongThucTe})";
-                
             }
             else
             {

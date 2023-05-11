@@ -16,6 +16,7 @@ namespace QLCongTy
     public partial class FProfile : Form
     {
         ProfileDAO pfd = new ProfileDAO();
+        ThongTinXinNghiDAO ttxnd = new ThongTinXinNghiDAO();
         bool sidebarExpand;
         Panel currentPanel = new Panel();
         public FProfile()
@@ -153,7 +154,7 @@ namespace QLCongTy
         {
             ThongTinXinNghi ttxn = new ThongTinXinNghi(fMainMenu.currentStaff.MaNV, dtpNgayNghi.Value, cboLyDoNghi.Text);
             //Cập nhật bảng xin nghỉ.
-            pfd.CapNhatBangXinNghi(ttxn);
+            ttxnd.ThemBangXinNghi(ttxn);
         }
 
         private void ShowLuong()

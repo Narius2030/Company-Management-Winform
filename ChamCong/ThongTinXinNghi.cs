@@ -11,6 +11,7 @@ namespace QLCongTy.ChamCong
         string manv;
         DateTime ngaynghi;
         string lydo;
+        string phanhoi;
 
         public ThongTinXinNghi(string manv, DateTime ngaynghi, string lydo)
         {
@@ -22,5 +23,6 @@ namespace QLCongTy.ChamCong
         public string Manv { get => manv; set => manv = value; }
         public DateTime Ngaynghi { get => ngaynghi; set => ngaynghi = value; }
         public string Lydo { get => lydo; set => lydo = value; }
+        public string Phanhoi { get => phanhoi; set => phanhoi = value; }
     }
 }
