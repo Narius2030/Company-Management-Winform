@@ -1,0 +1,9 @@
+1. Chỉnh sửa cách tính % tiến độ dự án--------đã xong
+2. Thông báo đã đơn xin nghỉ   
+3. Nhấn logo đăng home thì ẩn mẹ form đăng nhập
+4. cho nhân viên cập nhật tiến độ cho nhiều dự án-------TN
+5. Trực quan thể hiện dự án đã xong, quá hạn, đang làm trên datagridview------đã xong
+
+
+6. Cho chọn nghĩ nhiều ngày (cuối cùng)
+7. Chỉnh định dạng thành phần trong form (màu, trang trí,...)
