@@ -46,18 +46,17 @@ namespace QLCongTy.ChamCong
             DataTable dt = dbconn.FormLoad(sqlStr);
 
             //Giảm SoNgNghiPhep sau khi Gửi đơn VÀ Tăng số ngày đi làm tương ứng vs lý do nghỉ
-            int soNgNP = int.Parse(dt.Rows[0]["SoNgNghiPhep"].ToString());
-            int soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString());
+            int soNgNP, soNgDilam = 0;
+
+            soNgNP = int.Parse(dt.Rows[0]["SoNgNghiPhep"].ToString()) - 1;
+            if (soNgNP < 0)
+            {
+                soNgNP = 0;
+            }
 
             if (ttxn.Lydo.ToLower() == "nghi phep" && soNgNP > 0)
             {
                 soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString()) + 1;
-            }
-
-            soNgNP -= 1;
-            if (soNgNP < 0)
-            {
-                soNgNP = 0;
             }
 
             //Cập nhật CSDL
