@@ -126,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabQLDA.Controls.Add(this.tpQLDA);
             this.tabQLDA.Controls.Add(this.tpPCDA);
-            this.tabQLDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabQLDA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLDA.Location = new System.Drawing.Point(0, 0);
             this.tabQLDA.Name = "tabQLDA";
             this.tabQLDA.SelectedIndex = 0;
@@ -139,10 +139,10 @@
             this.tpQLDA.Controls.Add(this.pnlTiendo);
             this.tpQLDA.Controls.Add(this.artanPannel2);
             this.tpQLDA.Controls.Add(this.artanPannel1);
-            this.tpQLDA.Location = new System.Drawing.Point(4, 25);
+            this.tpQLDA.Location = new System.Drawing.Point(4, 31);
             this.tpQLDA.Name = "tpQLDA";
             this.tpQLDA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQLDA.Size = new System.Drawing.Size(1329, 743);
+            this.tpQLDA.Size = new System.Drawing.Size(1329, 737);
             this.tpQLDA.TabIndex = 0;
             this.tpQLDA.Text = "Dự Án";
             // 
@@ -155,7 +155,7 @@
             this.pnlTiendo.Controls.Add(this.btnThongKe);
             this.pnlTiendo.Controls.Add(this.artanPannel5);
             this.pnlTiendo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTiendo.Location = new System.Drawing.Point(3, 682);
+            this.pnlTiendo.Location = new System.Drawing.Point(3, 676);
             this.pnlTiendo.MaximumSize = new System.Drawing.Size(1323, 734);
             this.pnlTiendo.MinimumSize = new System.Drawing.Size(1323, 58);
             this.pnlTiendo.Name = "pnlTiendo";
@@ -390,6 +390,7 @@
             this.gvQLDuAn.Size = new System.Drawing.Size(940, 338);
             this.gvQLDuAn.TabIndex = 56;
             this.gvQLDuAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvQLDuAn_CellClick);
+            this.gvQLDuAn.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvQLDuAn_CellFormatting);
             // 
             // artanPannel1
             // 
@@ -548,7 +549,7 @@
             "TESTER"});
             this.cboCongViec.Location = new System.Drawing.Point(618, 321);
             this.cboCongViec.Name = "cboCongViec";
-            this.cboCongViec.Size = new System.Drawing.Size(182, 24);
+            this.cboCongViec.Size = new System.Drawing.Size(182, 30);
             this.cboCongViec.TabIndex = 82;
             // 
             // label6
@@ -680,10 +681,10 @@
             this.tpNhanlucDA.Controls.Add(this.btnXoaNVkhoiDA);
             this.tpNhanlucDA.Controls.Add(this.cboTrinhDo);
             this.tpNhanlucDA.Controls.Add(this.label13);
-            this.tpNhanlucDA.Location = new System.Drawing.Point(4, 25);
+            this.tpNhanlucDA.Location = new System.Drawing.Point(4, 31);
             this.tpNhanlucDA.Name = "tpNhanlucDA";
             this.tpNhanlucDA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanlucDA.Size = new System.Drawing.Size(1315, 288);
+            this.tpNhanlucDA.Size = new System.Drawing.Size(1315, 282);
             this.tpNhanlucDA.TabIndex = 0;
             this.tpNhanlucDA.Text = "Nhân lực dự án";
             // 
@@ -874,7 +875,7 @@
             "Internship"});
             this.cboTrinhDo.Location = new System.Drawing.Point(947, 19);
             this.cboTrinhDo.Name = "cboTrinhDo";
-            this.cboTrinhDo.Size = new System.Drawing.Size(143, 24);
+            this.cboTrinhDo.Size = new System.Drawing.Size(143, 30);
             this.cboTrinhDo.TabIndex = 65;
             this.cboTrinhDo.SelectedIndexChanged += new System.EventHandler(this.cboTrinhDo_SelectedIndexChanged);
             // 
