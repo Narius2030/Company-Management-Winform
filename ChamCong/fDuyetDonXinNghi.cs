@@ -55,7 +55,7 @@ namespace QLCongTy
             DialogResult result = MessageBox.Show($"{ttxn.Manv} xin nghỉ ngày {ttxn.Ngaynghi.ToString()}", "Duyệt đơn xin nghỉ", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                ttxnDao.XoaDon(ttxn);
+                //ttxnDao.XoaDon(ttxn);
                 phanhoi = "da duyet";
                 //Cập nhật lý do nghi
                 ttxnDao.CapNhatLyDoNghi(ttxn);
@@ -68,11 +68,12 @@ namespace QLCongTy
             }
             if (result == DialogResult.No)
             {
-                ttxnDao.XoaDon(ttxn);
+                //ttxnDao.XoaDon(ttxn);
                 phanhoi = "tu choi";
                 // Cập nhật phan hồi
                 ttxnDao.CapNhatBangXinNghi(ttxn, phanhoi);
             }
+            fDuyetDonXinNghi_Load(sender, e);
         }
     }
 }
