@@ -71,7 +71,12 @@ namespace QLCongTy
             return info;
         }
 
-        //Hàm cập nhật bảng XinNghi
+        //Lấy danh sách nghỉ phép của nhân viên chỉ định
+        public DataTable LayDSXinNghi(string manv)
+        {
+            string sqlStr = $"select * from NGHIPHEP where MaNV = '{manv}'";
+            return db.FormLoad(sqlStr);
+        }
      
     }
 }

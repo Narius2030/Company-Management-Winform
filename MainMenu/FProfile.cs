@@ -138,7 +138,10 @@ namespace QLCongTy
             lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
             ShowPanel();
         }
+        private void btnThongBao_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnUpdateMatKhau_Click(object sender, EventArgs e)
         {
             pnlDoiMatKhau.Visible = false;
@@ -150,7 +153,6 @@ namespace QLCongTy
         {
             pnlDoiMatKhau.Visible = true;
         }
-
         private void btnGuiDonXinNghi_Click(object sender, EventArgs e)
         {
             ThongTinXinNghi ttxn = new ThongTinXinNghi(fMainMenu.currentStaff.MaNV, dtpNgayNghi.Value, cboLyDoNghi.Text);
@@ -180,9 +182,10 @@ namespace QLCongTy
 
         public void ShowTTCN()
         {
+            gvThongbao.DataSource = pfd.LayDSXinNghi(fMainMenu.currentStaff.MaNV);
             var info = pfd.LayThonTinCN();
             int i = 0;
-            foreach (var control in pnlTTCN.Controls.OfType<VBLabel>())
+            foreach (var control in pnlThongTinCN.Controls.OfType<VBLabel>())
             {
                 control.Text = info[i];
                 i++;

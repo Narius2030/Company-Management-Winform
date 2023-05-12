@@ -496,7 +496,6 @@
             this.btnMaximize.Size = new System.Drawing.Size(40, 43);
             this.btnMaximize.TabIndex = 3;
             this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // lblTitleChildForm
             // 
