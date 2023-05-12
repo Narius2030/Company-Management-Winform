@@ -346,5 +346,7 @@ namespace QLCongTy
             lblTime.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
         }
+
+      
     }
 }
