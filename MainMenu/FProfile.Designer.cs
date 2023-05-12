@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlHome = new System.Windows.Forms.Panel();
@@ -42,7 +45,6 @@
             this.btnLuong = new FontAwesome.Sharp.IconButton();
             this.btnXinNghiPhep = new FontAwesome.Sharp.IconButton();
             this.btnBaoMat = new FontAwesome.Sharp.IconButton();
-            this.btnThongBao = new FontAwesome.Sharp.IconButton();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.pnlTong = new System.Windows.Forms.Panel();
             this.pnlBaoMat = new System.Windows.Forms.Panel();
@@ -127,6 +129,7 @@
             this.lblDiaChi = new QLCongTy.VBLabel();
             this.lblMaNV = new QLCongTy.VBLabel();
             this.lblTenNV = new QLCongTy.VBLabel();
+            this.chartLuongThangNV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.sidebar.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -159,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).BeginInit();
             this.artanPannel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvThongbao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuongThangNV)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebarTimer
@@ -177,7 +181,6 @@
             this.sidebar.Controls.Add(this.btnLuong);
             this.sidebar.Controls.Add(this.btnXinNghiPhep);
             this.sidebar.Controls.Add(this.btnBaoMat);
-            this.sidebar.Controls.Add(this.btnThongBao);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(219, 819);
@@ -322,26 +325,6 @@
             this.btnBaoMat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBaoMat.UseVisualStyleBackColor = true;
             this.btnBaoMat.Click += new System.EventHandler(this.btnBaoMat_Click);
-            // 
-            // btnThongBao
-            // 
-            this.btnThongBao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongBao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
-            this.btnThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongBao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongBao.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.btnThongBao.IconColor = System.Drawing.Color.White;
-            this.btnThongBao.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThongBao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongBao.Location = new System.Drawing.Point(3, 534);
-            this.btnThongBao.Name = "btnThongBao";
-            this.btnThongBao.Size = new System.Drawing.Size(210, 75);
-            this.btnThongBao.TabIndex = 97;
-            this.btnThongBao.Text = "Thông báo";
-            this.btnThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongBao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongBao.UseVisualStyleBackColor = true;
-            this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
             // pnlTitle
             // 
@@ -603,7 +586,7 @@
             "2021",
             "2022",
             "2023"});
-            this.cboNam.Location = new System.Drawing.Point(34, 82);
+            this.cboNam.Location = new System.Drawing.Point(37, 22);
             this.cboNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNam.Name = "cboNam";
             this.cboNam.Size = new System.Drawing.Size(95, 31);
@@ -631,7 +614,7 @@
             "10",
             "11",
             "12"});
-            this.cboThang.Location = new System.Drawing.Point(153, 82);
+            this.cboThang.Location = new System.Drawing.Point(156, 22);
             this.cboThang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboThang.Name = "cboThang";
             this.cboThang.Size = new System.Drawing.Size(104, 31);
@@ -646,9 +629,9 @@
             this.panel1.Controls.Add(this.pnlThongSo);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pnlHoaDon);
-            this.panel1.Location = new System.Drawing.Point(31, 133);
+            this.panel1.Location = new System.Drawing.Point(34, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 563);
+            this.panel1.Size = new System.Drawing.Size(1052, 631);
             this.panel1.TabIndex = 67;
             // 
             // pnlThongtinluong
@@ -681,7 +664,7 @@
             this.pnlThongtinluong.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlThongtinluong.Location = new System.Drawing.Point(423, 91);
             this.pnlThongtinluong.Name = "pnlThongtinluong";
-            this.pnlThongtinluong.Size = new System.Drawing.Size(629, 472);
+            this.pnlThongtinluong.Size = new System.Drawing.Size(629, 540);
             this.pnlThongtinluong.TabIndex = 68;
             // 
             // panel2
@@ -804,28 +787,29 @@
             // 
             this.pnlThongSo.BackColor = System.Drawing.Color.White;
             this.pnlThongSo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlThongSo.Controls.Add(this.chartLuongThangNV);
             this.pnlThongSo.Controls.Add(this.panel4);
             this.pnlThongSo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlThongSo.Location = new System.Drawing.Point(0, 91);
             this.pnlThongSo.Name = "pnlThongSo";
-            this.pnlThongSo.Size = new System.Drawing.Size(423, 472);
+            this.pnlThongSo.Size = new System.Drawing.Size(423, 540);
             this.pnlThongSo.TabIndex = 67;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.iconPictureBox10);
             this.panel4.Controls.Add(this.lblLuongNam);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Location = new System.Drawing.Point(85, 25);
+            this.panel4.Location = new System.Drawing.Point(14, 8);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(235, 130);
+            this.panel4.Size = new System.Drawing.Size(271, 105);
             this.panel4.TabIndex = 1;
             // 
             // iconPictureBox10
             // 
-            this.iconPictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.iconPictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.iconPictureBox10.ForeColor = System.Drawing.Color.Black;
             this.iconPictureBox10.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
@@ -841,7 +825,7 @@
             // lblLuongNam
             // 
             this.lblLuongNam.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLuongNam.ForeColor = System.Drawing.Color.White;
+            this.lblLuongNam.ForeColor = System.Drawing.Color.Black;
             this.lblLuongNam.Location = new System.Drawing.Point(60, 54);
             this.lblLuongNam.Name = "lblLuongNam";
             this.lblLuongNam.Size = new System.Drawing.Size(170, 39);
@@ -1352,14 +1336,14 @@
             this.gvDuAn.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvDuAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDuAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvDuAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(93)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvDuAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvDuAn.ColumnHeadersHeight = 35;
             this.gvDuAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDuAn.EnableHeadersVisualStyles = false;
@@ -1401,23 +1385,23 @@
             this.gvThongbao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvThongbao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gvThongbao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvThongbao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvThongbao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvThongbao.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(229)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(99)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvThongbao.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(229)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(99)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvThongbao.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvThongbao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvThongbao.EnableHeadersVisualStyles = false;
             this.gvThongbao.Location = new System.Drawing.Point(10, 10);
@@ -1620,6 +1604,22 @@
             this.lblTenNV.TextColor = System.Drawing.Color.White;
             this.lblTenNV.UseVisualStyleBackColor = false;
             // 
+            // chartLuongThangNV
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartLuongThangNV.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartLuongThangNV.Legends.Add(legend1);
+            this.chartLuongThangNV.Location = new System.Drawing.Point(14, 129);
+            this.chartLuongThangNV.Name = "chartLuongThangNV";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartLuongThangNV.Series.Add(series1);
+            this.chartLuongThangNV.Size = new System.Drawing.Size(401, 352);
+            this.chartLuongThangNV.TabIndex = 2;
+            this.chartLuongThangNV.Text = "chartLuongThangNV";
+            // 
             // FProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1670,6 +1670,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDuAn)).EndInit();
             this.artanPannel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvThongbao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuongThangNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1752,7 +1753,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox10;
         private System.Windows.Forms.Label lblLuongNam;
         private System.Windows.Forms.Label label14;
-        private FontAwesome.Sharp.IconButton btnThongBao;
         private System.Windows.Forms.Panel pnlThongTinCN;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
@@ -1770,5 +1770,6 @@
         private VBLabel vbLabel3;
         private ArtanComponent.ArtanPannel artanPannel1;
         private System.Windows.Forms.DataGridView gvThongbao;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartLuongThangNV;
     }
 }

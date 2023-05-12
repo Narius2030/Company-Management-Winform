@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Media.Animation;
 
 namespace QLCongTy
@@ -39,6 +40,7 @@ namespace QLCongTy
             lblTenNV.Text = "";
         }
 
+        #region Adjust Panel
         private void CustomizeDesing()
         {
             pnlTTCN.Visible = false;
@@ -86,6 +88,29 @@ namespace QLCongTy
                 }
             }
         }
+        #endregion
+
+        #region Vẽ biểu đồ
+
+        // Biểu đồ lương theo từng tháng trong 1 năm của nhân viên đó
+        public void VeBDLuongThangNV(string manv, string year)
+        {
+            var lstparent = pfd.LayLuongTT(manv, year);
+            //Add series
+            chartLuongThangNV.Series.Add("Lương");
+            chartLuongThangNV.Series[0].ChartType = SeriesChartType.Column;
+
+            //Adjust Chart
+            //...
+
+            //Add columns
+            foreach (var ele in lstparent)
+            {
+                chartLuongThangNV.Series[0].Points.AddXY(ele.Key, ele.Value);
+            }
+        }
+
+        #endregion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -138,10 +163,6 @@ namespace QLCongTy
             lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
             ShowPanel();
         }
-        private void btnThongBao_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnUpdateMatKhau_Click(object sender, EventArgs e)
         {
             pnlDoiMatKhau.Visible = false;
@@ -165,7 +186,7 @@ namespace QLCongTy
             List<float> luong;
             try
             {
-                luong = pfd.LayThongTinLuong(fMainMenu.currentStaff.MaNV, thang, nam);
+                luong = pfd.LayHoaDonLuong(fMainMenu.currentStaff.MaNV, thang, nam);
             }
             catch
             {
@@ -199,7 +220,9 @@ namespace QLCongTy
 
         private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chartLuongThangNV.Series.Clear();
             lblLuongNam.Text = pfd.GetLuongNam(fMainMenu.currentStaff, Convert.ToInt32(cboNam.Text));
+            VeBDLuongThangNV(fMainMenu.currentStaff.MaNV, cboNam.Text);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace QLCongTy
     public partial class fCheckin_Checkout : Form
     {
         CheckInOutDAO ciod = new CheckInOutDAO();
+        ChamCongDAO ccd = new ChamCongDAO();
         CheckInOut cio = new CheckInOut();
         DuAnDAO dad = new DuAnDAO();
         PCNhanLuc pc = null;
@@ -90,6 +91,7 @@ namespace QLCongTy
 
         private void btnSubmitChieu_Click(object sender, EventArgs e)
         {
+            ccd.InsertChamCong();
             ConvertCheck(cio);
             ciod.SubmitChieu(cio);
             //Tính số ngày đi làm sau khi checkin_out

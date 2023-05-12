@@ -214,9 +214,3 @@ alter table PHANCONGDUAN with check add foreign key (MaNV) references NHANSU(MaN
 alter table TRANGTHAINHANVIEN with check add foreign key (MaNV) references NHANSU(MaNV);
 alter table NGHIPHEP with check add foreign key (MANV) references NHANSU(MaNV);
 go
-
-
-SELECT SUM(LuongThucTe) as TongLuong
-FROM TIENLUONG
-WHERE MaNV = 'NV100' AND Nam = 2023
-GROUP BY MaNV
