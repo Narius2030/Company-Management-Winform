@@ -34,6 +34,16 @@ namespace QLCongTy
             db.ThucThi(sqlStr);
         }
 
+        public string GetLuongNam(Nhansu nv, int year)
+        {
+            string sqlStr = string.Format($@"SELECT SUM(LuongThucTe) as TongLuong 
+                                                FROM TIENLUONG 
+                                                WHERE MaNV = '{nv.MaNV}' AND Nam = '{year}' 
+                                                GROUP BY MaNV");
+            return db.GetItem(sqlStr).ToString();
+
+        }
+
         public List<float> LayThongTinLuong(string manv, int month, int year)
         {
             //Lấy thông tin lương của tài khoản trên TIENLUONG

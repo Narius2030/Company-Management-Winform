@@ -1,4 +1,5 @@
 ﻿using QLCongTy.ChamCong;
+using QLCongTy.NhanSu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -117,7 +118,7 @@ namespace QLCongTy
             HidePanel();
 
             currentPanel = pnlLuong;
-            ShowLuong();
+            ShowLuong(DateTime.Now.Year, DateTime.Now.Month);
 
             ShowPanel();
         }
@@ -157,12 +158,12 @@ namespace QLCongTy
             ttxnd.ThemBangXinNghi(ttxn);
         }
 
-        private void ShowLuong()
+        private void ShowLuong(int nam, int thang)
         {
             List<float> luong;
             try
             {
-                luong = pfd.LayThongTinLuong(fMainMenu.currentStaff.MaNV, 5, 2023);//month, year);
+                luong = pfd.LayThongTinLuong(fMainMenu.currentStaff.MaNV, thang, nam);
             }
             catch
             {
@@ -171,11 +172,6 @@ namespace QLCongTy
             }
             int i = 0;
             foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
-            {
-                control.Texts = luong[i].ToString();
-                i++;
-            }
-            foreach (var control in pnlThongSo.Controls.OfType<CTTextBox>())
             {
                 control.Texts = luong[i].ToString();
                 i++;
@@ -191,6 +187,16 @@ namespace QLCongTy
                 control.Text = info[i];
                 i++;
             }
+        }
+
+        private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowLuong(Convert.ToInt32(cboNam.Text), Convert.ToInt32(cboThang.Text));
+        }
+
+        private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblLuongNam.Text = pfd.GetLuongNam(fMainMenu.currentStaff, Convert.ToInt32(cboNam.Text));
         }
     }
 }
