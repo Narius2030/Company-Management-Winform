@@ -230,6 +230,7 @@
             this.gvTienLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvTienLuong.MultiSelect = false;
             this.gvTienLuong.Name = "gvTienLuong";
+            this.gvTienLuong.ReadOnly = true;
             this.gvTienLuong.RowHeadersVisible = false;
             this.gvTienLuong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gvTienLuong.RowTemplate.DividerHeight = 2;
@@ -245,11 +246,11 @@
             this.pnlThongKe.Controls.Add(this.pnlThongTin);
             this.pnlThongKe.Controls.Add(this.btnShowChinhSua);
             this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlThongKe.Location = new System.Drawing.Point(0, 231);
+            this.pnlThongKe.Location = new System.Drawing.Point(0, 759);
             this.pnlThongKe.MaximumSize = new System.Drawing.Size(1355, 587);
             this.pnlThongKe.MinimumSize = new System.Drawing.Size(1355, 59);
             this.pnlThongKe.Name = "pnlThongKe";
-            this.pnlThongKe.Size = new System.Drawing.Size(1355, 587);
+            this.pnlThongKe.Size = new System.Drawing.Size(1355, 59);
             this.pnlThongKe.TabIndex = 93;
             // 
             // pnlThongTin

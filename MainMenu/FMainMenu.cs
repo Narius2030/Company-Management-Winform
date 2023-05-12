@@ -223,6 +223,7 @@ namespace Entity_QLCongTy
                     btnDiemDanh.Visible = true;
                     pnlDiemDanh.Visible = false;
                     btnLuong.Visible = true;
+                    btnDuyetDonXinNghi.Enabled = true;
                 }
                 if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
                 {
@@ -236,6 +237,7 @@ namespace Entity_QLCongTy
                     pnlNhanSu.Visible = true;
                     btnNhanSu.Visible = true;
                     pnlNhanSu.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = true;
                 }
                 else
                 {

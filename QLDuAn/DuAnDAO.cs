@@ -26,6 +26,46 @@ namespace Entity_QLCongTy.QLDuAn
             string sqlStr = $"INSERT INTO DUAN VALUES ('{da.MaDA}', '{da.TenDA}', '{da.MaPB}', 0, '{da.TruongDA}', '{da.NgayBD}', '{da.NgayKT}', '{da.TrangThai}', 0)";
             db.ThucThi(sqlStr);
         }
+        public DataTable LayDanhSachDuAn(string manv)
+        {
+            string sqlStr = $"select * from DUAN where TruongDA = '{manv}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachNhanLuc(string matp)
+        {
+            string sqlStr = $@"select MaNV, TrinhDo from NHANSU as nv
+                               join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                               where pb.MaTP = '{matp}' and nv.MaNV != '{matp}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachPhanCong(string col, string value)
+        {
+            string sqlStr = $"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE {col} = '{value}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDanhSachNVRanh(string matp)
+        {
+            //string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'";
+            string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
+                                join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                                join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
+                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LayDSNVRanhVaDieuKien(string matp, string col, string value)
+        {
+            string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
+                                join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                                join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
+                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh' and {col} = '{value}'";
+            return db.FormLoad(sqlStr);
+        }
+
+        public DataTable DSDuAn()
+        {
+            string sqlStr = $"select * from DUAN";
+            return db.FormLoad(sqlStr);
+        }
         public void Xoa(DUAN da)
         {
             string sqlStr = string.Format("DELETE FROM DUAN WHERE MaDA = '{0}'",da.MaDA);

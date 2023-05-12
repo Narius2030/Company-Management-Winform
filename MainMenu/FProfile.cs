@@ -16,6 +16,7 @@ namespace Entity_QLCongTy
     public partial class FProfile : Form
     {
         ProfileDAO pfd = new ProfileDAO();
+        ThongTinXinNghiDAO ttxnd = new ThongTinXinNghiDAO();
         bool sidebarExpand;
         Panel currentPanel = new Panel();
         public FProfile()
@@ -37,6 +38,111 @@ namespace Entity_QLCongTy
             lblTenNV.Text = "";
         }
 
+        
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ///set timer interval to lowest to make it smoother
+            sidebarTimer.Start();
+        }
+
+        private void btnThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            HidePanel();
+
+            currentPanel = pnlTTCN;
+            ShowTTCN();
+
+            ShowPanel();
+        }
+
+        private void btnDuAn_Click(object sender, EventArgs e)
+        {
+            HidePanel();
+
+            currentPanel = pnlDuAn;
+            gvDuan.DataSource = pfd.GetDuAn(fMainMenu.currentStaff);
+
+            ShowPanel();
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            HidePanel();
+
+            currentPanel = pnlLuong;
+            ShowLuong();
+
+            ShowPanel();
+        }
+
+        private void btnXinNghiPhep_Click(object sender, EventArgs e)
+        {
+            HidePanel();
+            currentPanel = pnlXinNghiPhep;
+            ShowPanel();
+        }
+
+        private void btnBaoMat_Click(object sender, EventArgs e)
+        {
+            HidePanel();
+            currentPanel = pnlBaoMat;
+            lblTaiKhoan.Text = fMainMenu.currentStaff.MaNV;
+            lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
+            ShowPanel();
+        }
+
+        private void btnUpdateMatKhau_Click(object sender, EventArgs e)
+        {
+            pnlDoiMatKhau.Visible = false;
+            pfd.DoiMatKhau(fMainMenu.currentStaff,txtMatKhauCu.Text, txtMatKhauMoi.Text);
+            lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            pnlDoiMatKhau.Visible = true;
+        }
+
+        private void btnGuiDonXinNghi_Click(object sender, EventArgs e)
+        {
+            NGHIPHEP ttxn = new NGHIPHEP(fMainMenu.currentStaff.MaNV, dtpNgayNghi.Value, cboLyDoNghi.Text);
+            //Cập nhật bảng xin nghỉ.
+            ttxnd.ThemBangXinNghi(ttxn);
+        }
+
+        private void ShowLuong()
+        {
+            List<float> luong;
+            try
+            {
+                luong = pfd.LayHoaDonLuong(fMainMenu.currentStaff.MaNV);
+            }
+            catch
+            {
+                MessageBox.Show("Lương tháng này hiện chưa có");
+                luong = Enumerable.Repeat<float>(0, 9).ToList();
+            }
+            int i = 0;
+            foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
+            {
+                control.Texts = luong[i].ToString();
+                i++;
+            }
+        }
+
+        public void ShowTTCN()
+        {
+            var info = pfd.LayThonTinCN();
+            int i = 0;
+            foreach (var control in pnlTTCN.Controls.OfType<VBLabel>())
+            {
+                control.Text = info[i];
+                i++;
+            }
+        }
+
+        #region Ajust Form
         private void CustomizeDesing()
         {
             pnlTTCN.Visible = false;
@@ -85,97 +191,6 @@ namespace Entity_QLCongTy
             }
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            ///set timer interval to lowest to make it smoother
-            sidebarTimer.Start();
-        }
-
-        private void btnThongTinCaNhan_Click(object sender, EventArgs e)
-        {
-            HidePanel();
-
-            currentPanel = pnlTTCN;
-            ShowTTCN();
-
-            ShowPanel();
-        }
-
-        private void btnDuAn_Click(object sender, EventArgs e)
-        {
-            HidePanel();
-
-            currentPanel = pnlDuAn;
-            gvDuAn.DataSource = pfd.GetDuAn(fMainMenu.currentStaff);
-
-            ShowPanel();
-        }
-
-        private void btnLuong_Click(object sender, EventArgs e)
-        {
-            HidePanel();
-
-            currentPanel = pnlLuong;
-            ShowLuong();
-
-            ShowPanel();
-        }
-
-        private void btnXinNghiPhep_Click(object sender, EventArgs e)
-        {
-            HidePanel();
-            currentPanel = pnlXinNghiPhep;
-            ShowPanel();
-        }
-
-        private void btnBaoMat_Click(object sender, EventArgs e)
-        {
-            HidePanel();
-            currentPanel = pnlBaoMat;
-            lblTaiKhoan.Text = fMainMenu.currentStaff.MaNV;
-            lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
-            ShowPanel();
-        }
-
-        private void btnUpdateMatKhau_Click(object sender, EventArgs e)
-        {
-            pnlDoiMatKhau.Visible = false;
-            pfd.DoiMatKhau(fMainMenu.currentStaff,txtMatKhauCu.Text, txtMatKhauMoi.Text);
-            lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
-        }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
-        {
-            pnlDoiMatKhau.Visible = true;
-        }
-
-        private void btnGuiDonXinNghi_Click(object sender, EventArgs e)
-        {
-            NGHIPHEP ttxn = new NGHIPHEP(fMainMenu.currentStaff.MaNV, dtpNgayNghi.Value, cboLyDoNghi.Text);
-            //Cập nhật bảng xin nghỉ.
-            pfd.CapNhatBangXinNghi(ttxn);
-        }
-
-        private void ShowLuong()
-        {
-            var luong = pfd.LayThongTinLuong(lblMaNV.Text);
-            int i = 0;
-            foreach (var control in pnlThongtinluong.Controls.OfType<CTTextBox>())
-            {
-                control.Texts = luong[i].ToString();
-                i++;
-            }
-        }
-
-        public void ShowTTCN()
-        {
-            var info = pfd.LayThonTinCN();
-            int i = 0;
-            foreach (var control in pnlTTCN.Controls.OfType<VBLabel>())
-            {
-                control.Text = info[i];
-                i++;
-            }
-        }
+        #endregion
     }
 }

@@ -38,17 +38,17 @@ namespace Entity_QLCongTy
             gvChecksang.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
             gvCheckchieu.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
         }
-
-        private void btnSubmitsang_Click(object sender, EventArgs e)
+        private void btnSubmitCheckout_Click(object sender, EventArgs e)
         {
+            ccd.InsertChamCong();
             ConvertCheck(cio);
-            cio.MaNV = txtManvsang.Texts;
-            cio.Ngay = dtpCheckIn.Value.Date;
-            ciod.SubmitSang(cio);
-            ReLoad();
+            ciod.SubmitChieu(cio);
+            //Tính số ngày đi làm sau khi checkin_out
+            CheckNgayNghi(cio);
+            //Thông báo
+            MessageBox.Show("Đã check out thành công");
         }
-
-        private void btnSubmitchieu_Click(object sender, EventArgs e)
+        private void btnCapnhatTiendoDA_Click(object sender, EventArgs e)
         {
             //Điền thông tin điểm danh cho cio
             cio.MaNV = txtManvchieu.Texts;
@@ -59,19 +59,24 @@ namespace Entity_QLCongTy
                 ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.MaNV, pc.NgayBD, pc.NgayKT);
                 dad.TienDoDuAn(pc.MaDA);
             }
-            ConvertCheck(cio);
-            ciod.SubmitChieu(cio);
             ReLoad();
-
-            //Kiểm tra tháng, năm chấm công có tồn tại hay chưa
-            if (!ccd.InsertChamCong())
-            {
-                MessageBox.Show("Đã tồn tại dữ liệu chấm công tại thời gian này");
-            }
-            //Tính số ngày đi làm sau khi checkin_out
-            CheckNgayNghi(cio);
         }
-
+        private void btnSubmitsang_Click(object sender, EventArgs e)
+        {
+            ConvertCheck(cio);
+            cio.MaNV = txtManvsang.Texts;
+            cio.Ngay = dtpCheckIn.Value.Date;
+            try
+            {
+                ciod.SubmitSang(cio);
+                MessageBox.Show("Đã check in thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Bạn đã check in sáng nay rồi");
+            }
+            ReLoad();
+        }
         public void ConvertCheck(CHECKIN_OUT cio)
         {
             if (cbCheckInsang.Checked == true)
@@ -106,12 +111,6 @@ namespace Entity_QLCongTy
             pc.MaDA = rows.Cells["MaDA"].Value.ToString();
             pc.NgayBD = DateTime.Parse(rows.Cells["NgayBD"].Value.ToString());
             pc.NgayKT = DateTime.Parse(rows.Cells["NgayKT"].Value.ToString());
-        }
-
-        private void gvChecksang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow rows = gvChecksang.SelectedRows[0];
-            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString() + " - " + rows.Cells["CongViec"].Value.ToString();
         }
     }
 }

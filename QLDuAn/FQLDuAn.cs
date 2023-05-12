@@ -36,21 +36,28 @@ namespace Entity_QLCongTy.QLDuAn
         }
         private void fQLDuAn_Load(object sender, EventArgs e)
         {
-            gvQLDuAn.DataSource= daDao.LayDanhSach($"select *from DUAN where TruongDA = '{fMainMenu.currentStaff.MaNV}'");
+            gvQLDuAn.DataSource = daDao.LayDanhSachDuAn(fMainMenu.currentStaff.MaNV);
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                gvQLDuAn.DataSource = daDao.DSDuAn();
+            }
             daDao.InitStatusTB();
-            gvNhanLuc.DataSource = daDao.LayDanhSach("select MaNV, TrinhDo from TRANGTHAINHANVIEN");
+            gvNhanLuc.DataSource = daDao.LayDanhSachNhanLuc(fMainMenu.currentStaff.MaNV);
             tabQLDA.Controls.Remove(tpPCDA);
             DoiTen();
             GettxtFindMaDA();
         }
         public void ReLoadPCDuAn()
         {
-            gvPCDuAn.DataSource = daDao.LayDanhSach($"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE MaDA = '{da.MaDA}'");
+            gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaDA", da.MaDA);
         }
 
-        #region Hide Show panel
-       
-        #endregion
+        #region Adjust Form
+
+        private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            daDao.DeleteBangTT();
+        }
         void DoiTen()
         {
             gvQLDuAn.Columns[0].HeaderText = "Mã Dự Án";
@@ -64,10 +71,8 @@ namespace Entity_QLCongTy.QLDuAn
             gvNhanLuc.Columns[0].HeaderText = "Mã Nhân Viên";
             gvNhanLuc.Columns[1].HeaderText = "Trình Độ";
         }
-        private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            daDao.DeleteBangTT();
-        }
+
+        #endregion
 
         private void gvPCDuAn_Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -147,14 +152,14 @@ namespace Entity_QLCongTy.QLDuAn
             if (string.IsNullOrEmpty(Convert.ToString(txtMaNV.Text)))
             {
                 daDao.UpdateStatus(dtpStart.Value, dtpFinish.Value);
-                gvNhanLuc.DataSource = db.FormLoad("select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'");
-                gvPCDuAn.DataSource = daDao.LayDanhSach($"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE MaDA = '{da.MaDA}'");
+                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh(fMainMenu.currentStaff.MaNV);
+                gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaDA", da.MaDA);
 
             }
             else
             {
-                gvPCDuAn.DataSource = daDao.LayDanhSach($"select MaDA, MaNV, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE MaNV = '{txtMaNV.Text}'");
-                gvNhanLuc.DataSource = db.FormLoad($"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE MaNV = '{txtMaNV.Text}'");
+                gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaNV", txtMaNV.Text);
+                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien(fMainMenu.currentStaff.MaNV, "MaNV", txtMaNV.Text);
             }
         }
 
@@ -180,13 +185,11 @@ namespace Entity_QLCongTy.QLDuAn
         {
             if (cboTrinhDo.Text == "All")
             {
-                string sqlStr = string.Format("select * from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'");
-                gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
+                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh(fMainMenu.currentStaff.MaNV);
             }
             else
             {
-                string sqlStr = string.Format("select *from TRANGTHAINHANVIEN where TrinhDo = '{0}'", cboTrinhDo.Text);
-                gvNhanLuc.DataSource = daDao.LayDanhSach(sqlStr);
+                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien(fMainMenu.currentStaff.MaNV, "TrinhDo", cboTrinhDo.Text);
             }
         }
 

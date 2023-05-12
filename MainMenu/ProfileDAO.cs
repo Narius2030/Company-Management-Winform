@@ -32,7 +32,7 @@ namespace Entity_QLCongTy
             db.ThucThi(sqlStr);
         }
 
-        public List<float> LayThongTinLuong(string manv)
+        public List<float> LayHoaDonLuong(string manv)
         {
             //Lấy thông tin lương của tài khoản trên TIENLUONG
             DateTime curtime = DateTime.Now.Date;

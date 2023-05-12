@@ -22,31 +22,33 @@ namespace Entity_QLCongTy
 
         private void fDuyetDonXinNghi_Load(object sender, EventArgs e)
         {
-            gvDSXinNghi.DataSource = ttxnDao.LayDanhSach();
+            gvDSxinghi.DataSource = ttxnDao.LayDanhSach();
         }
 
-        private void gvDSXinNghi_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void gvDSxinghi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow r = gvDSXinNghi.SelectedRows[0];
-            NGHIPHEP ttxn = new NGHIPHEP();
-            ttxn.MANV = r.Cells[0].Value.ToString();
-            ttxn.NGAYNGHI = Convert.ToDateTime(r.Cells[1].Value.ToString());
-            ttxn.LYDO = r.Cells[2].Value.ToString();
-            //MessageBox.Show($"{ttxn.Ngaynghi.ToString()}");
+            DataGridViewRow r = gvDSxinghi.SelectedRows[0];
+            string phanhoi;
+            NGHIPHEP ttxn = new NGHIPHEP(r.Cells[0].Value.ToString(), Convert.ToDateTime(r.Cells[1].Value.ToString()), r.Cells[2].Value.ToString());
             DialogResult result = MessageBox.Show($"{ttxn.MANV} xin nghỉ ngày {ttxn.NGAYNGHI.ToString()}", "Duyệt đơn xin nghỉ", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                ttxnDao.XoaDon(ttxn);
+                phanhoi = "da duyet";
                 //Cập nhật lý do nghi
                 ttxnDao.CapNhatLyDoNghi(ttxn);
                 //Giảm số ngày nghỉ phép
                 ttxnDao.GiamSoNgNghiPhep(ttxn);
-                gvDSXinNghi.DataSource = ttxnDao.LayDanhSach();
+                // Cập nhật phan hồi
+                ttxnDao.CapNhatBangXinNghi(ttxn, phanhoi);
             }
             if (result == DialogResult.No)
             {
-                ttxnDao.XoaDon(ttxn);
+                //ttxnDao.XoaDon(ttxn);
+                phanhoi = "tu choi";
+                // Cập nhật phan hồi
+                ttxnDao.CapNhatBangXinNghi(ttxn, phanhoi);
             }
+            fDuyetDonXinNghi_Load(sender, e);
         }
     }
 }

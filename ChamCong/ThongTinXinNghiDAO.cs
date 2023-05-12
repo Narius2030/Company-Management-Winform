@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Entity_QLCongTy.ChamCong
 {
@@ -22,7 +23,18 @@ namespace Entity_QLCongTy.ChamCong
             string sqlStr = $"DELETE NGHIPHEP WHERE MANV = '{ttxn.MANV}' AND NGAYNGHI = '{ttxn.NGAYNGHI}'";
             dbconn.ThucThi(sqlStr);
         }
-
+        public void ThemBangXinNghi(NGHIPHEP ttxn)
+        {
+            string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.MANV}', '{ttxn.NGAYNGHI}', '{ttxn.LYDO}', 'chua duyet')";
+            dbconn.ThucThi(sqlStr);
+            MessageBox.Show("Đã gửi đơn xin nghỉ");
+        }
+        public void CapNhatBangXinNghi(NGHIPHEP ttxn, string phanhoi)
+        {
+            string sqlStr = $"UPDATE NGHIPHEP SET PHANHOI = '{phanhoi}' WHERE MANV = '{ttxn.MANV}' AND NGAYNGHI = '{ttxn.NGAYNGHI}'";
+            dbconn.ThucThi(sqlStr);
+            MessageBox.Show("Đã phản hồi cho nhân viên");
+        }
         public void GiamSoNgNghiPhep(NGHIPHEP ttxn)
         {
             //Tạo CHAMCONG ban đầu 
@@ -34,26 +46,22 @@ namespace Entity_QLCongTy.ChamCong
             DataTable dt = dbconn.FormLoad(sqlStr);
 
             //Giảm SoNgNghiPhep sau khi Gửi đơn VÀ Tăng số ngày đi làm tương ứng vs lý do nghỉ
-            int soNgNP, soNgDilam = 0;
+            int soNgNP = int.Parse(dt.Rows[0]["SoNgNghiPhep"].ToString());
+            int soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString());
 
-            soNgNP = int.Parse(dt.Rows[0]["SoNgNghiPhep"].ToString()) - 1;
+            if (ttxn.LYDO.ToLower() == "nghi phep" && soNgNP > 0)
+            {
+                soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString()) + 1;
+            }
+
+            soNgNP -= 1;
             if (soNgNP < 0)
             {
                 soNgNP = 0;
             }
 
-            if (ttxn.LYDO.ToLower() == "nghi phep")
-            {
-                soNgDilam = int.Parse(dt.Rows[0]["NgDilam"].ToString()) + 1;
-            }
-
             //Cập nhật CSDL
-            CHAMCONG cc = new CHAMCONG();
-            cc.MaNV = ttxn.MANV;
-            cc.Thang = ttxn.NGAYNGHI.Month;
-            cc.Nam = ttxn.NGAYNGHI.Year;
-            cc.NgDilam = soNgDilam;
-            cc.SoNgNghiPhep = soNgNP;
+            CHAMCONG cc = new CHAMCONG(ttxn.MANV, ttxn.NGAYNGHI.Month, ttxn.NGAYNGHI.Year, soNgDilam, soNgNP);
             ccd.CapNhat(cc);
         }
 
