@@ -86,6 +86,7 @@
             this.gvDSXinNghi.Location = new System.Drawing.Point(10, 10);
             this.gvDSXinNghi.MultiSelect = false;
             this.gvDSXinNghi.Name = "gvDSXinNghi";
+            this.gvDSXinNghi.ReadOnly = true;
             this.gvDSXinNghi.RowHeadersVisible = false;
             this.gvDSXinNghi.RowHeadersWidth = 51;
             this.gvDSXinNghi.RowTemplate.Height = 24;

@@ -30,5 +30,11 @@ namespace QLCongTy.QLPhongBan
             string sqlStr = string.Format("select NHANSU.MaPB, PHONGBAN.TenPB,NHANSU.MaNV,NHANSU.Ten  from NHANSU,PHONGBAN where NHANSU.MaPB = PHONGBAN.MaPB and NHANSU.MaNV <> PHONGBAN.MaTP and PHONGBAN.MaPB = '{0}'",mpb);
             return db.FormLoad(sqlStr);
         }
+
+        public DataTable GetNameDept()
+        {
+            string sqlStr = "SELECT TenPB, MaPB FROM PHONGBAN";    //CONCAT(MaPB, ' - ', TenPB) AS PhongBan, MaPB FROM PHONGBAN";
+            return db.FormLoad(sqlStr);
+        }
     }
 }

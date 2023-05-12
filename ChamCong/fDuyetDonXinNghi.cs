@@ -51,11 +51,9 @@ namespace QLCongTy
             DataGridViewRow r = gvDSXinNghi.SelectedRows[0];
             string phanhoi;
             ThongTinXinNghi ttxn = new ThongTinXinNghi(r.Cells[0].Value.ToString(), Convert.ToDateTime(r.Cells[1].Value.ToString()), r.Cells[2].Value.ToString());
-            //MessageBox.Show($"{ttxn.Ngaynghi.ToString()}");
             DialogResult result = MessageBox.Show($"{ttxn.Manv} xin nghỉ ngày {ttxn.Ngaynghi.ToString()}", "Duyệt đơn xin nghỉ", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                //ttxnDao.XoaDon(ttxn);
                 phanhoi = "da duyet";
                 //Cập nhật lý do nghi
                 ttxnDao.CapNhatLyDoNghi(ttxn);

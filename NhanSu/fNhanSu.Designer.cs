@@ -385,11 +385,11 @@
             this.pnlDangKy.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlDangKy.Controls.Add(this.pnlThongTin);
             this.pnlDangKy.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDangKy.Location = new System.Drawing.Point(12, 0);
+            this.pnlDangKy.Location = new System.Drawing.Point(1266, 0);
             this.pnlDangKy.MaximumSize = new System.Drawing.Size(1264, 772);
             this.pnlDangKy.MinimumSize = new System.Drawing.Size(10, 772);
             this.pnlDangKy.Name = "pnlDangKy";
-            this.pnlDangKy.Size = new System.Drawing.Size(1264, 772);
+            this.pnlDangKy.Size = new System.Drawing.Size(10, 772);
             this.pnlDangKy.TabIndex = 93;
             // 
             // pnlThongTin
@@ -729,7 +729,7 @@
             this.pnlThongKe.Controls.Add(this.pnlDuLieuTK);
             this.pnlThongKe.Controls.Add(this.pnlBarchart);
             this.pnlThongKe.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlThongKe.Location = new System.Drawing.Point(2, 0);
+            this.pnlThongKe.Location = new System.Drawing.Point(1256, 0);
             this.pnlThongKe.MaximumSize = new System.Drawing.Size(1267, 772);
             this.pnlThongKe.MinimumSize = new System.Drawing.Size(10, 772);
             this.pnlThongKe.Name = "pnlThongKe";

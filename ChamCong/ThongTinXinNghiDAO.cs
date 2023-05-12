@@ -15,7 +15,7 @@ namespace QLCongTy.ChamCong
         CheckInOutDAO ciod = new CheckInOutDAO();
         public DataTable LayDanhSach()
         {
-            return dbconn.FormLoad("SELECT * FROM NGHIPHEP");
+            return dbconn.FormLoad("SELECT * FROM NGHIPHEP WHERE PHANHOI = 'chua duyet'");
         }
 
         public void XoaDon(ThongTinXinNghi ttxn)

@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblMaPB = new System.Windows.Forms.Label();
-            this.txtMaPhongBan = new System.Windows.Forms.TextBox();
-            this.lblTenPB = new System.Windows.Forms.Label();
-            this.txtTenPhongBan = new System.Windows.Forms.TextBox();
             this.lblMaNV = new System.Windows.Forms.Label();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
             this.txtMaNhanVien = new System.Windows.Forms.TextBox();
@@ -44,66 +40,26 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.cboPhongBan = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
             this.gvNhanVienPB = new System.Windows.Forms.DataGridView();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
             this.gvTruongPhong = new System.Windows.Forms.DataGridView();
-            this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.pnlChucNang.SuspendLayout();
             this.artanPannel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVienPB)).BeginInit();
             this.artanPannel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTruongPhong)).BeginInit();
-            this.pnlChucNang.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblMaPB
-            // 
-            this.lblMaPB.AutoSize = true;
-            this.lblMaPB.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaPB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMaPB.Location = new System.Drawing.Point(32, 49);
-            this.lblMaPB.Name = "lblMaPB";
-            this.lblMaPB.Size = new System.Drawing.Size(177, 31);
-            this.lblMaPB.TabIndex = 5;
-            this.lblMaPB.Text = "Mã Phòng Ban:";
-            // 
-            // txtMaPhongBan
-            // 
-            this.txtMaPhongBan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaPhongBan.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaPhongBan.Location = new System.Drawing.Point(225, 49);
-            this.txtMaPhongBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMaPhongBan.Name = "txtMaPhongBan";
-            this.txtMaPhongBan.Size = new System.Drawing.Size(193, 31);
-            this.txtMaPhongBan.TabIndex = 11;
-            // 
-            // lblTenPB
-            // 
-            this.lblTenPB.AutoSize = true;
-            this.lblTenPB.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenPB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTenPB.Location = new System.Drawing.Point(29, 128);
-            this.lblTenPB.Name = "lblTenPB";
-            this.lblTenPB.Size = new System.Drawing.Size(180, 31);
-            this.lblTenPB.TabIndex = 12;
-            this.lblTenPB.Text = "Tên Phòng Ban:";
-            // 
-            // txtTenPhongBan
-            // 
-            this.txtTenPhongBan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenPhongBan.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtTenPhongBan.Location = new System.Drawing.Point(225, 128);
-            this.txtTenPhongBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTenPhongBan.Name = "txtTenPhongBan";
-            this.txtTenPhongBan.Size = new System.Drawing.Size(193, 31);
-            this.txtTenPhongBan.TabIndex = 13;
             // 
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNV.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMaNV.Location = new System.Drawing.Point(32, 215);
+            this.lblMaNV.Location = new System.Drawing.Point(37, 185);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(172, 31);
             this.lblMaNV.TabIndex = 14;
@@ -113,7 +69,7 @@
             // 
             this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNhanVien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtTenNhanVien.Location = new System.Drawing.Point(225, 317);
+            this.txtTenNhanVien.Location = new System.Drawing.Point(228, 261);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(193, 31);
@@ -123,7 +79,7 @@
             // 
             this.txtMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNhanVien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaNhanVien.Location = new System.Drawing.Point(225, 217);
+            this.txtMaNhanVien.Location = new System.Drawing.Point(230, 187);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(193, 31);
@@ -134,7 +90,7 @@
             this.lblTenNhanVien.AutoSize = true;
             this.lblTenNhanVien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNhanVien.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTenNhanVien.Location = new System.Drawing.Point(34, 315);
+            this.lblTenNhanVien.Location = new System.Drawing.Point(37, 259);
             this.lblTenNhanVien.Name = "lblTenNhanVien";
             this.lblTenNhanVien.Size = new System.Drawing.Size(175, 31);
             this.lblTenNhanVien.TabIndex = 18;
@@ -188,6 +144,45 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Nhân Viên";
             // 
+            // pnlChucNang
+            // 
+            this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(88)))), ((int)(((byte)(228)))));
+            this.pnlChucNang.Controls.Add(this.label3);
+            this.pnlChucNang.Controls.Add(this.cboPhongBan);
+            this.pnlChucNang.Controls.Add(this.lblMaNV);
+            this.pnlChucNang.Controls.Add(this.btnTimKiem);
+            this.pnlChucNang.Controls.Add(this.txtMaNhanVien);
+            this.pnlChucNang.Controls.Add(this.btnSua);
+            this.pnlChucNang.Controls.Add(this.lblTenNhanVien);
+            this.pnlChucNang.Controls.Add(this.txtTenNhanVien);
+            this.pnlChucNang.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlChucNang.Location = new System.Drawing.Point(837, 147);
+            this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlChucNang.Name = "pnlChucNang";
+            this.pnlChucNang.Size = new System.Drawing.Size(479, 528);
+            this.pnlChucNang.TabIndex = 28;
+            // 
+            // cboPhongBan
+            // 
+            this.cboPhongBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhongBan.FormattingEnabled = true;
+            this.cboPhongBan.Location = new System.Drawing.Point(226, 107);
+            this.cboPhongBan.Name = "cboPhongBan";
+            this.cboPhongBan.Size = new System.Drawing.Size(229, 34);
+            this.cboPhongBan.TabIndex = 23;
+            this.cboPhongBan.SelectedIndexChanged += new System.EventHandler(this.txtPhongBan_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(65, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 31);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Phòng Ban:";
+            // 
             // artanPannel2
             // 
             this.artanPannel2.BackColor = System.Drawing.Color.White;
@@ -227,7 +222,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -286,7 +281,7 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -306,26 +301,6 @@
             this.gvTruongPhong.Size = new System.Drawing.Size(736, 252);
             this.gvTruongPhong.TabIndex = 0;
             // 
-            // pnlChucNang
-            // 
-            this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(88)))), ((int)(((byte)(228)))));
-            this.pnlChucNang.Controls.Add(this.lblMaPB);
-            this.pnlChucNang.Controls.Add(this.txtMaPhongBan);
-            this.pnlChucNang.Controls.Add(this.lblTenPB);
-            this.pnlChucNang.Controls.Add(this.txtTenPhongBan);
-            this.pnlChucNang.Controls.Add(this.lblMaNV);
-            this.pnlChucNang.Controls.Add(this.btnTimKiem);
-            this.pnlChucNang.Controls.Add(this.txtMaNhanVien);
-            this.pnlChucNang.Controls.Add(this.btnSua);
-            this.pnlChucNang.Controls.Add(this.lblTenNhanVien);
-            this.pnlChucNang.Controls.Add(this.txtTenNhanVien);
-            this.pnlChucNang.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlChucNang.Location = new System.Drawing.Point(837, 147);
-            this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(479, 528);
-            this.pnlChucNang.TabIndex = 28;
-            // 
             // FQLNhanVienPB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,22 +316,18 @@
             this.Name = "FQLNhanVienPB";
             this.Text = "Quản Lý Nhân Viên Phòng Ban";
             this.Load += new System.EventHandler(this.fQLNhanVienPB_Load);
+            this.pnlChucNang.ResumeLayout(false);
+            this.pnlChucNang.PerformLayout();
             this.artanPannel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVienPB)).EndInit();
             this.artanPannel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvTruongPhong)).EndInit();
-            this.pnlChucNang.ResumeLayout(false);
-            this.pnlChucNang.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblMaPB;
-        private System.Windows.Forms.TextBox txtMaPhongBan;
-        private System.Windows.Forms.Label lblTenPB;
-        private System.Windows.Forms.TextBox txtTenPhongBan;
         private System.Windows.Forms.Label lblMaNV;
         private System.Windows.Forms.TextBox txtTenNhanVien;
         private System.Windows.Forms.TextBox txtMaNhanVien;
@@ -370,5 +341,7 @@
         private System.Windows.Forms.DataGridView gvTruongPhong;
         private ArtanComponent.ArtanPannel artanPannel1;
         private System.Windows.Forms.Panel pnlChucNang;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboPhongBan;
     }
 }

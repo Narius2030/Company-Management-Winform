@@ -38,38 +38,6 @@ namespace QLCongTy
             gvCheckchieu.DataSource = ciod.LayDanhSach(fMainMenu.MaNV);
         }
 
-        private void btnSubmitsang_Click(object sender, EventArgs e)
-        {
-            ConvertCheck(cio);
-            cio.MaNV = txtManvsang.Texts;
-            cio.Macv = txtMacvsang.Texts;
-            cio.Ngay = dtpCheckIn.Value.Date;
-            ciod.SubmitSang(cio);
-            //Thông báo
-            MessageBox.Show("Đã check in thành công");
-            ReLoad();
-        }
-
-        private void btnSubmitchieu_Click(object sender, EventArgs e)
-        {
-            //Điền thông tin điểm danh cho cio
-            cio.MaNV = txtManvchieu.Texts;
-            cio.Ngay = dtpCheckOut.Value.Date;
-            //Cập nhật CheckInOut
-            if (pc != null)
-            {
-                ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.Manv, pc.Ngaybd, pc.Ngaykt);
-                dad.TienDoDuAn(pc.Mada);
-            }
-            ConvertCheck(cio);
-            ciod.SubmitChieu(cio);
-            ReLoad();
-            //Tính số ngày đi làm sau khi checkin_out
-            CheckNgayNghi(cio);
-            //Thông báo
-            MessageBox.Show("Đã check out thành công");
-        }
-
         public void ConvertCheck(CheckInOut cio)
         {
             if (cbCheckInsang.Checked == true)
@@ -106,10 +74,40 @@ namespace QLCongTy
             pc.Ngaykt = DateTime.Parse(rows.Cells["NgayKT"].Value.ToString());
         }
 
-        private void gvChecksang_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCapNhatTienDo_Click(object sender, EventArgs e)
         {
-            DataGridViewRow rows = gvChecksang.SelectedRows[0];
-            txtMaDa.Texts = rows.Cells["MaDA"].Value.ToString() + " - " + rows.Cells["CongViec"].Value.ToString();
+            //Điền thông tin điểm danh cho cio
+            cio.MaNV = txtManvchieu.Texts;
+            cio.Ngay = dtpCheckOut.Value.Date;
+            //Cập nhật CheckInOut
+            if (pc != null)
+            {
+                ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.Manv, pc.Ngaybd, pc.Ngaykt);
+                dad.TienDoDuAn(pc.Mada);
+            }
+            ReLoad();
+        }
+
+        private void btnSubmitChieu_Click(object sender, EventArgs e)
+        {
+            ConvertCheck(cio);
+            ciod.SubmitChieu(cio);
+            //Tính số ngày đi làm sau khi checkin_out
+            CheckNgayNghi(cio);
+            //Thông báo
+            MessageBox.Show("Đã check out thành công");
+        }
+
+        private void btnSubmitSang_Click(object sender, EventArgs e)
+        {
+            ConvertCheck(cio);
+            cio.MaNV = txtManvsang.Texts;
+            cio.Macv = txtMacvsang.Texts;
+            cio.Ngay = dtpCheckIn.Value.Date;
+            ciod.SubmitSang(cio);
+            //Thông báo
+            MessageBox.Show("Đã check in thành công");
+            ReLoad();
         }
     }
 }
