@@ -58,12 +58,11 @@
             this.picCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.artanPannel3 = new ArtanComponent.ArtanPannel();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnDangNhap = new QLCongTy.VBButton();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
-            this.txtMatKhau = new QLCongTy.CTTextBox();
             this.btnShowPW = new FontAwesome.Sharp.IconButton();
+            this.txtMatKhau = new QLCongTy.CTTextBox();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
             this.txtTaiKhoan = new QLCongTy.CTTextBox();
             this.lblMatKhau = new System.Windows.Forms.Label();
@@ -82,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCurrentChildForm)).BeginInit();
             this.pnlDesktop.SuspendLayout();
             this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.artanPannel3.SuspendLayout();
             this.artanPannel2.SuspendLayout();
             this.artanPannel1.SuspendLayout();
@@ -212,22 +210,22 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblDate.Location = new System.Drawing.Point(12, 861);
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(13, 843);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(41, 19);
+            this.lblDate.Size = new System.Drawing.Size(53, 28);
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Date";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblTime.Location = new System.Drawing.Point(12, 824);
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(12, 815);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(43, 19);
+            this.lblTime.Size = new System.Drawing.Size(54, 28);
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "Time";
             // 
@@ -392,7 +390,7 @@
             // picHome
             // 
             this.picHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
-            this.picHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.picHome.IconChar = FontAwesome.Sharp.IconChar.Windows;
             this.picHome.IconColor = System.Drawing.Color.White;
             this.picHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.picHome.IconSize = 126;
@@ -554,15 +552,10 @@
             // 
             // pnlLogin
             // 
-            this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(81)))), ((int)(((byte)(139)))));
+            this.pnlLogin.BackColor = System.Drawing.Color.Lavender;
+            this.pnlLogin.BackgroundImage = global::QLCongTy.Properties.Resources.sean_pollock_PhYq704ffdA_unsplash;
             this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlLogin.Controls.Add(this.pictureBox1);
             this.pnlLogin.Controls.Add(this.artanPannel3);
-            this.pnlLogin.Controls.Add(this.artanPannel2);
-            this.pnlLogin.Controls.Add(this.artanPannel1);
-            this.pnlLogin.Controls.Add(this.lblMatKhau);
-            this.pnlLogin.Controls.Add(this.lblTaiKhoan);
-            this.pnlLogin.Controls.Add(this.picAccount);
             this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlLogin.ForeColor = System.Drawing.Color.DimGray;
@@ -571,64 +564,80 @@
             this.pnlLogin.Size = new System.Drawing.Size(1355, 819);
             this.pnlLogin.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::QLCongTy.Properties.Resources.main_picture;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(828, 815);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // artanPannel3
             // 
             this.artanPannel3.BackColor = System.Drawing.Color.White;
             this.artanPannel3.BorderRadius = 30;
-            this.artanPannel3.Controls.Add(this.btnLogin);
+            this.artanPannel3.Controls.Add(this.btnDangNhap);
+            this.artanPannel3.Controls.Add(this.artanPannel2);
+            this.artanPannel3.Controls.Add(this.artanPannel1);
+            this.artanPannel3.Controls.Add(this.lblMatKhau);
+            this.artanPannel3.Controls.Add(this.lblTaiKhoan);
+            this.artanPannel3.Controls.Add(this.picAccount);
             this.artanPannel3.ForeColor = System.Drawing.Color.Black;
             this.artanPannel3.GradientAngle = 90F;
-            this.artanPannel3.GradientBttomColor = System.Drawing.Color.White;
-            this.artanPannel3.GradientTopcolor = System.Drawing.Color.White;
-            this.artanPannel3.Location = new System.Drawing.Point(1009, 716);
+            this.artanPannel3.GradientBttomColor = System.Drawing.Color.Azure;
+            this.artanPannel3.GradientTopcolor = System.Drawing.Color.Azure;
+            this.artanPannel3.Location = new System.Drawing.Point(364, 44);
             this.artanPannel3.Name = "artanPannel3";
-            this.artanPannel3.Size = new System.Drawing.Size(204, 64);
-            this.artanPannel3.TabIndex = 16;
+            this.artanPannel3.Size = new System.Drawing.Size(664, 695);
+            this.artanPannel3.TabIndex = 89;
             // 
-            // btnLogin
+            // btnDangNhap
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.White;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnLogin.Location = new System.Drawing.Point(3, 9);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(198, 52);
-            this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnDangNhap.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnDangNhap.BackgroundColor = System.Drawing.Color.BlueViolet;
+            this.btnDangNhap.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDangNhap.BorderRadius = 12;
+            this.btnDangNhap.BorderSize = 0;
+            this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDangNhap.FlatAppearance.BorderSize = 0;
+            this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
+            this.btnDangNhap.Location = new System.Drawing.Point(245, 604);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(182, 64);
+            this.btnDangNhap.TabIndex = 94;
+            this.btnDangNhap.Text = "Login";
+            this.btnDangNhap.TextColor = System.Drawing.Color.White;
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // artanPannel2
             // 
             this.artanPannel2.BackColor = System.Drawing.Color.White;
-            this.artanPannel2.BorderRadius = 30;
-            this.artanPannel2.Controls.Add(this.txtMatKhau);
+            this.artanPannel2.BorderRadius = 10;
             this.artanPannel2.Controls.Add(this.btnShowPW);
+            this.artanPannel2.Controls.Add(this.txtMatKhau);
             this.artanPannel2.ForeColor = System.Drawing.Color.Black;
             this.artanPannel2.GradientAngle = 90F;
-            this.artanPannel2.GradientBttomColor = System.Drawing.Color.White;
-            this.artanPannel2.GradientTopcolor = System.Drawing.Color.White;
-            this.artanPannel2.Location = new System.Drawing.Point(873, 596);
+            this.artanPannel2.GradientBttomColor = System.Drawing.Color.Transparent;
+            this.artanPannel2.GradientTopcolor = System.Drawing.Color.Transparent;
+            this.artanPannel2.Location = new System.Drawing.Point(120, 503);
             this.artanPannel2.Name = "artanPannel2";
             this.artanPannel2.Padding = new System.Windows.Forms.Padding(5);
             this.artanPannel2.Size = new System.Drawing.Size(420, 70);
-            this.artanPannel2.TabIndex = 15;
+            this.artanPannel2.TabIndex = 93;
+            // 
+            // btnShowPW
+            // 
+            this.btnShowPW.BackColor = System.Drawing.Color.White;
+            this.btnShowPW.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.btnShowPW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPW.ForeColor = System.Drawing.Color.White;
+            this.btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnShowPW.IconColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowPW.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnShowPW.IconSize = 30;
+            this.btnShowPW.Location = new System.Drawing.Point(362, 9);
+            this.btnShowPW.Name = "btnShowPW";
+            this.btnShowPW.Size = new System.Drawing.Size(50, 56);
+            this.btnShowPW.TabIndex = 7;
+            this.btnShowPW.UseVisualStyleBackColor = false;
+            this.btnShowPW.Click += new System.EventHandler(this.btnShowPW_Click);
             // 
             // txtMatKhau
             // 
@@ -638,50 +647,33 @@
             this.txtMatKhau.BackColor = System.Drawing.Color.White;
             this.txtMatKhau.BorderColor = System.Drawing.Color.White;
             this.txtMatKhau.BorderSize = 2;
-            this.txtMatKhau.Font = new System.Drawing.Font("Courier New", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.txtMatKhau.Location = new System.Drawing.Point(15, 7);
+            this.txtMatKhau.Location = new System.Drawing.Point(9, 9);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Multiline = false;
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Padding = new System.Windows.Forms.Padding(7);
             this.txtMatKhau.Password = true;
-            this.txtMatKhau.Size = new System.Drawing.Size(343, 53);
+            this.txtMatKhau.Size = new System.Drawing.Size(354, 56);
             this.txtMatKhau.TabIndex = 11;
             this.txtMatKhau.Texts = "";
             this.txtMatKhau.UnderlinedStyle = false;
             // 
-            // btnShowPW
-            // 
-            this.btnShowPW.BackColor = System.Drawing.Color.Transparent;
-            this.btnShowPW.Cursor = System.Windows.Forms.Cursors.HSplit;
-            this.btnShowPW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowPW.ForeColor = System.Drawing.Color.White;
-            this.btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnShowPW.IconColor = System.Drawing.Color.RoyalBlue;
-            this.btnShowPW.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnShowPW.IconSize = 30;
-            this.btnShowPW.Location = new System.Drawing.Point(363, 2);
-            this.btnShowPW.Name = "btnShowPW";
-            this.btnShowPW.Size = new System.Drawing.Size(70, 70);
-            this.btnShowPW.TabIndex = 7;
-            this.btnShowPW.UseVisualStyleBackColor = false;
-            this.btnShowPW.Click += new System.EventHandler(this.btnShowPW_Click);
-            // 
             // artanPannel1
             // 
             this.artanPannel1.BackColor = System.Drawing.Color.White;
-            this.artanPannel1.BorderRadius = 30;
+            this.artanPannel1.BorderRadius = 10;
             this.artanPannel1.Controls.Add(this.txtTaiKhoan);
             this.artanPannel1.ForeColor = System.Drawing.Color.Black;
             this.artanPannel1.GradientAngle = 90F;
-            this.artanPannel1.GradientBttomColor = System.Drawing.Color.White;
-            this.artanPannel1.GradientTopcolor = System.Drawing.Color.White;
-            this.artanPannel1.Location = new System.Drawing.Point(873, 440);
+            this.artanPannel1.GradientBttomColor = System.Drawing.Color.Transparent;
+            this.artanPannel1.GradientTopcolor = System.Drawing.Color.Transparent;
+            this.artanPannel1.Location = new System.Drawing.Point(120, 347);
             this.artanPannel1.Name = "artanPannel1";
             this.artanPannel1.Padding = new System.Windows.Forms.Padding(5);
             this.artanPannel1.Size = new System.Drawing.Size(420, 70);
-            this.artanPannel1.TabIndex = 14;
+            this.artanPannel1.TabIndex = 92;
             // 
             // txtTaiKhoan
             // 
@@ -691,15 +683,15 @@
             this.txtTaiKhoan.BackColor = System.Drawing.Color.White;
             this.txtTaiKhoan.BorderColor = System.Drawing.Color.White;
             this.txtTaiKhoan.BorderSize = 2;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Courier New", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(15, 12);
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.ForeColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(9, 9);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.txtTaiKhoan.Multiline = false;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Padding = new System.Windows.Forms.Padding(7);
             this.txtTaiKhoan.Password = false;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(396, 53);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(402, 56);
             this.txtTaiKhoan.TabIndex = 10;
             this.txtTaiKhoan.Texts = "";
             this.txtTaiKhoan.UnderlinedStyle = false;
@@ -707,36 +699,39 @@
             // lblMatKhau
             // 
             this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Font = new System.Drawing.Font("Courier New", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatKhau.ForeColor = System.Drawing.Color.Gray;
-            this.lblMatKhau.Location = new System.Drawing.Point(868, 567);
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatKhau.ForeColor = System.Drawing.Color.DarkViolet;
+            this.lblMatKhau.Location = new System.Drawing.Point(113, 462);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(138, 27);
-            this.lblMatKhau.TabIndex = 13;
+            this.lblMatKhau.Size = new System.Drawing.Size(147, 38);
+            this.lblMatKhau.TabIndex = 91;
             this.lblMatKhau.Text = "Password:";
             // 
             // lblTaiKhoan
             // 
             this.lblTaiKhoan.AutoSize = true;
-            this.lblTaiKhoan.Font = new System.Drawing.Font("Courier New", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaiKhoan.ForeColor = System.Drawing.Color.Gray;
-            this.lblTaiKhoan.Location = new System.Drawing.Point(868, 410);
+            this.lblTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.lblTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaiKhoan.ForeColor = System.Drawing.Color.DarkViolet;
+            this.lblTaiKhoan.Location = new System.Drawing.Point(113, 302);
             this.lblTaiKhoan.Name = "lblTaiKhoan";
-            this.lblTaiKhoan.Size = new System.Drawing.Size(124, 27);
-            this.lblTaiKhoan.TabIndex = 12;
+            this.lblTaiKhoan.Size = new System.Drawing.Size(133, 38);
+            this.lblTaiKhoan.TabIndex = 90;
             this.lblTaiKhoan.Text = "Account:";
             // 
             // picAccount
             // 
             this.picAccount.BackColor = System.Drawing.Color.Transparent;
-            this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.picAccount.IconColor = System.Drawing.Color.White;
+            this.picAccount.ForeColor = System.Drawing.Color.DarkBlue;
+            this.picAccount.IconChar = FontAwesome.Sharp.IconChar.UserShield;
+            this.picAccount.IconColor = System.Drawing.Color.DarkBlue;
             this.picAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.picAccount.IconSize = 307;
-            this.picAccount.Location = new System.Drawing.Point(946, 67);
+            this.picAccount.IconSize = 230;
+            this.picAccount.Location = new System.Drawing.Point(217, 31);
             this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(357, 307);
-            this.picAccount.TabIndex = 0;
+            this.picAccount.Size = new System.Drawing.Size(230, 245);
+            this.picAccount.TabIndex = 89;
             this.picAccount.TabStop = false;
             // 
             // tmCurrentTime
@@ -771,9 +766,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCurrentChildForm)).EndInit();
             this.pnlDesktop.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.artanPannel3.ResumeLayout(false);
+            this.artanPannel3.PerformLayout();
             this.artanPannel2.ResumeLayout(false);
             this.artanPannel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
@@ -794,10 +788,6 @@
         private FontAwesome.Sharp.IconButton btnMaximize;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private System.Windows.Forms.Panel pnlLogin;
-        private FontAwesome.Sharp.IconPictureBox picAccount;
-        private CTTextBox txtTaiKhoan;
-        private System.Windows.Forms.Button btnLogin;
-        private FontAwesome.Sharp.IconButton btnShowPW;
         private System.Windows.Forms.Panel pnlAccount;
         private FontAwesome.Sharp.IconPictureBox picName;
         private FontAwesome.Sharp.IconButton btnDiemDanh;
@@ -816,14 +806,17 @@
         private FontAwesome.Sharp.IconButton btnCheckInOut;
         private FontAwesome.Sharp.IconButton btnDangXuat;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
+        private VBLabel lblTenNV;
+        private ArtanComponent.ArtanPannel artanPannel3;
+        private VBButton btnDangNhap;
+        private ArtanComponent.ArtanPannel artanPannel2;
+        private FontAwesome.Sharp.IconButton btnShowPW;
+        private CTTextBox txtMatKhau;
+        private ArtanComponent.ArtanPannel artanPannel1;
+        private CTTextBox txtTaiKhoan;
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.Label lblTaiKhoan;
-        private VBLabel lblTenNV;
-        private ArtanComponent.ArtanPannel artanPannel1;
-        private CTTextBox txtMatKhau;
-        private ArtanComponent.ArtanPannel artanPannel3;
-        private ArtanComponent.ArtanPannel artanPannel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconPictureBox picAccount;
     }
 }
 

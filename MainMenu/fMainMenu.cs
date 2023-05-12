@@ -195,79 +195,6 @@ namespace QLCongTy
         #endregion
 
         #region Button
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Dealing with Login
-                var infoAcc = dao.DangNhap(txtTaiKhoan.Texts, txtMatKhau.Texts);
-                currentStaff = dao.GetInfo(txtTaiKhoan.Texts);
-                //Enable feature base on their ChucVu
-                if (infoAcc.Item3 == null)      //??????????????????????
-                    return;
-                if (infoAcc.Item3.Contains("KT") || infoAcc.Item3.Contains("TPNS") || infoAcc.Item3.Contains("GD"))
-                {
-                    pnlAccount.Visible = true;
-                    btnDangXuat.Visible = true;
-                    btnTaiKhoan.Visible = true;
-                    pnlDiemDanh.Visible = true;
-                    btnDiemDanh.Visible = true;
-                    pnlDiemDanh.Visible = false;
-                    btnLuong.Visible = true;
-                }
-                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
-                {
-                    pnlAccount.Visible = true;
-                    btnDangXuat.Visible = true;
-                    btnTaiKhoan.Visible = true;
-                    pnlDiemDanh.Visible = true;
-                    btnDiemDanh.Visible = true;
-                    pnlDiemDanh.Visible = false;
-                    btnDuAn.Visible = true;
-                    pnlNhanSu.Visible = true;
-                    btnNhanSu.Visible = true;
-                    pnlNhanSu.Visible = false;
-                    btnDuyetDonXinNghi.Enabled = true;
-                }
-                else
-                {
-                    pnlAccount.Visible = true;
-                    btnDangXuat.Visible = true;
-                    btnTaiKhoan.Visible = true;
-                    pnlDiemDanh.Visible = true;
-                    btnDiemDanh.Visible = true;
-                    pnlDiemDanh.Visible = false;
-                    btnDuyetDonXinNghi.Enabled = false;
-                }
-                Account = true;
-
-                //Assigning to NhanSu variables
-                MaNV = infoAcc.Item1;
-                MaCV = infoAcc.Item3;
-                lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
-                HidePanel(pnlLogin);
-
-                pnlAccount.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnShowPW_Click(object sender, EventArgs e)
-        {
-            if (txtMatKhau.Password)
-            {
-                txtMatKhau.Password = false;
-                btnShowPW.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            }
-            else
-            {
-                txtMatKhau.Password = true;
-                btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            }
-        }
 
         private void btnNhanSu_Click(object sender, EventArgs e)
         {
@@ -346,7 +273,78 @@ namespace QLCongTy
             lblTime.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
         }
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Dealing with Login
+                var infoAcc = dao.DangNhap(txtTaiKhoan.Texts, txtMatKhau.Texts);
+                currentStaff = dao.GetInfo(txtTaiKhoan.Texts);
+                //Enable feature base on their ChucVu
+                if (infoAcc.Item3 == null)      
+                    return;
+                if (infoAcc.Item3.Contains("KT") || infoAcc.Item3.Contains("TPNS") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnLuong.Visible = true;
+                }
+                if (infoAcc.Item3.Contains("TP") || infoAcc.Item3.Contains("GD"))
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnDuAn.Visible = true;
+                    pnlNhanSu.Visible = true;
+                    btnNhanSu.Visible = true;
+                    pnlNhanSu.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = true;
+                }
+                else
+                {
+                    pnlAccount.Visible = true;
+                    btnDangXuat.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    pnlDiemDanh.Visible = true;
+                    btnDiemDanh.Visible = true;
+                    pnlDiemDanh.Visible = false;
+                    btnDuyetDonXinNghi.Enabled = false;
+                }
+                Account = true;
 
-      
+                //Assigning to NhanSu variables
+                MaNV = infoAcc.Item1;
+                MaCV = infoAcc.Item3;
+                lblTenNV.Text = currentStaff.HoDem + " " + currentStaff.Ten;
+                HidePanel(pnlLogin);
+
+                pnlAccount.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnShowPW_Click(object sender, EventArgs e)
+        {
+            if (txtMatKhau.Password)
+            {
+                txtMatKhau.Password = false;
+                btnShowPW.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            }
+            else
+            {
+                txtMatKhau.Password = true;
+                btnShowPW.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            }
+        }
     }
 }

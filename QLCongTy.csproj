@@ -210,61 +210,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Nhanvien %281%29.jpg" />
+    <None Include="Resources\main_picture.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Chuvu %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Phancong %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Truongphong %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Nhanvienphong %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Duan %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Luong %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bonus %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tienphat %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\chitietduan %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VonDT %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\check %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ngaynghi %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\chamcong %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\black-calendar-icon-16.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WhiteCalendar.png" />
+    <None Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarDark.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarWhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_picture.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

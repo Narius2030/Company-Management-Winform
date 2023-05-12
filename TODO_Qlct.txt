@@ -15,3 +15,5 @@
 10. Vẽ biểu đồ cho lương theo tháng cho 1 nhân viên trong 1 năm ở FProfile
 	+ Còn trang trí biểu đồ: tô màu lương cao và thấp nhất, thêm label cho trục x,y,...(còn lại tùy ý)
 	Notes: Hàm t vẽ biểu đồ nó nằm file FProfile.cs á, rồi m thêm code trang trí vào ngày chỗ "...." ấy
+
+11. Chỉnh lại Panel Login ----- đã xong
