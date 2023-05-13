@@ -36,9 +36,7 @@ namespace QLCongTy.NhanSu
             gvNhanSu.DataSource = nsDao.DanhSach();
             cboChucVu.Text = "";
             cboGioiTinh.Text = "";
-            cboLocKhac.Text = "";
             cboPhongBan.Text = "";
-            txtThongTinLoc.Clear();
         }
 
         #region Tương tác với Datagridview
@@ -88,24 +86,6 @@ namespace QLCongTy.NhanSu
             ns = new Nhansu(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
             nsDao.Sua(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            switch (cboLocKhac.Text)
-            {
-                case "Mã Nhân Viên":
-                    gvNhanSu.DataSource = nsDao.Loc("MaNV", txtThongTinLoc.Text);
-                    break;
-                case "Họ Đệm":
-                    gvNhanSu.DataSource = nsDao.Loc("HovaTendem", txtThongTinLoc.Text);
-                    break;
-                case "Tên":
-                    gvNhanSu.DataSource = nsDao.Loc("Ten", txtThongTinLoc.Text);
-                    break;
-                case "CCCD":
-                    gvNhanSu.DataSource = nsDao.Loc("CCCD", txtThongTinLoc.Text);
-                    break;
-            }
         }
         #endregion
 

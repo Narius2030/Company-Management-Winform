@@ -91,7 +91,7 @@
             // 
             // tpCheckSang
             // 
-            this.tpCheckSang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.tpCheckSang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(207)))), ((int)(((byte)(245)))));
             this.tpCheckSang.Controls.Add(this.pnlThongtinCheckIn);
             this.tpCheckSang.Controls.Add(this.artanPannel1);
             this.tpCheckSang.Cursor = System.Windows.Forms.Cursors.PanWest;

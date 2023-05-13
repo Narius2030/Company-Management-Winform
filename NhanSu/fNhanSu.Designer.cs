@@ -29,30 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpLocThongTin = new System.Windows.Forms.GroupBox();
-            this.btnLoc = new QLCongTy.VBButton();
             this.btnReload = new QLCongTy.VBButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cboPhongBan = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtThongTinLoc = new System.Windows.Forms.TextBox();
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cboLocKhac = new System.Windows.Forms.ComboBox();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new FontAwesome.Sharp.IconButton();
             this.tmSidebar = new System.Windows.Forms.Timer(this.components);
@@ -126,15 +123,12 @@
             // grpLocThongTin
             // 
             this.grpLocThongTin.BackColor = System.Drawing.Color.Transparent;
-            this.grpLocThongTin.Controls.Add(this.btnLoc);
             this.grpLocThongTin.Controls.Add(this.btnReload);
             this.grpLocThongTin.Controls.Add(this.label4);
             this.grpLocThongTin.Controls.Add(this.cboPhongBan);
             this.grpLocThongTin.Controls.Add(this.label13);
-            this.grpLocThongTin.Controls.Add(this.txtThongTinLoc);
             this.grpLocThongTin.Controls.Add(this.cboChucVu);
             this.grpLocThongTin.Controls.Add(this.label8);
-            this.grpLocThongTin.Controls.Add(this.cboLocKhac);
             this.grpLocThongTin.Controls.Add(this.cboGioiTinh);
             this.grpLocThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpLocThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,27 +139,6 @@
             this.grpLocThongTin.TabIndex = 4;
             this.grpLocThongTin.TabStop = false;
             this.grpLocThongTin.Text = "Lọc Thông Tin";
-            // 
-            // btnLoc
-            // 
-            this.btnLoc.BackColor = System.Drawing.Color.Azure;
-            this.btnLoc.BackgroundColor = System.Drawing.Color.Azure;
-            this.btnLoc.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLoc.BorderRadius = 10;
-            this.btnLoc.BorderSize = 1;
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.ForeColor = System.Drawing.Color.Black;
-            this.btnLoc.Location = new System.Drawing.Point(587, 42);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(98, 41);
-            this.btnLoc.TabIndex = 83;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.TextColor = System.Drawing.Color.Black;
-            this.btnLoc.UseVisualStyleBackColor = false;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnReload
             // 
@@ -179,7 +152,7 @@
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.Black;
-            this.btnReload.Location = new System.Drawing.Point(587, 105);
+            this.btnReload.Location = new System.Drawing.Point(352, 42);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(98, 46);
             this.btnReload.TabIndex = 84;
@@ -228,15 +201,6 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Giới Tính";
             // 
-            // txtThongTinLoc
-            // 
-            this.txtThongTinLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThongTinLoc.Location = new System.Drawing.Point(379, 88);
-            this.txtThongTinLoc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtThongTinLoc.Name = "txtThongTinLoc";
-            this.txtThongTinLoc.Size = new System.Drawing.Size(140, 32);
-            this.txtThongTinLoc.TabIndex = 1;
-            // 
             // cboChucVu
             // 
             this.cboChucVu.FormattingEnabled = true;
@@ -248,7 +212,7 @@
             "LDN",
             "KS",
             "RS"});
-            this.cboChucVu.Location = new System.Drawing.Point(148, 84);
+            this.cboChucVu.Location = new System.Drawing.Point(148, 86);
             this.cboChucVu.Margin = new System.Windows.Forms.Padding(2);
             this.cboChucVu.Name = "cboChucVu";
             this.cboChucVu.Size = new System.Drawing.Size(140, 36);
@@ -265,20 +229,6 @@
             this.label8.Size = new System.Drawing.Size(84, 28);
             this.label8.TabIndex = 9;
             this.label8.Text = "Chức Vụ";
-            // 
-            // cboLocKhac
-            // 
-            this.cboLocKhac.FormattingEnabled = true;
-            this.cboLocKhac.Items.AddRange(new object[] {
-            "Mã Nhân Viên",
-            "Họ Đệm",
-            "Tên",
-            "CCCD"});
-            this.cboLocKhac.Location = new System.Drawing.Point(379, 47);
-            this.cboLocKhac.Margin = new System.Windows.Forms.Padding(2);
-            this.cboLocKhac.Name = "cboLocKhac";
-            this.cboLocKhac.Size = new System.Drawing.Size(140, 36);
-            this.cboLocKhac.TabIndex = 5;
             // 
             // cboGioiTinh
             // 
@@ -747,28 +697,28 @@
             // 
             // chartCLNL
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartCLNL.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartCLNL.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chartCLNL.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chartCLNL.Legends.Add(legend7);
             this.chartCLNL.Location = new System.Drawing.Point(24, 56);
             this.chartCLNL.Name = "chartCLNL";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "srClnl";
-            this.chartCLNL.Series.Add(series1);
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series19.IsValueShownAsLabel = true;
+            series19.LabelForeColor = System.Drawing.Color.White;
+            series19.Legend = "Legend1";
+            series19.Name = "srClnl";
+            this.chartCLNL.Series.Add(series19);
             this.chartCLNL.Size = new System.Drawing.Size(343, 423);
             this.chartCLNL.TabIndex = 0;
             this.chartCLNL.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title";
-            title1.Text = "Tỉ lệ chất lượng nhân lực";
-            this.chartCLNL.Titles.Add(title1);
+            title7.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title7.Name = "Title";
+            title7.Text = "Tỉ lệ chất lượng nhân lực";
+            this.chartCLNL.Titles.Add(title7);
             // 
             // pnlDuLieuTK
             // 
@@ -905,41 +855,41 @@
             // 
             this.chartLayLuongThang.BorderlineColor = System.Drawing.Color.Black;
             this.chartLayLuongThang.BorderlineWidth = 10;
-            chartArea2.Name = "ChartArea1";
-            this.chartLayLuongThang.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartLayLuongThang.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chartLayLuongThang.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartLayLuongThang.Legends.Add(legend8);
             this.chartLayLuongThang.Location = new System.Drawing.Point(31, 72);
             this.chartLayLuongThang.Name = "chartLayLuongThang";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "P001";
-            series2.YValuesPerPoint = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "P002";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "P003";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "P004";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "P005";
-            this.chartLayLuongThang.Series.Add(series2);
-            this.chartLayLuongThang.Series.Add(series3);
-            this.chartLayLuongThang.Series.Add(series4);
-            this.chartLayLuongThang.Series.Add(series5);
-            this.chartLayLuongThang.Series.Add(series6);
+            series20.ChartArea = "ChartArea1";
+            series20.Legend = "Legend1";
+            series20.Name = "P001";
+            series20.YValuesPerPoint = 2;
+            series21.ChartArea = "ChartArea1";
+            series21.Legend = "Legend1";
+            series21.Name = "P002";
+            series22.ChartArea = "ChartArea1";
+            series22.Legend = "Legend1";
+            series22.Name = "P003";
+            series23.ChartArea = "ChartArea1";
+            series23.Legend = "Legend1";
+            series23.Name = "P004";
+            series24.ChartArea = "ChartArea1";
+            series24.Legend = "Legend1";
+            series24.Name = "P005";
+            this.chartLayLuongThang.Series.Add(series20);
+            this.chartLayLuongThang.Series.Add(series21);
+            this.chartLayLuongThang.Series.Add(series22);
+            this.chartLayLuongThang.Series.Add(series23);
+            this.chartLayLuongThang.Series.Add(series24);
             this.chartLayLuongThang.Size = new System.Drawing.Size(798, 424);
             this.chartLayLuongThang.TabIndex = 1;
             this.chartLayLuongThang.Text = "Thống kê lương cho các phòng";
-            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Tổng lương theo năm của phòng";
-            this.chartLayLuongThang.Titles.Add(title2);
+            title8.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title8.Name = "Title1";
+            title8.Text = "Tổng lương theo năm của phòng";
+            this.chartLayLuongThang.Titles.Add(title8);
             // 
             // artanPannel1
             // 
@@ -970,23 +920,23 @@
             this.gvNhanSu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvNhanSu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gvNhanSu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvNhanSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gvNhanSu.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(229)))), ((int)(((byte)(253)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(99)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvNhanSu.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(147)))), ((int)(((byte)(199)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(229)))), ((int)(((byte)(253)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(99)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvNhanSu.DefaultCellStyle = dataGridViewCellStyle8;
             this.gvNhanSu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvNhanSu.EnableHeadersVisualStyles = false;
             this.gvNhanSu.Location = new System.Drawing.Point(10, 10);
@@ -1040,16 +990,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtThongTinLoc;
         private System.Windows.Forms.ComboBox cboPhongBan;
         private System.Windows.Forms.GroupBox grpLocThongTin;
         private System.Windows.Forms.ComboBox cboGioiTinh;
-        private System.Windows.Forms.ComboBox cboLocKhac;
         private System.Windows.Forms.ComboBox cboChucVu;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private VBButton btnLoc;
         private VBButton btnReload;
         private System.Windows.Forms.Timer tmSidebar;
         private ArtanComponent.ArtanPannel artanPannel1;
