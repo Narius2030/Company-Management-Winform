@@ -23,3 +23,5 @@
 
 Entity:
 1. Hàm DoDLTextBox() dùng làm gì?
+2. Chưa thiết kế lại form Phân Công dự án
+3. Chưa tối ưu combobox tạo dự án
