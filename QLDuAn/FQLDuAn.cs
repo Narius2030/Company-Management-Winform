@@ -26,7 +26,7 @@ namespace QLCongTy.QLDuAn
         DuAn da = new DuAn();
         PCNhanLuc pc = new PCNhanLuc();
         TienDoDAO tdd = new TienDoDAO();
-        DBConnection db = new DBConnection();
+        
         public fQLDuAn()
         {
             InitializeComponent();

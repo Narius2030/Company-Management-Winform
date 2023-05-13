@@ -25,10 +25,6 @@ namespace QLCongTy.TienLuong
                 return 0;
             }
         }
-        public static float TienLuong(Tienluong tl)
-        {
-            return (tl.Luongcoban * tl.Hesoluong) + tl.Luongthuong - tl.Luongphat;
-        }
 
         public DataTable LDS()
         {
