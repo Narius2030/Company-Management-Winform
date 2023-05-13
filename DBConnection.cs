@@ -49,15 +49,6 @@ namespace Entity_QLCongTy
             }
             return dataSet;
         }
-        public int TienDoDuAn(string MaDA)
-        {
-            int result = int.Parse(GetItem($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
-            if (result >= 100)
-            {
-                return 100;
-            }
-            return result;
-        }
         public object GetItem(string sqlStr)
         {
             object result = new object();
