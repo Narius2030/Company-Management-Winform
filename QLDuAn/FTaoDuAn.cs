@@ -76,6 +76,8 @@ namespace Entity_QLCongTy.QLDuAn
                 control.Clear();
             }
         }
+
+        //Hàm này dùng làm gì ???
         public void DoDLTextBox()
         {
             Type type = da.GetType();
@@ -85,11 +87,6 @@ namespace Entity_QLCongTy.QLDuAn
             {
                 control.Text = props[i].GetValue(da, null).ToString();
             }
-        }
-
-        private void cboMaTruongDA_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(cboMaTruongDA.SelectedValue.ToString());
         }
     }
 }

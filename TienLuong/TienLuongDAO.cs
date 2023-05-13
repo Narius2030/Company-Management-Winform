@@ -57,13 +57,19 @@ namespace Entity_QLCongTy.TienLuong
             string sqlStr = string.Format("UPDATE TIENLUONG SET LuongCB = {0}, LuongThuong = {1}, LuongPhat = {2}, LuongThucTe = {3} where MaNV = '{4}'", tl.LuongCB, tl.LuongThuong, tl.LuongPhat,tl.LuongThucTe, tl.MaNV);
             db.ThucThi(sqlStr);
         }
-
-        public DataTable Loc(string sqlStr)
+        public DataTable LocThang(string nam, string thang)
         {
+            //return db.FormLoad(sqlStr);
+            string sqlStr = $"SELECT * FROM TIENLUONG WHERE Nam = '{nam}' AND Thang = '{thang}'";
+            return db.FormLoad(sqlStr);
+        }
+        public DataTable LocNam(string nam)
+        {
+            //return db.FormLoad(sqlStr);
+            string sqlStr = $"SELECT * FROM TIENLUONG WHERE Nam = '{nam}'";
             return db.FormLoad(sqlStr);
         }
 
-        //ĐOẠN CODE CẦN CHỈNH SỬA VÌ LỖI ÉP KIỂU
         public void TinhTienLuong()
         {
             string sqlStr = $@"select MaNV, CHUCVU.MaCV, HeSoLuong

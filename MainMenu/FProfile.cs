@@ -1,4 +1,5 @@
 ﻿using Entity_QLCongTy.ChamCong;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Media.Animation;
 
 namespace Entity_QLCongTy
@@ -32,13 +34,33 @@ namespace Entity_QLCongTy
             
         }
 
+        #region Vẽ biểu đồ
+
+        // Biểu đồ lương theo từng tháng trong 1 năm của nhân viên đó
+        public void VeBDLuongThangNV(string manv, string year)
+        {
+            var lstparent = pfd.LayLuongTT(manv, year);
+            //Add series
+            chartLuongThangNV.Series.Add("Lương");
+            chartLuongThangNV.Series[0].ChartType = SeriesChartType.Column;
+
+            //Adjust Chart
+            //...
+
+            //Add columns
+            foreach (var ele in lstparent)
+            {
+                chartLuongThangNV.Series[0].Points.AddXY(ele.Key, ele.Value);
+            }
+        }
+
+        #endregion
+
         private void LoadProfile()
         {
             lblMaNV.Text = fMainMenu.MaNV;
             lblTenNV.Text = "";
         }
-
-        
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -49,30 +71,24 @@ namespace Entity_QLCongTy
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
             HidePanel();
-
             currentPanel = pnlTTCN;
             ShowTTCN();
-
             ShowPanel();
         }
 
         private void btnDuAn_Click(object sender, EventArgs e)
         {
             HidePanel();
-
             currentPanel = pnlDuAn;
             gvDuan.DataSource = pfd.GetDuAn(fMainMenu.currentStaff);
-
             ShowPanel();
         }
 
         private void btnLuong_Click(object sender, EventArgs e)
         {
             HidePanel();
-
             currentPanel = pnlLuong;
-            ShowLuong();
-
+            ShowLuong(DateTime.Now.Year, DateTime.Now.Month);
             ShowPanel();
         }
 
@@ -111,12 +127,12 @@ namespace Entity_QLCongTy
             ttxnd.ThemBangXinNghi(ttxn);
         }
 
-        private void ShowLuong()
+        private void ShowLuong(int nam, int thang)
         {
             List<float> luong;
             try
             {
-                luong = pfd.LayHoaDonLuong(fMainMenu.currentStaff.MaNV);
+                luong = pfd.LayHoaDonLuong(fMainMenu.currentStaff.MaNV, thang, nam);
             }
             catch
             {
@@ -133,13 +149,26 @@ namespace Entity_QLCongTy
 
         public void ShowTTCN()
         {
+            gvThongbao.DataSource = pfd.LayDSXinNghi(fMainMenu.currentStaff.MaNV);
             var info = pfd.LayThonTinCN();
             int i = 0;
-            foreach (var control in pnlTTCN.Controls.OfType<VBLabel>())
+            foreach (var control in pnlThongTinCN.Controls.OfType<VBLabel>())
             {
                 control.Text = info[i];
                 i++;
             }
+        }
+        private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chartLuongThangNV.Series.Clear();
+            lblLuongNam.Text = pfd.GetLuongNam(fMainMenu.currentStaff, Convert.ToInt32(cboNam.Text));
+            VeBDLuongThangNV(fMainMenu.currentStaff.MaNV, cboNam.Text);
+
+        }
+
+        private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowLuong(Convert.ToInt32(cboNam.Text), Convert.ToInt32(cboThang.Text));
         }
 
         #region Ajust Form

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -36,10 +40,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,6 +57,7 @@
             this.tabQLDA = new System.Windows.Forms.TabControl();
             this.tpQLDA = new System.Windows.Forms.TabPage();
             this.pnlTiendo = new System.Windows.Forms.Panel();
+            this.chartTongTiendo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTienDoDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTiendoCN = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
@@ -79,7 +80,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lblPhongban = new System.Windows.Forms.Label();
             this.tmShowTiendo = new System.Windows.Forms.Timer(this.components);
-            this.chartTongTiendo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.artanPannel5 = new ArtanComponent.ArtanPannel();
             this.gvTTPhancong = new System.Windows.Forms.DataGridView();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
@@ -101,13 +101,13 @@
             this.tabQLDA.SuspendLayout();
             this.tpQLDA.SuspendLayout();
             this.pnlTiendo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).BeginInit();
             this.tpPCDA.SuspendLayout();
             this.pnlPCDA.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpNhanlucDA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).BeginInit();
             this.artanPannel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTTPhancong)).BeginInit();
             this.artanPannel2.SuspendLayout();
@@ -161,6 +161,31 @@
             this.pnlTiendo.Name = "pnlTiendo";
             this.pnlTiendo.Size = new System.Drawing.Size(1323, 58);
             this.pnlTiendo.TabIndex = 1;
+            // 
+            // chartTongTiendo
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartTongTiendo.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTongTiendo.Legends.Add(legend1);
+            this.chartTongTiendo.Location = new System.Drawing.Point(631, 371);
+            this.chartTongTiendo.Name = "chartTongTiendo";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTongTiendo.Series.Add(series1);
+            this.chartTongTiendo.Size = new System.Drawing.Size(673, 344);
+            this.chartTongTiendo.TabIndex = 92;
+            this.chartTongTiendo.Text = "chart1";
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Tổng tiến độ";
+            this.chartTongTiendo.Titles.Add(title1);
             // 
             // chartTienDoDA
             // 
@@ -441,31 +466,6 @@
             // 
             this.tmShowTiendo.Interval = 10;
             this.tmShowTiendo.Tick += new System.EventHandler(this.tmShowTiendo_Tick);
-            // 
-            // chartTongTiendo
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTongTiendo.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTongTiendo.Legends.Add(legend1);
-            this.chartTongTiendo.Location = new System.Drawing.Point(631, 371);
-            this.chartTongTiendo.Name = "chartTongTiendo";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartTongTiendo.Series.Add(series1);
-            this.chartTongTiendo.Size = new System.Drawing.Size(673, 344);
-            this.chartTongTiendo.TabIndex = 92;
-            this.chartTongTiendo.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Tổng tiến độ";
-            this.chartTongTiendo.Titles.Add(title1);
             // 
             // artanPannel5
             // 
@@ -943,6 +943,7 @@
             this.tabQLDA.ResumeLayout(false);
             this.tpQLDA.ResumeLayout(false);
             this.pnlTiendo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).EndInit();
             this.tpPCDA.ResumeLayout(false);
@@ -951,7 +952,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tpNhanlucDA.ResumeLayout(false);
             this.tpNhanlucDA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).EndInit();
             this.artanPannel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvTTPhancong)).EndInit();
             this.artanPannel2.ResumeLayout(false);

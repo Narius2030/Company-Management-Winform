@@ -15,7 +15,6 @@ namespace Entity_QLCongTy.TienLuong
     public partial class fTienLuong : Form
     {
         TienLuongDAO tlDao = new TienLuongDAO();
-        DBConnection db = new DBConnection();
         ExportFile exFile = new ExportFile();
         public fTienLuong()
         {
@@ -30,16 +29,14 @@ namespace Entity_QLCongTy.TienLuong
         #region Tính năng Form
         private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sqlStr = string.Format("SELECT * FROM TIENLUONG WHERE Nam = '{0}'", cboNam.Text);
-            gvTienLuong.DataSource = tlDao.Loc(sqlStr);
+            gvTienLuong.DataSource = tlDao.LocNam(cboNam.Text);
         }
 
         private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboNam.Text != "Năm")
             {
-                string sqlStr = string.Format("SELECT * FROM TIENLUONG WHERE Nam = '{0}' AND Thang = '{1}'", cboNam.Text, cboThang.Text);
-                gvTienLuong.DataSource = tlDao.Loc(sqlStr);
+                gvTienLuong.DataSource = tlDao.LocThang(cboNam.Text, cboThang.Text);
             }
             else
             {
@@ -116,12 +113,6 @@ namespace Entity_QLCongTy.TienLuong
         }
         #endregion
 
-        private void vbbtnSua_Click(object sender, EventArgs e)
-        {
-            TIENLUONG tl = new TIENLUONG(txtMaNV.Text, txtMaCV.Text, int.Parse(txtThang.Text), int.Parse(txtNam.Text), int.Parse(txtThuong.Text), decimal.Parse(txtLuongPhat.Text), float.Parse(txtLuongTT.Text)); ;
-            tlDao.CapNhat(tl);
-        }
-
         private void gvTienLuong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = gvTienLuong.SelectedRows[0];
@@ -133,6 +124,12 @@ namespace Entity_QLCongTy.TienLuong
             txtThuong.Text = row.Cells["LuongThuong"].Value.ToString();
             txtLuongPhat.Text = row.Cells["LuongPhat"].Value.ToString();
             txtLuongTT.Text = row.Cells["LuongThucTe"].Value.ToString();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            TIENLUONG tl = new TIENLUONG(txtMaNV.Text, txtMaCV.Text, int.Parse(txtThang.Text), int.Parse(txtNam.Text), int.Parse(txtThuong.Text), decimal.Parse(txtLuongPhat.Text), float.Parse(txtLuongTT.Text)); ;
+            tlDao.CapNhat(tl);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Entity_QLCongTy.QLDuAn
             gvQLDuAn.DataSource = daDao.LayDanhSachDuAn(fMainMenu.currentStaff.MaNV);
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
-                gvQLDuAn.DataSource = daDao.DSDuAn();
+                gvQLDuAn.DataSource = daDao.LayDanhSach();
             }
             daDao.InitStatusTB();
             gvNhanLuc.DataSource = daDao.LayDanhSachNhanLuc(fMainMenu.currentStaff.MaNV);
@@ -107,7 +107,7 @@ namespace Entity_QLCongTy.QLDuAn
                 // -----v------v-------
                 MessageBox.Show(da.MaDA);
                 daDao.Xoa(da);
-                gvQLDuAn.DataSource = daDao.DSDuAn();
+                gvQLDuAn.DataSource = daDao.LayDanhSach();
             }
             else
             {
@@ -175,6 +175,7 @@ namespace Entity_QLCongTy.QLDuAn
 
         private void btnXoaNVkhoiDA_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(pc.NgayKT.ToString() + pc.TienDo.ToString());
             PHANCONGDUAN pcnl = new PHANCONGDUAN(da.MaDA, pc.MaNV, pc.CongViec, pc.NgayBD, pc.NgayKT, int.Parse(pc.TienDo.ToString()));
             DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn muốn loại nhân viên khỏi dự án?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -239,11 +240,11 @@ namespace Entity_QLCongTy.QLDuAn
             int i = 0;
             foreach (var propertyInfo in type.GetProperties())
             {
-                if (propertyInfo.PropertyType == typeof(Nullable<DateTime>))
+                if (propertyInfo.PropertyType == typeof(DateTime))
                 {
                     propertyInfo.SetValue(pc, DateTime.Parse(r.Cells[i].Value.ToString()));
                 }
-                else if (propertyInfo.PropertyType == typeof(int))
+                else if (propertyInfo.PropertyType == typeof(Nullable<int>))
                 {
                     propertyInfo.SetValue(pc, int.Parse(r.Cells[i].Value.ToString()));
                 }
@@ -270,8 +271,10 @@ namespace Entity_QLCongTy.QLDuAn
             tmShowTiendo.Start();
             chartTiendoCN.Series.Clear();
             chartTienDoDA.Series.Clear();
+            chartTongTiendo.Series.Clear();
             VeBDTienDoCN();
             VeBDTienDoDA();
+            VeBDTongTienDoDA();
         }
         public void GettxtFindMaDA()
         {

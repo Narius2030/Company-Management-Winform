@@ -35,8 +35,8 @@ namespace Entity_QLCongTy
 
         public void ReLoad()
         {
-            gvChecksang.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
-            gvCheckchieu.DataSource = ciod.LayDanhSach($"SELECT * FROM PHANCONGDUAN WHERE MaNV = '{fMainMenu.MaNV}'");
+            gvChecksang.DataSource = ciod.LayDanhSach(fMainMenu.MaNV);
+            gvCheckchieu.DataSource = ciod.LayDanhSach(fMainMenu.MaNV);
         }
         private void btnSubmitCheckout_Click(object sender, EventArgs e)
         {
@@ -66,15 +66,9 @@ namespace Entity_QLCongTy
             ConvertCheck(cio);
             cio.MaNV = txtManvsang.Texts;
             cio.Ngay = dtpCheckIn.Value.Date;
-            try
-            {
-                ciod.SubmitSang(cio);
-                MessageBox.Show("Đã check in thành công");
-            }
-            catch
-            {
-                MessageBox.Show("Bạn đã check in sáng nay rồi");
-            }
+            ciod.SubmitSang(cio);
+            //Thông báo
+            MessageBox.Show("Đã check in thành công");
             ReLoad();
         }
         public void ConvertCheck(CHECKIN_OUT cio)

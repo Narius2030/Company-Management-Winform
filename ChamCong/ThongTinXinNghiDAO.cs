@@ -15,13 +15,7 @@ namespace Entity_QLCongTy.ChamCong
         CheckInOutDAO ciod = new CheckInOutDAO();
         public DataTable LayDanhSach()
         {
-            return dbconn.FormLoad("SELECT * FROM NGHIPHEP");
-        }
-
-        public void XoaDon(NGHIPHEP ttxn)
-        {
-            string sqlStr = $"DELETE NGHIPHEP WHERE MANV = '{ttxn.MANV}' AND NGAYNGHI = '{ttxn.NGAYNGHI}'";
-            dbconn.ThucThi(sqlStr);
+            return dbconn.FormLoad("SELECT * FROM NGHIPHEP WHERE PHANHOI = 'chua duyet'");
         }
         public void ThemBangXinNghi(NGHIPHEP ttxn)
         {

@@ -61,18 +61,9 @@ namespace Entity_QLCongTy.ChamCong
             //Tìm tháng, năm mới nhất
             string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
             DataTable dt = dbconn.FormLoad(sqlStr);
-            int month, year;
-            try
-            {
-                month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
-                year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
-            }
-            
-            catch
-            {
-                month = DateTime.Now.Month;
-                year = DateTime.Now.Year;
-            }
+            int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
+            int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+
             //Thêm tháng, năm châm công mới nhất vào
             sqlStr = $@"select * from CHAMCONG
                         where Thang = {month} and Nam = {year}";

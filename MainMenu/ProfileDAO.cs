@@ -32,25 +32,55 @@ namespace Entity_QLCongTy
             db.ThucThi(sqlStr);
         }
 
-        public List<float> LayHoaDonLuong(string manv)
+        public string GetLuongNam(NHANSU nv, int year)
+        {
+            string sqlStr = string.Format($@"SELECT SUM(LuongThucTe) as TongLuong 
+                                            FROM TIENLUONG 
+                                            WHERE MaNV = '{nv.MaNV}' AND Nam = '{year}' 
+                                            GROUP BY MaNV");
+            var result = db.GetItem(sqlStr);
+            if (result == null)
+            {
+                return "0";
+            }
+            return result.ToString();
+        }
+
+        public List<float> LayHoaDonLuong(string manv, int month, int year)
         {
             //Lấy thông tin lương của tài khoản trên TIENLUONG
-            DateTime curtime = DateTime.Now.Date;
-            string sqlStr = $@"select * from TIENLUONG
-                               where Thang = {curtime.Month} and Nam = {curtime.Year} and MaNV = '{manv}'";
-            DataTable dt = db.FormLoad(sqlStr);
+            string sqlStr = $@"SELECT TIENLUONG.LuongCB, TIENLUONG.LuongThuong, TIENLUONG.LuongPhat, TIENLUONG.LuongThucTe, CHAMCONG.NgDiLam, (30 - CHAMCONG.NgDiLam - CHAMCONG.SoNgNghiPhep) AS SoNgNghiKhongPhep, CHAMCONG.SoNgNghiPhep, (30 - 1) as DuAnHoanThanh
+                                FROM TIENLUONG
+                                INNER JOIN CHAMCONG ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
+                                WHERE TIENLUONG.MaNV = '{manv}' AND TIENLUONG.Nam = '{year}' AND TIENLUONG.Thang = '{month}'";
+            var dt = db.FormLoad(sqlStr);
 
             //Điền thông tin vào List
             List<float> luong = new List<float>();
-            
-            for (int i=4; i< dt.Columns.Count; i++)
+
+            for (int i = 0; i < dt.Columns.Count; i++)
             {
                 luong.Add(float.Parse(dt.Rows[0][i].ToString()));
             }
+
             return luong;
         }
 
-        //ns.NgaySinh.ToString() dòng 58 có vấn đề
+        public List<KeyValuePair<int, float>> LayLuongTT(string manv, string year)
+        {
+            string sqlStr = $@"SELECT Thang, LuongThucTe FROM TIENLUONG
+                                WHERE TIENLUONG.MaNV = '{manv}' AND TIENLUONG.Nam = '{year}'";
+            var dt = db.FormLoad(sqlStr);
+
+            var luongnam = new List<KeyValuePair<int, float>>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                var luongthang = new KeyValuePair<int, float>(int.Parse(dt.Rows[i][0].ToString()), float.Parse(dt.Rows[i][1].ToString()));
+                luongnam.Add(luongthang);
+            }
+            return luongnam;
+        }
+
         public List<string> LayThonTinCN()
         {
             NHANSU ns = fMainMenu.currentStaff;
@@ -58,12 +88,11 @@ namespace Entity_QLCongTy
             return info;
         }
 
-        //Hàm cập nhật bảng XinNghi
-        public void CapNhatBangXinNghi(NGHIPHEP ttxn)
+        //Lấy danh sách nghỉ phép của nhân viên chỉ định
+        public DataTable LayDSXinNghi(string manv)
         {
-            string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.MANV}', '{ttxn.NGAYNGHI.ToString()}', '{ttxn.LYDO}')";
-            db.ThucThi(sqlStr);
-            MessageBox.Show("Đã gửi đơn xin nghỉ");
+            string sqlStr = $"select * from NGHIPHEP where MaNV = '{manv}'";
+            return db.FormLoad(sqlStr);
         }
     }
 }

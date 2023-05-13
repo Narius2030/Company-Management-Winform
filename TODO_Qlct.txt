@@ -20,3 +20,6 @@
 
 11. Chỉnh lại Panel Login ----- đã xong
 
+
+Entity:
+1. Hàm DoDLTextBox() dùng làm gì?

@@ -36,9 +36,7 @@ namespace Entity_QLCongTy.NhanSu
             gvNhanSu.DataSource = nsDao.DanhSach();
             cboChucVu.Text = "";
             cboGioiTinh.Text = "";
-            cboLocKhac.Text = "";
             cboPhongBan.Text = "";
-            txtThongTinLoc.Clear();
         }
 
         #region Tương tác với Datagridview
@@ -69,43 +67,26 @@ namespace Entity_QLCongTy.NhanSu
         {
             gvNhanSu.DataSource = nsDao.Loc("GioiTinh", cboGioiTinh.Text);
         }
-        private void btnThem_Click_1(object sender, EventArgs e)
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
             ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
             nsDao.Them(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
-        private void btnXoa_Click_1(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
             nsDao.Xoa(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
-        private void btnSua_Click_1(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
             nsDao.Sua(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
-        }
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            switch (cboLocKhac.Text)
-            {
-                case "Mã Nhân Viên":
-                    gvNhanSu.DataSource = nsDao.Loc("MaNV", txtThongTinLoc.Text);
-                    break;
-                case "Họ Đệm":
-                    gvNhanSu.DataSource = nsDao.Loc("HovaTendem", txtThongTinLoc.Text);
-                    break;
-                case "Tên":
-                    gvNhanSu.DataSource = nsDao.Loc("Ten", txtThongTinLoc.Text);
-                    break;
-                case "CCCD":
-                    gvNhanSu.DataSource = nsDao.Loc("CCCD", txtThongTinLoc.Text);
-                    break;
-            }
         }
         #endregion
 

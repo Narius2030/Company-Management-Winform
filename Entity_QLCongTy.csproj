@@ -277,6 +277,8 @@
       <DependentUpon>QLCTModel.edmx</DependentUpon>
       <LastGenOutput>QLCTModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\sean-pollock-phyq704ffda-unsplash.jpg" />
+    <None Include="Resources\main_picture.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

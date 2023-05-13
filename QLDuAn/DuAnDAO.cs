@@ -21,11 +21,6 @@ namespace Entity_QLCongTy.QLDuAn
             string sqlStr = $"SELECT * FROM DUAN";
             return db.FormLoad(sqlStr);
         }
-        public void Them(DUAN da)
-        {
-            string sqlStr = $"INSERT INTO DUAN VALUES ('{da.MaDA}', '{da.TenDA}', '{da.MaPB}', 0, '{da.TruongDA}', '{da.NgayBD}', '{da.NgayKT}', '{da.TrangThai}', 0)";
-            db.ThucThi(sqlStr);
-        }
         public DataTable LayDanhSachDuAn(string manv)
         {
             string sqlStr = $"select * from DUAN where TruongDA = '{manv}'";
@@ -60,11 +55,10 @@ namespace Entity_QLCongTy.QLDuAn
                                 where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh' and {col} = '{value}'";
             return db.FormLoad(sqlStr);
         }
-
-        public DataTable DSDuAn()
+        public void Them(DUAN da)
         {
-            string sqlStr = $"select * from DUAN";
-            return db.FormLoad(sqlStr);
+            string sqlStr = $"INSERT INTO DUAN VALUES ('{da.MaDA}', '{da.TenDA}', '{da.MaPB}', 0, '{da.TruongDA}', '{da.NgayBD}', '{da.NgayKT}', '{da.TrangThai}', 0)";
+            db.ThucThi(sqlStr);
         }
         public void Xoa(DUAN da)
         {
@@ -155,6 +149,7 @@ namespace Entity_QLCongTy.QLDuAn
             string sqlStr = "SELECT CONCAT(MaNV, ' - ', Ten) AS TenNV, MaNV FROM NHANSU WHERE MaCV LIKE 'TP%'";
             return db.FormLoad(sqlStr);
         }
+
         public DataTable GetNameProd()
         {
             string sqlStr = "SELECT CONCAT(MaDA, ' - ', TenDA) AS TenDA, MaDA FROM DUAN";
