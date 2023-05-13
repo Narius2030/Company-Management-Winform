@@ -22,7 +22,7 @@ namespace QLCongTy
 
         private void fDuyetDonXinNghi_Load(object sender, EventArgs e)
         {
-            gvDSXinNghi.DataSource = ttxnDao.LayDanhSach();
+            gvDSXinNghi.DataSource = ttxnDao.LayDanhSach(fMainMenu.currentStaff.MaNV);
         }
 
         private void gvDSXinNghi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -41,7 +41,7 @@ namespace QLCongTy
                 // Cập nhật phan hồi
                 ttxnDao.CapNhatBangXinNghi(ttxn, phanhoi);
 
-                gvDSXinNghi.DataSource = ttxnDao.LayDanhSach();
+                gvDSXinNghi.DataSource = ttxnDao.LayDanhSach(fMainMenu.currentStaff.MaNV);
             }
             if (result == DialogResult.No)
             {

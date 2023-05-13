@@ -93,9 +93,14 @@ namespace QLCongTy
         //Lấy danh sách nghỉ phép của nhân viên chỉ định
         public DataTable LayDSXinNghi(string manv)
         {
-            string sqlStr = $"select * from NGHIPHEP where MaNV = '{manv}'";
+            string sqlStr = $"select NGAYNGHI, LYDO, PHANHOI from NGHIPHEP where MaNV = '{manv}'";
             return db.FormLoad(sqlStr);
         }
-     
+        public string LayMaPhongBan(string manv)
+        {
+            string sqlStr = $"select MaPB from NHANSU where MaNV = '{manv}'";
+            var mapb = db.GetItem(sqlStr).ToString();
+            return mapb;
+        }
     }
 }

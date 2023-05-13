@@ -28,6 +28,7 @@ namespace QLCongTy
             LoadProfile();
             lblTenNV.Text = fMainMenu.currentStaff.HoDem + " " + fMainMenu.currentStaff.Ten;
             lblMaNV.Text = fMainMenu.currentStaff.MaNV;
+            lblMaPB.Text = pfd.LayMaPhongBan(fMainMenu.currentStaff.MaNV);
         }
         private void FProfile_Load(object sender, EventArgs e)
         {
@@ -39,78 +40,6 @@ namespace QLCongTy
             lblMaNV.Text = fMainMenu.MaNV;
             lblTenNV.Text = "";
         }
-
-        #region Adjust Panel
-        private void CustomizeDesing()
-        {
-            pnlTTCN.Visible = false;
-            pnlDuAn.Visible = false;
-            pnlLuong.Visible = false;
-            pnlXinNghiPhep.Visible = false;
-            pnlBaoMat.Visible = false;
-            pnlDoiMatKhau.Visible = false;
-        }
-        private void HidePanel()
-        {
-            if (currentPanel.Visible)
-            {
-                currentPanel.Visible = false;
-            }
-        }
-
-        private void ShowPanel()
-        {
-            if (currentPanel.Visible == false)
-            {
-                currentPanel.Visible = true;
-            }
-        }
-
-        private void sideBarTimer_Tick(object sender, EventArgs e)
-        {
-            //Set the minimum and maximum size of sidebar panel
-            if (sidebarExpand)
-            {
-                sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
-                {
-                    sidebarExpand = false;
-                    sidebarTimer.Stop();
-                }
-            }
-            else
-            {
-                sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
-                {
-                    sidebarExpand = true;
-                    sidebarTimer.Stop();
-                }
-            }
-        }
-        #endregion
-
-        #region Vẽ biểu đồ
-
-        // Biểu đồ lương theo từng tháng trong 1 năm của nhân viên đó
-        public void VeBDLuongThangNV(string manv, string year)
-        {
-            var lstparent = pfd.LayLuongTT(manv, year);
-            //Add series
-            chartLuongThangNV.Series.Add("Lương");
-            chartLuongThangNV.Series[0].ChartType = SeriesChartType.Column;
-
-            //Adjust Chart
-            //...
-
-            //Add columns
-            foreach (var ele in lstparent)
-            {
-                chartLuongThangNV.Series[0].Points.AddXY(ele.Key, ele.Value);
-            }
-        }
-
-        #endregion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -224,5 +153,77 @@ namespace QLCongTy
             lblLuongNam.Text = pfd.GetLuongNam(fMainMenu.currentStaff, Convert.ToInt32(cboNam.Text));
             VeBDLuongThangNV(fMainMenu.currentStaff.MaNV, cboNam.Text);
         }
+
+        #region Vẽ biểu đồ
+
+        // Biểu đồ lương theo từng tháng trong 1 năm của nhân viên đó
+        public void VeBDLuongThangNV(string manv, string year)
+        {
+            var lstparent = pfd.LayLuongTT(manv, year);
+            //Add series
+            chartLuongThangNV.Series.Add("Lương");
+            chartLuongThangNV.Series[0].ChartType = SeriesChartType.Column;
+
+            //Adjust Chart
+            //...
+
+            //Add columns
+            foreach (var ele in lstparent)
+            {
+                chartLuongThangNV.Series[0].Points.AddXY(ele.Key, ele.Value);
+            }
+        }
+
+        #endregion
+
+        #region Adjust Panel
+        private void CustomizeDesing()
+        {
+            pnlTTCN.Visible = false;
+            pnlDuAn.Visible = false;
+            pnlLuong.Visible = false;
+            pnlXinNghiPhep.Visible = false;
+            pnlBaoMat.Visible = false;
+            pnlDoiMatKhau.Visible = false;
+        }
+        private void HidePanel()
+        {
+            if (currentPanel.Visible)
+            {
+                currentPanel.Visible = false;
+            }
+        }
+
+        private void ShowPanel()
+        {
+            if (currentPanel.Visible == false)
+            {
+                currentPanel.Visible = true;
+            }
+        }
+
+        private void sideBarTimer_Tick(object sender, EventArgs e)
+        {
+            //Set the minimum and maximum size of sidebar panel
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+        #endregion
     }
 }

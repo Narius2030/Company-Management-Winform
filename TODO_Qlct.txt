@@ -20,3 +20,5 @@
 
 11. Chỉnh lại Panel Login ----- đã xong
 12. Xóa XoaDon và RowHeaderClick trong ThongTinDuyetDon ------ Đã xong
+13. Lọc đơn xin nghỉ theo từng phòng ban ---- Chờ test
+14. Thêm label Phòng ban trên cùng Form Profile ---- Đã xong
