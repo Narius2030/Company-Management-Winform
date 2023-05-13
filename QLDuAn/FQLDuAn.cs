@@ -24,7 +24,6 @@ namespace Entity_QLCongTy.QLDuAn
         DUAN da = new DUAN();
         PHANCONGDUAN pc = new PHANCONGDUAN();
         TienDoDAO tdd = new TienDoDAO();
-        DBConnection db = new DBConnection();
         public fQLDuAn()
         {
             InitializeComponent();
@@ -92,6 +91,7 @@ namespace Entity_QLCongTy.QLDuAn
             {
                 FTaoDuAn tda = new FTaoDuAn(da, btnThem.Text);
                 tda.Show();
+                gvQLDuAn.DataSource = daDao.LayDanhSach();
             }
             else
             {
@@ -101,8 +101,18 @@ namespace Entity_QLCongTy.QLDuAn
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            //ShowPanel(pnlEdit);
-            //lblTitle.Text = "Xóa dự án";
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                DataGridViewRow rows = gvQLDuAn.SelectedRows[0];
+                // -----v------v-------
+                MessageBox.Show(da.MaDA);
+                daDao.Xoa(da);
+                gvQLDuAn.DataSource = daDao.DSDuAn();
+            }
+            else
+            {
+                MessageBox.Show("Không thuộc thẩm quyền");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -331,11 +341,51 @@ namespace Entity_QLCongTy.QLDuAn
             chartTienDoDA.Series[0].Points.AddXY("Quá hạn", tdd.LaySLQuaHan(da.MaDA));
         }
 
+        //Vẽ biểu đồ tổng tiến độ dự án
+        public void VeBDTongTienDoDA()
+        {
+            chartTongTiendo.Series.Add("Series1");
+            chartTongTiendo.Series[0].ChartType = SeriesChartType.Doughnut;
+
+            #region Trang trí biểu đồ
+            chartTongTiendo.Series[0].IsValueShownAsLabel = true;
+            chartTongTiendo.Series[0].LabelForeColor = Color.White;
+            chartTongTiendo.Series[0].Font = new System.Drawing.Font("Segoe UI", 12.0f, FontStyle.Bold);
+            #endregion
+
+            int tiendo = tdd.LayTienDoDA(da.MaDA);
+            chartTongTiendo.Series[0].Points.AddXY("Đã hoàn thành", tiendo);
+            chartTongTiendo.Series[0].Points.AddXY("Chưa hoàn thanh", 100 - tiendo);
+        }
+
         #endregion
 
         private void cboFindMaDA_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(cboFindMaDA.SelectedValue.ToString());
+        }
+
+        private void gvQLDuAn_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in gvQLDuAn.Rows)
+            {
+                DateTime Deadline = Convert.ToDateTime(row.Cells["NgayKT"].Value);
+                bool OutDeadLine = DateTime.Now > Deadline;
+                if (OutDeadLine)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    int TienDo = Convert.ToInt32(row.Cells["Tiendo"].Value);
+                    if (TienDo == 100)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                    }
+                }
+            }
         }
     }
 }

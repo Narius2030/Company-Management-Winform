@@ -16,9 +16,9 @@ namespace Entity_QLCongTy.QLDuAn
     {
         DBConnection db = new DBConnection();
 
-        public DataTable LayDanhSach(string lenh)
+        public DataTable LayDanhSach()
         {
-            string sqlStr = string.Format(lenh);
+            string sqlStr = $"SELECT * FROM DUAN";
             return db.FormLoad(sqlStr);
         }
         public void Them(DUAN da)
@@ -93,12 +93,7 @@ namespace Entity_QLCongTy.QLDuAn
         }
         public void TienDoDuAn(string MaDA)
         {
-            int result = int.Parse(db.GetItem($"SELECT SUM(TienDo/5) FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
-            if (result >= 100)
-            {
-                result = 100;
-            }
-            //return result;
+            int result = int.Parse(db.GetItem($"SELECT AVG(Tiendo) AS TienDoDuAn FROM PHANCONGDUAN WHERE MaDA = '{MaDA}' GROUP BY MaDA").ToString());
             string sqlStr = $"UPDATE DUAN SET TienDo = {result} WHERE MaDA = '{MaDA}'";
             db.ThucThi(sqlStr);
         }

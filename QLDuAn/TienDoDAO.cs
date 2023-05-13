@@ -73,5 +73,20 @@ namespace Entity_QLCongTy.QLDuAn
             DataTable dt = dbconn.FormLoad(sqlStr);
             return int.Parse(dt.Rows[0]["so_luong"].ToString());
         }
+
+        //Lấy tiến độ dự án
+        public int LayTienDoDA(string mada)
+        {
+            try
+            {
+                string sqlStr = $@"select Tiendo from DUAN where MaDA ='{mada}'";
+                DataTable dt = dbconn.FormLoad(sqlStr);
+                return int.Parse(dt.Rows[0]["Tiendo"].ToString());
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace Entity_QLCongTy.QLDuAn
         private void btnAccept_Click(object sender, EventArgs e)
         {
             //Cần sửa thuộc tính tiến độ trong cóntructor DUAN, tạm để giá trị 0
-            DUAN da = new DUAN(txtMaDA.Text, txtTenDA.Text, cboMaPB.SelectedValue.ToString(), cboMaTruongDA.SelectedValue.ToString(), dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
+            DUAN da = new DUAN(txtMaDA.Texts, txtTenDA.Texts, cboMaPB.SelectedValue.ToString(), cboMaTruongDA.SelectedValue.ToString(), dtpNgayBatDau.Value.Date, dtpNgayKetThuc.Value.Date, cboTrangThai.Text);
             try
             {
                 if (chedo.ToUpper() == "THÊM")
@@ -61,13 +61,12 @@ namespace Entity_QLCongTy.QLDuAn
                 {
                     dad.Sua(da);
                 }
-                MessageBox.Show("Thông báo" ,"Thao tác thành công");
+                MessageBox.Show("Thao tác thành công", "Thông báo");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
