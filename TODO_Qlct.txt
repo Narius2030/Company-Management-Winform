@@ -8,6 +8,8 @@
 
 6. Cho chọn nghĩ nhiều ngày (cuối cùng)
 7. Chỉnh định dạng thành phần trong form (màu, trang trí,...)
+	+ Đã chỉnh màu sách cho Form checkInOut
+	+ Đã xóa nút Lọc, cbo LocKhac, TextBoxt LocKhac
 8. Lỗi khi submit lại ngày đã submit, bắt exception nhưng mesagebox vẫn hiện là check thành công (ĐƠn xin nghỉ cũng gặp tình trạng tương tự)--------
 9. Xem lương cá nhân theo tháng----------Xong
 
@@ -17,3 +19,4 @@
 	Notes: Hàm t vẽ biểu đồ nó nằm file FProfile.cs á, rồi m thêm code trang trí vào ngày chỗ "...." ấy
 
 11. Chỉnh lại Panel Login ----- đã xong
+
