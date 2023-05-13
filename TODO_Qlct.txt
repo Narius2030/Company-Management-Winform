@@ -1,0 +1,22 @@
+1. Chỉnh sửa cách tính % tiến độ dự án--------đã xong
+2. Thông báo đã đơn xin nghỉ  
+	+ Còn thiếu thông tin người gửi (trưởng phòng)
+	
+3. Nhấn logo đăng home thì ẩn mẹ form đăng nhập
+4. cho nhân viên cập nhật tiến độ cho nhiều dự án-------Xong
+5. Trực quan thể hiện dự án đã xong, quá hạn, đang làm trên datagridview------đã xong
+
+6. Cho chọn nghĩ nhiều ngày (cuối cùng)
+7. Chỉnh định dạng thành phần trong form (màu, trang trí,...)
+	+ Đã chỉnh màu sách cho Form checkInOut
+	+ Đã xóa nút Lọc, cbo LocKhac, TextBoxt LocKhac
+8. Lỗi khi submit lại ngày đã submit, bắt exception nhưng mesagebox vẫn hiện là check thành công (ĐƠn xin nghỉ cũng gặp tình trạng tương tự)--------
+9. Xem lương cá nhân theo tháng----------Xong
+
+
+10. Vẽ biểu đồ cho lương theo tháng cho 1 nhân viên trong 1 năm ở FProfile
+	+ Còn trang trí biểu đồ: tô màu lương cao và thấp nhất, thêm label cho trục x,y,...(còn lại tùy ý)
+	Notes: Hàm t vẽ biểu đồ nó nằm file FProfile.cs á, rồi m thêm code trang trí vào ngày chỗ "...." ấy
+
+11. Chỉnh lại Panel Login ----- đã xong
+
