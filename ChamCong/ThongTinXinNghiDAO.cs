@@ -17,12 +17,6 @@ namespace QLCongTy.ChamCong
         {
             return dbconn.FormLoad("SELECT * FROM NGHIPHEP WHERE PHANHOI = 'chua duyet'");
         }
-
-        public void XoaDon(ThongTinXinNghi ttxn)
-        {
-            string sqlStr = $"DELETE NGHIPHEP WHERE MANV = '{ttxn.Manv}' AND NGAYNGHI = '{ttxn.Ngaynghi}'";
-            dbconn.ThucThi(sqlStr);
-        }
         public void ThemBangXinNghi(ThongTinXinNghi ttxn)
         {
             string sqlStr = $"INSERT INTO NGHIPHEP VALUES ('{ttxn.Manv}', '{ttxn.Ngaynghi}', '{ttxn.Lydo}', 'chua duyet')";

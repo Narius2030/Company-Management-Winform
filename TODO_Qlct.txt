@@ -19,4 +19,4 @@
 	Notes: Hàm t vẽ biểu đồ nó nằm file FProfile.cs á, rồi m thêm code trang trí vào ngày chỗ "...." ấy
 
 11. Chỉnh lại Panel Login ----- đã xong
-
+12. Xóa XoaDon và RowHeaderClick trong ThongTinDuyetDon ------ Đã xong
