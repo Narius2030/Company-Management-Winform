@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
+﻿using System.Data;
 
 namespace QLCongTy.TienLuong
 {
@@ -37,7 +29,7 @@ namespace QLCongTy.TienLuong
             string sqlStr = $@"select * from TIENLUONG where MaNV = '{tl.Manv}' and Thang = {tl.Thang} and Nam = {tl.Nam}";
             DataTable dt = db.FormLoad(sqlStr);
 
-            if (dt.Rows.Count == 0 )
+            if (dt.Rows.Count == 0)
             {
                 //Them Luong mới cho Nhan Vien
                 sqlStr = $"insert into TIENLUONG values ('{tl.Manv}','{tl.Macv}', {tl.Thang}, {tl.Nam}, {tl.Luongcoban}, {tl.Luongthuong},{tl.Luongphat},{tl.LuongThucTe})";
@@ -52,7 +44,7 @@ namespace QLCongTy.TienLuong
         }
         public void CapNhat(Tienluong tl)
         {
-            string sqlStr = string.Format("UPDATE TIENLUONG SET LuongThuong = {0}, LuongPhat = {1}, LuongThucTe = {2} where MaNV = '{3}'", tl.Luongthuong,tl.Luongphat,tl.LuongThucTe, tl.Manv);
+            string sqlStr = string.Format("UPDATE TIENLUONG SET LuongThuong = {0}, LuongPhat = {1}, LuongThucTe = {2} where MaNV = '{3}'", tl.Luongthuong, tl.Luongphat, tl.LuongThucTe, tl.Manv);
             db.ThucThi(sqlStr);
         }
         public DataTable LocThang(string nam, string thang)
@@ -75,7 +67,7 @@ namespace QLCongTy.TienLuong
             Tienluong tl = new Tienluong();
 
             //Thêm lương cho các nhân viên theo tháng và năm mới nhất
-            for (int i=0; i < dtns.Rows.Count; i++)
+            for (int i = 0; i < dtns.Rows.Count; i++)
             {
                 TinhTienPhat(tl, dtns.Rows[i]["MaNV"].ToString());
                 TinhTienThuong(tl, dtns.Rows[i]["MaNV"].ToString());

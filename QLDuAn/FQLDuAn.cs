@@ -1,22 +1,8 @@
-﻿using Microsoft.Office.Interop.Excel;
-using Microsoft.SqlServer.Server;
-using QLCongTy.QLDuAn;
-using QLCongTy.QLPhongBan;
-using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace QLCongTy.QLDuAn
 {
@@ -30,7 +16,6 @@ namespace QLCongTy.QLDuAn
         public fQLDuAn()
         {
             InitializeComponent();
-
             //Ẩn dòng cuối cùng của DatagridView
             gvQLDuAn.AllowUserToAddRows = false;
             gvNhanLuc.AllowUserToAddRows = false;
@@ -45,7 +30,7 @@ namespace QLCongTy.QLDuAn
                 gvQLDuAn.DataSource = daDao.DSDuAn();
             }
             daDao.InitStatusTB();
-            gvNhanLuc.DataSource = daDao.LayDanhSachNhanLuc();
+            gvNhanLuc.DataSource = daDao.LayDanhSachNhanLuc(fMainMenu.currentStaff.MaNV);
             tabQLDA.Controls.Remove(tpPCDA);
             DoiTen();
             GettxtFindMaDA();
@@ -56,9 +41,8 @@ namespace QLCongTy.QLDuAn
             gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaDA", da.Mada);
         }
 
-        #region Hide Show panel
-       
-        #endregion
+        #region Adjust Form
+
         void DoiTen()
         {
             gvQLDuAn.Columns[0].HeaderText = "Mã Dự Án";
@@ -72,22 +56,41 @@ namespace QLCongTy.QLDuAn
             gvNhanLuc.Columns[0].HeaderText = "Mã Nhân Viên";
             gvNhanLuc.Columns[1].HeaderText = "Trình Độ";
         }
-
-        private void fQLDuAn_FormClosing(object sender, FormClosingEventArgs e)
+        private void gvQLDuAn_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            daDao.DeleteBangTT();
+            foreach (DataGridViewRow row in gvQLDuAn.Rows)
+            {
+                DateTime Deadline = Convert.ToDateTime(row.Cells["NgayKT"].Value);
+                bool OutDeadLine = DateTime.Now > Deadline;
+                if (OutDeadLine)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    int TienDo = Convert.ToInt32(row.Cells["Tiendo"].Value);
+                    if (TienDo == 100)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                    }
+                }
+            }
         }
+
+        #endregion
 
         private void gvPCDuAn_Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvPCDuAn.SelectedRows[0];
-            txtMaNV.Text = r.Cells[1].Value.ToString();
+            txtMaNV.Texts = r.Cells[1].Value.ToString();
         }
 
         private void gvNhanLuc_Row_Click(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow r = gvNhanLuc.SelectedRows[0];
-            txtMaNV.Text = r.Cells[0].Value.ToString();
+            txtMaNV.Texts = r.Cells[0].Value.ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -142,6 +145,13 @@ namespace QLCongTy.QLDuAn
                 tabQLDA.Controls.Remove(tpPCDA);
                 tabQLDA.Controls.Add(tpPCDA);
                 tabQLDA.SelectedIndex = 1;
+                #region Điền thông tin dự án
+
+                lblThongtinDA.Text = da.Mada + "_" + da.Tenda;
+                txtTenPB.Texts = da.Mapb;
+                txtTruongDA.Texts= da.Truongda;
+
+                #endregion
                 ReLoadPCDuAn();
             }
             else
@@ -161,17 +171,17 @@ namespace QLCongTy.QLDuAn
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Convert.ToString(txtMaNV.Text)))
+            if (string.IsNullOrEmpty(Convert.ToString(txtMaNV.Texts)))
             {
                 daDao.UpdateStatus(dtpStart.Value, dtpFinish.Value);
-                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh();
+                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh(fMainMenu.currentStaff.MaNV);
                 gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaDA", da.Mada);
 
             }
             else
             {
-                gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaNV", txtMaNV.Text);
-                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien("MaNV", txtMaNV.Text);
+                gvPCDuAn.DataSource = daDao.LayDanhSachPhanCong("MaNV", txtMaNV.Texts);
+                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien(fMainMenu.currentStaff.MaNV, "MaNV", txtMaNV.Texts);
             }
         }
 
@@ -191,18 +201,17 @@ namespace QLCongTy.QLDuAn
             PCNhanLuc pcnl = new PCNhanLuc(da.Mada, pc.Manv, cboCongViec.Text, dtpStart.Value.Date, dtpFinish.Value.Date);
             daDao.ThemNVvaoDA(pcnl);
             ReLoadPCDuAn();
-
         }
 
         private void cboTrinhDo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboTrinhDo.Text == "All")
             {
-                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh();
+                gvNhanLuc.DataSource = daDao.LayDanhSachNVRanh(fMainMenu.currentStaff.MaNV);
             }
             else
             {
-                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien("TrinhDo", cboTrinhDo.Text);
+                gvNhanLuc.DataSource = daDao.LayDSNVRanhVaDieuKien(fMainMenu.currentStaff.MaNV, "TrinhDo", cboTrinhDo.Text);
             }
         }
 
@@ -360,28 +369,6 @@ namespace QLCongTy.QLDuAn
         private void cboFindMaDA_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(cboFindMaDA.SelectedValue.ToString());
-        }
-
-        private void gvQLDuAn_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            foreach (DataGridViewRow row in gvQLDuAn.Rows)
-            {
-                DateTime Deadline = Convert.ToDateTime(row.Cells["NgayKT"].Value);
-                bool OutDeadLine = DateTime.Now > Deadline;
-                if (OutDeadLine)
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                    row.DefaultCellStyle.ForeColor = Color.Black;
-                }
-                else
-                {
-                    int TienDo = Convert.ToInt32(row.Cells["Tiendo"].Value);
-                    if (TienDo == 100) { 
-                        row.DefaultCellStyle.BackColor = Color.LightGreen;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                    }
-                }
-            }
         }
     }
 }

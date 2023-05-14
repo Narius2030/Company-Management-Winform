@@ -576,7 +576,7 @@
             this.artanPannel3.Controls.Add(this.picAccount);
             this.artanPannel3.ForeColor = System.Drawing.Color.Black;
             this.artanPannel3.GradientAngle = 90F;
-            this.artanPannel3.GradientBttomColor = System.Drawing.Color.Azure;
+            this.artanPannel3.GradientBttomColor = System.Drawing.Color.LightCyan;
             this.artanPannel3.GradientTopcolor = System.Drawing.Color.Azure;
             this.artanPannel3.Location = new System.Drawing.Point(364, 44);
             this.artanPannel3.Name = "artanPannel3";

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLCongTy.QLDuAn
 {
@@ -24,7 +20,7 @@ namespace QLCongTy.QLDuAn
         {
             string sqlStr = $@"select NHANSU.MaNV, Ten, CongViec, NgayBD, NgayKT, TienDo 
                             from PHANCONGDUAN join NHANSU on PHANCONGDUAN.MaNV = NHANSU.MaNV
-                            where PHANCONGDUAN.NgayBD <= GETDATE() and MaDA = '{mada}'";
+                            where MaDA = '{mada}'";
             DataTable dt = dbconn.FormLoad(sqlStr);
 
             List<List<string>> lstparent = new List<List<string>>();

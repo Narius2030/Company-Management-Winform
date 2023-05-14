@@ -1,13 +1,5 @@
-﻿using QLCongTy.QLDuAn;
-using QLCongTy.TienLuong;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCongTy.TienLuong
@@ -60,7 +52,8 @@ namespace QLCongTy.TienLuong
         #region Hiệu ứng
         bool sidebarExpand;
         private void tmThongKe_Tick(object sender, EventArgs e)
-        {;
+        {
+            ;
             if (sidebarExpand)
             {
                 pnlThongKe.Height -= 50;

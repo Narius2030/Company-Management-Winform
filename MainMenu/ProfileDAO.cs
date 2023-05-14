@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using QLCongTy.TienLuong;
-using QLCongTy.ChamCong;
 using QLCongTy.NhanSu;
-using System.Windows;
-//using Microsoft.Office.Interop.Excel;
-using System.Windows.Controls.Primitives;
+
 
 namespace QLCongTy
 {
@@ -98,9 +90,10 @@ namespace QLCongTy
         }
         public string LayMaPhongBan(string manv)
         {
-            string sqlStr = $"select MaPB from NHANSU where MaNV = '{manv}'";
-            var mapb = db.GetItem(sqlStr).ToString();
-            return mapb;
+            string sqlStr = $"select NHANSU.MaPB, PHONGBAN.TenPB from NHANSU join PHONGBAN on NHANSU.MaPB = PHONGBAN.MaPB where MaNV = '{manv}'";
+            var dt = db.FormLoad(sqlStr);
+            var phongban = dt.Rows[0][0].ToString() + " - " + dt.Rows[0][1].ToString();
+            return phongban;
         }
     }
 }

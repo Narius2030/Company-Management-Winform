@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCongTy.QLDuAn
@@ -15,7 +9,7 @@ namespace QLCongTy.QLDuAn
         DuAnDAO dad = new DuAnDAO();
         private string chedo;
         private DuAn da = new DuAn();
-        public FTaoDuAn(DuAn da,string chedo)
+        public FTaoDuAn(DuAn da, string chedo)
         {
             InitializeComponent();
             this.chedo = chedo;
@@ -66,12 +60,12 @@ namespace QLCongTy.QLDuAn
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            foreach(var control in pnlTTDuAn.Controls.OfType<TextBox>())
+            foreach (var control in pnlTTDuAn.Controls.OfType<TextBox>())
             {
                 control.Clear();
             }

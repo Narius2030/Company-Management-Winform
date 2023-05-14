@@ -1,17 +1,9 @@
 ﻿using QLCongTy.ChamCong;
-using QLCongTy.NhanSu;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Media.Animation;
 
 namespace QLCongTy
 {
@@ -32,7 +24,7 @@ namespace QLCongTy
         }
         private void FProfile_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void LoadProfile()
@@ -95,7 +87,7 @@ namespace QLCongTy
         private void btnUpdateMatKhau_Click(object sender, EventArgs e)
         {
             pnlDoiMatKhau.Visible = false;
-            pfd.DoiMatKhau(fMainMenu.currentStaff,txtMatKhauCu.Text, txtMatKhauMoi.Text);
+            pfd.DoiMatKhau(fMainMenu.currentStaff, txtMatKhauCu.Text, txtMatKhauMoi.Text);
             lblMatKhau.Text = pfd.GetMatKhau(fMainMenu.currentStaff);
         }
 

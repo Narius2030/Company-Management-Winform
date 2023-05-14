@@ -1,14 +1,5 @@
-﻿using QLCongTy.QLPhongBan;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace QLCongTy.QLDuAn
 {
@@ -28,27 +19,34 @@ namespace QLCongTy.QLDuAn
             return db.FormLoad(sqlStr);
         }
 
-        public DataTable LayDanhSachNhanLuc()
+        public DataTable LayDanhSachNhanLuc(string matp)
         {
-            string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN";
+            string sqlStr = $@"select MaNV, TrinhDo from NHANSU as nv
+                               join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                               where pb.MaTP = '{matp}' and nv.MaNV != '{matp}'";
             return db.FormLoad(sqlStr);
         }
-
         public DataTable LayDanhSachPhanCong(string col, string value)
         {
             string sqlStr = $"select MaDA, MaNV, CongViec, NgayBD, NgayKT, TienDo from PHANCONGDUAN WHERE {col} = '{value}'";
             return db.FormLoad(sqlStr);
         }
 
-        public DataTable LayDanhSachNVRanh()
+        public DataTable LayDanhSachNVRanh(string matp)
         {
-            string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'";
+            string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
+                                join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                                join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
+                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh'";
             return db.FormLoad(sqlStr);
         }
 
-        public DataTable LayDSNVRanhVaDieuKien(string col, string value)
+        public DataTable LayDSNVRanhVaDieuKien(string matp, string col, string value)
         {
-            string sqlStr = $"select  MaNV, TrinhDo from TRANGTHAINHANVIEN where {col} = '{value}' and TrangThai = 'Ranh'";
+            string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
+                                join PHONGBAN as pb on pb.MaPB = nv.MaPB
+                                join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
+                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh' and nv.{col} = '{value}'";
             return db.FormLoad(sqlStr);
         }
 

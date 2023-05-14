@@ -8,7 +8,6 @@ using QLCongTy.TienLuong;
 using QLCongTy.NhanSu;
 using QLCongTy.QLDuAn;
 using QLCongTy.ChamCong;
-using QLCongTy;
 
 namespace QLCongTy
 {
