@@ -104,8 +104,6 @@ namespace Entity_QLCongTy.QLDuAn
             if (fMainMenu.currentStaff.MaCV.Contains("GD"))
             {
                 DataGridViewRow rows = gvQLDuAn.SelectedRows[0];
-                // -----v------v-------
-                MessageBox.Show(da.MaDA);
                 daDao.Xoa(da);
                 gvQLDuAn.DataSource = daDao.LayDanhSach();
             }
@@ -140,6 +138,11 @@ namespace Entity_QLCongTy.QLDuAn
                 tabQLDA.Controls.Remove(tpPCDA);
                 tabQLDA.Controls.Add(tpPCDA);
                 tabQLDA.SelectedIndex = 1;
+                #region Điền thông tin dự án
+                lblTenDA.Text = da.MaDA + "_" + da.TenDA;
+                txtMaPB.Text = da.MaPB;
+                txtTruongDA.Text = da.TruongDA;
+                #endregion
                 ReLoadPCDuAn();
             }
             else

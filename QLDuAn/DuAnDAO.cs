@@ -40,7 +40,6 @@ namespace Entity_QLCongTy.QLDuAn
         }
         public DataTable LayDanhSachNVRanh(string matp)
         {
-            //string sqlStr = $"select MaNV, TrinhDo from TRANGTHAINHANVIEN WHERE TrangThai = 'Ranh'";
             string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
                                 join PHONGBAN as pb on pb.MaPB = nv.MaPB
                                 join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
@@ -52,7 +51,7 @@ namespace Entity_QLCongTy.QLDuAn
             string sqlStr = $@"select nv.MaNV, nv.TrinhDo from NHANSU as nv
                                 join PHONGBAN as pb on pb.MaPB = nv.MaPB
                                 join TRANGTHAINHANVIEN as ttnv on nv.MaNV = ttnv.MaNV
-                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh' and {col} = '{value}'";
+                                where pb.MaTP = '{matp}' and nv.MaNV != '{matp}' and ttnv.TrangThai = 'Ranh' and nv.{col} = '{value}'";
             return db.FormLoad(sqlStr);
         }
         public void Them(DUAN da)
