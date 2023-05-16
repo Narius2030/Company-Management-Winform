@@ -90,10 +90,12 @@ namespace QLCongTy
         }
         public string LayMaPhongBan(string manv)
         {
-            string sqlStr = $"select NHANSU.MaPB, PHONGBAN.TenPB from NHANSU join PHONGBAN on NHANSU.MaPB = PHONGBAN.MaPB where MaNV = '{manv}'";
-            var dt = db.FormLoad(sqlStr);
-            var phongban = dt.Rows[0][0].ToString() + " - " + dt.Rows[0][1].ToString();
-            return phongban;
+            if (manv == "NV100")
+            {
+                return "Giám đốc";
+            }
+            string sqlStr = $"SELECT CONCAT(PHONGBAN.MaPB, ' - ', TenPB) AS PhongBan FROM PHONGBAN INNER JOIN NHANSU ON PHONGBAN.MaPB = NHANSU.MaPB WHERE NHANSU.MaNV = '{manv}'";
+            return db.GetItem(sqlStr).ToString();
         }
     }
 }
