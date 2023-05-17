@@ -156,6 +156,10 @@ namespace QLCongTy
                     btnNhanSu.Visible = true;
                     pnlNhanSu.Visible = false;
                     btnDuyetDonXinNghi.Enabled = true;
+                    if (infoAcc.Item3.Contains("GD"))
+                    {
+                        btnDuyetDonXinNghi.Enabled = false;
+                    }
                 }
                 else
                 {

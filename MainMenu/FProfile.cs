@@ -136,7 +136,14 @@ namespace QLCongTy
 
         private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ShowLuong(Convert.ToInt32(cboNam.Text), Convert.ToInt32(cboThang.Text));
+            if (cboNam.Text != "Năm")
+            {
+                ShowLuong(Convert.ToInt32(cboNam.Text), Convert.ToInt32(cboThang.Text));
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập năm");
+            }
         }
 
         private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
