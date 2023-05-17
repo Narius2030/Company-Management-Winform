@@ -83,16 +83,6 @@ namespace QLCongTy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap main_picture {
-            get {
-                object obj = ResourceManager.GetObject("main_picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -105,7 +95,7 @@ namespace QLCongTy.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap sean_pollock_PhYq704ffdA_unsplash {
             get {
-                object obj = ResourceManager.GetObject("sean-pollock-PhYq704ffdA-unsplash", resourceCulture);
+                object obj = ResourceManager.GetObject("sean_pollock_PhYq704ffdA_unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
