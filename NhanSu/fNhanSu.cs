@@ -72,7 +72,7 @@ namespace QLCongTy.NhanSu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
+            ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.Text.ToString(), cboCV.Text.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Them(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
@@ -228,18 +228,16 @@ namespace QLCongTy.NhanSu
         {
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
 
-            //Dùng Loop thay thế -> ???
-
-            txtMaNV.Text = r.Cells[0].Value.ToString();
-            txtHoDem.Text = r.Cells[1].Value.ToString();
-            txtTenNV.Text = r.Cells[2].Value.ToString();
+            txtMaNV.Texts = r.Cells[0].Value.ToString();
+            txtHoDem.Texts = r.Cells[1].Value.ToString();
+            txtTenNV.Texts = r.Cells[2].Value.ToString();
             dtpNgaySinh.Text = r.Cells[3].Value.ToString();
-            txtDiaChi.Text = r.Cells[4].Value.ToString();
-            txtCCCD.Text = r.Cells[5].Value.ToString();
+            txtDiaChi.Texts = r.Cells[4].Value.ToString();
+            txtCCCD.Texts = r.Cells[5].Value.ToString();
             cboPB.Text = r.Cells[6].Value.ToString();
             cboGTinh.Text = r.Cells[7].Value.ToString();
-            txtSDT.Text = r.Cells[8].Value.ToString();
-            txtEmail.Text = r.Cells[9].Value.ToString();
+            txtSDT.Texts = r.Cells[8].Value.ToString();
+            txtEmail.Texts = r.Cells[9].Value.ToString();
             cboCV.Text = r.Cells[10].Value.ToString();
             cboTrinhdo.Text = r.Cells[11].Value.ToString();
         }
