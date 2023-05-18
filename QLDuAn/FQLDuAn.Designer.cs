@@ -61,18 +61,23 @@
             this.chartTienDoDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartTiendoCN = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnThongKe = new FontAwesome.Sharp.IconButton();
+            this.tpPCDA = new System.Windows.Forms.TabPage();
+            this.pnlPCDA = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tpNhanlucDA = new System.Windows.Forms.TabPage();
+            this.tmShowTiendo = new System.Windows.Forms.Timer(this.components);
             this.artanPannel5 = new ArtanComponent.ArtanPannel();
             this.gvTTPhancong = new System.Windows.Forms.DataGridView();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
             this.gvQLDuAn = new System.Windows.Forms.DataGridView();
             this.artanPannel1 = new ArtanComponent.ArtanPannel();
+            this.ReloadCboFind = new FontAwesome.Sharp.IconButton();
             this.cboFindMaDA = new System.Windows.Forms.ComboBox();
             this.btnPhanCong = new QLCongTy.VBButton();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnThem = new QLCongTy.VBButton();
             this.btnXoa = new QLCongTy.VBButton();
             this.btnSua = new QLCongTy.VBButton();
-            this.tpPCDA = new System.Windows.Forms.TabPage();
             this.pnlThongtinCheckIn = new ArtanComponent.ArtanPannel();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -90,9 +95,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.PnlDonxinnghi = new ArtanComponent.ArtanPannel();
             this.lblThongtinDA = new System.Windows.Forms.Label();
-            this.pnlPCDA = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tpNhanlucDA = new System.Windows.Forms.TabPage();
             this.artanPannel4 = new ArtanComponent.ArtanPannel();
             this.gvNhanLuc = new System.Windows.Forms.DataGridView();
             this.artanPannel3 = new ArtanComponent.ArtanPannel();
@@ -100,24 +102,23 @@
             this.btnThemNVvaoDA = new QLCongTy.VBButton();
             this.btnFilter = new QLCongTy.VBButton();
             this.btnXoaNVkhoiDA = new QLCongTy.VBButton();
-            this.tmShowTiendo = new System.Windows.Forms.Timer(this.components);
             this.tabQLDA.SuspendLayout();
             this.tpQLDA.SuspendLayout();
             this.pnlTiendo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).BeginInit();
+            this.tpPCDA.SuspendLayout();
+            this.pnlPCDA.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tpNhanlucDA.SuspendLayout();
             this.artanPannel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTTPhancong)).BeginInit();
             this.artanPannel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQLDuAn)).BeginInit();
             this.artanPannel1.SuspendLayout();
-            this.tpPCDA.SuspendLayout();
             this.pnlThongtinCheckIn.SuspendLayout();
             this.PnlDonxinnghi.SuspendLayout();
-            this.pnlPCDA.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tpNhanlucDA.SuspendLayout();
             this.artanPannel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanLuc)).BeginInit();
             this.artanPannel3.SuspendLayout();
@@ -254,6 +255,60 @@
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // tpPCDA
+            // 
+            this.tpPCDA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(207)))), ((int)(((byte)(245)))));
+            this.tpPCDA.Controls.Add(this.pnlThongtinCheckIn);
+            this.tpPCDA.Controls.Add(this.PnlDonxinnghi);
+            this.tpPCDA.Controls.Add(this.pnlPCDA);
+            this.tpPCDA.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.tpPCDA.Location = new System.Drawing.Point(4, 40);
+            this.tpPCDA.Name = "tpPCDA";
+            this.tpPCDA.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPCDA.Size = new System.Drawing.Size(1329, 728);
+            this.tpPCDA.TabIndex = 1;
+            this.tpPCDA.Text = "Phân Công";
+            // 
+            // pnlPCDA
+            // 
+            this.pnlPCDA.Controls.Add(this.tabControl1);
+            this.pnlPCDA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlPCDA.Location = new System.Drawing.Point(3, 393);
+            this.pnlPCDA.Name = "pnlPCDA";
+            this.pnlPCDA.Size = new System.Drawing.Size(1323, 332);
+            this.pnlPCDA.TabIndex = 57;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tpNhanlucDA);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1323, 332);
+            this.tabControl1.TabIndex = 58;
+            // 
+            // tpNhanlucDA
+            // 
+            this.tpNhanlucDA.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tpNhanlucDA.Controls.Add(this.artanPannel4);
+            this.tpNhanlucDA.Controls.Add(this.artanPannel3);
+            this.tpNhanlucDA.Controls.Add(this.btnThemNVvaoDA);
+            this.tpNhanlucDA.Controls.Add(this.btnFilter);
+            this.tpNhanlucDA.Controls.Add(this.btnXoaNVkhoiDA);
+            this.tpNhanlucDA.Location = new System.Drawing.Point(4, 40);
+            this.tpNhanlucDA.Name = "tpNhanlucDA";
+            this.tpNhanlucDA.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNhanlucDA.Size = new System.Drawing.Size(1315, 288);
+            this.tpNhanlucDA.TabIndex = 0;
+            this.tpNhanlucDA.Text = "Nhân lực dự án";
+            // 
+            // tmShowTiendo
+            // 
+            this.tmShowTiendo.Interval = 10;
+            this.tmShowTiendo.Tick += new System.EventHandler(this.tmShowTiendo_Tick);
             // 
             // artanPannel5
             // 
@@ -401,6 +456,7 @@
             // 
             this.artanPannel1.BackColor = System.Drawing.Color.White;
             this.artanPannel1.BorderRadius = 40;
+            this.artanPannel1.Controls.Add(this.ReloadCboFind);
             this.artanPannel1.Controls.Add(this.cboFindMaDA);
             this.artanPannel1.Controls.Add(this.btnPhanCong);
             this.artanPannel1.Controls.Add(this.btnTimKiem);
@@ -416,10 +472,27 @@
             this.artanPannel1.Size = new System.Drawing.Size(960, 184);
             this.artanPannel1.TabIndex = 86;
             // 
+            // ReloadCboFind
+            // 
+            this.ReloadCboFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(232)))), ((int)(((byte)(250)))));
+            this.ReloadCboFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReloadCboFind.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.ReloadCboFind.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.ReloadCboFind.IconColor = System.Drawing.Color.RoyalBlue;
+            this.ReloadCboFind.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ReloadCboFind.IconSize = 30;
+            this.ReloadCboFind.Location = new System.Drawing.Point(291, 28);
+            this.ReloadCboFind.Name = "ReloadCboFind";
+            this.ReloadCboFind.Size = new System.Drawing.Size(32, 30);
+            this.ReloadCboFind.TabIndex = 87;
+            this.ReloadCboFind.UseVisualStyleBackColor = false;
+            this.ReloadCboFind.Click += new System.EventHandler(this.ReloadCboFind_Click);
+            // 
             // cboFindMaDA
             // 
+            this.cboFindMaDA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFindMaDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFindMaDA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFindMaDA.FormattingEnabled = true;
             this.cboFindMaDA.Location = new System.Drawing.Point(58, 28);
             this.cboFindMaDA.Name = "cboFindMaDA";
             this.cboFindMaDA.Size = new System.Drawing.Size(189, 30);
@@ -447,15 +520,18 @@
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(232)))), ((int)(((byte)(250)))));
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTimKiem.IconColor = System.Drawing.Color.Black;
+            this.btnTimKiem.IconColor = System.Drawing.Color.RoyalBlue;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 30;
             this.btnTimKiem.Location = new System.Drawing.Point(253, 28);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(32, 34);
+            this.btnTimKiem.Size = new System.Drawing.Size(32, 30);
             this.btnTimKiem.TabIndex = 85;
-            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThem
@@ -517,20 +593,6 @@
             this.btnSua.TextColor = System.Drawing.Color.Black;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // tpPCDA
-            // 
-            this.tpPCDA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(207)))), ((int)(((byte)(245)))));
-            this.tpPCDA.Controls.Add(this.pnlThongtinCheckIn);
-            this.tpPCDA.Controls.Add(this.PnlDonxinnghi);
-            this.tpPCDA.Controls.Add(this.pnlPCDA);
-            this.tpPCDA.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.tpPCDA.Location = new System.Drawing.Point(4, 40);
-            this.tpPCDA.Name = "tpPCDA";
-            this.tpPCDA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPCDA.Size = new System.Drawing.Size(1329, 728);
-            this.tpPCDA.TabIndex = 1;
-            this.tpPCDA.Text = "Phân Công";
             // 
             // pnlThongtinCheckIn
             // 
@@ -776,41 +838,6 @@
             this.lblThongtinDA.Text = "Mã_Tên Dự Án";
             this.lblThongtinDA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlPCDA
-            // 
-            this.pnlPCDA.Controls.Add(this.tabControl1);
-            this.pnlPCDA.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPCDA.Location = new System.Drawing.Point(3, 393);
-            this.pnlPCDA.Name = "pnlPCDA";
-            this.pnlPCDA.Size = new System.Drawing.Size(1323, 332);
-            this.pnlPCDA.TabIndex = 57;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tpNhanlucDA);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1323, 332);
-            this.tabControl1.TabIndex = 58;
-            // 
-            // tpNhanlucDA
-            // 
-            this.tpNhanlucDA.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tpNhanlucDA.Controls.Add(this.artanPannel4);
-            this.tpNhanlucDA.Controls.Add(this.artanPannel3);
-            this.tpNhanlucDA.Controls.Add(this.btnThemNVvaoDA);
-            this.tpNhanlucDA.Controls.Add(this.btnFilter);
-            this.tpNhanlucDA.Controls.Add(this.btnXoaNVkhoiDA);
-            this.tpNhanlucDA.Location = new System.Drawing.Point(4, 40);
-            this.tpNhanlucDA.Name = "tpNhanlucDA";
-            this.tpNhanlucDA.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanlucDA.Size = new System.Drawing.Size(1315, 288);
-            this.tpNhanlucDA.TabIndex = 0;
-            this.tpNhanlucDA.Text = "Nhân lực dự án";
-            // 
             // artanPannel4
             // 
             this.artanPannel4.BackColor = System.Drawing.Color.White;
@@ -1007,11 +1034,6 @@
             this.btnXoaNVkhoiDA.UseVisualStyleBackColor = false;
             this.btnXoaNVkhoiDA.Click += new System.EventHandler(this.btnXoaNVkhoiDA_Click);
             // 
-            // tmShowTiendo
-            // 
-            this.tmShowTiendo.Interval = 10;
-            this.tmShowTiendo.Tick += new System.EventHandler(this.tmShowTiendo_Tick);
-            // 
             // fQLDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1031,18 +1053,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartTongTiendo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTienDoDA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTiendoCN)).EndInit();
+            this.tpPCDA.ResumeLayout(false);
+            this.pnlPCDA.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tpNhanlucDA.ResumeLayout(false);
             this.artanPannel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvTTPhancong)).EndInit();
             this.artanPannel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvQLDuAn)).EndInit();
             this.artanPannel1.ResumeLayout(false);
-            this.tpPCDA.ResumeLayout(false);
             this.pnlThongtinCheckIn.ResumeLayout(false);
             this.pnlThongtinCheckIn.PerformLayout();
             this.PnlDonxinnghi.ResumeLayout(false);
-            this.pnlPCDA.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tpNhanlucDA.ResumeLayout(false);
             this.artanPannel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanLuc)).EndInit();
             this.artanPannel3.ResumeLayout(false);
@@ -1100,5 +1122,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton ReloadCboFind;
     }
 }

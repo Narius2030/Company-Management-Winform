@@ -210,9 +210,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\main_picture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>

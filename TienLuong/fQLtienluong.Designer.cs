@@ -334,7 +334,7 @@
             this.artanPannel2.Controls.Add(this.btnLamMoi);
             this.artanPannel2.ForeColor = System.Drawing.Color.Black;
             this.artanPannel2.GradientAngle = 90F;
-            this.artanPannel2.GradientBttomColor = System.Drawing.Color.DarkOrchid;
+            this.artanPannel2.GradientBttomColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
             this.artanPannel2.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
             this.artanPannel2.Location = new System.Drawing.Point(83, 118);
             this.artanPannel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -443,7 +443,7 @@
             this.artanPannel1.Controls.Add(this.gvTienLuong);
             this.artanPannel1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.artanPannel1.GradientAngle = 90F;
-            this.artanPannel1.GradientBttomColor = System.Drawing.Color.DarkOrchid;
+            this.artanPannel1.GradientBttomColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
             this.artanPannel1.GradientTopcolor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(96)))), ((int)(((byte)(228)))));
             this.artanPannel1.Location = new System.Drawing.Point(83, 231);
             this.artanPannel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
