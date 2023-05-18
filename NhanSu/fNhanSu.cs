@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCongTy.ChamCong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace QLCongTy.NhanSu
     {
         Nhansu ns;
         NhanSuDAO nsDao = new NhanSuDAO();
+        ChamCongDAO ccd = new ChamCongDAO();
         public FNhanSu()
         {
             InitializeComponent();
@@ -72,8 +74,10 @@ namespace QLCongTy.NhanSu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.Text.ToString(), cboCV.Text.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
+            ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Them(ns);
+            Chamcong cc = new Chamcong(txtMaNV.Texts, DateTime.Now.Month, DateTime.Now.Year, 0, 1);
+            ccd.Them(cc);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
