@@ -77,7 +77,7 @@ namespace QLCongTy.NhanSu
             ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Them(ns);
 
-            //Thêm ChamCong cho nhân viên mới tại thời điểm hiện tại
+            //Thêm ChamCong cho nhân viên mới tại thời điểm mới nhất
             nsDao.ChamCongNVMoi(txtMaNV.Texts);
 
             gvNhanSu.DataSource = nsDao.DanhSach();
