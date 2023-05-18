@@ -17,20 +17,16 @@ namespace QLCongTy
         {
             InitializeComponent();
             CustomizeDesing();
-            LoadProfile();
-            lblTenNV.Text = fMainMenu.currentStaff.HoDem + " " + fMainMenu.currentStaff.Ten;
-            lblMaNV.Text = fMainMenu.currentStaff.MaNV;
-            lblMaPB.Text = pfd.LayMaPhongBan(fMainMenu.currentStaff.MaNV);
         }
         private void FProfile_Load(object sender, EventArgs e)
         {
-
+            LoadProfile();
         }
 
         private void LoadProfile()
         {
-            lblMaNV.Text = fMainMenu.MaNV;
-            lblTenNV.Text = "";
+            lblMaNV.Text = fMainMenu.currentStaff.MaNV;
+            lblMaPB.Text = pfd.LayMaPhongBan(fMainMenu.currentStaff.MaNV);
         }
 
         private void btnHome_Click(object sender, EventArgs e)

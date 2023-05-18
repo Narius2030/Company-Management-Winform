@@ -48,7 +48,6 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblMaPB = new QLCongTy.VBLabel();
             this.lblMaNV = new QLCongTy.VBLabel();
-            this.lblTenNV = new QLCongTy.VBLabel();
             this.pnlTong = new System.Windows.Forms.Panel();
             this.pnlBaoMat = new System.Windows.Forms.Panel();
             this.pnlDoiMatKhau = new System.Windows.Forms.Panel();
@@ -333,7 +332,6 @@
             this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTitle.Controls.Add(this.lblMaPB);
             this.pnlTitle.Controls.Add(this.lblMaNV);
-            this.pnlTitle.Controls.Add(this.lblTenNV);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(219, 0);
             this.pnlTitle.Name = "pnlTitle";
@@ -350,7 +348,7 @@
             this.lblMaPB.FlatAppearance.BorderSize = 0;
             this.lblMaPB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMaPB.ForeColor = System.Drawing.Color.White;
-            this.lblMaPB.Location = new System.Drawing.Point(429, 21);
+            this.lblMaPB.Location = new System.Drawing.Point(206, 10);
             this.lblMaPB.Name = "lblMaPB";
             this.lblMaPB.Size = new System.Drawing.Size(243, 40);
             this.lblMaPB.TabIndex = 15;
@@ -368,31 +366,13 @@
             this.lblMaNV.FlatAppearance.BorderSize = 0;
             this.lblMaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMaNV.ForeColor = System.Drawing.Color.White;
-            this.lblMaNV.Location = new System.Drawing.Point(253, 21);
+            this.lblMaNV.Location = new System.Drawing.Point(35, 10);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(150, 40);
             this.lblMaNV.TabIndex = 14;
             this.lblMaNV.Text = "Mã nhân viên";
             this.lblMaNV.TextColor = System.Drawing.Color.White;
             this.lblMaNV.UseVisualStyleBackColor = false;
-            // 
-            // lblTenNV
-            // 
-            this.lblTenNV.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTenNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTenNV.BorderRadius = 20;
-            this.lblTenNV.BorderSize = 0;
-            this.lblTenNV.FlatAppearance.BorderSize = 0;
-            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTenNV.ForeColor = System.Drawing.Color.White;
-            this.lblTenNV.Location = new System.Drawing.Point(6, 21);
-            this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(228, 40);
-            this.lblTenNV.TabIndex = 4;
-            this.lblTenNV.Text = "Tên";
-            this.lblTenNV.TextColor = System.Drawing.Color.White;
-            this.lblTenNV.UseVisualStyleBackColor = false;
             // 
             // pnlTong
             // 
@@ -1701,7 +1681,6 @@
         private System.Windows.Forms.Panel pnlHome;
         private System.Windows.Forms.Panel pnlTitle;
         private VBLabel lblMaNV;
-        private VBLabel lblTenNV;
         private System.Windows.Forms.Panel pnlTong;
         private System.Windows.Forms.Panel pnlBaoMat;
         private System.Windows.Forms.Panel pnlXinNghiPhep;

@@ -47,6 +47,7 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.picHome = new FontAwesome.Sharp.IconPictureBox();
             this.pnlAccount = new System.Windows.Forms.Panel();
+            this.lblTenNV = new QLCongTy.VBLabel();
             this.picName = new FontAwesome.Sharp.IconPictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
@@ -57,7 +58,6 @@
             this.picCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.tmCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.artanPannel3 = new ArtanComponent.ArtanPannel();
             this.btnDangNhap = new QLCongTy.VBButton();
             this.artanPannel2 = new ArtanComponent.ArtanPannel();
@@ -68,7 +68,7 @@
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.picAccount = new FontAwesome.Sharp.IconPictureBox();
-            this.lblTenNV = new QLCongTy.VBLabel();
+            this.tmCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlDiemDanh.SuspendLayout();
             this.pnlNhanSu.SuspendLayout();
@@ -412,6 +412,25 @@
             this.pnlAccount.Size = new System.Drawing.Size(277, 61);
             this.pnlAccount.TabIndex = 1;
             // 
+            // lblTenNV
+            // 
+            this.lblTenNV.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTenNV.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTenNV.BorderColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.BorderRadius = 8;
+            this.lblTenNV.BorderSize = 0;
+            this.lblTenNV.FlatAppearance.BorderSize = 0;
+            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNV.ForeColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.Location = new System.Drawing.Point(66, 9);
+            this.lblTenNV.Name = "lblTenNV";
+            this.lblTenNV.Size = new System.Drawing.Size(196, 43);
+            this.lblTenNV.TabIndex = 9;
+            this.lblTenNV.Text = "Tên Nhân Viên";
+            this.lblTenNV.TextColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.UseVisualStyleBackColor = false;
+            // 
             // picName
             // 
             this.picName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
@@ -544,10 +563,6 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(1355, 819);
             this.pnlLogin.TabIndex = 0;
-            // 
-            // tmCurrentTime
-            // 
-            this.tmCurrentTime.Tick += new System.EventHandler(this.tmCurrentTime_Tick);
             // 
             // artanPannel3
             // 
@@ -719,24 +734,9 @@
             this.picAccount.TabIndex = 89;
             this.picAccount.TabStop = false;
             // 
-            // lblTenNV
+            // tmCurrentTime
             // 
-            this.lblTenNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
-            this.lblTenNV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
-            this.lblTenNV.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.lblTenNV.BorderRadius = 8;
-            this.lblTenNV.BorderSize = 0;
-            this.lblTenNV.FlatAppearance.BorderSize = 0;
-            this.lblTenNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNV.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTenNV.Location = new System.Drawing.Point(66, 9);
-            this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(196, 43);
-            this.lblTenNV.TabIndex = 9;
-            this.lblTenNV.Text = "Tên Nhân Viên";
-            this.lblTenNV.TextColor = System.Drawing.Color.Transparent;
-            this.lblTenNV.UseVisualStyleBackColor = false;
+            this.tmCurrentTime.Tick += new System.EventHandler(this.tmCurrentTime_Tick);
             // 
             // fMainMenu
             // 
