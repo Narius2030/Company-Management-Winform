@@ -34,7 +34,7 @@ namespace QLCongTy.ChamCong
         }
         public bool InsertChamCong()
         {
-            //Tìm tháng, năm mới nhất
+            //Tìm tháng, năm mới nhất trong csdl
             string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
             int month, year;
             DataTable dt = dbconn.FormLoad(sqlStr);
@@ -45,6 +45,7 @@ namespace QLCongTy.ChamCong
             }
             catch
             {
+                //Tìm tháng, năm hiện tại
                 month = DateTime.Now.Month;
                 year = DateTime.Now.Year;
             }
