@@ -14,7 +14,7 @@ namespace QLCongTy.NhanSu
 {
     public partial class FNhanSu : Form
     {
-        Nhansu ns;
+        Nhansu ns = new Nhansu();
         NhanSuDAO nsDao = new NhanSuDAO();
         ChamCongDAO ccd = new ChamCongDAO();
         public FNhanSu()

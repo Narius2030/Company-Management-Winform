@@ -32,7 +32,10 @@ namespace QLCongTy.NhanSu
             this.email = Email;
             Trinhdo = trinhdo;
         }
+        public Nhansu()
+        {
 
+        }
         public string MaNV
         {
             get { return this.maNV; }

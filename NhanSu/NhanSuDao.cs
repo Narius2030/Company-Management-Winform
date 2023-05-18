@@ -138,10 +138,13 @@ namespace QLCongTy.NhanSu
         }
         public void ChamCongNVMoi(string manv)
         {
-            string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
+            string sqlStr = $@"select * from CHAMCONG
+                            where Thang = (select max(Thang) 
+		                            from (select * from CHAMCONG 
+		                            where Nam = (select max(Nam) from CHAMCONG)) as Q)";
             DataTable dt = db.FormLoad(sqlStr);
-            int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
-            int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+            int month = int.Parse(dt.Rows[0]["Thang"].ToString());
+            int year= int.Parse(dt.Rows[0]["Nam"].ToString());
             Chamcong cc = new Chamcong(manv, month, year, 0, 1);
             ccd.Them(cc);
         }
