@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCongTy.ChamCong;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -7,6 +8,7 @@ namespace QLCongTy.NhanSu
     internal class NhanSuDAO
     {
         DBConnection db = new DBConnection();
+        ChamCongDAO ccd  =new ChamCongDAO();
         public DataTable DanhSach()
         {
             return db.FormLoad("SELECT *FROM NHANSU");
@@ -133,6 +135,15 @@ namespace QLCongTy.NhanSu
         {
             string sqlStr = "SELECT TenCV, MaCV FROM CHUCVU";
             return db.FormLoad(sqlStr);
+        }
+        public void ChamCongNVMoi(string manv)
+        {
+            string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
+            DataTable dt = db.FormLoad(sqlStr);
+            int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
+            int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+            Chamcong cc = new Chamcong(manv, month, year, 0, 1);
+            ccd.Them(cc);
         }
     }
 }

@@ -76,8 +76,10 @@ namespace QLCongTy.NhanSu
         {
             ns = new Nhansu(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Them(ns);
-            Chamcong cc = new Chamcong(txtMaNV.Texts, DateTime.Now.Month, DateTime.Now.Year, 0, 1);
-            ccd.Them(cc);
+
+            //Thêm ChamCong cho nhân viên mới tại thời điểm hiện tại
+            nsDao.ChamCongNVMoi(txtMaNV.Texts);
+
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
