@@ -103,6 +103,7 @@ namespace QLCongTy.QLDuAn
             {
                 FTaoDuAn tda = new FTaoDuAn(da, btnSua.Text);
                 tda.Show();
+                gvQLDuAn.DataSource = daDao.DSDuAn();
             }
             else
             {

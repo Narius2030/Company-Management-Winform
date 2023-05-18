@@ -75,9 +75,9 @@ namespace QLCongTy.QLDuAn
             Type type = da.GetType();
             var props = type.GetProperties();
             int i = 0;
-            foreach (var control in pnlTTDuAn.Controls.OfType<TextBox>())
+            foreach (var control in pnlTTDuAn.Controls.OfType<CTTextBox>())
             {
-                control.Text = props[i].GetValue(da, null).ToString();
+                control.Texts = props[i].GetValue(da, null).ToString();
             }
         }
     }
