@@ -795,6 +795,7 @@
             this.txtLuongcb.BackColor = System.Drawing.Color.White;
             this.txtLuongcb.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtLuongcb.BorderSize = 2;
+            this.txtLuongcb.Enabled = false;
             this.txtLuongcb.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongcb.ForeColor = System.Drawing.Color.Black;
             this.txtLuongcb.Location = new System.Drawing.Point(417, 47);
@@ -857,6 +858,7 @@
             this.txtLuongthuong.BackColor = System.Drawing.Color.White;
             this.txtLuongthuong.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtLuongthuong.BorderSize = 2;
+            this.txtLuongthuong.Enabled = false;
             this.txtLuongthuong.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongthuong.ForeColor = System.Drawing.Color.Black;
             this.txtLuongthuong.Location = new System.Drawing.Point(417, 159);
@@ -919,6 +921,7 @@
             this.txtLuongphat.BackColor = System.Drawing.Color.White;
             this.txtLuongphat.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtLuongphat.BorderSize = 2;
+            this.txtLuongphat.Enabled = false;
             this.txtLuongphat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongphat.ForeColor = System.Drawing.Color.Black;
             this.txtLuongphat.Location = new System.Drawing.Point(419, 278);
@@ -952,6 +955,7 @@
             this.txtLuongcthuc.BackColor = System.Drawing.Color.White;
             this.txtLuongcthuc.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtLuongcthuc.BorderSize = 2;
+            this.txtLuongcthuc.Enabled = false;
             this.txtLuongcthuc.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongcthuc.ForeColor = System.Drawing.Color.Black;
             this.txtLuongcthuc.Location = new System.Drawing.Point(355, 407);
@@ -1043,6 +1047,7 @@
             this.txtSoNgayLam.BackColor = System.Drawing.Color.White;
             this.txtSoNgayLam.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSoNgayLam.BorderSize = 2;
+            this.txtSoNgayLam.Enabled = false;
             this.txtSoNgayLam.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayLam.ForeColor = System.Drawing.Color.Black;
             this.txtSoNgayLam.Location = new System.Drawing.Point(252, 35);
@@ -1061,6 +1066,7 @@
             this.txtSoNgayNghi.BackColor = System.Drawing.Color.White;
             this.txtSoNgayNghi.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSoNgayNghi.BorderSize = 2;
+            this.txtSoNgayNghi.Enabled = false;
             this.txtSoNgayNghi.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayNghi.ForeColor = System.Drawing.Color.Black;
             this.txtSoNgayNghi.Location = new System.Drawing.Point(252, 110);
@@ -1079,6 +1085,7 @@
             this.txtSoNgayNghiPhep.BackColor = System.Drawing.Color.White;
             this.txtSoNgayNghiPhep.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSoNgayNghiPhep.BorderSize = 2;
+            this.txtSoNgayNghiPhep.Enabled = false;
             this.txtSoNgayNghiPhep.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayNghiPhep.ForeColor = System.Drawing.Color.Black;
             this.txtSoNgayNghiPhep.Location = new System.Drawing.Point(252, 188);
@@ -1097,6 +1104,7 @@
             this.txtSoDuAnHoanThanh.BackColor = System.Drawing.Color.White;
             this.txtSoDuAnHoanThanh.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSoDuAnHoanThanh.BorderSize = 2;
+            this.txtSoDuAnHoanThanh.Enabled = false;
             this.txtSoDuAnHoanThanh.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDuAnHoanThanh.ForeColor = System.Drawing.Color.Black;
             this.txtSoDuAnHoanThanh.Location = new System.Drawing.Point(252, 269);
