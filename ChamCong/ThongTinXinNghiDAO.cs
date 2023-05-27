@@ -13,9 +13,17 @@ namespace Entity_QLCongTy.ChamCong
         DBConnection dbconn = new DBConnection();
         ChamCongDAO ccd = new ChamCongDAO();
         CheckInOutDAO ciod = new CheckInOutDAO();
-        public DataTable LayDanhSach()
+        public DataTable LayDanhSach(string manv)
         {
-            return dbconn.FormLoad("SELECT * FROM NGHIPHEP WHERE PHANHOI = 'chua duyet'");
+            string sqlStr = $"select MaPB from PHONGBAN where MaTP = '{manv}'";
+            var mapb = dbconn.GetItem(sqlStr).ToString();
+
+            sqlStr = $@"SELECT NGHIPHEP.MANV as N'Mã nhân viên', CONCAT(HovaTendem, ' ', Ten) as N'Họ tên', 
+	                        NGAYNGHI as 'Ngày nghỉ', LYDO as N'Lý do', PHANHOI as N'Phản hồi'
+                        FROM NGHIPHEP JOIN NHANSU on NGHIPHEP.MANV = NHANSU.MaNV
+                        WHERE PHANHOI = 'chua duyet' AND MaPB = '{mapb}'";
+
+            return dbconn.FormLoad(sqlStr);
         }
         public void ThemBangXinNghi(NGHIPHEP ttxn)
         {

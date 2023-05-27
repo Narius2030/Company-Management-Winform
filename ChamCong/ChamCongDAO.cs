@@ -58,11 +58,21 @@ namespace Entity_QLCongTy.ChamCong
 
         public bool InsertChamCong()
         {
-            //Tìm tháng, năm mới nhất
+            //Tìm tháng, năm mới nhất trong csdl
             string sqlStr = $@"select MAX(Ngay) as Ngay from CHECKIN_OUT";
+            int month, year;
             DataTable dt = dbconn.FormLoad(sqlStr);
-            int month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
-            int year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+            try
+            {
+                month = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Month;
+                year = DateTime.Parse(dt.Rows[0]["Ngay"].ToString()).Year;
+            }
+            catch
+            {
+                //Tìm tháng, năm hiện tại
+                month = DateTime.Now.Month;
+                year = DateTime.Now.Year;
+            }
 
             //Thêm tháng, năm châm công mới nhất vào
             sqlStr = $@"select * from CHAMCONG

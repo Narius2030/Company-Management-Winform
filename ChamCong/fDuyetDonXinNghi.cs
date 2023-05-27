@@ -22,7 +22,7 @@ namespace Entity_QLCongTy
 
         private void fDuyetDonXinNghi_Load(object sender, EventArgs e)
         {
-            gvDSxinghi.DataSource = ttxnDao.LayDanhSach();
+            gvDSxinghi.DataSource = ttxnDao.LayDanhSach(fMainMenu.currentStaff.MaNV);
         }
 
         private void gvDSxinghi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -40,6 +40,7 @@ namespace Entity_QLCongTy
                 ttxnDao.GiamSoNgNghiPhep(ttxn);
                 // Cập nhật phan hồi
                 ttxnDao.CapNhatBangXinNghi(ttxn, phanhoi);
+                gvDSxinghi.DataSource = ttxnDao.LayDanhSach(fMainMenu.currentStaff.MaNV);
             }
             if (result == DialogResult.No)
             {

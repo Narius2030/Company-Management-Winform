@@ -56,8 +56,15 @@ namespace Entity_QLCongTy
             //Cập nhật CheckInOut
             if (pc != null)
             {
-                ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.MaNV, pc.NgayBD, pc.NgayKT);
-                dad.TienDoDuAn(pc.MaDA);
+                if (int.Parse(txtPhanTram.Texts) >= 0 && int.Parse(txtPhanTram.Texts) <= 100)
+                {
+                    ciod.DanhGiaCV(int.Parse(txtPhanTram.Texts), pc.MaNV, pc.NgayBD, pc.NgayKT);
+                    dad.TienDoDuAn(pc.MaDA);
+                }
+                else
+                {
+                    MessageBox.Show("Phần trăm khong hợp lệ");
+                }
             }
             ReLoad();
         }
