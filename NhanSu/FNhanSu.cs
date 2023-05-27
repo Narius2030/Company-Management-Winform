@@ -24,6 +24,8 @@ namespace Entity_QLCongTy.NhanSu
         {
             gvNhanSu.DataSource = nsDao.DanhSach();
             DoiTenGV();
+            GetCboPB();
+            GetCboCV();
 
             //Thống kê
             ThongKeLuong();
@@ -70,21 +72,25 @@ namespace Entity_QLCongTy.NhanSu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            ns = new NHANSU(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Them(ns);
+
+            //Thêm ChamCong cho nhân viên mới tại thời điểm mới nhất
+            nsDao.ChamCongNVMoi(txtMaNV.Texts);
+
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            ns = new NHANSU(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Xoa(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            ns = new NHANSU(txtMaNV.Text, txtHoDem.Text, txtTenNV.Text, dtpNgaySinh.Value.Date, txtDiaChi.Text, txtCCCD.Text, txtMaPB.Text, txtMaCV.Text, cboGTinh.Text, txtSDT.Text, txtEmail.Text, cboTrinhdo.Text);
+            ns = new NHANSU(txtMaNV.Texts, txtHoDem.Texts, txtTenNV.Texts, dtpNgaySinh.Value.Date, txtDiaChi.Texts, txtCCCD.Texts, cboPB.SelectedValue.ToString(), cboCV.SelectedValue.ToString(), cboGTinh.Text, txtSDT.Texts, txtEmail.Texts, cboTrinhdo.Text);
             nsDao.Sua(ns);
             gvNhanSu.DataSource = nsDao.DanhSach();
         }
@@ -227,19 +233,31 @@ namespace Entity_QLCongTy.NhanSu
             DataGridViewRow r = gvNhanSu.SelectedRows[0];
 
             //Dùng Loop thay thế -> ???
-           
-            txtMaNV.Text = r.Cells[0].Value.ToString();
-            txtHoDem.Text = r.Cells[1].Value.ToString();
-            txtTenNV.Text = r.Cells[2].Value.ToString();
+            txtMaNV.Texts = r.Cells[0].Value.ToString();
+            txtHoDem.Texts = r.Cells[1].Value.ToString();
+            txtTenNV.Texts = r.Cells[2].Value.ToString();
             dtpNgaySinh.Text = r.Cells[3].Value.ToString();
-            txtDiaChi.Text = r.Cells[4].Value.ToString();
-            txtCCCD.Text = r.Cells[5].Value.ToString();
-            txtMaPB.Text = r.Cells[6].Value.ToString();
+            txtDiaChi.Texts = r.Cells[4].Value.ToString();
+            txtCCCD.Texts = r.Cells[5].Value.ToString();
+            cboPB.Text = r.Cells[6].Value.ToString();
             cboGTinh.Text = r.Cells[7].Value.ToString();
-            txtSDT.Text = r.Cells[8].Value.ToString();
-            txtEmail.Text = r.Cells[9].Value.ToString();
-            txtMaCV.Text = r.Cells[10].Value.ToString();
+            txtSDT.Texts = r.Cells[8].Value.ToString();
+            txtEmail.Texts = r.Cells[9].Value.ToString();
+            cboCV.Text = r.Cells[10].Value.ToString();
             cboTrinhdo.Text = r.Cells[11].Value.ToString();
+        }
+        private void GetCboPB()
+        {
+            cboPB.DataSource = nsDao.GetNameDept();
+            cboPB.DisplayMember = "TenPB";
+            cboPB.ValueMember = "MaPB";
+        }
+
+        private void GetCboCV()
+        {
+            cboCV.DataSource = nsDao.GetChucVu();
+            cboCV.DisplayMember = "TenCV";
+            cboCV.ValueMember = "MaCV";
         }
     }
 }

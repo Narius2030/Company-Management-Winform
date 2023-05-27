@@ -61,7 +61,10 @@ namespace Entity_QLCongTy.QLDuAn
         }
         public void Xoa(DUAN da)
         {
-            string sqlStr = string.Format("DELETE FROM DUAN WHERE MaDA = '{0}'",da.MaDA);
+            // Tránh xung đột khóa ngoại
+            string sqlStr = $"DELETE FROM PHANCONGDUAN WHERE MaDA = '{da.MaDA}'";
+            db.ThucThi(sqlStr);
+            sqlStr = $"DELETE FROM DUAN WHERE MaDA = '{da.MaDA}'";
             db.ThucThi(sqlStr);
         }
         public void Sua(DUAN da)

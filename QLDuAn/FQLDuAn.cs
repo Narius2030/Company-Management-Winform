@@ -1,20 +1,9 @@
-﻿using Microsoft.Office.Interop.Excel;
-using Microsoft.SqlServer.Server;
-using Entity_QLCongTy.QLDuAn;
-using Entity_QLCongTy.QLPhongBan;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Xml.Linq;
 
 namespace Entity_QLCongTy.QLDuAn
 {
@@ -45,6 +34,23 @@ namespace Entity_QLCongTy.QLDuAn
             tabQLDA.Controls.Remove(tpPCDA);
             DoiTen();
             GettxtFindMaDA();
+        }
+
+        public void LoadCboFind()
+        {
+            DataTable dt;
+            if (fMainMenu.currentStaff.MaCV.Contains("GD"))
+            {
+                dt = daDao.LayDanhSach();
+            }
+            else
+            {
+                dt = daDao.LayDanhSachDuAn(fMainMenu.currentStaff.MaNV);
+            }
+            foreach (DataRow row in dt.Rows)
+            {
+                cboFindMaDA.Items.Add((row[0] + " - " + row[1]).ToString());
+            }
         }
         public void ReLoadPCDuAn()
         {
@@ -119,6 +125,7 @@ namespace Entity_QLCongTy.QLDuAn
             {
                 FTaoDuAn tda = new FTaoDuAn(da, btnXoa.Text);
                 tda.Show();
+                gvQLDuAn.DataSource = daDao.LayDanhSach();
             }
             else
             {
@@ -128,7 +135,11 @@ namespace Entity_QLCongTy.QLDuAn
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gvQLDuAn.DataSource = daDao.TimKiem(cboFindMaDA.SelectedValue.ToString());
+            string find = cboFindMaDA.Text.ToString();
+            if (find != String.Empty)
+            {
+                gvQLDuAn.DataSource = daDao.TimKiem(cboFindMaDA.SelectedValue.ToString());
+            }
         }
 
         private void btnPhanCong_Click(object sender, EventArgs e)
@@ -177,8 +188,7 @@ namespace Entity_QLCongTy.QLDuAn
         }
 
         private void btnXoaNVkhoiDA_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(pc.NgayKT.ToString() + pc.TienDo.ToString());
+        { 
             PHANCONGDUAN pcnl = new PHANCONGDUAN(da.MaDA, pc.MaNV, pc.CongViec, pc.NgayBD, pc.NgayKT, int.Parse(pc.TienDo.ToString()));
             DialogResult dialogResult = MessageBox.Show("Bạn chắc chắn muốn loại nhân viên khỏi dự án?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)

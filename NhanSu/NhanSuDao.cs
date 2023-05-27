@@ -9,12 +9,14 @@ using Entity_QLCongTy.TienLuong;
 using Entity_QLCongTy.QLDuAn;
 //using System.Windows.Documents;
 using System.Windows;
+using Entity_QLCongTy.ChamCong;
 
 namespace Entity_QLCongTy.NhanSu
 {
     internal class NhanSuDAO
     {
         DBConnection dbConnec = new DBConnection();
+        ChamCongDAO ccd = new ChamCongDAO();
         public DataTable DanhSach()
         {
             return dbConnec.FormLoad("SELECT *FROM NHANSU");
@@ -45,9 +47,9 @@ namespace Entity_QLCongTy.NhanSu
 
         public void Sua(NHANSU ns)
         {
-            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}', TrinhDo = '{10}' WHERE MaNV = '{10}'", ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh , ns.SDT, ns.Email, ns.MaCV, ns.MaNV, ns.TrinhDo);
+            string sqlStr = string.Format("UPDATE NHANSU SET HovaTendem = '{0}', Ten = '{1}', NgaySinh = '{2}', DiaChi = '{3}', CCCD = '{4}', MaPB = '{5}', GioiTinh = '{6}', SDT = '{7}', Email = '{8}', MaCV = '{9}', TrinhDo = '{11}' WHERE MaNV = '{10}'", ns.HovaTendem, ns.Ten, ns.NgaySinh, ns.DiaChi, ns.CCCD, ns.MaPB, ns.GioiTinh, ns.SDT, ns.Email, ns.MaCV, ns.MaNV, ns.TrinhDo);
             dbConnec.ThucThi(sqlStr);
-            sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'",ns.MaCV,ns.MaNV );
+            sqlStr = string.Format("UPDATE TAIKHOAN SET MaCV = '{0}' WHERE taikhoan ='{1}'", ns.MaCV, ns.MaNV);
             dbConnec.ThucThi(sqlStr);
         }
         public float LuongTheoThang(string mapb, int year)
@@ -130,6 +132,29 @@ namespace Entity_QLCongTy.NhanSu
 
             double tile = Math.Round(((double)sl_nam / (double)tong_nv), 3) * 100;
             return tile;
+        }
+        public DataTable GetNameDept()
+        {
+            string sqlStr = "SELECT TenPB, MaPB FROM PHONGBAN";
+            return dbConnec.FormLoad(sqlStr);
+        }
+
+        public DataTable GetChucVu()
+        {
+            string sqlStr = "SELECT TenCV, MaCV FROM CHUCVU";
+            return dbConnec.FormLoad(sqlStr);
+        }
+        public void ChamCongNVMoi(string manv)
+        {
+            string sqlStr = $@"select * from CHAMCONG
+                            where Thang = (select max(Thang) 
+		                            from (select * from CHAMCONG 
+		                            where Nam = (select max(Nam) from CHAMCONG)) as Q)";
+            DataTable dt = dbConnec.FormLoad(sqlStr);
+            int month = int.Parse(dt.Rows[0]["Thang"].ToString());
+            int year = int.Parse(dt.Rows[0]["Nam"].ToString());
+            CHAMCONG cc = new CHAMCONG(manv, month, year, 0, 1);
+            ccd.Them(cc);
         }
     }
 }

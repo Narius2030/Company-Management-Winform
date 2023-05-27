@@ -49,7 +49,7 @@ namespace Entity_QLCongTy
         public List<float> LayHoaDonLuong(string manv, int month, int year)
         {
             //Lấy thông tin lương của tài khoản trên TIENLUONG
-            string sqlStr = $@"SELECT TIENLUONG.LuongCB, TIENLUONG.LuongThuong, TIENLUONG.LuongPhat, TIENLUONG.LuongThucTe, CHAMCONG.NgDiLam, (30 - CHAMCONG.NgDiLam - CHAMCONG.SoNgNghiPhep) AS SoNgNghiKhongPhep, CHAMCONG.SoNgNghiPhep, (30 - 1) as DuAnHoanThanh
+            string sqlStr = $@"SELECT TIENLUONG.LuongCB, TIENLUONG.LuongThuong, TIENLUONG.LuongPhat, TIENLUONG.LuongThucTe, CHAMCONG.NgDiLam, (30 - CHAMCONG.NgDiLam - CHAMCONG.SoNgNghiPhep) AS SoNgNghiKhongPhep, CHAMCONG.SoNgNghiPhep
                                 FROM TIENLUONG
                                 INNER JOIN CHAMCONG ON TIENLUONG.MaNV = CHAMCONG.MaNV AND TIENLUONG.Nam = CHAMCONG.Nam AND TIENLUONG.Thang = CHAMCONG.Thang
                                 WHERE TIENLUONG.MaNV = '{manv}' AND TIENLUONG.Nam = '{year}' AND TIENLUONG.Thang = '{month}'";
@@ -57,11 +57,16 @@ namespace Entity_QLCongTy
 
             //Điền thông tin vào List
             List<float> luong = new List<float>();
-
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 luong.Add(float.Parse(dt.Rows[0][i].ToString()));
             }
+
+            //Tìm số lượng da đã làm
+            sqlStr = $@"select COUNT(MaDA) as soluong from PHANCONGDUAN
+                        where MaNV = '{manv}' and MONTH(NgayKT) = {month} and YEAR(NgayKT) = '{year}' and  TienDo = 100";
+            float soluongda = int.Parse(db.GetItem(sqlStr).ToString());
+            luong.Add(soluongda);
 
             return luong;
         }
