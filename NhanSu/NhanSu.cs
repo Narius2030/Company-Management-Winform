@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QLCongTy
+namespace QLCongTy.NhanSu
 {
-    public class NhanSu
+    public class Nhansu
     {
         private string maNV;
         private string hoDem;
@@ -19,22 +15,27 @@ namespace QLCongTy
         private string gioiTinh;
         private string sdt;
         private string email;
+        private string trinhdo;
 
-        public NhanSu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email)
+        public Nhansu(string MaNV, string HoDem, string Ten, DateTime NgaySinh, string DiaChi, string CCCD, string MaPB, string MaCV, string GioiTinh, string SDT, string Email, string trinhdo)
         {
             this.maNV = MaNV;
             this.hoDem = HoDem;
             this.ten = Ten;
-            this.ngaySinh= NgaySinh;
-            this.diaChi= DiaChi;
-            this.cccd= CCCD;
-            this.maPB= MaPB;
-            this.maCV= MaCV;
-            this.gioiTinh= GioiTinh;
-            this.sdt= SDT;
-            this.email= Email;
+            this.ngaySinh = NgaySinh;
+            this.diaChi = DiaChi;
+            this.cccd = CCCD;
+            this.maPB = MaPB;
+            this.maCV = MaCV;
+            this.gioiTinh = GioiTinh;
+            this.sdt = SDT;
+            this.email = Email;
+            Trinhdo = trinhdo;
         }
+        public Nhansu()
+        {
 
+        }
         public string MaNV
         {
             get { return this.maNV; }
@@ -79,5 +80,7 @@ namespace QLCongTy
         {
             get { return this.email; }
         }
+
+        public string Trinhdo { get => trinhdo; set => trinhdo = value; }
     }
 }

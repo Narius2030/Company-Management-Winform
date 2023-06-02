@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QLCongTy
@@ -48,6 +44,25 @@ namespace QLCongTy
                 conn.Close();
             }
             return dataSet;
+        }
+        public object GetItem(string sqlStr)
+        {
+            object result = new object();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(sqlStr, conn);
+                result = command.ExecuteScalar();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
         }
     }
 }

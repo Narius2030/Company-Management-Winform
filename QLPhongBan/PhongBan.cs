@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLCongTy.QLPhongBan
+﻿namespace QLCongTy.QLPhongBan
 {
     internal class PhongBan
     {
-        public string mapb;
-        public string tenpb;
-        public string matp;       
+        string mapb;
+        string tenpb;
+        string matp;       
+
 
         public PhongBan(string mapb, string tenpb, string matp)
         {
-            this.mapb = mapb;
-            this.tenpb = tenpb;
-            this.matp = matp;        
+            this.Mapb = mapb;
+            this.Tenpb = tenpb;
+            this.Matp = matp;        
         }
+
+        public string Mapb { get => mapb; set => mapb = value; }
+        public string Tenpb { get => tenpb; set => tenpb = value; }
+        public string Matp { get => matp; set => matp = value; }
     }
 }
